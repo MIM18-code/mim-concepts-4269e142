@@ -313,10 +313,32 @@ footer a:hover{text-decoration:underline;text-underline-offset:4px}
   .stats li{left:calc(var(--plx, var(--lx)) * 1cqw);top:calc(var(--ply, var(--ly)) * 1cqh)}
 }
 
-/* short landscape windows (a 1280x720 laptop): the words need the nav's 96px, so the library frame
-   moves in closer from the left and her crown keeps its place under "Service" */
-@media (orientation:landscape) and (max-height:800px){
+/* short wide windows (a 1280x720 laptop): the words need the nav's 96px, so the library frame
+   moves in closer from the left and her crown keeps its place under "Service". Not on 4:3 windows:
+   at 1024x768 that zoom put her head over the P of "Production" */
+@media (orientation:landscape) and (max-height:800px) and (min-aspect-ratio:3/2){
   #services .shot{--z:1.2!important;--fx:0!important;--fy:0!important}
+}
+/* tablets. Landscape iPads and other 4:3-ish windows (1024x768, 1180x820, 1366x1024): the hero frame
+   comes in less so the second hiker's face stays whole through the push; the library heading is a
+   touch smaller with "Production" stepped further right, so her crown sits under "Service" again and
+   her hair clears the P; the Q&A heading is a touch smaller so the speaker's head covers the end of
+   "Production" by 30% of the N at most, not 39% */
+@media (orientation:landscape) and (max-aspect-ratio:3/2){
+  #top .shot[data-intro]{--z:1.06!important}
+  #svc-h{--fs:8.1!important}
+  #svc-h .indent{--ind:4.75em!important}
+  #about-h{--fs:6.27!important}
+}
+/* portrait tablets (768x1024, 820x1180, 1024x1366): the window is 40% of a frame's width, not the
+   phone's quarter. The hero drops the second hiker entirely instead of halving her face; the reading
+   set keeps the daughter's face inside through the push; the closing set frames the boy whole, with
+   his hair behind the R of "Your" as on desktop */
+@media (orientation:portrait) and (min-width:761px){
+  #top .shot[data-intro]{--pfx:.40!important}
+  #testimonials .shot{--pfx:.44!important}
+  #contact .shot{--pfx:.43!important}
+  #cta-h{--px:28!important}
 }
 
 /* no script: every set shows as a still composite */
