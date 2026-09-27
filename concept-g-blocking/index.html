@@ -1,0 +1,1155 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Video Production Baltimore &amp; Orlando | MindInMotion</title>
+<meta name="description" content="MindInMotion is a video production company in Baltimore and Orlando.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,600..900&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="set/hero-bg.webp">
+<link rel="preload" as="image" href="set/hero-fg.webp">
+<style>
+:root{
+  --page:#0C0E0E; --page2:#131616; --ink:#EEF1F0; --dim:#9AA3A1; --line:rgba(238,241,240,.16);
+  --cyan:#10C6F8;
+  --sans:'Schibsted Grotesk', system-ui, sans-serif;
+  --set:'Big Shoulders', 'Big Shoulders Display', 'Arial Narrow', sans-serif;
+  --nav-h:68px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:80px}
+.scene{scroll-margin-top:-80px}
+body{margin:0;background:var(--page);color:var(--ink);font:400 18px/1.55 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:clip}
+img{display:block;max-width:none}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:2px}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+.skip{position:fixed;left:12px;top:-60px;z-index:100;background:var(--ink);color:var(--page);padding:10px 14px;font-weight:600;text-decoration:none}
+.skip:focus{top:12px}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:10px;height:52px;padding:0 22px;border-radius:3px;font:600 15px/1 var(--sans);text-decoration:none;cursor:pointer;border:0;white-space:nowrap;transition:background .2s,color .2s}
+.btn-solid{background:var(--ink);color:#0C0E0E}
+.btn-solid:hover{background:#fff}
+.btn-dark{background:#2A2F2F;color:var(--ink)}
+.btn-dark:hover{background:#3A4040}
+.btn svg{width:12px;height:12px;flex:none}
+.play{display:inline-flex;align-items:center;gap:9px;height:44px;padding:0 16px 0 14px;border:0;border-radius:3px;background:var(--ink);color:#0C0E0E;font:600 14px/1 var(--sans);cursor:pointer}
+.play svg{width:11px;height:11px}
+.play:hover{background:#fff}
+
+/* ---------- nav ---------- */
+.nav{position:fixed;inset:0 0 auto 0;height:var(--nav-h);z-index:50;display:flex;align-items:center;gap:28px;padding:0 28px;transition:transform .35s ease,background .25s}
+.nav.solid{background:rgba(12,14,14,.96)}
+.nav.away{transform:translateY(-100%)}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:700 17px/1 var(--sans);letter-spacing:-.01em;margin-right:auto}
+.brand img{width:30px;height:30px}
+.nav ul{list-style:none;margin:0;padding:0;display:flex;gap:26px;align-items:center}
+.nav a,.nav .sub-btn{font:500 15px/1 var(--sans);text-decoration:none;background:none;border:0;padding:8px 0;cursor:pointer;text-shadow:0 1px 10px rgba(0,0,0,.35)}
+.nav a:hover,.nav .sub-btn:hover{color:#fff;text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:1px}
+.sub{position:relative}
+.sub-btn{display:inline-flex;align-items:center;gap:6px}
+.sub-btn svg{width:10px;height:10px;transition:transform .2s}
+.sub-btn[aria-expanded="true"] svg{transform:rotate(180deg)}
+.sub-menu{position:absolute;top:calc(100% + 12px);left:-18px;min-width:210px;background:#1A1E1E;box-shadow:0 18px 40px rgba(0,0,0,.5);padding:10px 0;display:none;flex-direction:column}
+.sub-menu.open{display:flex}
+.nav .sub-menu a{display:block;padding:11px 18px;text-shadow:none}
+.phones{font:500 14px/1 var(--sans);color:var(--dim);white-space:nowrap;display:none}
+.phones a{text-decoration:none;color:var(--ink)}
+.phones span.sep{margin:0 8px;color:rgba(238,241,240,.3)}
+.nav{padding-right:168px}
+.quote-fixed{position:fixed;top:13px;right:28px;z-index:52;height:42px;padding:0 18px;font-size:14px;box-shadow:0 2px 18px rgba(0,0,0,.25)}
+.menu-btn{display:none;background:none;border:0;height:44px;padding:0 4px;font:600 15px/1 var(--sans);cursor:pointer}
+@media (min-width:1280px){.phones{display:block}}
+
+/* phone menu + bottom bar */
+.sheet{position:fixed;inset:0;z-index:60;background:#0C0E0E;display:none;flex-direction:column;padding:18px 20px 28px;overflow:auto}
+.sheet.open{display:flex}
+.sheet-top{display:flex;align-items:center;justify-content:space-between;height:44px;margin-bottom:26px}
+.sheet-top button{background:none;border:0;font:600 15px/1 var(--sans);height:44px;cursor:pointer}
+.sheet nav a{display:block;text-decoration:none;font:800 46px/1.02 var(--set);text-transform:uppercase;padding:6px 0}
+.sheet nav .subs a{font:500 18px/1.2 var(--sans);text-transform:none;padding:8px 0 8px 2px;color:var(--dim)}
+.sheet .sheet-phones{margin-top:auto;padding-top:28px;font-size:16px;line-height:1.8}
+.sheet .sheet-phones a{text-decoration:none}
+.bar{display:none}
+
+/* ---------- scenes (pinned stages) and shots ---------- */
+.scene{position:relative;background:#000}
+.stage{position:sticky;top:0;height:100svh;overflow:hidden;background:#000}
+.shot{position:absolute;inset:0;container-type:size;overflow:hidden;opacity:0;pointer-events:none}
+.shot.on{opacity:1;pointer-events:auto}
+.frame{position:absolute;--fw:calc(max(100cqw, 100cqh * var(--ar)) * var(--z,1));width:var(--fw);height:calc(var(--fw) / var(--ar));
+  left:calc((100cqw - var(--fw)) * var(--fx,.5));top:calc((100cqh - var(--fw) / var(--ar)) * var(--fy,.5));container-type:size}
+.pl{position:absolute;inset:0;transform-origin:var(--ax,50%) var(--ay,50%);will-change:transform;pointer-events:none}
+.p-bg{z-index:1}.p-type{z-index:2}.p-fg{z-index:3}
+.p-bg img{width:100%;height:100%}
+.p-fg img{position:absolute}
+.shot.fwd .p-type{z-index:4}
+.grad{position:absolute;inset:0;z-index:5;pointer-events:none;
+  background:linear-gradient(to bottom,rgba(4,6,6,var(--gt,.42)),rgba(4,6,6,0) 15%),linear-gradient(to top,rgba(4,6,6,var(--gb,.72)),rgba(4,6,6,0) var(--gh,42%))}
+.front{position:absolute;inset:0;z-index:6;pointer-events:none;padding:calc(var(--nav-h) + 18px) 40px 40px}
+.front > *{pointer-events:auto}
+
+/* blocked type: set into the frame, lit by the frame */
+.blk{position:absolute;margin:0;left:calc(var(--x) * 1% + var(--kdx,0px));top:calc(var(--y) * 1%);font-size:calc(var(--fs) * 1cqw * var(--k,1));
+  font-family:var(--set);font-weight:900;font-optical-sizing:auto;text-transform:uppercase;line-height:.84;letter-spacing:-.004em;white-space:nowrap;
+  color:var(--c,#EEF1F0);filter:blur(var(--blur,0px));transform-origin:0 50%;transition:transform .35s cubic-bezier(.2,.7,.2,1);pointer-events:auto}
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+  .blk{background-image:var(--inkmap,linear-gradient(var(--c,#EEF1F0),var(--c,#EEF1F0)));background-size:100cqw 100cqh;background-repeat:no-repeat;
+    background-position:calc(var(--x) * -1cqw) calc(var(--y) * -1cqh);
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .blk .solid{-webkit-text-fill-color:var(--c)}
+}
+.blk .s1{font-size:var(--s1,.34em);display:inline-block;line-height:1;letter-spacing:.01em;padding-bottom:.08em}
+.blk br.m{display:none}
+.shot.fwd .blk{transform:scale(1.03)}
+.blk.dark{--c:#1D1B1A}
+.blk .indent{margin-left:var(--ind,3.6em)}
+.blk .lock{font-size:.43em;line-height:1;display:inline-block;vertical-align:baseline;margin-right:.09em;letter-spacing:.012em;padding:0}
+
+/* hero front */
+.hero-copy .loc{margin:0 0 14px;font:600 14px/1 var(--sans);color:#C9D0CE;letter-spacing:.01em}
+.hero-copy{position:absolute;left:40px;bottom:44px;max-width:560px}
+.hero-copy p{margin:0;font:500 21px/1.35 var(--sans);text-shadow:0 1px 18px rgba(0,0,0,.55);text-wrap:balance}
+.hero-copy .v2{margin-top:2px;color:#C9D0CE}
+.hero-copy .ctas{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap}
+
+/* stats */
+.stats{position:absolute;left:0;top:0;width:100%;height:0;margin:0;padding:0;list-style:none;font-size:calc(var(--fs) * 1cqw * var(--k,1))}
+.stats li{position:absolute;left:calc(var(--lx) * 1cqw);top:calc(var(--ly) * 1cqh);display:flex;flex-direction:column-reverse;align-items:flex-start}
+.stats .num{position:static;font-size:1em}
+.stats .lab{font:500 max(15px,.14em)/1.2 var(--sans);color:#C8D0DA;margin-bottom:.5em;white-space:nowrap}
+
+/* credits on project shots */
+.credit{position:absolute;left:40px;bottom:40px;display:flex;align-items:flex-end;gap:22px;max-width:calc(100% - 180px)}
+.credit .who{display:flex;flex-direction:column;gap:3px;text-shadow:0 1px 14px rgba(0,0,0,.6)}
+.credit .t{font:600 21px/1.2 var(--sans)}
+.credit .c{font:500 16px/1.3 var(--sans);color:#D5DBD9}
+.credit .d{font:400 14px/1.3 var(--sans);color:#AEB6B4}
+
+/* ---------- page sections ---------- */
+.page{position:relative;z-index:2;background:var(--page)}
+.wrap{max-width:1360px;margin:0 auto;padding:0 40px}
+.clients{padding:64px 0 70px}
+.clients h2{margin:0 0 30px;font:500 16px/1.2 var(--sans);color:var(--dim)}
+.logos{display:flex;align-items:center;justify-content:space-between;gap:34px;flex-wrap:wrap}
+.logos img{height:34px;width:auto;filter:brightness(0) invert(1);opacity:.86}
+.logos img.badge{filter:none;opacity:1;height:52px}
+.logos img.tall{height:46px}
+
+.index{padding:88px 0 96px;overflow:hidden}
+.index .wrap{position:relative;z-index:1}
+.index-bg{position:absolute;inset:0;z-index:0;opacity:0;transition:opacity .45s ease}
+.index-bg.lit{opacity:1}
+.index-bg img{position:absolute;inset:-4%;width:108%;height:108%;object-fit:cover;opacity:0;transition:opacity .35s ease;filter:blur(7px) brightness(.34) saturate(.85)}
+.index-bg img.on{opacity:1}
+.index-head{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;flex-wrap:wrap;margin-bottom:34px}
+.index h2{margin:0;font:900 clamp(44px,5.6vw,84px)/.86 var(--set);text-transform:uppercase}
+.filters{display:flex;gap:6px;flex-wrap:wrap}
+.filters button{height:40px;padding:0 16px;border-radius:3px;border:0;background:#1E2222;font:500 15px/1 var(--sans);cursor:pointer}
+.filters button:hover{background:#2A2F2F}
+.filters button[aria-pressed="true"]{background:var(--ink);color:#0C0E0E}
+.plist{list-style:none;margin:0;padding:0;columns:2;column-gap:56px}
+.plist li{break-inside:avoid}
+.plist button{display:grid;grid-template-columns:28px 1fr;align-items:start;gap:0 12px;width:100%;text-align:left;background:none;border:0;padding:15px 0;cursor:pointer}
+.plist .tri{width:28px;height:28px;border-radius:50%;background:rgba(238,241,240,.1);display:grid;place-items:center;margin-top:1px;transition:background .2s}
+.plist .tri svg{width:9px;height:9px;margin-left:2px}
+.plist button:hover .tri,.plist button:focus-visible .tri{background:var(--ink);color:#0C0E0E}
+.plist .pt{display:block;font:600 19px/1.3 var(--sans)}
+.plist .pc{display:block;font:400 15px/1.35 var(--sans);color:var(--dim);margin-top:2px}
+.plist button.has-th{grid-template-columns:96px 1fr;gap:0 14px;align-items:center;padding:10px 0}
+.plist .th{position:relative;width:96px;height:54px;overflow:hidden;background:#1A1E1E;border-radius:2px}
+.plist .th img{width:100%;height:100%;object-fit:cover}
+.plist .th svg{position:absolute;left:7px;bottom:7px;width:10px;height:10px;color:#fff;filter:drop-shadow(0 1px 2px rgba(0,0,0,.9))}
+.index-foot{display:flex;gap:12px;margin-top:40px;flex-wrap:wrap}
+
+/* strips: thin crops of real frames that carry set type between the pinned sets */
+.strip{position:relative;height:clamp(150px,17vw,300px);overflow:hidden;background:#15191A}
+.strip img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:var(--op,50% 50%)}
+.strip::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(4,6,6,.5),rgba(4,6,6,0) 60%)}
+.st{position:absolute;inset:0;z-index:1;margin:0;display:flex;align-items:flex-end;padding:0 max(40px,calc((100% - 1360px) / 2 + 40px)) clamp(14px,1.6vw,26px);
+  font:900 clamp(56px,10.5vw,168px)/.8 var(--set);text-transform:uppercase;letter-spacing:-.004em;white-space:nowrap;color:var(--c,#EEF1F0)}
+.svc{padding:88px 0 8px}
+.svc .intro{font:500 clamp(22px,2.1vw,30px)/1.35 var(--sans);max-width:30em;margin:0 0 56px}
+.svc-copy{display:flex;align-items:flex-end;justify-content:space-between;gap:20px 48px;max-width:1360px;margin:0 auto;padding:24px 40px 68px}
+.svc-copy p{margin:0;max-width:36em;color:#C9D0CE;font-size:19px}
+.svc-copy .btn{flex:none}
+
+.about{padding:0 0 96px}
+.about-body{padding-top:56px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px clamp(40px,6vw,110px);align-items:start}
+.about-body .lead{margin:0;font:500 clamp(26px,2.6vw,40px)/1.22 var(--sans);letter-spacing:-.012em;position:sticky;top:110px}
+.about-text{max-width:36em}
+.about-body p{margin:0 0 1.2em;font-size:20px;line-height:1.6;color:#D8DEDC}
+.about-body .btn{margin-top:10px}
+
+/* testimonials: the four quotes as large plain type on graphite, stepping down the page */
+.quotes{padding:96px 0 104px}
+.qlist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:clamp(56px,7vw,104px)}
+.qlist figure{margin:0;max-width:21em;font-size:clamp(25px,2.7vw,40px)}
+.qlist li:nth-child(even) figure{margin-left:auto}
+.qlist li:nth-child(3) figure{margin-left:14%}
+.qlist blockquote{margin:0 0 .6em;font:500 1em/1.28 var(--sans);letter-spacing:-.012em;color:#F2F4F3;text-indent:-.42em}
+.qlist blockquote::before{content:'\201C'}
+.qlist blockquote::after{content:'\201D'}
+.qlist figcaption{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px}
+.qlist figcaption b{font:900 clamp(26px,2.4vw,36px)/1 var(--set);text-transform:uppercase;letter-spacing:.004em;color:var(--ink)}
+.qlist figcaption span{font:500 15px/1.3 var(--sans);color:var(--dim)}
+
+.cta-front{position:absolute;left:40px;bottom:44px;max-width:640px}
+.cta-front p{margin:0 0 20px;font:500 21px/1.4 var(--sans);text-shadow:0 1px 16px rgba(0,0,0,.6)}
+.cta-front .ctas{display:flex;gap:12px;flex-wrap:wrap}
+
+footer{padding:72px 0 40px;background:var(--page2)}
+.fcols{display:grid;grid-template-columns:1.2fr 1fr 1.2fr 1.2fr;gap:40px}
+footer h2,footer h3{margin:0 0 14px;font:600 15px/1.2 var(--sans);color:var(--dim)}
+footer .fbrand{display:flex;align-items:center;gap:10px;font:700 19px/1 var(--sans);margin-bottom:10px}
+footer .fbrand img{width:32px;height:32px}
+footer p,footer li{margin:0;font-size:16px;line-height:1.7}
+footer ul{list-style:none;margin:0;padding:0}
+footer a{text-decoration:none}
+footer a:hover{text-decoration:underline;text-underline-offset:4px}
+.fbottom{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:56px;color:var(--dim);font-size:14px}
+.social{display:flex;gap:18px;flex-wrap:wrap}
+
+/* ---------- player dialog ---------- */
+.player{position:fixed;inset:0;z-index:80;background:rgba(0,0,0,.96);display:none;flex-direction:column;padding:18px 28px 28px}
+.player.open{display:flex}
+.player-bar{display:flex;align-items:center;justify-content:space-between;gap:20px;height:52px;margin-bottom:14px}
+.player-bar p{margin:0;font:600 17px/1.2 var(--sans)}
+.player-bar button{height:44px;padding:0 18px;border-radius:3px;border:0;background:var(--ink);color:#0C0E0E;font:600 15px/1 var(--sans);cursor:pointer}
+.player-box{flex:1;display:grid;place-items:center;min-height:0}
+.player-box .ratio{width:min(100%, calc((100svh - 130px) * 16 / 9));aspect-ratio:16/9;background:#050505}
+.player-box iframe{width:100%;height:100%;border:0;display:block}
+.trap{position:absolute;width:1px;height:1px;overflow:hidden;opacity:0}
+/* play: the camera dollies through the set. The layers travel together (the cut-out a little faster,
+   it is nearest) and the frame goes to black before any gap behind the cut-out could open */
+.shot .pl{transition:scale .6s cubic-bezier(.55,0,.75,.35)}
+.shot .frame{transition:opacity .22s ease-in .28s}
+.through .p-bg,.through .p-type{scale:1.35}
+.through .p-fg{scale:1.45}
+.through .frame{opacity:0}
+.through .front{opacity:0;transition:opacity .25s}
+.snap .pl,.snap .frame,.snap .front{transition:none!important}
+/* the reel loop plays in the studio monitor (real visitors only) */
+.monitor{position:absolute;left:56.9%;top:49.7%;width:35.2%;height:28%;overflow:hidden}
+.monitor iframe{position:absolute;left:0;width:100%;height:106%;top:-3%;border:0;opacity:0;transition:opacity 1.2s;pointer-events:none;filter:brightness(.82) saturate(.9)}
+.monitor iframe.ready{opacity:1}
+/* before the lazy plates land, the bright sets show their own tone, not black */
+#testimonials .frame{background:#BFC7CE}
+#contact .frame{background:#B79C88}
+@media (forced-colors:active){.blk,.st{background:none;-webkit-text-fill-color:CanvasText;color:CanvasText}}
+
+/* ---------- phone ---------- */
+@media (max-width:1000px){
+  .nav ul,.quote-fixed{display:none}
+  .nav{padding-right:16px}
+  .menu-btn{display:block}
+  .bar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:55;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(12,14,14,.97);
+    transform:translateY(calc(100% + 2px));visibility:hidden;transition:transform .3s ease,visibility 0s .3s}
+  .bar.show{transform:none;visibility:visible;transition:transform .3s ease}
+  .bar a{flex:1;justify-content:center;height:48px}
+  .bar a.call{flex:0 0 auto;padding:0 16px}
+  .hero-copy{bottom:calc(30px + env(safe-area-inset-bottom))}
+  .credit,.cta-front{bottom:calc(86px + env(safe-area-inset-bottom))}
+  footer{padding-bottom:110px}
+}
+@media (max-width:760px){
+  :root{--nav-h:58px}
+  body{font-size:17px}
+  .nav{padding:0 16px}
+  .brand{font-size:16px}
+  .front{padding:calc(var(--nav-h) + 10px) 18px 0}
+  .hero-copy{left:18px;right:18px;bottom:calc(26px + env(safe-area-inset-bottom))}
+  .hero-copy p{font-size:18px}
+  .hero-copy .ctas{margin-top:16px;gap:8px}
+  .hero-copy .btn{height:46px;padding:0 12px;font-size:13.5px;gap:8px}
+  .hero-copy .ctas{flex-wrap:nowrap}
+  .credit{left:18px;right:18px;bottom:calc(86px + env(safe-area-inset-bottom));max-width:none;flex-direction:column;align-items:flex-start;gap:14px}
+  .credit .t{font-size:18px}
+  .wrap{padding:0 18px}
+  .clients{padding:48px 0 54px}
+  .logos{justify-content:flex-start;gap:26px 30px}
+  .logos img{height:26px}
+  .logos img.badge{height:44px}
+  .logos img.tall{height:36px}
+  .index{padding:60px 0 64px}
+  .plist{columns:1}
+  .svc{padding:60px 0 0}
+  .svc .intro{margin-bottom:40px}
+  .strip{height:150px}
+  .st{font-size:min(12vw,64px);padding:0 18px 12px}
+  .svc-copy{flex-direction:column;align-items:flex-start;padding:18px 18px 52px}
+  .svc-copy p{font-size:17px}
+  .about{padding:0 0 64px}
+  .about-body{padding-top:30px;grid-template-columns:1fr}
+  .about-body .lead{position:static;font-size:24px}
+  .about-body p{font-size:18px}
+  .quotes{padding:60px 0 72px}
+  .qlist figure,.qlist li:nth-child(even) figure,.qlist li:nth-child(3) figure{margin-left:0;font-size:23px}
+  .cta-front{left:18px;right:18px;bottom:calc(86px + env(safe-area-inset-bottom))}
+  .cta-front p{font-size:18px}
+  footer{padding:56px 0 110px}
+  .fcols{grid-template-columns:1fr;gap:30px}
+  .player{padding:12px 12px 20px}
+}
+/* portrait: each set has its own composition */
+@media (orientation:portrait){
+  .frame{--fw:calc(max(100cqw, 100cqh * var(--ar)) * var(--pz,1));left:calc((100cqw - var(--fw)) * var(--pfx, var(--fx,.5)));top:calc((100cqh - var(--fw) / var(--ar)) * var(--pfy, var(--fy,.5)))}
+  .pl{transform-origin:var(--pax,var(--ax,50%)) var(--pay,var(--ay,50%))}
+  .blk{left:calc(var(--px, var(--x)) * 1% + var(--kdx,0px));top:calc(var(--py, var(--y)) * 1%);font-size:calc(var(--pfs, var(--fs)) * 1cqw * var(--k,1))}
+  @supports ((-webkit-background-clip:text) or (background-clip:text)){
+    .blk{background-position:calc(var(--px, var(--x)) * -1cqw) calc(var(--py, var(--y)) * -1cqh)}
+  }
+  .blk br.m{display:inline}
+  .blk br.d{display:none}
+  .blk .s1{font-size:var(--ps1, var(--s1,.34em))}
+  .blk .indent{margin-left:var(--pind,0)}
+  .blk .lock{display:inline;font-size:var(--ps1,.5em);margin:0}
+  .stats{font-size:calc(var(--pfs, var(--fs)) * 1cqw * var(--k,1))}
+  .stats li{left:calc(var(--plx, var(--lx)) * 1cqw);top:calc(var(--ply, var(--ly)) * 1cqh)}
+}
+
+/* short landscape windows (a 1280x720 laptop): the words need the nav's 96px, so the library frame
+   moves in closer from the left and her crown keeps its place under "Service" */
+@media (orientation:landscape) and (max-height:800px){
+  #services .shot{--z:1.2!important;--fx:0!important;--fy:0!important}
+}
+
+/* no script: every set shows as a still composite */
+.no-js .stage{position:relative;height:auto;overflow:visible}
+.no-js .shot{position:relative;height:100svh;opacity:1;pointer-events:auto}
+
+/* ---------- reduced motion: still composites, normal scrolling ---------- */
+@media (prefers-reduced-motion:reduce){
+  .scene{height:auto!important}
+  .stage{position:relative;height:auto;overflow:visible}
+  .shot{position:relative;height:100svh;opacity:1;pointer-events:auto}
+  .pl{transform:none!important;will-change:auto}
+  .blk,.nav,.index-bg,.index-bg img,.bar,.shot .pl{transition:none}
+  .shot.fwd .blk{transform:none}
+  .through .pl{scale:none}
+  .through .frame,.through .front{opacity:1}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav" id="nav">
+  <a class="brand" href="#top"><img src="../assets/img/mindinmotion-logo.png" width="205" height="205" alt="">MindInMotion</a>
+  <ul>
+    <li><a href="#work">Portfolio</a></li>
+    <li class="sub">
+      <button class="sub-btn" type="button" aria-expanded="false" aria-controls="svc-menu">Services<svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
+      <div class="sub-menu" id="svc-menu">
+        <a href="#svc-commercial">Commercial</a>
+        <a href="#svc-corporate">Corporate</a>
+        <a href="#svc-film">Film</a>
+        <a href="#svc-post">Post-Production</a>
+      </div>
+    </li>
+    <li><a href="#about">About</a></li>
+    <li><a href="https://mindinmotion.tv/orlando/">Orlando</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="phones">Baltimore: <a href="tel:+14435275181">(443) 527-5181</a> <span class="sep">|</span> Orlando: <a href="tel:+14075848891">(407) 584-8891</a></div>
+  <button class="menu-btn" type="button" aria-expanded="false" aria-controls="sheet">Menu</button>
+</header>
+
+<a class="btn btn-solid quote-fixed" href="https://mindinmotion.tv/contact/">Get a Quote</a>
+
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="sheet-top">
+    <a class="brand" href="#top"><img src="../assets/img/mindinmotion-logo.png" width="205" height="205" alt="">MindInMotion</a>
+    <button type="button" class="sheet-close">Close</button>
+  </div>
+  <nav aria-label="Main">
+    <a href="#projects">Portfolio</a>
+    <a href="#services">Services</a>
+    <div class="subs">
+      <a href="#svc-commercial">Commercial</a>
+      <a href="#svc-corporate">Corporate</a>
+      <a href="#svc-film">Film</a>
+      <a href="#svc-post">Post-Production</a>
+    </div>
+    <a href="#about">About</a>
+    <a href="https://mindinmotion.tv/orlando/">Orlando</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="sheet-phones">
+    <div>Baltimore: <a href="tel:+14435275181">(443) 527-5181</a></div>
+    <div>Orlando: <a href="tel:+14075848891">(407) 584-8891</a></div>
+  </div>
+</div>
+
+<div class="bar">
+  <a class="btn btn-solid" href="https://mindinmotion.tv/contact/">Get a Quote</a>
+  <a class="btn btn-dark call" href="tel:+14435275181">(443) 527-5181</a>
+</div>
+
+<main id="main">
+
+<!-- ============ SCENE 1: hero + stats ============ -->
+<section class="scene" id="top" aria-label="We are MindInMotion">
+ <div class="stage">
+
+  <div class="shot" data-seg="90" data-cam="0 .08 0 0 0 0" data-intro="1"
+       style="--ar:1.7778;--z:1.18;--fx:.35;--fy:0;--pfx:.464;--ax:42%;--ay:22%;--gb:.78;--gh:46%;--gt:.3">
+   <div class="frame">
+    <div class="pl p-bg"><img src="set/hero-bg.webp" width="1920" height="1080" alt="Two hikers on a Cuban hillside; the man in a wide hat looks up at limestone mountains over banana trees" fetchpriority="high"></div>
+    <div class="pl p-type">
+     <h1 class="blk" aria-label="We are MindInMotion" style="--x:10.4;--y:9.5;--fs:10.2;--px:35.5;--py:10.5;--pfs:4.13;--ps1:.5em;--inkmap:url(set/hero-ink.png);--c:#EEF2EC"><span class="lock">We <br class="d">are </span><br class="m">MindInMotion</h1>
+    </div>
+    <div class="pl p-fg"><img src="set/hero-fg.webp" width="843" height="858" alt="" style="left:46.198%;top:20.556%;width:43.906%;height:79.444%" fetchpriority="high"></div>
+   </div>
+   <div class="grad"></div>
+   <div class="front">
+    <div class="hero-copy">
+     <p class="loc">Baltimore · Orlando</p>
+     <p class="v1">We Create, Produce, Direct, Film, and Edit.</p>
+     <p class="v2">Let's Create Something Amazing Together.</p>
+     <div class="ctas">
+      <button class="btn btn-dark" type="button" data-video="vimeo:851026180" data-title="2025 Demo Reel" aria-label="Watch Our Reel"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 1l9 5-9 5z" fill="currentColor"/></svg>Watch Our Reel</button>
+      <a class="btn btn-solid" href="https://mindinmotion.tv/contact/">Get a Quote in 24 Hours</a>
+     </div>
+    </div>
+   </div>
+  </div>
+
+  <div class="shot" data-seg="75" data-cam=".04 .09 -2 2 0 0" data-pcam=".03 .06 -1 1 0 0"
+       style="--ar:1.5;--fx:.5;--fy:.3;--pfx:.41;--pfy:.3;--ax:45%;--pax:43%;--ay:36%;--gb:.6;--gh:30%">
+   <div class="frame">
+    <div class="pl p-bg"><img src="set/stats-bg.webp" width="2400" height="1600" loading="lazy" alt="A black studio stage: a crew member adjusts a police recruit's uniform while monitors show the shot"><div class="monitor" data-loop="723880294"></div></div>
+    <div class="pl p-type">
+     <ul class="stats" style="--fs:7.2;--pfs:5.4">
+      <li style="--lx:38;--ly:25;--plx:29.8;--ply:9"><span class="blk num" style="--x:38;--y:28;--px:29.8;--py:12;--c:#E6ECF4">100+</span><span class="lab">Clients Served</span></li>
+      <li style="--lx:54;--ly:25;--plx:43.5;--ply:9"><span class="blk num" style="--x:54;--y:28;--px:43.5;--py:12;--c:#E6ECF4">2012</span><span class="lab">Founded</span></li>
+      <li style="--lx:70;--ly:25;--plx:29.8;--ply:27.5"><span class="blk num" style="--x:70;--y:28;--px:29.8;--py:30.5;--c:#E6ECF4">1.8M+</span><span class="lab">Video Views</span></li>
+      <li style="--lx:88.5;--ly:25;--plx:47.5;--ply:27.5"><span class="blk num" style="--x:88.5;--y:28;--px:47.5;--py:30.5;--c:#E6ECF4">5</span><span class="lab">Feature Films</span></li>
+     </ul>
+    </div>
+    <div class="pl p-fg"><img src="set/stats-fg.webp" width="981" height="1085" loading="lazy" alt="" style="left:12.042%;top:32.188%;width:40.875%;height:67.812%"></div>
+   </div>
+   <div class="grad"></div>
+  </div>
+
+ </div>
+</section>
+
+<!-- ============ clients ============ -->
+<section class="page clients" aria-labelledby="clients-h">
+ <div class="wrap">
+  <h2 id="clients-h">Trusted by industry leaders</h2>
+  <div class="logos">
+   <img src="../assets/img/logo-johns-hopkins.png" width="2317" height="397" alt="Johns Hopkins" loading="lazy">
+   <img src="../assets/img/logo-msde.png" width="2084" height="542" alt="Maryland State Department of Education" loading="lazy">
+   <img class="tall" src="../assets/img/logo-american-lung.png" width="1200" height="489" alt="American Lung Association" loading="lazy">
+   <img class="tall" src="../assets/img/logo-interpublic.png" width="1561" height="772" alt="InterPublic" loading="lazy">
+   <img class="badge" src="../assets/img/logo-aacpd.png" width="800" height="570" alt="Anne Arundel County Police" loading="lazy">
+   <img class="tall" src="../assets/img/logo-infinite-legacy.png" width="1838" height="1104" alt="Infinite Legacy" loading="lazy">
+   <img class="tall" src="../assets/img/logo-packard-center.png" width="331" height="132" alt="The Packard Center" loading="lazy">
+  </div>
+ </div>
+</section>
+
+<!-- ============ SCENE 2: featured projects ============ -->
+<section class="scene" id="work" aria-labelledby="work-h">
+ <div class="stage">
+
+  <div class="shot" data-seg="80" data-cam="0 .09 0 0 0 0"
+       style="--ar:1.7778;--fx:.5;--pfx:.51;--ax:62%;--ay:40%;--gb:.7">
+   <div class="frame">
+    <div class="pl p-bg"><img src="set/aacpd-bg.webp" width="2400" height="1350" loading="lazy" alt="A woman at night, rim-lit, with red and blue police lights blurred behind her"></div>
+    <div class="pl p-type">
+     <h2 class="blk" id="work-h" style="--x:7.2;--y:21;--fs:10.8;--px:37.9;--py:8.5;--pfs:2.9;--blur:.5px;--inkmap:url(set/aacpd-ink.png);--c:#EEECFF">Featured <br>Projects</h2>
+    </div>
+    <div class="pl p-fg"><img src="set/aacpd-fg.webp" width="1664" height="1350" loading="lazy" alt="" style="left:30.667%;top:0.0%;width:69.333%;height:100.0%"></div>
+   </div>
+   <div class="grad"></div>
+   <div class="front">
+    <div class="credit">
+     <button class="play" type="button" data-video="vimeo:723880294" data-title="AACPD Recruitment" aria-label="Play AACPD Recruitment"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 1l9 5-9 5z" fill="currentColor"/></svg>Play</button>
+     <div class="who"><span class="t">AACPD Recruitment</span><span class="c">Anne Arundel County Police</span><span class="d">Director: Josh Land &amp; Victor Fink, DP: Alex Guckert</span></div>
+    </div>
+   </div>
+  </div>
+
+  <div class="shot" data-seg="75" data-cam=".09 0 0 0 0 0"
+       style="--ar:1.7778;--fx:.5;--pfx:.38;--ax:43%;--ay:40%;--gb:.35;--gh:30%">
+   <div class="frame">
+    <div class="pl p-bg"><img src="set/joe-bg.webp" width="2400" height="1350" loading="lazy" alt="A man silhouetted against evening clouds, his head in his hand"></div>
+    <div class="pl p-type">
+     <h3 class="blk" style="--x:21.1;--y:30;--fs:14.2;--s1:.2em;--px:33.1;--py:36;--pfs:7.2;--ps1:.17em;--inkmap:url(set/joe-ink.png);--c:#FFF1E2"><span class="s1">Infinite Legacy - </span><br>Joe</h3>
+    </div>
+    <div class="pl p-fg"><img src="set/joe-fg.webp" width="2094" height="1350" loading="lazy" alt="" style="left:12.75%;top:0.0%;width:87.25%;height:100.0%"></div>
+   </div>
+   <div class="grad"></div>
+   <div class="front">
+    <div class="credit">
+     <button class="play" type="button" data-video="vimeo:836987067" data-title="Infinite Legacy - Joe" aria-label="Play Infinite Legacy - Joe"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 1l9 5-9 5z" fill="currentColor"/></svg>Play</button>
+     <div class="who"><span class="c">Infinite Legacy</span></div>
+    </div>
+   </div>
+  </div>
+
+  <div class="shot" data-seg="80" data-cam=".06 .08 0 0 2.5 -2.5"
+       style="--ar:1.7778;--fx:.5;--pfx:.40;--ax:52%;--ay:50%;--gb:.66">
+   <div class="frame">
+    <div class="pl p-bg"><img src="set/horse-bg.webp" width="1200" height="675" loading="lazy" alt="A boy in a cap rides a horse under a storm sky, a thatched hut behind"></div>
+    <div class="pl p-type">
+     <h3 class="blk" data-kax="1" style="--x:7;--y:8;--fs:9.3;--px:30.6;--py:10;--pfs:3.9;--inkmap:url(set/horse-ink.png);--c:#E8ECEA">Cuba Field <br>Course <br>Experience</h3>
+    </div>
+    <div class="pl p-fg"><img src="set/horse-fg.webp" width="855" height="596" loading="lazy" alt="" style="left:27.75%;top:11.704%;width:71.25%;height:88.296%"></div>
+   </div>
+   <div class="grad"></div>
+   <div class="front">
+    <div class="credit">
+     <button class="play" type="button" data-video="vimeo:376001457" data-title="Cuba Field Course Experience" aria-label="Play Cuba Field Course Experience"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 1l9 5-9 5z" fill="currentColor"/></svg>Play</button>
+     <div class="who"><span class="c">Johns Hopkins AAP</span><span class="d">Director: Josh Land &amp; Victor Fink</span></div>
+    </div>
+   </div>
+  </div>
+
+ </div>
+</section>
+
+<!-- ============ project index ============ -->
+<section class="page index" id="projects" aria-labelledby="index-h">
+ <div class="index-bg" aria-hidden="true"><img alt="" width="1600" height="900"><img alt="" width="1600" height="900"></div>
+ <div class="wrap">
+  <div class="index-head">
+   <h2 id="index-h">Our Work</h2>
+   <div class="filters" role="group" aria-label="Filter projects">
+    <button type="button" aria-pressed="true" data-f="all">All</button>
+    <button type="button" aria-pressed="false" data-f="commercial">Commercial</button>
+    <button type="button" aria-pressed="false" data-f="corporate">Corporate</button>
+    <button type="button" aria-pressed="false" data-f="film">Film</button>
+   </div>
+  </div>
+  <ul class="plist" id="plist"></ul>
+  <div class="index-foot">
+   <a class="btn btn-dark" href="https://mindinmotion.tv/portfolio/">View All Projects</a>
+   <a class="btn btn-solid" href="https://mindinmotion.tv/contact/">Get a Quote</a>
+  </div>
+ </div>
+</section>
+
+<!-- ============ SCENE 3: services ============ -->
+<section class="scene" id="services" aria-labelledby="svc-h">
+ <div class="stage">
+  <div class="shot" data-seg="70" data-cam="0 .08 0 0 0 -1"
+       style="--ar:1.7778;--fx:.5;--pfx:.3;--ax:30%;--ay:30%;--gb:.5;--gh:30%">
+   <div class="frame">
+    <div class="pl p-bg"><img src="set/services-bg.webp" width="1920" height="1080" loading="lazy" alt="A woman looks up in a wood-paneled library, lamps glowing on the shelves"></div>
+    <div class="pl p-type">
+     <h2 class="blk" id="svc-h" style="--x:8;--y:5;--fs:8.4;--px:23.5;--py:4;--pfs:4.4;--blur:.5px;--inkmap:url(set/services-ink.png);--c:#FFEBD6">Full-Service <br><span class="indent" style="--ind:4.5em">Production</span></h2>
+    </div>
+    <div class="pl p-fg"><img src="set/services-fg.webp" width="1066" height="894" loading="lazy" alt="" style="left:13.594%;top:17.222%;width:55.521%;height:82.778%"></div>
+   </div>
+   <div class="grad"></div>
+  </div>
+ </div>
+</section>
+
+<section class="page svc" aria-label="Services">
+ <div class="wrap">
+  <p class="intro">From initial concept to final delivery, we handle every aspect of your video production with expertise built since 2012 across five feature films.</p>
+ </div>
+  <div class="svc-item" id="svc-commercial">
+   <div class="strip" style="--op:30% 40%;--c:#F1EEEA">
+    <img src="set/strip-commercial.webp" width="2400" height="544" loading="lazy" alt="A camera and its monitor frame a woman on a couch on a commercial set">
+    <h3 class="st" id="svc-commercial-h">Commercial</h3>
+   </div>
+   <div class="svc-copy"><p>TV spots, social media ads, and branded content. We've created campaigns for clients like Maryland State Education that reach millions of viewers across broadcast and digital.</p><a class="btn btn-dark" href="https://mindinmotion.tv/commercial/" aria-describedby="svc-commercial-h">Learn More</a></div>
+  </div>
+  <div class="svc-item" id="svc-corporate">
+   <div class="strip" style="--op:50% 62%;--c:#EAEEF0">
+    <img src="set/strip-corporate.webp" width="2400" height="640" loading="lazy" alt="Two bounce boards set up outside a glass office building on a WellPoint shoot">
+    <h3 class="st" id="svc-corporate-h">Corporate</h3>
+   </div>
+   <div class="svc-copy"><p>Recruitment videos, training content, testimonials, and internal communications. Trusted by Johns Hopkins, Anne Arundel County Police, and InterPublic for professional corporate storytelling.</p><a class="btn btn-dark" href="https://mindinmotion.tv/corporate/" aria-describedby="svc-corporate-h">Learn More</a></div>
+  </div>
+  <div class="svc-item" id="svc-film">
+   <div class="strip" style="--op:50% 50%;--c:#EEF0E6">
+    <img src="set/strip-film.webp" width="2400" height="557" loading="lazy" alt="A crew on location: a boom mic, a monitor under a black flag, an actor in a lab coat">
+    <h3 class="st" id="svc-film-h">Film</h3>
+   </div>
+   <div class="svc-copy"><p>Feature films, documentaries, music videos, and narrative projects. Our films "I Like Me" and "Bad Witch" have screened at festivals worldwide and stream on major VOD platforms.</p><a class="btn btn-dark" href="https://mindinmotion.tv/film/" aria-describedby="svc-film-h">Learn More</a></div>
+  </div>
+  <div class="svc-item" id="svc-post">
+   <div class="strip" style="--op:60% 50%;--c:#E4ECF4">
+    <img src="set/strip-post.webp" width="2400" height="486" loading="lazy" alt="A color grading panel lit by its screens in a dark edit suite">
+    <h3 class="st" id="svc-post-h">Post-Production</h3>
+   </div>
+   <div class="svc-copy"><p>Expert editing, color grading, and VFX using Final Cut Pro, Premiere, Avid, and DaVinci Resolve.</p><a class="btn btn-dark" href="https://mindinmotion.tv/post-production/" aria-describedby="svc-post-h">Learn More</a></div>
+  </div>
+</section>
+
+<!-- ============ SCENE 4: behind the scenes + about ============ -->
+<section class="scene" id="about" aria-labelledby="about-h">
+ <div class="stage">
+
+  <div class="shot" data-seg="70" data-cam=".04 .08 1.5 -1.5 0 0"
+       style="--ar:1.4988;--fx:.5;--fy:.35;--pfx:.28;--ax:45%;--ay:40%;--gb:.5;--gh:30%">
+   <div class="frame">
+    <div class="pl p-bg"><img src="set/bts-bg.webp" width="1199" height="800" loading="lazy" alt="A film crew in a park: a boom operator, a grip holding stands and a camera operator"></div>
+    <div class="pl p-type">
+     <h2 class="blk" style="--x:3;--y:25;--fs:9.2;--px:21;--py:30.5;--pfs:4.8;--inkmap:url(set/bts-ink.png);--c:#F4F6EC">Behind the <br>Scenes</h2>
+    </div>
+    <div class="pl p-fg"><img src="set/bts-fg.webp" width="937" height="728" loading="lazy" alt="" style="left:10.092%;top:9.0%;width:78.148%;height:91.0%"></div>
+   </div>
+   <div class="grad"></div>
+  </div>
+
+  <div class="shot" data-seg="70" data-cam="0 .07 0 0 0 0"
+       style="--ar:1.5038;--fx:.5;--fy:.3;--pfx:.274;--pfy:0;--pz:1.3;--ax:3%;--ay:30%;--pax:30%;--pay:62%;--gb:.5;--gh:30%">
+   <div class="frame">
+    <div class="pl p-bg"><img src="set/about-bg.webp" width="1200" height="798" loading="lazy" alt="Joshua Land and Victor Fink on stage at a screening Q&amp;A, one holding a microphone"></div>
+    <div class="pl p-type">
+     <h2 class="blk" id="about-h" data-kax="1" style="--x:2.05;--y:11;--fs:6.3;--ind:.5em;--px:22;--py:6.4;--pfs:3.0;--inkmap:url(set/about-ink.png);--c:#ECEFF6"><span class="indent">Film School</span> <br>Friends.<br><span class="indent">Production</span> <br>Partners.</h2>
+    </div>
+    <div class="pl p-fg"><img src="set/about-fg.webp" width="932" height="798" loading="lazy" alt="" style="left:22.333%;top:0.0%;width:77.667%;height:100.0%"></div>
+   </div>
+   <div class="grad"></div>
+  </div>
+
+ </div>
+</section>
+
+<section class="page about" aria-label="About Us">
+ <div class="strip" style="--op:50% 30%;--c:#EEF1EA">
+  <img src="set/strip-since.webp" width="1200" height="286" loading="lazy" alt="Two young filmmakers with a camera rig by a lake">
+  <p class="st">Since 2012</p>
+ </div>
+ <div class="wrap about-body">
+  <p class="lead">Making movies and videos for clients who care about quality</p>
+  <div class="about-text">
+  <p>MindInMotion was founded by Baltimore native Joshua Land, and Boston transplant Victor Fink in 2012. We met in a 16mm filmmaking class in college and quickly bonded over being obsessed with movies and wanting to spend as much time outside of school working on film projects as possible.</p>
+  <p>Since then we've made five feature films together, and grown a company making film and video for a wide range of clients. Our work spans the realms of documentary and fiction, and has taken us everywhere from Baltimore, Washington DC, and Orlando, Florida to the mountains of Washington state and the rainforests of Cuba.</p>
+  <p>Our feature films "I Like Me" and "Bad Witch" have screened at festivals across the world and are available to view on all major VOD platforms. When we're not working for clients, we're working on our own projects. Our new feature film, "Incubation", is now screening at festivals.</p>
+  <a class="btn btn-dark" href="https://mindinmotion.tv/about/">Read Our Full Story</a>
+  </div>
+ </div>
+</section>
+
+<!-- ============ SCENE 5: testimonials ============ -->
+<section class="scene" id="testimonials" aria-labelledby="testi-h">
+ <div class="stage">
+  <div class="shot" data-seg="60" data-cam="0 .06 -1.5 1.5 0 0" data-pcam="0 .06 0 0 0 0"
+       style="--ar:1.7778;--z:1.1;--fx:.5;--fy:0;--pfx:.39;--ax:43%;--ay:17%;--gb:.45;--gh:25%;--gt:.3">
+   <div class="frame">
+    <div class="pl p-bg"><img src="set/testi-bg.webp" width="2400" height="1350" loading="lazy" alt="A mother and daughter read a book together on a bedroom floor"></div>
+    <div class="pl p-type">
+     <h2 class="blk dark" id="testi-h" style="--x:18.4;--y:9.7;--fs:6.6;--px:32;--py:7;--pfs:3.5;--inkmap:url(set/testi-ink.png);--c:#24344A">What Our <br class="m">Clients Say</h2>
+    </div>
+    <div class="pl p-fg"><img src="set/testi-fg.webp" width="1470" height="1086" loading="lazy" alt="" style="left:23.208%;top:17.037%;width:61.25%;height:80.444%"></div>
+   </div>
+   <div class="grad"></div>
+  </div>
+ </div>
+</section>
+
+<section class="page quotes" aria-label="Testimonials">
+ <div class="wrap">
+  <ul class="qlist">
+   <li><figure><blockquote>Not only are Josh and Victor an amazing creative team with a TON of knowledge on every facet of filmmaking, they're just great people.</blockquote><figcaption><b>Chris Perillo</b><span>Director</span></figcaption></figure></li>
+   <li><figure><blockquote>MindInMotion are terrifically talented. Easy to work with. And really care about the quality of their work.</blockquote><figcaption><b>Matthew White</b><span>FIVES</span></figcaption></figure></li>
+   <li><figure><blockquote>They go the extra mile to create the best content and offer helpful input on ways to create the most appealing video for our audience.</blockquote><figcaption><b>Patrick Moody</b><span>Director of Marketing, Johns Hopkins AAP</span></figcaption></figure></li>
+   <li><figure><blockquote>Super professional, a lot of fun to work with and always on schedule. Would recommend them for virtually any project!</blockquote><figcaption><b>Nate Lanzino</b><span>Entrepreneur</span></figcaption></figure></li>
+  </ul>
+ </div>
+</section>
+
+<!-- ============ SCENE 6: closing ============ -->
+<section class="scene" id="contact" aria-labelledby="cta-h">
+ <div class="stage">
+  <div class="shot" data-seg="50" data-cam=".08 0 0 0 0 0"
+       style="--ar:1.7778;--fx:.5;--fy:.3;--pfx:.24;--ax:45%;--ay:50%;--gb:.86;--gh:52%">
+   <div class="frame">
+    <div class="pl p-bg"><img src="set/cta-bg.webp" width="2400" height="1350" loading="lazy" alt="Preschoolers laughing at a play table in a bright classroom"></div>
+    <div class="pl p-type">
+     <h2 class="blk dark" id="cta-h" data-kax="1" style="--x:17;--y:8;--fs:6.8;--px:19.5;--py:4;--pfs:4.4;--blur:.6px;--inkmap:url(set/cta-ink.png);--c:#2A2320">Ready to <br>Bring Your <br>Vision to <br>Life?</h2>
+    </div>
+    <div class="pl p-fg"><img src="set/cta-fg.webp" width="1633" height="1350" loading="lazy" alt="" style="left:0.0%;top:0.0%;width:68.042%;height:100.0%"></div>
+   </div>
+   <div class="grad"></div>
+   <div class="front">
+    <div class="cta-front">
+     <p>Get a custom quote within 24 hours. We'd love to hear about your project.</p>
+     <div class="ctas">
+      <a class="btn btn-solid" href="https://mindinmotion.tv/contact/">Get Your Free Quote</a>
+      <a class="btn btn-dark" href="tel:+14435275181">(443) 527-5181</a>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+</main>
+
+<footer class="page">
+ <div class="wrap">
+  <div class="fcols">
+   <div>
+    <p class="fbrand"><img src="../assets/img/mindinmotion-logo.png" width="205" height="205" alt="" loading="lazy">MindInMotion</p>
+    <p>Creative Production &amp; Post</p>
+   </div>
+   <div>
+    <h2>Services</h2>
+    <ul><li><a href="https://mindinmotion.tv/commercial/">Commercial</a></li><li><a href="https://mindinmotion.tv/corporate/">Corporate</a></li><li><a href="https://mindinmotion.tv/film/">Film</a></li><li><a href="https://mindinmotion.tv/post-production/">Post-Production</a></li></ul>
+   </div>
+   <div>
+    <h3>Baltimore</h3>
+    <p>3617 Chestnut Ave<br>Baltimore, MD 21211</p>
+    <p><a href="tel:+14435275181">(443) 527-5181</a></p>
+    <p><a href="mailto:mindinmotionpro@gmail.com">mindinmotionpro@gmail.com</a></p>
+   </div>
+   <div>
+    <h3>Orlando</h3>
+    <p>3011 Bonfire Beach Dr STE 103<br>Kissimmee, FL 34746</p>
+    <p><a href="tel:+14075848891">(407) 584-8891</a></p>
+   </div>
+  </div>
+  <div class="fbottom">
+   <div class="social">
+    <a href="https://www.imdb.com/name/nm4644677/">IMDb</a>
+    <a href="https://instagram.com/mindinmotionpro">Instagram</a>
+    <a href="https://vimeo.com/mindinmotionpro">Vimeo</a>
+    <a href="https://youtube.com/@mindinmotionpro">YouTube</a>
+    <a href="https://facebook.com/mindinmotionpro">Facebook</a>
+    <a href="https://linkedin.com/company/mindinmotion">LinkedIn</a>
+   </div>
+   <div>© 2026 MindInMotion. All rights reserved. · <a href="https://mindinmotion.tv/privacy/">Privacy</a></div>
+  </div>
+ </div>
+</footer>
+
+<div class="player" id="player" role="dialog" aria-modal="true" aria-labelledby="player-title">
+ <span class="trap" tabindex="0"></span>
+ <div class="player-bar"><p id="player-title"></p><button type="button" class="player-close">Close</button></div>
+ <div class="player-box"><div class="ratio" id="player-ratio"></div></div>
+ <span class="trap" tabindex="0"></span>
+</div>
+
+<script>
+(() => {
+  'use strict';
+  document.documentElement.classList.remove('no-js');
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const RM = matchMedia('(prefers-reduced-motion: reduce)');
+  const FINE = matchMedia('(hover: hover) and (pointer: fine)');
+  const NOHOVER = matchMedia('(hover: none)');
+  let motion = !RM.matches;
+  const PLAY_SVG = '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 1l9 5-9 5z" fill="currentColor"/></svg>';
+
+  /* ---------- projects (homepage data) ---------- */
+  const I = '../assets/img/';
+  const P = [
+    ['2025 Demo Reel', '', 'commercial', 'vimeo:851026180', I + 'reel-tile.webp'],
+    ['Johns Hopkins Engineering Management', 'Johns Hopkins', 'corporate', 'vimeo:953655351', I + 'vimeo-1864108460.webp'],
+    ['Cuba Field Course Experience', 'Johns Hopkins AAP', 'corporate', 'vimeo:376001457', I + 'Screen-Shot-2020-07-28-at-5.31.32-PM.webp'],
+    ['Maryland Excels - Checklist Moments', 'MD State Dept of Education', 'commercial', 'vimeo:904194910', I + 'vimeo-1784674291.webp'],
+    ['AACPD Recruitment', 'Anne Arundel County Police', 'commercial', 'vimeo:723880294', I + 'vimeo-1457439090.webp'],
+    ['Ashley & Dr. Reed - Patient-Provider Story', 'American Lung Association', 'corporate', 'youtube:dxUx8L3rQos', 'https://img.youtube.com/vi/dxUx8L3rQos/maxresdefault.jpg'],
+    ['Infinite Legacy - Joe', 'Infinite Legacy', 'corporate', 'vimeo:836987067', I + 'vimeo-1801164708.webp'],
+    ['Infinite Legacy - Chelsea', 'Infinite Legacy', 'corporate', 'vimeo:836990393', I + 'chelsea-ilf.webp'],
+    ['The Packard Center for ALS Research', 'The Packard Center', 'corporate', 'vimeo:378347545', I + 'Screen-Shot-2019-12-09-at-2.15.52-PM-2-1.webp'],
+    ['WellPoint', 'InterPublic', 'commercial', 'vimeo:762000615', I + 'vimeo-1530319048.webp'],
+    ['Pearlstone', 'Pearlstone', 'corporate', 'vimeo:724562331', I + 'vimeo-1458914655.webp'],
+    ['Maryland Excels - Moms at the Playground', 'MD State Dept of Education', 'commercial', 'vimeo:723874620', I + 'Screen-Shot-2022-06-24-at-5.18.24-PM.webp'],
+    ['Juliet Lloyd - Call Your Wife', '', 'film', 'vimeo:1019535308', I + 'vimeo-1937932446.webp'],
+    ['Maryland Excels - Good Mom TV PSA', 'MD State Dept of Education', 'commercial', 'vimeo:794207449', I + 'Screen-Shot-2022-06-24-at-6.14.31-PM-2.webp'],
+    ['MSDE - Illegal Childcare', 'MD State Dept of Education', 'commercial', 'vimeo:794249489', I + 'vimeo-1599400687.webp'],
+    ['Because Quality Matters', 'MD State Dept of Education', 'commercial', 'vimeo:1021087594:2c0add4aa6', I + 'vimeo-1939778533.webp'],
+    ['Tidewater Direct', 'Tidewater Direct', 'commercial', 'vimeo:967087552', I + 'Screenshot-2024-09-10-at-2.02.32-PM.webp'],
+    ['Maryland Excels - Finding Childcare', 'MD State Dept of Education', 'commercial', 'vimeo:723892095:bef550ce0c', I + 'vimeo-1457462318.webp'],
+  ];
+  const plist = $('#plist');
+  function renderList(f) {
+    const rows = f === 'all' ? P.slice(0, 9) : P.filter(p => p[2] === f);
+    plist.innerHTML = '';
+    for (const [t, c, , v, still] of rows) {
+      const li = document.createElement('li');
+      const b = document.createElement('button');
+      b.type = 'button'; b.dataset.video = v; b.dataset.title = t; b.dataset.still = still;
+      b.setAttribute('aria-label', 'Play ' + t);
+      b.innerHTML = `<span class="tri">${PLAY_SVG}</span><span><span class="pt"></span>${c ? '<span class="pc"></span>' : ''}</span>`;
+      if (NOHOVER.matches) {
+        // no hover on phones: every row shows its own still
+        const th = document.createElement('span'); th.className = 'th';
+        const im = new Image(96, 54); im.loading = 'lazy'; im.decoding = 'async'; im.alt = ''; im.src = still;
+        th.append(im); th.insertAdjacentHTML('beforeend', PLAY_SVG);
+        b.querySelector('.tri').replaceWith(th); b.classList.add('has-th');
+      }
+      b.querySelector('.pt').textContent = t;
+      if (c) b.querySelector('.pc').textContent = c;
+      li.append(b); plist.append(li);
+    }
+  }
+  renderList('all');
+  // the index is a set too: hovering or focusing a title lights its picture up behind the list
+  const ibg = $('.index-bg'), ib = $$('.index-bg img');
+  let ibOn = 0, ibSrc = '';
+  function lightUp(src) {
+    if (!src || src === ibSrc) return;
+    ibSrc = src; const next = ib[1 - ibOn];
+    next.onload = () => { next.classList.add('on'); ib[ibOn].classList.remove('on'); ibOn = 1 - ibOn; };
+    next.src = src;
+    ibg.classList.add('lit');
+  }
+  plist.addEventListener('pointerover', e => { const b = e.target.closest('button'); if (b && FINE.matches) lightUp(b.dataset.still); });
+  plist.addEventListener('focusin', e => { const b = e.target.closest('button'); if (b) lightUp(b.dataset.still); });
+  plist.addEventListener('pointerleave', () => { if (!plist.contains(document.activeElement)) { ibg.classList.remove('lit'); ibSrc = ''; } });
+  plist.addEventListener('focusout', e => { if (!plist.contains(e.relatedTarget)) { ibg.classList.remove('lit'); ibSrc = ''; } });
+  $$('.filters button').forEach(b => b.addEventListener('click', () => {
+    $$('.filters button').forEach(x => x.setAttribute('aria-pressed', x === b ? 'true' : 'false'));
+    renderList(b.dataset.f);
+  }));
+
+  /* ---------- player dialog ---------- */
+  const player = $('#player'), ratio = $('#player-ratio'), ptitle = $('#player-title'), pclose = $('.player-close');
+  const outside = [$('#main'), $('#nav'), $('footer'), $('.bar'), $('.skip'), $('.quote-fixed')];
+  let lastTrigger = null, throughShot = null;
+  function srcFor(v) {
+    const [kind, id, h] = v.split(':');
+    if (kind === 'youtube') return `https://www.youtube-nocookie.com/embed/${id}?autoplay=1`;
+    return `https://player.vimeo.com/video/${id}?${h ? 'h=' + h + '&' : ''}autoplay=1`;
+  }
+  function openPlayer(v, title, trigger) {
+    lastTrigger = trigger;
+    ptitle.textContent = title;
+    ratio.innerHTML = '';
+    const f = document.createElement('iframe');
+    f.src = srcFor(v); f.title = title; f.allow = 'autoplay; fullscreen; picture-in-picture'; f.allowFullscreen = true;
+    ratio.append(f);
+    player.classList.add('open');
+    outside.forEach(el => el && el.setAttribute('inert', ''));
+    document.documentElement.style.overflow = 'hidden';
+    pclose.focus();
+  }
+  function closePlayer() {
+    if (!player.classList.contains('open')) return;
+    player.classList.remove('open');
+    ratio.innerHTML = '';
+    outside.forEach(el => el && el.removeAttribute('inert'));
+    document.documentElement.style.overflow = '';
+    if (throughShot) {
+      // the set comes back as it was, in one frame: no reverse dolly, nothing to reveal
+      const sh = throughShot; throughShot = null;
+      sh.classList.add('snap'); sh.classList.remove('through'); void sh.offsetWidth;
+      requestAnimationFrame(() => requestAnimationFrame(() => sh.classList.remove('snap')));
+    }
+    if (lastTrigger) lastTrigger.focus({ preventScroll: true });
+  }
+  pclose.addEventListener('click', closePlayer);
+  player.addEventListener('keydown', e => { if (e.key === 'Escape') { e.preventDefault(); closePlayer(); } });
+  // focus cycles Close -> player -> Close in both directions. Tab from Close always enters the player,
+  // even when its page has nothing focusable yet; leaving the player's last control comes back to Close.
+  const traps = $$('#player .trap');
+  const frameEl = () => ratio.querySelector('iframe');
+  traps[0].addEventListener('focus', () => (frameEl() || pclose).focus());
+  traps[1].addEventListener('focus', () => pclose.focus());
+  pclose.addEventListener('keydown', e => {
+    if (e.key === 'Tab' && !e.shiftKey && frameEl()) { e.preventDefault(); frameEl().focus(); }
+  });
+  document.addEventListener('click', e => {
+    const b = e.target.closest('[data-video]');
+    if (!b) return;
+    const shot = b.closest('.shot');
+    if (throughShot) return;
+    if (shot && motion && b.classList.contains('play')) {
+      // push the camera through the scene, then open the film
+      throughShot = shot; shot.classList.add('through');
+      setTimeout(() => openPlayer(b.dataset.video, b.dataset.title, b), 520);
+    } else openPlayer(b.dataset.video, b.dataset.title, b);
+  });
+
+  /* ---------- nav: services disclosure, phone sheet, hide on scroll ---------- */
+  const subBtn = $('.sub-btn'), subMenu = $('#svc-menu');
+  const setSub = open => { subBtn.setAttribute('aria-expanded', open); subMenu.classList.toggle('open', open); };
+  subBtn.addEventListener('click', () => setSub(subBtn.getAttribute('aria-expanded') !== 'true'));
+  subMenu.addEventListener('click', () => setSub(false));
+  document.addEventListener('click', e => { if (!e.target.closest('.sub')) setSub(false); });
+  $('.sub').addEventListener('keydown', e => { if (e.key === 'Escape') { setSub(false); subBtn.focus(); } });
+  $('.sub').addEventListener('focusout', e => { if (!e.currentTarget.contains(e.relatedTarget)) setSub(false); });
+
+  const sheet = $('#sheet'), menuBtn = $('.menu-btn');
+  const setSheet = open => {
+    sheet.classList.toggle('open', open); menuBtn.setAttribute('aria-expanded', open);
+    [$('#main'), $('footer'), $('.bar'), $('.quote-fixed'), $('.skip')].forEach(el => open ? el.setAttribute('inert', '') : el.removeAttribute('inert'));
+    if (open) $('.sheet-close').focus(); else menuBtn.focus();
+  };
+  menuBtn.addEventListener('click', () => setSheet(true));
+  $('.sheet-close').addEventListener('click', () => setSheet(false));
+  sheet.addEventListener('click', e => { if (e.target.closest('nav a, .sheet-top .brand')) { sheet.classList.remove('open'); menuBtn.setAttribute('aria-expanded', false); [$('#main'), $('footer'), $('.bar'), $('.quote-fixed'), $('.skip')].forEach(el => el.removeAttribute('inert')); } });
+  sheet.addEventListener('keydown', e => { if (e.key === 'Escape') setSheet(false); });
+
+  const nav = $('#nav');
+  let lastY = scrollY;
+  function navState(y) {
+    nav.classList.toggle('solid', y > 40);
+    const down = y > lastY + 4, up = y < lastY - 4;
+    if (y < 80 || up || nav.contains(document.activeElement)) nav.classList.remove('away');
+    else if (down) { nav.classList.add('away'); setSub(false); }
+    lastY = y;
+    barState();
+  }
+  nav.addEventListener('focusin', () => nav.classList.remove('away'));
+
+  const bar = $('.bar');
+  let ctasSeen = true;
+  function barState() {
+    const heroUp = !motion || scenes[0].active <= 0;
+    bar.classList.toggle('show', !(ctasSeen && heroUp));
+  }
+  new IntersectionObserver(es => { ctasSeen = es[es.length - 1].isIntersecting; barState(); }).observe($('.hero-copy .ctas'));
+
+  /* ---------- scenes: pinned stages, a camera move per set, cuts on the type's motion ---------- */
+  // Each set is three layers at three depths: plate (far), words, cut-out (near). The camera has a
+  // position per set: z (push), x and y (truck and rise, in % of the frame). A layer moves by the
+  // camera times its depth, so the cut-out always travels further than the words and the words further
+  // than the plate: the words read as standing between the room and the person.
+  const DEPTH = [.5, .75, 1];
+  const PTR = [2, 3.5, 5];                   // px of pointer camera per layer
+  const INTRO = [[.02, 4], [.04, 10], [.06, 18]];  // hero settle: extra scale and x px per layer
+  const cam = s => { const v = (s || '0 .06 0 0 0 0').trim().split(/\s+/).map(Number); while (v.length < 6) v.push(0); return v; };
+  const scenes = $$('.scene').map(el => {
+    const stage = $('.stage', el), shots = $$('.shot', el);
+    shots.forEach(sh => {
+      sh._cam = cam(sh.dataset.cam);
+      sh._pcam = sh.dataset.pcam ? cam(sh.dataset.pcam) : [sh._cam[0], sh._cam[1], sh._cam[2] * .5, sh._cam[3] * .5, sh._cam[4], sh._cam[5]];
+      sh._bg = $('.p-bg', sh); sh._ty = $('.p-type', sh); sh._fg = $('.p-fg', sh); sh._fr = $('.frame', sh);
+      sh._fl = 0; sh._ft = 0; sh._fw = 1; sh._fh = 1; sh._W = 1; sh._H = 1; sh._ox = 0; sh._oy = 0;
+    });
+    return { el, stage, all: shots, shots, segs: [], cum: [], total: 0, active: -1, top: 0 };
+  });
+  let unit = innerHeight / 100, lastW = innerWidth;
+  let portrait = matchMedia('(orientation: portrait)').matches;
+  const clamp = (v, a, b) => v < a ? a : v > b ? b : v;
+  const easeOut = t => 1 - Math.pow(1 - t, 3);
+  const easeIn = t => t * t * t;
+
+  // words' own vertical motion on the cuts: they settle in after a cut and accelerate out before the next
+  const EXIT = .84;
+  function typeY(sh, t) {
+    if (sh._prev && t < .16) return -(1 - easeOut(t / .16)) * 3;
+    if (sh._next && t > EXIT) return -easeIn((t - EXIT) / (1 - EXIT)) * 42;
+    return 0;
+  }
+  // the three layers at shot time t: [scale, x px, y px] each, in frame coordinates
+  function layers(sh, t, k, ox, oy) {
+    const c = portrait ? sh._pcam : sh._cam;
+    const z = c[0] + (c[1] - c[0]) * t, cx = c[2] + (c[3] - c[2]) * t, cy = c[4] + (c[5] - c[4]) * t;
+    const L = DEPTH.map((w, i) => [1 + z * w + INTRO[i][0] * k, -cx * w * sh._fw / 100 + PTR[i] * ox + INTRO[i][1] * k, -cy * w * sh._fh / 100 + PTR[i] * oy]);
+    // the plate must always cover the stage: where the move would open an edge, the whole camera
+    // is held back instead (every layer shifts by the same amount, so the parallax is untouched)
+    const [s, tx, ty] = L[0];
+    const l = sh._fl + sh._ox * (1 - s) + tx, r = l + sh._fw * s, tp = sh._ft + sh._oy * (1 - s) + ty, b = tp + sh._fh * s;
+    const dx = l > 0 ? -l : r < sh._W ? sh._W - r : 0, dy = tp > 0 ? -tp : b < sh._H ? sh._H - b : 0;
+    if (dx || dy) L.forEach(o => { o[1] += dx; o[2] += dy; });
+    return L;
+  }
+
+  // frame each shot: keep the blocked type inside the window for the WHOLE move, not just at rest
+  function boxIn(el, stop) { let x = 0, y = 0, e = el; while (e && e !== stop) { x += e.offsetLeft; y += e.offsetTop; e = e.offsetParent; } return [x, y, el.offsetWidth, el.offsetHeight]; }
+  // d: the frame's offset from the CSS composition; the frame must cover the view and, where it can,
+  // the type [a, b] must sit inside the margins. Moves the frame only as far as the type needs.
+  function fit(d, size, view, a, b, m0, m1) {
+    const lo = Math.max(view - size, m0 - a), hi = Math.min(0, view - m1 - b);
+    return lo <= hi ? clamp(d, lo, hi) : clamp((m0 + view - m1) / 2 - (a + b) / 2, view - size, 0);
+  }
+  function place(sh) {
+    const fr = sh._fr, W = sh.clientWidth, H = sh.clientHeight;
+    if (!W || !H) return;
+    fr.style.left = fr.style.top = '';
+    const cs = getComputedStyle(fr), fw = fr.offsetWidth, fh = fr.offsetHeight;
+    const o = getComputedStyle(sh._ty).transformOrigin.split(' ').map(parseFloat);
+    Object.assign(sh, { _W: W, _H: H, _fw: fw, _fh: fh, _ox: o[0], _oy: o[1], _fl: parseFloat(cs.left), _ft: parseFloat(cs.top), _sx: 0, _sy: 0 });
+    const phone = W < 760, m = phone ? 16 : 36, mt = phone ? 70 : 96, mb = 16;
+    const stats = $$('.stats li', sh), els = stats.length ? stats : $$('.blk', sh);
+    const blks = stats.length ? [$('.stats', sh)] : els;   // what gets smaller when the words must fit
+    // every point of the shot the words pass through: the settle after the cut, the push, the end
+    // before they leave (and the hero's intro settle)
+    const T = [[0, 0], [.25, 0], [.5, 0], [EXIT, 0], [1, 0]];
+    if (sh.dataset.intro) T.push([0, 1]);
+    let x0, y0, x1, y1;
+    const box = () => {
+      let a0 = 1e9, b0 = 1e9, a1 = -1e9, b1 = -1e9;
+      for (const el of els) { const [x, y, w, h] = boxIn(el, fr); a0 = Math.min(a0, x); b0 = Math.min(b0, y); a1 = Math.max(a1, x + w); b1 = Math.max(b1, y + h); }
+      x0 = 1e9; y0 = 1e9; x1 = -1e9; y1 = -1e9;
+      for (const [t, k] of T) {
+        const [s, tx, ty0] = layers(sh, Math.min(t, sh._next ? EXIT : 1), k, 0, 0)[1];
+        const ty = ty0 + typeY(sh, Math.min(t, EXIT)) * fh / 100;
+        x0 = Math.min(x0, sh._ox + s * (a0 - sh._ox) + tx); x1 = Math.max(x1, sh._ox + s * (a1 - sh._ox) + tx);
+        y0 = Math.min(y0, sh._oy + s * (b0 - sh._oy) + ty); y1 = Math.max(y1, sh._oy + s * (b1 - sh._oy) + ty);
+      }
+    };
+    blks.forEach(b => { b.style.removeProperty('--k'); b.style.removeProperty('--kdx'); });
+    box();
+    // a window narrower than the move needs: shrink the blocked type until it fits all the way through
+    for (let i = 0; i < 4; i++) {
+      const k = Math.min(1, (W - 2 * m) / (x1 - x0), (H - mt - mb - 80) / (y1 - y0));
+      if (!blks.length || k >= .999) break;
+      const cur = parseFloat(blks[0].style.getPropertyValue('--k')) || 1;
+      blks.forEach(b => b.style.setProperty('--k', (cur * k).toFixed(4))); box();
+    }
+    // shrinking keeps the words' horizontal centre (data-kax: another point of the line) where it was
+    // composed, so a head that sat under a given letter still sits under it
+    const setK = f => {
+      const cur = parseFloat(blks[0].style.getPropertyValue('--k')) || 1;
+      blks.forEach(b => { const w = b.offsetWidth, ax = +(b.dataset.kax || .5);
+        b.style.setProperty('--k', (cur * f).toFixed(4)); b.style.setProperty('--kdx', ((w - b.offsetWidth) * ax + (parseFloat(b.style.getPropertyValue('--kdx')) || 0)).toFixed(1) + 'px'); });
+      box();
+    };
+    const place2 = () => {
+      for (let i = 0; i < 2; i++) {  // twice: the camera hold-back depends on where the frame sits
+        sh._fl = fit(parseFloat(cs.left), fw, W, x0, x1, m, m);
+        sh._ft = fit(parseFloat(cs.top), fh, H, y0, y1, mt, mb);
+        box();
+      }
+    };
+    place2();
+    // if the words would still start under the nav, they get smaller from the top down (once), so their
+    // lower edge, where the people in front of them are, stays where it was composed
+    const over = mt - (y0 + sh._ft);
+    if (blks.length && over >= 1) { setK(Math.max(.72, 1 - over / (y1 - y0))); place2(); }
+    fr.style.left = sh._fl.toFixed(1) + 'px';
+    fr.style.top = sh._ft.toFixed(1) + 'px';
+    // where the frame cannot move far enough (a 16:9 frame in a 16:10 window has no vertical play),
+    // the words themselves step inside the margins
+    const fl = sh._fl, ft = sh._ft;
+    sh._sx = x1 - x0 > W - 2 * m ? (W - x0 - x1) / 2 - fl : x0 + fl < m ? m - x0 - fl : x1 + fl > W - m ? W - m - x1 - fl : 0;
+    sh._sy = y0 + ft < mt ? mt - y0 - ft : y1 + ft > H - mb ? H - mb - y1 - ft : 0;
+  }
+  function measure() {
+    portrait = matchMedia('(orientation: portrait)').matches;
+    for (const s of scenes) {
+      s.shots = s.all.filter(sh => getComputedStyle(sh).display !== 'none');
+      s.shots.forEach((sh, i) => { sh._prev = i > 0; sh._next = i < s.shots.length - 1; sh._last = ''; });
+      s.segs = s.shots.map(sh => +sh.dataset.seg || 110);
+      s.cum = s.segs.map((_, i) => s.segs.slice(0, i).reduce((a, b) => a + b, 0));
+      s.total = s.segs.reduce((a, b) => a + b, 0);
+      s.active = -1;
+      s.shots.forEach(place);
+    }
+    const h = scenes[0].stage.offsetHeight || innerHeight;
+    unit = h / 100;
+    for (const s of scenes) {
+      s.el.style.height = motion ? (s.total * unit + h) + 'px' : '';
+      s.top = s.el.getBoundingClientRect().top + scrollY;
+      s.range = s.total * unit;
+    }
+  }
+
+  function setActive(s, i) {
+    if (s.active === i) return;
+    s.shots.forEach((sh, k) => { sh.classList.toggle('on', k === i); if (k !== i) sh.classList.remove('fwd'); });
+    s.active = i;
+  }
+  // focusing something inside a shot that is not on screen moves the page to that shot
+  scenes.forEach(s => s.all.forEach(sh => sh.addEventListener('focusin', () => {
+    const i = s.shots.indexOf(sh);
+    if (!motion || i < 0 || s.active === i) return;
+    scrollTo({ top: s.top + (s.cum[i] + s.segs[i] * 0.35) * unit, behavior: 'instant' });
+  })));
+
+  // pointer (desktop): a few pixels of camera, scaled by depth
+  let px = 0, py = 0, tx = 0, ty = 0;
+  addEventListener('pointermove', e => {
+    if (!FINE.matches) return;
+    tx = (e.clientX / innerWidth - .5) * 2; ty = (e.clientY / innerHeight - .5) * 2;
+  }, { passive: true });
+
+  const t0 = performance.now();
+  const INTRO_MS = 2600;
+  function apply(sh, t, now) {
+    const k = sh.dataset.intro ? 1 - easeOut(clamp((now - t0) / INTRO_MS, 0, 1)) : 0;
+    const L = layers(sh, t, k, -px, -py);
+    L[1][1] += sh._sx; L[1][2] += sh._sy + typeY(sh, t) * sh._fh / 100;
+    const css = L.map(([s, x, y]) => `translate3d(${x.toFixed(2)}px,${y.toFixed(2)}px,0) scale(${s.toFixed(4)})`);
+    const key = css.join();
+    if (sh._last === key) return;
+    sh._last = key;
+    sh._bg.style.transform = css[0]; sh._ty.style.transform = css[1]; sh._fg.style.transform = css[2];
+  }
+
+  // the reel loop plays in the studio monitor (real visitors only). The frame is shown only once
+  // Vimeo reports that it is playing; a blocked or failed player never replaces the photo's monitor.
+  const mon = $('.monitor');
+  let monDone = false;
+  function loadLoop() {
+    monDone = true;
+    if (!mon || navigator.webdriver || !motion || (navigator.connection && navigator.connection.saveData)) return;
+    const f = document.createElement('iframe');
+    f.src = `https://player.vimeo.com/video/${mon.dataset.loop}?background=1&autoplay=1&loop=1&muted=1`;
+    f.title = 'Reel'; f.tabIndex = -1; f.setAttribute('aria-hidden', 'true'); f.allow = 'autoplay';
+    const post = m => f.contentWindow && f.contentWindow.postMessage(JSON.stringify(m), 'https://player.vimeo.com');
+    addEventListener('message', e => {
+      if (e.origin !== 'https://player.vimeo.com' || e.source !== f.contentWindow) return;
+      let d = e.data; try { if (typeof d === 'string') d = JSON.parse(d); } catch (_) { return; }
+      if (!d || !d.event) return;
+      if (d.event === 'ready') { post({ method: 'addEventListener', value: 'play' }); post({ method: 'addEventListener', value: 'playProgress' }); }
+      if (d.event === 'play' || (d.event === 'playProgress' && d.data && d.data.seconds > 0)) f.classList.add('ready');
+    });
+    mon.append(f);
+  }
+
+  function tick(now) {
+    px += (tx - px) * .06; py += (ty - py) * .06;
+    const y = scrollY;
+    for (const s of scenes) {
+      const rel = y - s.top;
+      if (rel < -unit * 110 || rel > s.range + unit * 110) continue;
+      const p = clamp(rel, 0, s.range) / unit;
+      let i = 0;
+      while (i < s.segs.length - 1 && p >= s.cum[i] + s.segs[i]) i++;
+      const t = clamp((p - s.cum[i]) / s.segs[i], 0, 1);
+      if (!monDone && s === scenes[0] && p > s.segs[0] * .4) loadLoop();
+      setActive(s, i);
+      apply(s.shots[i], t, now);
+    }
+    navState(y);
+    if (motion) requestAnimationFrame(tick);
+  }
+
+  function still() {
+    scenes.forEach(s => { s.all.forEach(sh => { sh.classList.add('on'); [sh._bg, sh._ty, sh._fg].forEach(l => l.style.transform = ''); }); s.active = -1; });
+  }
+
+  function start() {
+    motion = !RM.matches;
+    measure();
+    if (motion) { scenes.forEach(s => { s.active = -1; }); requestAnimationFrame(tick); }
+    else still();
+  }
+  addEventListener('scroll', () => { if (!motion) navState(scrollY); }, { passive: true });
+  addEventListener('resize', () => {
+    if (Math.abs(innerWidth - lastW) > 2 || !motion) { lastW = innerWidth; measure(); }
+  });
+  RM.addEventListener('change', () => location.reload());
+  addEventListener('load', measure);
+  document.fonts && document.fonts.ready.then(measure);
+
+  // hovering or focusing a project's play button brings its title in front of the subject
+  $$('.shot').forEach(sh => {
+    const pb = $('.play', sh), blk = $('.blk', sh);
+    if (!pb || !blk) return;
+    const on = () => sh.classList.add('fwd'), off = () => sh.classList.remove('fwd');
+    pb.addEventListener('pointerenter', on); pb.addEventListener('pointerleave', off);
+    pb.addEventListener('focus', on); pb.addEventListener('blur', off);
+    blk.addEventListener('pointerenter', on); blk.addEventListener('pointerleave', off);
+    blk.addEventListener('click', () => pb.click());
+    blk.style.cursor = 'pointer';
+  });
+
+  start();
+})();
+</script>
+</body>
+</html>

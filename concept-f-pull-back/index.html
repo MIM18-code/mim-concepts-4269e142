@@ -1,0 +1,1340 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Video Production Baltimore &amp; Orlando | MindInMotion</title>
+<meta name="description" content="MindInMotion: video production in Baltimore and Orlando.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mona+Sans:wdth,wght@75..125,300..900&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="../assets/img/Screenshot-2024-01-18-at-2.33.57-PM.webp" fetchpriority="high">
+<style>
+:root{
+  --bg:#000; --fg:#fff; --dim:#a2a8ae; --cyan:#00e6f8;
+  --H:100vh; --gut:max(20px,4.6vw);
+  --disp:"Mona Sans",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{background:#000;color:#fff;-webkit-text-size-adjust:100%}
+body{margin:0;background:#000;color:#fff;font-family:var(--disp);font-stretch:100%;font-weight:400;font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:clip}
+img{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+.skip{position:fixed;left:12px;top:-60px;z-index:100;background:var(--cyan);color:#000;padding:10px 16px;font-weight:650;text-decoration:none}
+.skip:focus{top:12px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+
+/* ---------- type ---------- */
+.d{font-stretch:75%;font-weight:800;letter-spacing:-.012em;line-height:.88;margin:0}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:50px;padding:0 22px;font-size:16px;font-weight:640;line-height:1.1;text-decoration:none;border:0;border-radius:0;cursor:pointer;white-space:nowrap;background:none;color:inherit}
+.btn-cyan{background:var(--cyan);color:#000}
+.btn-cyan:hover{background:#6ff2fc}
+.btn-line{box-shadow:inset 0 0 0 1.5px currentColor}
+.btn-line:hover{background:rgba(255,255,255,.12)}
+.btn svg{flex:none}
+.btn-play{padding:0 20px 0 0;gap:14px}
+.btn-play .cue{width:50px;height:50px}
+.btn-play:hover{color:var(--cyan)}
+.btn-play:hover .cue{background:var(--cyan)}
+
+
+/* ---------- header ---------- */
+.hdr{position:fixed;left:0;right:0;top:0;height:72px;z-index:60;display:flex;align-items:center;gap:26px;padding:0 var(--gut);transition:background-color .35s}
+.hdr::before{content:"";position:absolute;inset:0 0 -56px;background:linear-gradient(rgba(0,0,0,.74),rgba(0,0,0,0));pointer-events:none;z-index:-1;transition:opacity .35s}
+.hdr.solid{background:#000}
+.hdr.solid::before{opacity:0}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;font-weight:680;font-size:18px;letter-spacing:-.01em;flex:none}
+.brand img{width:30px;height:30px}
+.nav{margin-left:auto}
+.nav>ul{display:flex;align-items:center;gap:4px;list-style:none;margin:0;padding:0}
+.nav a,.nav .sub-btn{display:inline-flex;align-items:center;gap:6px;height:44px;padding:0 11px;font-size:15.5px;font-weight:540;text-decoration:none;background:none;border:0;cursor:pointer;color:#fff}
+.nav a:hover,.nav .sub-btn:hover{color:var(--cyan)}
+.sub-btn svg{width:10px;height:6px;transition:transform .2s}
+.sub-btn[aria-expanded="true"] svg{transform:rotate(180deg)}
+.has-sub{position:relative}
+.sub{position:absolute;left:0;top:100%;margin:0;padding:8px 0;list-style:none;background:#000;min-width:210px;box-shadow:0 0 0 1px rgba(255,255,255,.14)}
+.sub a{display:flex;height:44px;padding:0 18px;width:100%}
+.phones{margin:0;font-size:14px;color:#dfe3e6;white-space:nowrap;flex:none}
+.phones a{text-decoration:none;color:#fff}
+.phones a:hover{color:var(--cyan)}
+.hdr .quote{min-height:44px;padding:0 18px;font-size:15px;flex:none}
+.menu-btn{display:none;min-height:44px;padding:0 4px 0 14px;background:none;border:0;font-weight:640;font-size:16px;cursor:pointer}
+@media (max-width:1279px){.phones{display:none}}
+@media (max-width:959px){.nav{display:none}.menu-btn{display:inline-flex;align-items:center}.hdr .quote{margin-left:auto}}
+@media (max-width:759px){.hdr{height:58px;gap:12px}.hdr .brand span{display:none}.hdr .quote{min-height:40px;padding:0 14px;font-size:14.5px}}
+
+/* phone/tablet menu */
+.mnav{position:fixed;inset:0;z-index:70;background:#000;padding:18px var(--gut) 32px;display:flex;flex-direction:column;overflow:auto}
+.mnav[hidden]{display:none}
+.mnav-top{display:flex;align-items:center;justify-content:space-between;height:40px;margin-bottom:28px}
+.mnav-top img{width:30px;height:30px}
+.mnav-close{background:none;border:0;font-weight:640;font-size:16px;min-height:44px;padding:0 4px 0 14px;cursor:pointer}
+.mnav ul{list-style:none;margin:0;padding:0}
+.mnav>nav>ul>li>a,.mnav .m-svc-label{display:block;font-stretch:75%;font-weight:800;font-size:44px;line-height:1.1;padding:4px 0;text-decoration:none}
+.mnav .m-sub a{display:block;font-size:19px;font-weight:520;padding:8px 0 8px 2px;color:var(--dim);text-decoration:none}
+.mnav .m-sub{margin:2px 0 10px}
+.mnav .m-phones{margin:28px 0 18px;font-size:17px;line-height:1.9}
+.mnav .m-phones a{color:#fff;text-decoration:none;font-weight:620}
+.mnav .btn{align-self:flex-start}
+
+/* ---------- pinned stages ---------- */
+.stage-sec{position:relative}
+.hero{z-index:0}
+.anc{position:absolute;left:0;top:0;width:1px;height:1px;pointer-events:none}
+.stage{position:relative;height:var(--H);overflow:hidden;background:#000}
+.js .stage-sec{height:calc(var(--H) * var(--len,2))}
+.js .stage{position:sticky;top:0}
+.ph{position:absolute;left:0;top:0;transform-origin:0 0;max-width:none;user-select:none;-webkit-user-drag:none;pointer-events:none;will-change:transform}
+.frame{position:absolute;left:0;top:0;width:1600px;height:900px;transform-origin:0 0;overflow:hidden;background:#0b0b0b;pointer-events:none;will-change:transform}
+.frame>img{width:100%;height:100%;object-fit:cover;max-width:none}
+.frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;opacity:0;transition:opacity .6s}
+.frame iframe.on{opacity:1}
+.js .ph,.js .frame{opacity:0}
+.ph[data-k="r2"]{-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 var(--fe,0%));mask-image:linear-gradient(90deg,transparent 0,#000 var(--fe,0%))}
+.clipbox{position:absolute;overflow:hidden;pointer-events:none}
+.win{position:absolute;inset:0;z-index:1}
+.rig{position:absolute;inset:0;pointer-events:none}
+.rig .ph,.rig .frame,.rig .clipbox{pointer-events:none}
+.clipbox .frame{opacity:1}
+
+/* monitor buttons: a real button over the glass, with a visible cue */
+.mon-btn{position:absolute;left:0;top:0;width:10px;height:10px;padding:0;margin:0;border:0;background:transparent;cursor:pointer;z-index:6}
+.mon-btn .cue{position:absolute;left:var(--cx,12px);top:var(--cy,12px);width:var(--cs,46px);height:var(--cs,46px)}
+.mon-btn[hidden]{display:none}
+.cue{display:flex;align-items:center;justify-content:center;width:52px;height:52px;background:#fff;color:#000;transition:transform .25s}
+.cue svg{width:14px;height:16px;margin-left:3px}
+.mon-btn:hover .cue,.mon-btn:focus-visible .cue{transform:scale(1.1)}
+.mon-btn:focus-visible{outline:2px solid var(--cyan);outline-offset:4px}
+.mon-btn.busy .cue{opacity:0}
+
+.loop-toggle{position:absolute;right:var(--gut);bottom:22px;z-index:8;min-height:40px;padding:0 14px;background:rgba(0,0,0,.6);border:0;font-size:14px;font-weight:600;cursor:pointer}
+.loop-toggle[hidden]{display:none}
+
+/* ---------- hero ---------- */
+.hero .shade{position:absolute;left:0;right:0;bottom:0;height:58%;background:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.78) 72%);pointer-events:none;z-index:3}
+.credit{position:absolute;left:var(--gut);bottom:30px;z-index:7;display:flex;align-items:center;gap:16px}
+.credit .c-play{display:flex;align-items:center;gap:14px;background:none;border:0;padding:0;cursor:pointer;text-align:left}
+.credit .c-play .cue{width:46px;height:46px}
+.credit p{margin:0;line-height:1.3}
+.credit .c-t{font-weight:650;font-size:17px}
+.credit .c-c{font-size:15px;color:#d5d9dd}
+.hero-copy{position:absolute;left:var(--gut);right:var(--gut);bottom:40px;z-index:5}
+.hero-copy:focus-within{opacity:1!important;pointer-events:auto!important}
+.hero-copy .row{display:flex;align-items:center;gap:24px;margin-top:26px}
+.loc{margin:0 0 14px;font-size:17px;font-weight:560}
+.ctas{display:flex;flex-wrap:wrap;gap:10px}
+.jump{display:inline-flex;align-items:center;gap:8px;min-height:50px;padding:0 6px 0 18px;font-weight:600;font-size:16px;text-decoration:none}
+.jump svg{width:12px;height:14px}
+.jump:hover{color:var(--cyan)}
+.h1{font-size:min(10.8vw,21vh);white-space:nowrap}
+.verbs{position:absolute;inset:0;margin:0;z-index:5;pointer-events:none}
+.verbs span{position:absolute;left:0;top:0;transform-origin:0 0;white-space:nowrap;font-stretch:75%;font-weight:800;line-height:1;letter-spacing:-.01em;font-size:clamp(40px,5.1vw,86px);padding:.06em .16em .09em;background:rgba(0,0,0,var(--bx,1));opacity:0}
+.verbs .tag{font-stretch:100%;font-weight:520;font-size:clamp(18px,1.55vw,24px);letter-spacing:0;padding:0;background:none;line-height:1.3;white-space:normal;width:min(30vw,420px)}
+.stats{position:absolute;left:0;top:0;z-index:5;pointer-events:none;margin:0;transform-origin:0 0}
+.stat{opacity:0;margin:0;display:flex;align-items:baseline;gap:.5em;white-space:nowrap}
+.stat b{display:inline-block;min-width:2.35em;font-stretch:75%;font-weight:800;font-size:clamp(40px,5.1vw,86px);line-height:1.02;letter-spacing:-.01em;font-variant-numeric:lining-nums proportional-nums}
+.stat span{font-size:clamp(17px,1.45vw,22px);font-weight:560;color:#e3e6e9}
+.flyer{position:absolute;left:0;top:0;width:10px;height:10px;overflow:hidden;opacity:0;z-index:9;pointer-events:none}
+.flyer img{width:100%;height:100%;object-fit:cover;max-width:none}
+
+/* ---------- featured projects ---------- */
+.work{position:relative;z-index:1;background:#000;padding:118px var(--gut) 90px}
+.js .work{margin-top:calc(var(--H) * -1)}
+.js .work{background:transparent}
+.work-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:26px}
+.work h2{font-size:clamp(52px,6.4vw,108px)}
+.filters{display:flex;gap:2px;flex-wrap:wrap}
+.filters button{background:none;border:0;min-height:44px;padding:0 13px;font-size:18px;font-weight:560;color:var(--dim);cursor:pointer}
+.filters button[aria-pressed="true"]{color:#000;background:#fff}
+.filters button:hover{color:#fff}
+.filters button[aria-pressed="true"]:hover{color:#000}
+.grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:30px 24px}
+.tile{display:flex;flex-direction:column;min-width:0}
+.tile.big{grid-column:span 2;grid-row:span 2}
+.tile-btn{display:flex;flex-direction:column;flex:1;text-align:left;background:none;border:0;padding:0;cursor:pointer}
+.t-img{position:relative;display:block;overflow:hidden;aspect-ratio:16/9;background:#111;width:100%}
+.tile.big .t-img{flex:1;aspect-ratio:auto;min-height:0}
+.t-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.4s cubic-bezier(.2,.6,.2,1)}
+.t-img img.crop-lt{inset:auto;max-width:none;left:-17%;top:0;width:134%;height:134%}
+.tile-btn:hover .t-img img,.tile-btn:focus-visible .t-img img{transform:scale(1.04)}
+.t-img .cue{position:absolute;left:14px;bottom:14px;width:44px;height:44px}
+.t-img .cue svg{width:12px;height:14px}
+.t-title{display:block;margin-top:14px;font-size:20px;font-weight:640;line-height:1.25}
+.t-client{display:block;margin-top:3px;font-size:15.5px;color:var(--dim)}
+.tile.big .t-title{font-size:24px}
+.tile.landing-hide .t-img img,.tile.landing-hide .t-img .cue{opacity:0}
+.tile.landing-hide .t-img{background:transparent}
+.work-foot{display:flex;flex-wrap:wrap;gap:12px;margin-top:48px}
+
+/* ---------- clients ---------- */
+.clients{padding:40px var(--gut) 110px;display:flex;align-items:center;gap:48px;flex-wrap:wrap}
+.clients p{margin:0;font-size:19px;font-weight:560;flex:none}
+.logos{list-style:none;margin:0;padding:0;display:flex;align-items:center;gap:22px 44px;flex-wrap:wrap;flex:1}
+.logos img{height:34px;width:auto;filter:brightness(0) invert(1);opacity:.92}
+.logos .jh img{height:26px}.logos .msde img{height:30px}.logos .pk img{height:40px}.logos .il img{height:44px}.logos .ipg img{height:36px}
+.logos .aa img{filter:none;opacity:1;height:52px}
+
+/* ---------- services ---------- */
+.svc-intro{padding:120px var(--gut) 70px;display:grid;grid-template-columns:1.25fr 1fr;gap:40px;align-items:end}
+.svc-intro h2{font-size:clamp(56px,8.2vw,136px)}
+.svc-intro p{margin:0;font-size:21px;line-height:1.5;max-width:34ch;color:#e3e6e9}
+.svc-copy{position:absolute;z-index:6;left:var(--gut);top:50%;transform:translateY(-50%);width:min(35vw,520px)}
+.svc[data-side="left"] .svc-copy{left:auto;right:var(--gut)}
+.svc-copy h3{font-size:clamp(52px,6.6vw,112px);margin-bottom:26px}
+.svc-copy p{margin:0 0 26px;font-size:19px;line-height:1.55;max-width:36ch}
+.learn{display:inline-flex;align-items:center;min-height:48px;padding:0 20px;box-shadow:inset 0 0 0 1.5px #fff;font-weight:620;font-size:16px;text-decoration:none}
+.learn:hover{background:#fff;color:#000}
+.js .svc-copy .fade{opacity:0}
+.svc-copy .fade{transition:none}
+
+/* ---------- about ---------- */
+.about{padding:120px var(--gut) 96px;display:grid;grid-template-columns:repeat(12,1fr);gap:0 24px}
+.about h2{grid-column:1/-1;font-size:clamp(56px,9.4vw,160px);margin-bottom:52px}
+.about h2 span{display:block}
+.ab-photo{grid-column:1/8;margin:0}
+.ab-photo img{width:100%;height:auto}
+.ab-text{grid-column:8/13;font-size:19px;line-height:1.6}
+.ab-text p{margin:0 0 1.1em;max-width:40ch}
+.ab-row{grid-column:1/-1;display:grid;grid-template-columns:repeat(12,1fr);gap:24px;margin-top:70px;align-items:end}
+.ab-bw{grid-column:1/5;margin:0}
+.ab-bw{max-width:576px;aspect-ratio:576/322;overflow:hidden}
+.ab-bw img{width:100%;height:100%;object-fit:cover}
+.since{grid-column:6/13;margin:0}
+.since b{display:block;font-stretch:75%;font-weight:800;font-size:clamp(44px,5vw,84px);line-height:.9}
+.since span{display:block;font-size:21px;margin-top:12px;color:#d3d7db;max-width:30ch}
+
+/* ---------- testimonials ---------- */
+.quotes{padding:96px var(--gut) 110px}
+.quotes h2{font-size:clamp(52px,6.4vw,108px);margin-bottom:56px}
+.qlist{list-style:none;margin:0;padding:0;display:grid;gap:60px}
+.q{display:grid;grid-template-columns:repeat(12,1fr);gap:0 24px;align-items:start}
+.q blockquote{grid-column:1/9;margin:0}
+.q blockquote p{margin:0;font-stretch:75%;font-weight:720;font-size:clamp(30px,3.05vw,52px);line-height:1.04;letter-spacing:-.004em}
+.q .who{grid-column:1/9;margin:16px 0 0;font-size:17px}
+.q .who b{font-weight:640;display:block}
+.q .who span{color:var(--dim);display:block}
+.q figure{grid-column:9/13;grid-row:1/3;margin:6px 0 0}
+.q figure img{width:100%;height:auto}
+
+/* ---------- CTA ---------- */
+.cta .shade{position:absolute;left:0;right:0;bottom:0;height:64%;background:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.84) 70%);pointer-events:none;z-index:3;opacity:0}
+.cta-copy{position:absolute;z-index:6;left:var(--gut);right:var(--gut);bottom:52px;color:#fff}
+.cta-copy h2{font-size:clamp(56px,7.2vw,124px);line-height:.9;max-width:11.5em;margin-bottom:24px;text-wrap:balance}
+.cta-copy p{margin:0 0 28px;font-size:20px;line-height:1.5;max-width:40ch}
+.cta-copy .ctas{gap:12px}
+.cta-copy .btn-line{background:#000}
+
+/* ---------- footer ---------- */
+.foot{padding:90px var(--gut) 40px;display:grid;grid-template-columns:1.4fr 1fr 1.2fr 1.2fr;gap:40px;font-size:16px;line-height:1.6;color:#d3d7db}
+.foot h3{margin:0 0 12px;font-size:16px;font-weight:650;color:#fff}
+.foot ul{list-style:none;margin:0;padding:0}
+.foot a{text-decoration:none}
+.foot a:hover{color:var(--cyan)}
+.f-brand .brand{margin-bottom:14px;color:#fff}
+.f-brand p{margin:0}
+.f-addr span,.f-addr a{display:block}
+.social{display:flex;gap:6px;margin-top:18px;align-items:center}
+.social a{display:inline-flex;align-items:center;justify-content:center;min-width:40px;height:40px;color:#fff}
+.social a.imdb{font-weight:750;padding:0 8px 0 0}
+.social svg{width:19px;height:19px;fill:currentColor}
+.legal{grid-column:1/-1;display:flex;gap:22px;margin:40px 0 0;padding-top:0;font-size:14.5px;color:var(--dim)}
+
+/* ---------- dialog ---------- */
+.dlg{position:fixed;inset:0;z-index:90;background:rgba(0,0,0,.94);display:flex;align-items:flex-start;justify-content:center;overflow:auto;padding:76px var(--gut) 50px;opacity:0;transition:opacity .25s}
+.dlg.open{opacity:1}
+.dlg[hidden]{display:none}
+.dlg-in{width:min(1180px,100%,calc((100vh - 330px) * 16 / 9))}
+.dlg-close{position:fixed;right:var(--gut);top:16px;min-height:44px;padding:0 16px;background:#fff;color:#000;border:0;font-weight:650;cursor:pointer;z-index:2}
+.dlg-player{position:relative;aspect-ratio:16/9;background:#0b0b0b}
+.dlg-player iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.dlg-info{margin-top:26px}
+.dlg-meta{margin:0 0 8px;color:var(--dim);font-size:16px}
+.dlg-info h2{font-size:clamp(34px,3.6vw,58px);font-stretch:75%;font-weight:800;line-height:.95;margin:0 0 10px}
+.dlg-cr{margin:0;color:#d3d7db}
+.dlg-case{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:30px}
+.dlg-case h3{margin:0 0 8px;font-size:17px;font-weight:650}
+.dlg-case p{margin:0;color:#c7ccd1;font-size:16.5px;line-height:1.55}
+.pushfx{position:fixed;z-index:85;overflow:hidden;pointer-events:none}
+.pushfx img{width:100%;height:100%;object-fit:cover;max-width:none}
+
+/* ---------- phone ---------- */
+@media (max-width:759px), (max-aspect-ratio:4/5){
+  body{font-size:17px}
+  .credit{bottom:22px}
+  .hero-copy{bottom:26px}
+  .hero-copy .row{display:block;margin-top:18px}
+  .loc{margin-bottom:10px;font-size:16px}
+  .h1{font-size:17.2vw;white-space:normal;line-height:.86}
+  .h1 .l2{display:block}
+  .ctas .btn{flex:1 1 100%}
+  .jump{padding-left:0;margin-top:4px}
+  .verbs span{font-size:min(12.4vw,6.6vh)}
+  .verbs .tag{width:auto;right:16px;font-size:17px}
+  .stat b{font-size:min(12.4vw,6.6vh)}
+  .stat span{font-size:15px}
+  .work{padding-top:84px}
+  .work-head{display:block;margin-bottom:18px}
+  .work h2{font-size:15vw;margin-bottom:14px}
+  .filters{margin-left:-12px}
+  .filters button{font-size:17px;padding:0 12px}
+  .grid{grid-template-columns:1fr;gap:30px}
+  .tile.big{grid-column:auto;grid-row:auto}
+  .tile.big .t-img{aspect-ratio:16/9;flex:none}
+  .work-foot .btn{flex:1 1 100%}
+  .clients{display:block;padding:24px var(--gut) 80px}
+  .clients p{margin-bottom:24px}
+  .logos{gap:26px 30px}
+  .logos img{height:26px}.logos .jh img{height:20px}.logos .aa img{height:44px}
+  .svc-intro{display:block;padding:90px var(--gut) 40px}
+  .svc-intro h2{font-size:15.5vw;margin-bottom:22px}
+  .svc-intro p{font-size:18px}
+  .svc-copy,.svc[data-side="left"] .svc-copy{left:var(--gut);right:var(--gut);top:auto;bottom:26px;transform:none;width:auto}
+  .svc-copy h3{font-size:14.5vw;margin-bottom:14px}
+  .svc-copy p{font-size:16.5px;margin-bottom:18px}
+  .about{display:block;padding:100px var(--gut) 80px}
+  .about h2{font-size:15vw;margin-bottom:36px}
+  .ab-text{margin-top:30px;font-size:17.5px}
+  .ab-row{display:block;margin-top:40px}
+  .since{margin-top:34px}
+  .since b{font-size:13vw}
+  .since span{font-size:18px}
+  .quotes{padding:80px var(--gut) 100px}
+  .quotes h2{font-size:15vw;margin-bottom:44px}
+  .qlist{gap:60px}
+  .q{display:block}
+  .q blockquote p{font-size:29px;line-height:1.06}
+  .q figure{margin-top:20px;max-width:80%}
+  .cta .shade{height:72%}
+  .cta-copy{bottom:26px}
+  .cta-copy h2{font-size:14.2vw;margin-bottom:16px}
+  .cta-copy p{font-size:17px;margin-bottom:18px}
+  .cta-copy .btn{flex:1 1 100%}
+  .foot{grid-template-columns:1fr;gap:30px;padding-top:70px}
+  .legal{flex-wrap:wrap}
+  .dlg{padding:64px 0 40px}
+  .dlg-info{padding:0 var(--gut)}
+  .dlg-case{grid-template-columns:1fr;gap:18px}
+}
+@media (min-width:760px) and (max-width:1099px) and (min-aspect-ratio:4/5){
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .tile.big{grid-row:auto}
+  .tile.big .t-img{aspect-ratio:16/9;flex:none}
+  .svc-copy{width:40vw}
+  .foot{grid-template-columns:1fr 1fr}
+}
+
+/* ---------- reduced motion: static composites, no scrubbing ---------- */
+.rm .stage-sec{height:auto}
+.rm .work{margin-top:0;background:#000}
+.rm .stage{position:relative}
+.rm .t-img img{transition:none}
+.rm .tile-btn:hover .t-img img{transform:none}
+.rm .dlg{transition:none}
+.rm .cta .shade,.rm .cta-copy{opacity:1}
+.rm-frame{position:relative}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="hdr" id="hdr">
+  <a class="brand" href="#top" aria-label="MindInMotion, top of page"><img src="../assets/img/mindinmotion-logo.png" alt="" width="205" height="205"><span>MindInMotion</span></a>
+  <nav class="nav" aria-label="Main">
+    <ul>
+      <li><a href="#work">Portfolio</a></li>
+      <li class="has-sub">
+        <button class="sub-btn" type="button" aria-expanded="false" aria-controls="svc-menu">Services <svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
+        <ul class="sub" id="svc-menu" hidden>
+          <li><a href="#commercial">Commercial</a></li>
+          <li><a href="#corporate">Corporate</a></li>
+          <li><a href="#film">Film</a></li>
+          <li><a href="#post">Post-Production</a></li>
+        </ul>
+      </li>
+      <li><a href="#about">About</a></li>
+      <li><a href="https://mindinmotion.tv/orlando/">Orlando</a></li>
+      <li><a href="https://mindinmotion.tv/contact/">Contact</a></li>
+    </ul>
+  </nav>
+  <p class="phones">Baltimore: <a href="tel:+14435275181">(443) 527-5181</a> | Orlando: <a href="tel:+14075848891">(407) 584-8891</a></p>
+  <a class="btn btn-cyan quote" href="#contact">Get a Quote</a>
+  <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mnav">Menu</button>
+</header>
+
+<div class="mnav" id="mnav" hidden role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="mnav-top"><img src="../assets/img/mindinmotion-logo.png" alt="" width="205" height="205"><button class="mnav-close" type="button">Close</button></div>
+  <nav aria-label="Main">
+    <ul>
+      <li><a href="#work">Portfolio</a></li>
+      <li><span class="m-svc-label">Services</span>
+        <ul class="m-sub">
+          <li><a href="#commercial">Commercial</a></li>
+          <li><a href="#corporate">Corporate</a></li>
+          <li><a href="#film">Film</a></li>
+          <li><a href="#post">Post-Production</a></li>
+        </ul>
+      </li>
+      <li><a href="#about">About</a></li>
+      <li><a href="https://mindinmotion.tv/orlando/">Orlando</a></li>
+      <li><a href="https://mindinmotion.tv/contact/">Contact</a></li>
+    </ul>
+  </nav>
+  <p class="m-phones">Baltimore: <a href="tel:+14435275181">(443) 527-5181</a><br>Orlando: <a href="tel:+14075848891">(407) 584-8891</a></p>
+  <a class="btn btn-cyan" href="#contact">Get a Quote</a>
+</div>
+
+<main id="main">
+
+<!-- HERO: finished frame > monitor on set > crew > edit suite > Featured Projects -->
+<section class="stage-sec hero" id="top" aria-labelledby="h1">
+  <div class="stage" id="hero-stage">
+    <img class="ph" data-k="r1" src="../assets/img/Attach0.jpg-1.webp" width="1067" height="800" alt="On the living-room set: a small field monitor shows the couch shot while the two actors sit on the real couch behind it, cereal and orange juice on the coffee table.">
+    <img class="ph" data-k="r2" src="../assets/img/Attach0.jpg.webp" width="1067" height="800" decoding="async" alt="The same set from behind the crew: a boom operator, a crew member crouched beside the actors with script pages, the camera operator and an LED panel overhead.">
+    <img class="ph" data-k="r3" src="../assets/img/011A5550.webp" width="2500" height="1667" decoding="async" alt="A dark edit suite: an editor seen from behind at three monitors, two lamps.">
+    <div class="frame" data-k="r0"><img src="../assets/img/Screenshot-2024-01-18-at-2.33.57-PM.webp" width="2500" height="1406" fetchpriority="high" alt="MSDE Illegal Childcare: a couple on a couch in their living room, she has a sticker-covered laptop on her knees."></div>
+    <div class="shade" data-k="shade"></div>
+    <div class="flyer" data-k="flyer" aria-hidden="true"><img src="../assets/img/Screenshot-2024-01-18-at-2.33.57-PM.webp" width="2500" height="1406" alt=""></div>
+
+    <div class="credit" data-k="credit">
+      <button class="c-play" type="button" data-play="illegal" aria-label="Play MSDE - Illegal Childcare">
+        <span class="cue" aria-hidden="true"><svg viewBox="0 0 11 13"><path d="M0 0l11 6.5L0 13z"/></svg></span>
+        <span><p class="c-t">MSDE - Illegal Childcare</p><p class="c-c">MD State Dept of Education</p></span>
+      </button>
+    </div>
+    <button class="mon-btn" type="button" data-k="mon" data-play="illegal" aria-label="Play MSDE - Illegal Childcare" hidden><span class="cue" aria-hidden="true"><svg viewBox="0 0 11 13"><path d="M0 0l11 6.5L0 13z"/></svg></span></button>
+
+    <div class="hero-copy" data-k="copy">
+      <p class="loc">Baltimore · Orlando</p>
+      <h1 class="d h1" id="h1">We are <span class="l2">MindInMotion</span></h1>
+      <div class="row">
+        <div class="ctas">
+          <button class="btn btn-play" type="button" data-play="reel"><span class="cue" aria-hidden="true"><svg viewBox="0 0 11 13"><path d="M0 0l11 6.5L0 13z"/></svg></span>Watch Our Reel</button>
+          <a class="btn btn-cyan" href="#contact">Get a Quote in 24 Hours</a>
+          <a class="jump" href="#work">Featured Projects <svg viewBox="0 0 12 14" aria-hidden="true"><path d="M6 0v12M1 7l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <p class="verbs" data-k="verbs"><span>We Create,</span> <span>Produce,</span> <span>Direct,</span> <span>Film,</span> <span>and Edit.</span> <span class="tag">Let's Create Something Amazing Together.</span></p>
+
+    <div class="stats" data-k="stats">
+      <p class="stat"><b>100+</b><span>Clients Served</span></p>
+      <p class="stat"><b>2012</b><span>Founded</span></p>
+      <p class="stat"><b>1.8M+</b><span>Video Views</span></p>
+      <p class="stat"><b>5</b><span>Feature Films</span></p>
+    </div>
+    <button class="loop-toggle" type="button" data-k="loopbtn" hidden>Pause</button>
+  </div>
+</section>
+
+<section class="work" id="work" aria-labelledby="work-h">
+  <div class="work-head">
+    <h2 class="d" id="work-h">Featured Projects</h2>
+    <div class="filters" role="group" aria-label="Filter projects">
+      <button type="button" aria-pressed="true" data-f="all">All</button>
+      <button type="button" aria-pressed="false" data-f="commercial">Commercial</button>
+      <button type="button" aria-pressed="false" data-f="corporate">Corporate</button>
+      <button type="button" aria-pressed="false" data-f="film">Film</button>
+    </div>
+  </div>
+  <ul class="grid" id="grid"></ul>
+  <div class="work-foot">
+    <a class="btn btn-line" href="https://mindinmotion.tv/portfolio/">View All Projects</a>
+    <a class="btn btn-cyan" href="#contact">Get a Quote</a>
+  </div>
+</section>
+
+<section class="clients" aria-label="Clients">
+  <p>Trusted by industry leaders</p>
+  <ul class="logos">
+    <li class="jh"><img src="../assets/img/logo-johns-hopkins.png" width="2317" height="397" alt="Johns Hopkins" loading="lazy"></li>
+    <li class="msde"><img src="../assets/img/logo-msde.png" width="2084" height="542" alt="Maryland State Department of Education" loading="lazy"></li>
+    <li><img src="../assets/img/logo-american-lung.png" width="1200" height="489" alt="American Lung Association" loading="lazy"></li>
+    <li class="ipg"><img src="../assets/img/logo-interpublic.png" width="1561" height="772" alt="InterPublic" loading="lazy"></li>
+    <li class="il"><img src="../assets/img/logo-infinite-legacy.png" width="1838" height="1104" alt="Infinite Legacy" loading="lazy"></li>
+    <li class="pk"><img src="../assets/img/logo-packard-center.png" width="331" height="132" alt="The Packard Center" loading="lazy"></li>
+    <li class="aa"><img src="../assets/img/logo-aacpd.png" width="800" height="570" alt="Anne Arundel County Police" loading="lazy"></li>
+  </ul>
+</section>
+
+<section class="svc-intro" id="services" aria-labelledby="svc-h">
+  <h2 class="d" id="svc-h">Full-Service Production</h2>
+  <p>From initial concept to final delivery, we handle every aspect of your video production with expertise built since 2012 across five feature films.</p>
+</section>
+
+<section class="stage-sec svc" data-svc="commercial" data-side="right" aria-labelledby="h-com">
+  <span class="anc" id="commercial"></span>
+  <div class="stage">
+    <div class="win" data-k="win">
+      <div class="rig" data-k="rig">
+        <img class="ph" data-k="set" src="../assets/img/File_002.webp" width="1067" height="800" loading="lazy" decoding="async" alt="In the studio: the spokesperson appears on a large monitor in the foreground while a crew member adjusts the rig and the sound mixer sits on a stand.">
+        <div class="frame" data-k="fr"><img src="../assets/img/Screenshot-2024-01-18-at-2.36.22-PM.webp" width="2500" height="1406" loading="lazy" alt="Maryland Excels Finding Childcare: the spokesperson on a white background beside the on-screen text telling parents where to search for a program."></div>
+      </div>
+      <button class="mon-btn" type="button" data-k="mon" data-play="finding" aria-label="Play Maryland Excels - Finding Childcare"><span class="cue" aria-hidden="true"><svg viewBox="0 0 11 13"><path d="M0 0l11 6.5L0 13z"/></svg></span></button>
+    </div>
+    <div class="svc-copy" data-k="copy">
+      <h3 class="d" id="h-com">Commercial</h3>
+      <div class="fade"><p>TV spots, social media ads, and branded content. We've created campaigns for clients like Maryland State Education that reach millions of viewers across broadcast and digital.</p>
+      <a class="learn" href="https://mindinmotion.tv/commercial/">Learn More</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="stage-sec svc" data-svc="corporate" data-side="right" aria-labelledby="h-cor">
+  <span class="anc" id="corporate"></span>
+  <div class="stage">
+    <div class="win" data-k="win">
+      <div class="rig" data-k="rig">
+        <img class="ph" data-k="set" src="../assets/img/wellpoint_md_2022--1068---140101.webp" width="2500" height="1668" loading="lazy" decoding="async" alt="On the WellPoint shoot: the camera's monitor in the dark foreground shows the woman on the couch, who sits with a laptop in the lamplit room behind it.">
+        <div class="frame" data-k="fr"><img src="../assets/img/vimeo-1530319048.webp" width="640" height="360" loading="lazy" alt="WellPoint: a woman on a couch with a laptop, a lamp on the side table behind her."></div>
+      </div>
+      <button class="mon-btn" type="button" data-k="mon" data-play="wellpoint" aria-label="Play WellPoint"><span class="cue" aria-hidden="true"><svg viewBox="0 0 11 13"><path d="M0 0l11 6.5L0 13z"/></svg></span></button>
+    </div>
+    <div class="svc-copy" data-k="copy">
+      <h3 class="d" id="h-cor">Corporate</h3>
+      <div class="fade"><p>Recruitment videos, training content, testimonials, and internal communications. Trusted by Johns Hopkins, Anne Arundel County Police, and InterPublic for professional corporate storytelling.</p>
+      <a class="learn" href="https://mindinmotion.tv/corporate/">Learn More</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="stage-sec svc" data-svc="film" data-side="right" aria-labelledby="h-film">
+  <span class="anc" id="film"></span>
+  <div class="stage">
+    <div class="win" data-k="win">
+      <div class="rig" data-k="rig">
+        <img class="ph" data-k="set" src="../assets/img/call-your-wife-bts.webp" width="450" height="800" loading="lazy" decoding="async" alt="Behind the scenes on Call Your Wife: the singer plays guitar in a field while one crew member films on a gimbal and another kneels at a monitor, a blue fan blowing her dress.">
+        <div class="frame" data-k="fr"><img src="../assets/img/vimeo-1937932446.webp" width="640" height="360" loading="lazy" alt="Juliet Lloyd, Call Your Wife: the singer with her guitar in an overgrown field, the sun flaring behind her."></div>
+      </div>
+      <button class="mon-btn" type="button" data-k="mon" data-play="cyw" aria-label="Play Juliet Lloyd - Call Your Wife"><span class="cue" aria-hidden="true"><svg viewBox="0 0 11 13"><path d="M0 0l11 6.5L0 13z"/></svg></span></button>
+    </div>
+    <div class="svc-copy" data-k="copy">
+      <h3 class="d" id="h-film">Film</h3>
+      <div class="fade"><p>Feature films, documentaries, music videos, and narrative projects. Our films "I Like Me" and "Bad Witch" have screened at festivals worldwide and stream on major VOD platforms.</p>
+      <a class="learn" href="https://mindinmotion.tv/film/">Learn More</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="stage-sec svc" data-svc="post" data-side="right" aria-labelledby="h-post">
+  <span class="anc" id="post"></span>
+  <div class="stage">
+    <div class="win" data-k="win">
+      <div class="rig" data-k="rig">
+        <img class="ph" data-k="set" src="../assets/img/011A1257-2.webp" width="2500" height="1401" loading="lazy" decoding="async" alt="The grading desk from above: a color control surface with three trackballs, scopes on the left monitor, the color page in the middle and the picture on the right-hand monitor.">
+        <div class="frame" data-k="fr"><img src="../assets/img/lotus-eyes.webp" width="1920" height="1080" loading="lazy" alt="Lotus Eyes: a woman and a boy by a window in soft side light."></div>
+      </div>
+      <button class="mon-btn" type="button" data-k="mon" data-play="lotus" aria-label="Play Lotus Eyes (feature film, 2016)"><span class="cue" aria-hidden="true"><svg viewBox="0 0 11 13"><path d="M0 0l11 6.5L0 13z"/></svg></span></button>
+    </div>
+    <div class="svc-copy" data-k="copy">
+      <h3 class="d" id="h-post">Post-Production</h3>
+      <div class="fade"><p>Expert editing, color grading, and VFX using Final Cut Pro, Premiere, Avid, and DaVinci Resolve.</p>
+      <a class="learn" href="https://mindinmotion.tv/post-production/">Learn More</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about" aria-labelledby="ab-h">
+  <h2 class="d" id="ab-h"><span>Film School Friends.</span> <span>Production Partners.</span></h2>
+  <figure class="ab-photo"><img src="../assets/img/Joshua-and-Victor-on-stage-1.webp" width="1200" height="798" loading="lazy" alt="Joshua Land and Victor Fink on stage with a microphone at a screening Q&amp;A."></figure>
+  <div class="ab-text">
+    <p>MindInMotion was founded by Baltimore native Joshua Land, and Boston transplant Victor Fink in 2012. We met in a 16mm filmmaking class in college and quickly bonded over being obsessed with movies and wanting to spend as much time outside of school working on film projects as possible.</p>
+    <p>Since then we've made five feature films together, and grown a company making film and video for a wide range of clients. Our work spans the realms of documentary and fiction, and has taken us everywhere from Baltimore, Washington DC, and Orlando, Florida to the mountains of Washington state and the rainforests of Cuba.</p>
+    <p>Our feature films "I Like Me" and "Bad Witch" have screened at festivals across the world and are available to view on all major VOD platforms. When we're not working for clients, we're working on our own projects. Our new feature film, "Incubation", is now screening at festivals.</p>
+    <a class="btn btn-line" href="https://mindinmotion.tv/about/">Read Our Full Story</a>
+  </div>
+  <div class="ab-row">
+    <figure class="ab-bw"><img src="../assets/img/20150810_175223-2-1.webp" width="576" height="384" loading="lazy" alt="Black-and-white: the crew hiking up a foggy hillside, one of them carrying a boom pole."></figure>
+    <p class="since"><b>Since 2012</b><span>Making movies and videos for clients who care about quality</span></p>
+  </div>
+</section>
+
+<section class="quotes" aria-labelledby="q-h">
+  <h2 class="d" id="q-h">What Our Clients Say</h2>
+  <ul class="qlist">
+    <li class="q">
+      <blockquote><p>Not only are Josh and Victor an amazing creative team with a TON of knowledge on every facet of filmmaking, they're just great people.</p></blockquote>
+      <p class="who"><b>Chris Perillo</b><span>Director</span></p>
+    </li>
+    <li class="q has-img">
+      <blockquote><p>MindInMotion are terrifically talented. Easy to work with. And really care about the quality of their work.</p></blockquote>
+      <p class="who"><b>Matthew White</b><span>FIVES</span></p>
+      <figure><img src="../assets/img/fives-heart-thunder.webp" width="1280" height="720" loading="lazy" alt="FIVES, Heart and Thunder: the drummer and the singer in blue light against a red wall."></figure>
+    </li>
+    <li class="q has-img">
+      <blockquote><p>They go the extra mile to create the best content and offer helpful input on ways to create the most appealing video for our audience.</p></blockquote>
+      <p class="who"><b>Patrick Moody</b><span>Director of Marketing, Johns Hopkins AAP</span></p>
+      <figure><img src="../assets/img/Screen-Shot-2020-07-28-at-5.31.32-PM.webp" width="2500" height="1406" loading="lazy" alt="From the Cuba field course film: a tobacco field below green hills."></figure>
+    </li>
+    <li class="q">
+      <blockquote><p>Super professional, a lot of fun to work with and always on schedule. Would recommend them for virtually any project!</p></blockquote>
+      <p class="who"><b>Nate Lanzino</b><span>Entrepreneur</span></p>
+    </li>
+  </ul>
+</section>
+
+<section class="stage-sec cta" aria-labelledby="cta-h">
+  <span class="anc" id="contact"></span>
+  <div class="stage">
+    <img class="ph" data-k="set" src="../assets/img/File_000-1.webp" width="1067" height="800" loading="lazy" decoding="async" alt="The studio: a white cyclorama wall under a lighting grid, stands and lights set up, a monitor on a stand at the right.">
+    <div class="shade" data-k="shade"></div>
+    <div class="cta-copy" data-k="copy">
+      <h2 class="d" id="cta-h">Ready to Bring Your Vision to Life?</h2>
+      <p>Get a custom quote within 24 hours. We'd love to hear about your project.</p>
+      <div class="ctas">
+        <a class="btn btn-cyan" href="https://mindinmotion.tv/contact/">Get Your Free Quote</a>
+        <a class="btn btn-line" href="tel:+14435275181">(443) 527-5181</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="f-brand">
+    <a class="brand" href="#top"><img src="../assets/img/mindinmotion-logo.png" alt="" width="205" height="205"><span>MindInMotion</span></a>
+    <p>Creative Production &amp; Post</p>
+    <div class="social">
+      <a class="imdb" href="https://www.imdb.com/name/nm4644677/">IMDb</a>
+      <a href="https://instagram.com/mindinmotionpro" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7a5 5 0 100 10 5 5 0 000-10zm0 8.2a3.2 3.2 0 110-6.4 3.2 3.2 0 010 6.4zM17.3 5.5a1.2 1.2 0 100 2.4 1.2 1.2 0 000-2.4zM12 3.8c2.7 0 3 0 4 .1 2.7.1 4 1.4 4.1 4.1.1 1 .1 1.4.1 4s0 3-.1 4c-.1 2.7-1.4 4-4.1 4.1-1 .1-1.4.1-4 .1s-3 0-4-.1c-2.7-.1-4-1.4-4.1-4.1-.1-1-.1-1.4-.1-4s0-3 .1-4C3.9 5.3 5.3 4 8 3.9c1-.1 1.3-.1 4-.1zM12 2c-2.7 0-3.1 0-4.1.1C4.2 2.2 2.2 4.2 2.1 7.9 2 8.9 2 9.3 2 12s0 3.1.1 4.1c.1 3.7 2.1 5.7 5.8 5.8 1 .1 1.4.1 4.1.1s3.1 0 4.1-.1c3.7-.1 5.7-2.1 5.8-5.8.1-1 .1-1.4.1-4.1s0-3.1-.1-4.1c-.1-3.7-2.1-5.7-5.8-5.8C15.1 2 14.7 2 12 2z"/></svg></a>
+      <a href="https://vimeo.com/mindinmotionpro" aria-label="Vimeo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 7.2c-.1 2-1.5 4.6-4.2 8-2.8 3.6-5.1 5.4-7.1 5.4-1.2 0-2.2-1.1-3-3.3L6.1 11.3C5.5 9.1 4.9 8 4.2 8c-.1 0-.7.3-1.6 1L1.6 7.8 4.6 5.2c1.3-1.2 2.3-1.8 3-1.8 1.6-.2 2.5.9 2.9 3.2.4 2.5.7 4.1.8 4.7.5 2.1 1 3.1 1.5 3.1.4 0 1.1-.7 2-2.1.9-1.4 1.4-2.5 1.5-3.2.1-1.2-.4-1.8-1.5-1.8-.5 0-1 .1-1.5.3 1-3.3 2.9-4.9 5.8-4.8 2.1 0 3.1 1.4 2.9 4.4z"/></svg></a>
+      <a href="https://youtube.com/@mindinmotionpro" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 7.2a3 3 0 00-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 001 7.2 31 31 0 00.5 12a31 31 0 00.5 4.8 3 3 0 002.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 002.1-2.1 31 31 0 00.5-4.8 31 31 0 00-.5-4.8zM9.7 15V9l5.8 3-5.8 3z"/></svg></a>
+      <a href="https://facebook.com/mindinmotionpro" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0022 12z"/></svg></a>
+      <a href="https://www.linkedin.com/company/mindinmotion" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 110-4.2 2.1 2.1 0 010 4.2zM7.1 20.5H3.5V9h3.6v11.5z"/></svg></a>
+    </div>
+  </div>
+  <div>
+    <h3>Services</h3>
+    <ul><li><a href="#commercial">Commercial</a></li><li><a href="#corporate">Corporate</a></li><li><a href="#film">Film</a></li><li><a href="#post">Post-Production</a></li></ul>
+  </div>
+  <div class="f-addr">
+    <h3>Baltimore</h3>
+    <span>3617 Chestnut Ave</span><span>Baltimore, MD 21211</span>
+    <a href="tel:+14435275181">(443) 527-5181</a>
+    <a href="mailto:mindinmotionpro@gmail.com">mindinmotionpro@gmail.com</a>
+  </div>
+  <div class="f-addr">
+    <h3>Orlando</h3>
+    <span>3011 Bonfire Beach Dr STE 103</span><span>Kissimmee, FL 34746</span>
+    <a href="tel:+14075848891">(407) 584-8891</a>
+  </div>
+  <p class="legal"><span>© 2026 MindInMotion. All rights reserved.</span><a href="https://mindinmotion.tv/privacy/">Privacy</a></p>
+</footer>
+
+<div class="dlg" id="dlg" role="dialog" aria-modal="true" aria-labelledby="dlg-title" hidden>
+  <button class="dlg-close" type="button">Close</button>
+  <div class="dlg-in">
+    <div class="dlg-player" id="dlg-player"></div>
+    <div class="dlg-info">
+      <p class="dlg-meta" id="dlg-meta"></p>
+      <h2 id="dlg-title" tabindex="-1"></h2>
+      <p class="dlg-cr" id="dlg-cr"></p>
+      <div class="dlg-case" id="dlg-case"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+(()=>{
+'use strict';
+const D=document, root=D.documentElement;
+root.classList.add('js');
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(RM) root.classList.add('rm');
+const SAVE=!!(navigator.connection&&navigator.connection.saveData);
+const IMG='../assets/img/';
+const $=(s,r=D)=>r.querySelector(s), $$=(s,r=D)=>[...r.querySelectorAll(s)];
+const clamp=(x,a=0,b=1)=>x<a?a:x>b?b:x;
+const lerp=(a,b,t)=>a+(b-a)*t;
+const sstep=(a,b,x)=>{const t=clamp((x-a)/(b-a));return t*t*(3-2*t)};
+const dolly=t=>{t=clamp(t);return t*t*(3-2*t)};            // eased only at the ends
+const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+
+/* ---------- projects (titles, clients, credits and case studies as on mindinmotion.tv) ---------- */
+const CS={
+ jhu:['Hopkins needed to showcase their prestigious Engineering Management program to prospective graduate students in a competitive market.','We interviewed current students, faculty, and alumni, capturing the program\'s unique blend of technical rigor and leadership development.','The video became a cornerstone of recruitment efforts, featured prominently on program landing pages and at open house events.'],
+ cuba:['Document an immersive academic experience in Cuba while capturing the transformative nature of field-based learning.','Our team traveled to Cuba with the students, capturing authentic moments of discovery, cultural exchange, and academic growth.','The documentary-style piece has been used for years to promote the Advanced Academic Programs international offerings.'],
+ checklist:['MSDE needed a TV PSA campaign to help Maryland parents understand the importance of quality childcare.','We created an emotional narrative showing relatable parenting moments, emphasizing that quality childcare is part of every parent\'s checklist.','Part of a multi-spot campaign that aired across Maryland broadcast and cable, reaching millions of families statewide.'],
+ aacpd:['During a nationwide police recruitment crisis, AACPD needed to attract qualified candidates to their academy.','We showcased the diversity of police work—from community engagement to specialized units—through cinematic storytelling.','The recruitment video became central to AACPD\'s hiring efforts, featured on their careers page and at recruitment events.'],
+ ala:['The American Lung Association needed to humanize the patient-provider relationship during lung cancer diagnosis.','We captured the authentic bond between Ashley and her physician Dr. Reed, letting their genuine connection tell the story.','Used nationally by the American Lung Association for patient education and advocacy campaigns.'],
+ joe:['Infinite Legacy needed to increase organ donation awareness through powerful, personal storytelling.','We profiled Joe\'s journey with intimate documentary techniques, letting his authentic story drive the emotional narrative.','Part of a testimonial series that has been instrumental in Infinite Legacy\'s awareness campaigns throughout the region.']
+};
+const DIR='Director: Josh Land & Victor Fink', DIRAG='Director: Josh Land & Victor Fink, DP: Alex Guckert', MD='MD State Dept of Education';
+const P={
+ illegal:{t:'MSDE - Illegal Childcare',c:MD,cat:'commercial',v:'794249489',img:'Screenshot-2024-01-18-at-2.33.57-PM.webp',w:2500,h:1406,cr:DIRAG,alt:'A couple on a couch, she has a sticker-covered laptop on her knees.'},
+ jhu:{t:'Johns Hopkins Engineering Management',c:'Johns Hopkins',cat:'corporate',v:'953655351',img:'vimeo-1864108460.webp',w:640,h:360,cls:'crop-lt',cr:DIR,alt:'An interview in an engineering lab.'},
+ cuba:{t:'Cuba Field Course Experience',c:'Johns Hopkins AAP',cat:'corporate',v:'376001457',img:'child-horse-cuba.webp',w:1200,h:675,cr:DIR,alt:'A child on a horse under a storm sky beside a thatched hut.'},
+ checklist:{t:'Maryland Excels - Checklist Moments',c:MD,cat:'commercial',v:'904194910',img:'vimeo-1784674291.webp',w:640,h:360,cr:DIR,alt:'A small child with curly hair holding a parent\'s hand.'},
+ aacpd:{t:'AACPD Recruitment',c:'Anne Arundel County Police',cat:'commercial',v:'723880294',img:'Screen-Shot-2022-06-24-at-5.40.56-PM.webp',w:2500,h:1406,cr:DIRAG,alt:'A woman at night, red and blue police lights blurred behind her.'},
+ ala:{t:'Ashley & Dr. Reed - Patient-Provider Story',c:'American Lung Association',cat:'corporate',yt:'dxUx8L3rQos',img:'https://img.youtube.com/vi/dxUx8L3rQos/maxresdefault.jpg',w:1280,h:720,cr:DIR,alt:'Ashley and Dr. Reed, from the patient-provider story.'},
+ joe:{t:'Infinite Legacy - Joe',c:'Infinite Legacy',cat:'corporate',v:'836987067',img:'Joe-ILF.webp',w:2500,h:1406,pos:'40% 50%',alt:'A man silhouetted against evening clouds, his head in his hand.'},
+ chelsea:{t:'Infinite Legacy - Chelsea',c:'Infinite Legacy',cat:'corporate',v:'836990393',img:'chelsea-ilf.webp',w:1920,h:1080,alt:'A mother holding her baby close in warm light.'},
+ packard:{t:'The Packard Center for ALS Research',c:'The Packard Center',cat:'corporate',v:'378347545',img:'Screen-Shot-2019-12-09-at-2.15.52-PM-2-1.webp',w:1920,h:1080,alt:'Researchers at laptops, shot with shallow focus.'},
+ wellpoint:{t:'WellPoint',c:'InterPublic',cat:'commercial',v:'762000615',img:'Screen-Shot-2022-10-19-at-3.10.25-PM.webp',w:2500,h:1406,alt:'A mother and daughter reading together on a bedroom floor.'},
+ pearlstone:{t:'Pearlstone',c:'Pearlstone',cat:'corporate',v:'724562331',img:'pearlstone.webp',w:1200,h:675,alt:'Aerial view of a road winding through forest.'},
+ moms:{t:'Maryland Excels - Moms at the Playground',c:MD,cat:'commercial',v:'723874620',img:'Screen-Shot-2022-06-24-at-5.18.24-PM.webp',w:1200,h:675,cr:'Director: Josh Land & Victor Fink, DP: John Grove',alt:'A girl in a yellow dress running at a playground, parents behind her.'},
+ cyw:{t:'Juliet Lloyd - Call Your Wife',cat:'film',v:'1019535308',img:'vimeo-1937932446.webp',w:640,h:360,cr:DIR,alt:'The singer with her guitar in an overgrown field.'},
+ goodmom:{t:'Maryland Excels - Good Mom TV PSA',c:MD,cat:'commercial',v:'794207449',img:'Screen-Shot-2022-06-24-at-6.14.31-PM-2.webp',w:2500,h:1406,cr:DIRAG,alt:'A woman in a dark bathroom at night in cold blue light.'},
+ bqm:{t:'Because Quality Matters',c:MD,cat:'commercial',v:'1021087594',h_:'2c0add4aa6',img:'checklist.webp',w:2500,h:1406,alt:'Preschoolers laughing at a play table.'},
+ tidewater:{t:'Tidewater Direct',c:'Tidewater Direct',cat:'commercial',v:'967087552',img:'Screenshot-2024-09-10-at-2.02.32-PM.webp',w:2288,h:1150,alt:'The Tidewater Direct warehouse from outside.'},
+ finding:{t:'Maryland Excels - Finding Childcare',c:MD,cat:'commercial',v:'723892095',h_:'bef550ce0c',img:'vimeo-1457462318.webp',w:640,h:360,cr:DIRAG,alt:'The Maryland Excels spokesperson on a white background.'},
+ ghost:{t:'Juliet Lloyd - Ghost Light',cat:'film',yt:'lxHxaH-awBM',img:'ghost-light-thumbnail.webp',w:2500,h:1250,cr:'Director: Josh Land & Victor Fink, DP: Ryan Celli',alt:'A woman at a piano in gold stage light and haze.'},
+ fives:{t:'FIVES - Lovers in Lullaby',cat:'film',yt:'95TjgxYdpVo',img:'fives-lovers.webp',w:2179,h:1226,cr:'Production/Post: MindInMotion',alt:'Two women at a lit makeup mirror, one in a red dress.'},
+ lotus:{t:'Lotus Eyes (feature film, 2016)',cat:'film',yt:'D4CIiTOL16c',img:'lotus-eyes.webp',w:1920,h:1080,cr:'Director: Joshua Land',alt:''},
+ reel:{t:'2025 Demo Reel',cat:'commercial',v:'851026180',img:'reel-tile.webp',w:1280,h:720,alt:''}
+};
+const SETS={
+ all:['illegal','jhu','cuba','checklist','aacpd','ala','joe','chelsea','packard'],
+ commercial:['illegal','checklist','aacpd','wellpoint','moms','goodmom','bqm','tidewater','finding'],
+ corporate:['jhu','cuba','ala','joe','chelsea','packard','pearlstone'],
+ film:['cyw','ghost','fives']
+};
+const src=f=>/^https?:/.test(f)?f:IMG+f;
+
+/* ---------- viewport ---------- */
+const NARROW_MQ=matchMedia('(max-width:759px), (max-aspect-ratio:4/5)');
+let VW=innerWidth, VH=innerHeight, narrow=NARROW_MQ.matches;
+function measure(force){
+  const w=innerWidth,h=innerHeight;
+  // ignore small height changes from mobile URL bars
+  if(!force && w===VW && Math.abs(h-VH)<130) return false;
+  VW=w; VH=h; narrow=NARROW_MQ.matches;
+  root.style.setProperty('--H',VH+'px');
+  return true;
+}
+measure(true);
+const gutPx=()=>Math.max(20,VW*.046);
+
+/* ---------- camera math ----------
+   A camera maps photo pixels to screen: screen = s*p + (x,y). Zoom is interpolated in log scale and the
+   photo point under the pivot moves linearly in 1/s, so a pure zoom about a point keeps it still (a dolly on track). */
+const fitCam=(r,d,mode)=>{const sx=d.w/r.w, sy=d.h/r.h; const s=mode==='contain'?Math.min(sx,sy):mode==='geo'?Math.sqrt(sx*sy):Math.max(sx,sy);
+  return {s, x:d.x+d.w/2-(r.x+r.w/2)*s, y:d.y+d.h/2-(r.y+r.h/2)*s}};
+function camLerp(A,B,e,px,py){
+  if(e<=0)return A; if(e>=1)return B;
+  const s=Math.exp(lerp(Math.log(A.s),Math.log(B.s),e));
+  const ax=(px-A.x)/A.s, ay=(py-A.y)/A.s, bx=(px-B.x)/B.s, by=(py-B.y)/B.s;
+  const k=Math.abs(1/B.s-1/A.s)<1e-9?e:(1/s-1/A.s)/(1/B.s-1/A.s);
+  return {s, x:px-lerp(ax,bx,k)*s, y:py-lerp(ay,by,k)*s};
+}
+const ap=(c,p)=>[p[0]*c.s+c.x, p[1]*c.s+c.y];
+const inv=(c,p)=>[(p[0]-c.x)/c.s,(p[1]-c.y)/c.s];
+const compose=(c,m)=>({s:c.s*m.s, x:c.s*m.x+c.x, y:c.s*m.y+c.y}); // camera for a photo whose pixels map into c's photo by m
+const invSim=m=>({s:1/m.s, x:-m.x/m.s, y:-m.y/m.s});
+const rot=(p,a)=>[p[0]*Math.cos(a)-p[1]*Math.sin(a), p[0]*Math.sin(a)+p[1]*Math.cos(a)];
+const rotAbout=(p,P,a)=>{const r=rot([p[0]-P[0],p[1]-P[1]],a); return [P[0]+r[0],P[1]+r[1]]};
+/* keep a photo filling the screen (scale capped for small sources: past the cap it centres and black shows at the sides) */
+function coverClamp(c,sw,sh,W,H,cap=Infinity){
+  const s=Math.max(c.s,Math.min(Math.max(W/sw,H/sh),cap)), pw=sw*s, ph=sh*s;
+  return {s, x:pw>=W?clamp(c.x,W-pw,0):(W-pw)/2, y:ph>=H?clamp(c.y,H-ph,0):(H-ph)/2};
+}
+const bbox=q=>{const xs=q.map(p=>p[0]),ys=q.map(p=>p[1]);const x=Math.min(...xs),y=Math.min(...ys);return {x,y,w:Math.max(...xs)-x,h:Math.max(...ys)-y}};
+const rectQ=r=>[[r.x,r.y],[r.x+r.w,r.y],[r.x+r.w,r.y+r.h],[r.x,r.y+r.h]];
+function cover(aspect,W,H,fx=.5,fy=.5){ // 16:9 frame covering a W x H box, focal point kept on screen
+  let w=W,h=W/aspect; if(h<H){h=H;w=H*aspect}
+  return {x:clamp(W/2-fx*w,W-w,0), y:clamp(H/2-fy*h,H-h,0), w, h};
+}
+/* rectangle (FW x FH element) -> quad, as a CSS matrix3d (square-to-quad homography) */
+const FW=1600, FH=900;
+function m3d(q){
+  const [x0,y0]=q[0],[x1,y1]=q[1],[x2,y2]=q[2],[x3,y3]=q[3];
+  const sx=x0-x1+x2-x3, sy=y0-y1+y2-y3;
+  let g=0,h=0;
+  if(Math.abs(sx)>1e-7||Math.abs(sy)>1e-7){
+    const dx1=x1-x2,dx2=x3-x2,dy1=y1-y2,dy2=y3-y2, det=dx1*dy2-dx2*dy1;
+    g=(sx*dy2-dx2*sy)/det; h=(dx1*sy-sx*dy1)/det;
+  }
+  const a=x1-x0+g*x1, b=x3-x0+h*x3, d=y1-y0+g*y1, e=y3-y0+h*y3;
+  return `matrix3d(${a/FW},${d/FW},0,${g/FW},${b/FH},${e/FH},0,${h/FH},0,0,1,0,${x0},${y0},0,1)`;
+}
+const camCss=c=>`matrix(${c.s},0,0,${c.s},${c.x},${c.y})`;
+/* The flat frame at the start of a pull, carried by the camera and bent onto the monitor.
+   The start camera overfills the screen with the monitor, and the bend is done by kEnd, before any frame edge shows. */
+function pullCorners(flat,cIn,cam,q,e,kEnd=.12){
+  const quad=q.map(p=>ap(cam,p));
+  const a=ap(cam,inv(cIn,[flat.x,flat.y])), b=ap(cam,inv(cIn,[flat.x+flat.w,flat.y+flat.h]));
+  const r=[[a[0],a[1]],[b[0],a[1]],[b[0],b[1]],[a[0],b[1]]];
+  const k=sstep(0,kEnd,e);
+  return r.map((p,i)=>[lerp(p[0],quad[i][0],k),lerp(p[1],quad[i][1],k)]);
+}
+const qw=q=>Math.hypot(q[1][0]-q[0][0],q[1][1]-q[0][1]); // top-edge length on screen
+function setPh(el,cam,op,blur,bri){
+  el.style.transform=camCss(cam);
+  el.style.opacity=op;
+  const f=(blur>.15?`blur(${(blur/cam.s).toFixed(2)}px) `:'')+(Math.abs(bri-1)>.005?`brightness(${bri.toFixed(3)})`:'');
+  el.style.filter=f||'none';
+}
+function setFrame(el,q,op,blurScreen=0){
+  el.style.transform=m3d(q);
+  el.style.opacity=op;
+  const sc=qw(q)/FW; // local px -> screen px
+  el.style.filter=blurScreen>.15?`blur(${(blurScreen/Math.max(sc,.02)).toFixed(2)}px)`:'none';
+}
+function placeBtn(btn,q,show,clip){
+  if(btn.dataset.keep) show=true;
+  if(!show){ if(!btn.hidden){ if(D.activeElement===btn) return; btn.hidden=true;} return; }
+  btn.hidden=false;
+  let b=bbox(q);
+  if(clip){ const x0=Math.max(b.x,clip.x), y0=Math.max(b.y,clip.y), x1=Math.min(b.x+b.w,clip.x+clip.w), y1=Math.min(b.y+b.h,clip.y+clip.h);
+    b={x:x0,y:y0,w:Math.max(0,x1-x0),h:Math.max(0,y1-y0)}; }
+  btn.style.transform=`translate(${b.x}px,${b.y}px)`;
+  btn.style.width=b.w+'px'; btn.style.height=b.h+'px';
+  // cue sits inside the picture near its lower-left corner, sized to the monitor, never outside what is visible
+  const w=Math.min(qw(q),b.w), cs=Math.round(clamp(w*.11,34,50)), m=Math.max(8,w*.04);
+  const cx=clamp(q[3][0]+m,b.x+8,b.x+b.w-cs-8), cy=clamp(q[3][1]-cs-m,b.y+8,b.y+b.h-cs-8);
+  btn.style.setProperty('--cs',cs+'px');
+  btn.style.setProperty('--cx',(cx-b.x)+'px');
+  btn.style.setProperty('--cy',(cy-b.y)+'px');
+}
+
+/* =====================================================================
+   HERO: finished frame > SmallHD on set > crew > edit suite (sentence, then the numbers) > first tile
+   ===================================================================== */
+const H1Q=[[160,268],[483,287],[465,510],[153,462]];         // SmallHD glass, Attach0.jpg-1 (measured)
+const H3Q=[[1664,508],[2334,536],[2306,938],[1654,884]];      // edit suite, right-hand monitor, 011A5550 (measured)
+const M21={s:1.637,x:173.5,y:-270.1};                         // Attach0.jpg pixels -> Attach0.jpg-1 pixels, matched on the actors' faces
+// Attach0.jpg: the actors; the man leaning on the wall, arms crossed; the crew member crouched with the pages; the operator at the slider and monitor.
+// Who is producing and directing here is a guess until Joshua confirms.
+const VERB_AT=[[196,214],[872,438],[448,206],[640,555]];
+// scroll segments (viewport heights): pull to the crew, hold, edit suite + sentence, sentence to numbers, landing in the first tile
+const HSEG=()=>narrow?[.8,.15,.8,.25,.8]:[1.0,.15,.95,.3,.85];
+const HT=[[1,2],[2,2],[2,3],[3,4],[4,5]];
+
+function heroCtx(root){
+  const k=n=>root.querySelector(`[data-k="${n}"]`);
+  return {root, r0:k('r0'), r1:k('r1'), r2:k('r2'), r3:k('r3'), shade:k('shade'), credit:k('credit'), mon:k('mon'), copy:k('copy'),
+    verbs:$$('span',k('verbs')), statsBox:k('stats'), stats:$$('.stat',k('stats')), flyer:k('flyer'), loopbtn:k('loopbtn')};
+}
+function heroCams(W,H){
+  const n=narrow, cap=W>1600?1.5:Infinity;  // Attach0 is 1067px wide: past 1.5x it goes soft, so large screens get black at the sides
+  const flat=cover(16/9,W,H,n?.6:.5,.5), top=hdr.offsetHeight||(n?58:72);
+  let c1, c2, c3, w3;
+  if(!n){
+    const s=Math.min(Math.max(W/1067,H/800),cap);
+    c1={s,x:(W-1067*s)/2,y:(H-800*s)/2};
+    c2={...c1}; if(800*s>H){ c2.y=Math.max(c2.y,H-800*s); c2.y=lerp(c2.y,0,.55); }
+    // the edit suite is a window onto the room: it bleeds off the top, right and bottom, the sentence column stays black
+    const wx=Math.round(W*.38); w3={x:wx,y:top,w:W-wx,h:H-top};
+    const s3=Math.max(w3.w/2500,w3.h/1667);
+    c3={s:s3,x:W-2500*s3,y:clamp(w3.y+w3.h/2-760*s3,w3.y+w3.h-1667*s3,w3.y)};
+  } else {
+    const s1=W/620; c1={s:s1,x:-95*s1,y:66-118*s1};
+    const s2=W/700; c2={s:s2,x:-170*s2,y:62-40*s2};
+    // phone: a band across the top, tight on the editor and the monitor with the couch take
+    const s3=W/1500, h3=Math.round(Math.min(1667*s3,H*.4)); w3={x:0,y:top,w:W,h:h3};
+    c3={s:s3,x:W-2500*s3,y:clamp(top+h3/2-730*s3,top+h3-1667*s3,top)};
+  }
+  return {flat,c1,c2,c3,w3,cap, c1in:fitCam(bbox(H1Q),flat,'cover'), c3in:fitCam(bbox(H3Q),flat,'cover')};
+}
+function stackPos(W,H,base,fs){ // where the verbs sit when they form a sentence (left column / under the photo)
+  const n=narrow, out=[], lh=fs*.94;
+  let x, y0;
+  if(!n){ x=W*0.046; const total=5*lh+fs*1.1; y0=Math.max(92,(H-total)/2-10); }
+  else { x=gutPx(); y0=Math.min(base+14, H-(5*lh+fs*1.9)-12); }   // tall tablets: never push the sentence off the bottom
+  for(let i=0;i<5;i++) out.push([x-fs*.16, y0+i*lh]);
+  out.push([x, y0+5*lh+fs*.42]);
+  return out;
+}
+function heroRender(ctx,t,W=VW,H=VH){
+  const n=narrow, C=heroCams(W,H), {flat}=C, px=W/2, py=H/2;
+  let o0=1,o1=0,o2=0,o3=0,z0=2, q0=rectQ(flat);
+  let cam1=C.c1, cam2=C.c2, cam3=C.c3, b1=0,br1=1,b2=0,br2=1,b3=0,br3=1;
+  let copyO=0, creditO=0, shadeO=0, flyO=0, monShow=false, bx=0, stackMove=0, k2=1;
+  let win2=null;   // wide screens: the monitor shot sits pillarboxed, and the pillarbox opens evenly as the crew shot takes over
+  const vO=[0,0,0,0,0,0], atPin=[false,false,false,false], stO=[0,0,0,0];
+  if(t<=1){
+    // at load: the finished frame fills the screen, then the camera backs out until it sits on the SmallHD
+    const e=clamp(t), ee=dolly(e);
+    cam1=camLerp(C.c1in,C.c1,ee,px,py);
+    q0=pullCorners(flat,C.c1in,cam1,H1Q,e);
+    o1=1; b1=lerp(6,0,sstep(.1,.85,e)); br1=lerp(.6,1,sstep(.05,.85,e));
+    copyO=sstep(.72,1,e); shadeO=copyO; creditO=1-sstep(.05,.3,e);
+    monShow=e>.6;
+  } else if(t<=2){
+    // keep backing out: the monitor photo dissolves into the wider crew photo, matched on the actors' faces
+    const e=t-1, ee=dolly(e);
+    // Both photos ride one camera, so the faces stay locked through the dissolve. The crew photo starts 234px short of the
+    // left edge at 1440; once the dissolve is done the camera eases over until it fills the screen, and its left edge is feathered meanwhile.
+    const raw=camLerp(compose(C.c1,M21),C.c2,ee,px,py);
+    k2=n?1:sstep(.15,.42,e);
+    if(!n){ const L0=Math.max(0,C.c1.x), R0=Math.min(W,C.c1.x+1067*C.c1.s); if(L0>0||R0<W) win2=[L0*(1-k2), W-(W-R0)*(1-k2)]; }
+    if(n) cam2=raw;
+    else { const cl=coverClamp(raw,1067,800,W,H,C.cap); cam2={s:lerp(raw.s,cl.s,k2),x:lerp(raw.x,cl.x,k2),y:lerp(raw.y,cl.y,k2)}; }
+    cam1=compose(cam2,invSim(M21));            // at scrollY 0-3 this is exactly where the intro left r1
+    q0=H1Q.map(p=>ap(cam1,p));
+    // the crew shot has to start at once (the monitor shot shrinks as the camera backs out and would open black edges),
+    // so the title clears fast instead: it is gone before the crew shot is half in
+    o2=sstep(0,.14,e); o1=1-sstep(.4,.46,e); o0=o1; b2=lerp(4,0,sstep(0,.4,e));
+    copyO=1-sstep(0,.06,e); shadeO=1-sstep(0,.14,e);
+    monShow=e<.04;
+    const ORDER=[0,3,1,2];                     // labels appear as their people come into frame: actors, crouching crew member, operator, the man at the wall
+    for(let i=0;i<4;i++){ const j=ORDER[i]; vO[i]=n?sstep(.3+i*.12,.42+i*.12,e):sstep(.34+j*.12,.44+j*.12,e); atPin[i]=!n; }
+    bx=1;
+  } else if(t<=3){
+    // the labels fade where they stand, the couch take comes back full screen,
+    // and the camera pulls off it onto the editor's monitor while the sentence builds in the left column
+    const e=t-2, e2=clamp((e-.24)/.6);
+    cam3=camLerp(C.c3in,C.c3,dolly(e2),px,py);
+    q0=pullCorners(flat,C.c3in,cam3,H3Q,e2);
+    o0=sstep(.08,.24,e); z0=5;
+    o2=1-sstep(.23,.25,e); br2=lerp(1,.8,sstep(0,.24,e));
+    o3=e>=.24?1:0; b3=lerp(4,0,sstep(0,.7,e2)); br3=lerp(.85,1.18,sstep(0,.7,e2));
+    monShow=e2>.95;
+    for(let i=0;i<4;i++){
+      if(n){ vO[i]=1; continue; }
+      const out=1-sstep(.02+i*.02,.1+i*.02,e);
+      if(out>0){ vO[i]=out; atPin[i]=true; } else vO[i]=sstep(.24+i*.07,.34+i*.07,e);
+    }
+    vO[4]=sstep(.6,.7,e); vO[5]=sstep(.68,.78,e);
+    bx=1-sstep(.62,.8,e);
+    stackMove=sstep(.2,.6,e);
+  } else if(t<=4){
+    // the sentence gives way to the numbers, same column, same type
+    const e=t-3;
+    o0=1; z0=5; o3=1; br3=1.18; q0=H3Q.map(p=>ap(cam3,p)); monShow=true; stackMove=1;
+    for(let i=0;i<6;i++) vO[i]=1-sstep(.25+i*.03,.45+i*.03,e);
+    for(let i=0;i<4;i++) stO[i]=sstep(.5+i*.06,.7+i*.06,e);
+  } else {
+    // landing: the shot lifts off the editor's monitor and settles into the first project tile
+    const e=clamp(t-4);
+    z0=5; br3=1.18; q0=H3Q.map(p=>ap(cam3,p)); stackMove=1;
+    o3=1-sstep(.08,.32,e); o0=1-sstep(0,.1,e);
+    for(let i=0;i<4;i++) stO[i]=1-sstep(0,.12,e);
+    flyO=e<.999?sstep(0,.08,e):0;
+  }
+  if(ctx.pushing) creditO=0;
+  // photos
+  setPh(ctx.r1,cam1,o1,b1,br1);
+  setPh(ctx.r2,cam2,o2,b2,br2); ctx.r2.style.setProperty('--fe',(7*(1-k2)).toFixed(2)+'%');
+  [[ctx.r1,cam1],[ctx.r2,cam2]].forEach(([el,c])=>{
+    el.style.clipPath=win2?`inset(0 ${Math.max(0,1067-(win2[1]-c.x)/c.s).toFixed(1)}px 0 ${Math.max(0,(win2[0]-c.x)/c.s).toFixed(1)}px)`:'none'; });
+  setPh(ctx.r3,cam3,o3,b3,br3);
+  { const w=C.w3, s=cam3.s; // the edit suite is only ever seen through its window (clip in photo pixels, before the transform)
+    const ins=[(w.y-cam3.y)/s, 2500-(w.x+w.w-cam3.x)/s, 1667-(w.y+w.h-cam3.y)/s, (w.x-cam3.x)/s].map(v=>Math.max(0,v).toFixed(1)+'px');
+    ctx.r3.style.clipPath=`inset(${ins.join(' ')})`; }
+  ctx.r1.style.zIndex=1; ctx.r2.style.zIndex=3; ctx.r3.style.zIndex=4;
+  ctx.r0.style.zIndex=z0;
+  setFrame(ctx.r0,q0,o0,0);
+  // type
+  ctx.copy.style.opacity=copyO; ctx.copy.style.pointerEvents=copyO<.5?'none':'';
+  ctx.shade.style.opacity=shadeO;
+  ctx.credit.style.opacity=creditO; ctx.credit.style.visibility=creditO<.02?'hidden':'visible';
+  // verbs: pinned beside the people doing each job, then (faded out, faded back in) one sentence in a column
+  const vs=ctx.verbs, fs=parseFloat(getComputedStyle(vs[0]).fontSize);
+  const fsPin=n?fs:Math.max(30,Math.min(56,W*.034));
+  const base=n?lerp(62+800*C.c2.s, C.w3.y+C.w3.h, stackMove):0;
+  const stackAt=stackPos(W,H,base,fs);
+  const pinCam=t<=2?cam2:C.c2;
+  for(let i=0;i<6;i++){
+    const el=vs[i]; let x,y,sc=1,b=bx;
+    if(i<4 && atPin[i]){ [x,y]=ap(pinCam,VERB_AT[i]); sc=fsPin/fs; b=1;
+      x=Math.min(x,W-el.offsetWidth*sc-10); y=Math.min(y,H-el.offsetHeight*sc-10); }
+    else [x,y]=stackAt[i];
+    el.style.transform=`translate(${x.toFixed(1)}px,${y.toFixed(1)}px) scale(${sc.toFixed(4)})`;
+    el.style.setProperty('--bx',b.toFixed(3));
+    el.style.opacity=vO[i].toFixed(3);
+  }
+  // numbers: the same column, where the verbs were
+  const sfs=parseFloat(getComputedStyle(ctx.stats[0].firstElementChild).fontSize);
+  ctx.statsBox.style.transform=`translate(${(stackAt[0][0]+fs*.16).toFixed(1)}px,${(stackAt[0][1]+fs*.02).toFixed(1)}px)`;
+  ctx.stats.forEach((s,i)=>{s.style.opacity=stO[i].toFixed(3)});
+  // landing flyer
+  if(ctx.flyer){
+    const tile=ctx.landTile;
+    if(t>4 && flyO>0 && tile){
+      const e=clamp(t-4);
+      const from=bbox(H3Q.map(p=>ap(C.c3,p)));
+      const tr=tile.getBoundingClientRect();
+      const m=ease(sstep(.1,.7,e)); // lift off the monitor, then ride up with the tile
+      const r={x:lerp(from.x,tr.left,m),y:lerp(from.y,tr.top,m),w:lerp(from.w,tr.width,m),h:lerp(from.h,tr.height,m)};
+      const f=ctx.flyer; f.style.opacity=flyO; f.style.transform=`translate(${r.x}px,${r.y}px)`; f.style.width=r.w+'px'; f.style.height=r.h+'px';
+    } else ctx.flyer.style.opacity=0;
+    if(ctx.landLi) ctx.landLi.classList.toggle('landing-hide', t>4 && t<4.999);
+  }
+  // the monitor is a button while it is on screen
+  if(ctx.mon){ placeBtn(ctx.mon,q0,monShow); ctx.mon.classList.toggle('busy',!!ctx.pushing); }  // no second play cue while the camera pushes in
+  ctx.root.style.background=t>4.02?'transparent':'#000';
+  ctx.root.style.pointerEvents=t>4.02?'none':'';
+  ctx.t=t;
+}
+
+/* =====================================================================
+   SERVICES: each one opens on the finished frame filling its window and backs out to the set it came from.
+   The window is everything but the copy column, so the picture bleeds off three edges and never runs under the type.
+   ===================================================================== */
+const SVC={
+  commercial:{sw:1067,sh:800,q:[[130,328],[376,307],[380,439],[147,489]],
+    rest:{d:{mode:'cover',fx:470,fy:420}, m:{mode:'cover',fx:440,fy:420}}},
+  corporate:{sw:2500,sh:1668,q:[[288,318],[676,326],[668,558],[272,532]],fb:2.5,   // the camera monitor is in the soft foreground
+    rest:{d:{mode:'span',x0:240,x1:2040,fy:1}, m:{mode:'span',x0:240,x1:2000,fy:0}}},
+  // no monitor: match on the singer, then dissolve. The frame is only ever shown inside the photo, and the photo's right edge
+  // starts on the window's right edge, so nothing hangs past it.
+  film:{sw:450,sh:800,rect:{x:166,y:134,w:448,h:252},clip:true,alignRight:true,
+    rest:{d:{mode:'cover',fx:225,fy:420,ax:1}, m:{mode:'cover',fx:260,fy:440}}},
+  // The grading viewer runs off the top-right corner of the photo (two corners measured, two extrapolated) and the desk is dark,
+  // so a pull reads as a tilted card over black. Instead the finished frame goes out of focus and dissolves onto the desk.
+  post:{sw:2500,sh:1401,q:[[2162,-304],[3022,100],[2745,557],[1885,153]],clip:true,focusDissolve:true,
+    rest:{d:{mode:'span',x0:1250,x1:2500,fy:0}, m:{mode:'span',x0:1490,x1:2500,fy:0}}}
+};
+const SVC_LEN=()=>narrow?2.05:2.1, SVC_HOLD=.2;
+function svcLayout(ctx,W,H){
+  const S=ctx.S, n=narrow, g=gutPx(), top=hdr.offsetHeight||72;
+  let win;
+  if(!n){ const w=W-(ctx.copy.offsetWidth+2*g); win=ctx.side==='left'?{x:0,y:top,w,h:H-top}:{x:W-w,y:top,w,h:H-top}; }
+  else { win={x:0,y:top,w:W,h:Math.max(160,ctx.copy.offsetTop-16-top)}; }
+  const P=[win.x+win.w/2, win.y+win.h/2];
+  // resting framing
+  const R=S.rest[n?'m':'d']; let rest;
+  if(R.mode==='span'){ // show photo x0..x1 across the window; on a tall window grow until the photo still covers it
+    const s=Math.max(win.w/(R.x1-R.x0), win.h/S.sh), ph=S.sh*s;
+    rest={s, x:clamp(win.x+win.w/2-(R.x0+R.x1)/2*s, win.x+win.w-S.sw*s, win.x), y:win.y+(win.h-ph)*R.fy}; }
+  else if(R.mode==='contain') rest=fitCam({x:0,y:0,w:S.sw,h:S.sh},win,'contain');
+  else { const s=Math.min(Math.max(win.w/S.sw,win.h/S.sh),1.5), pw=S.sw*s, ph=S.sh*s;
+    rest={s, x:pw>=win.w?clamp(P[0]-R.fx*s,win.x+win.w-pw,win.x):win.x+(win.w-pw)*(R.ax??.5),
+             y:ph>=win.h?clamp(P[1]-R.fy*s,win.y+win.h-ph,win.y):win.y+(win.h-ph)/2}; }
+  // opening framing: a 16:9 frame covering the window, never blown past 1.6x its pixel width
+  let fw=win.w, fh=fw*9/16; if(fh<win.h){ fh=win.h; fw=fh*16/9; }
+  fw=Math.min(fw,S.fw*1.6); fh=fw*9/16;
+  const flat={x:P[0]-fw/2,y:P[1]-fh/2,w:fw,h:fh};
+  if(S.alignRight){ const s=fw/S.rect.w; flat.x=win.x+win.w-(S.sw-S.rect.x)*s; }
+  let cin, phi0=0;
+  if(S.focusDissolve){ const k=1.3, v=ap(rest,[2200,200]); cin={s:rest.s*k, x:v[0]-(v[0]-rest.x)*k, y:v[1]-(v[1]-rest.y)*k};
+    const cv=cover(16/9,win.w,win.h); flat.x=win.x+cv.x; flat.y=win.y+cv.y; flat.w=cv.w; flat.h=cv.h; }
+  else if(S.roll){ // the viewer is shot at an angle: open level on it and let the room roll into place
+    phi0=-Math.atan2(S.q[1][1]-S.q[0][1],S.q[1][0]-S.q[0][0]);
+    const c=fitCam(bbox(S.q.map(p=>rot(p,phi0))),flat,'cover');
+    const t=rot([c.x-P[0],c.y-P[1]],-phi0);
+    cin={s:c.s,x:P[0]+t[0],y:P[1]+t[1]};
+  } else cin=fitCam(S.q?bbox(S.q):S.rect,flat,'cover');
+  return {win,P,rest,flat,cin,phi0};
+}
+function svcRender(ctx,e,W=VW,H=VH){
+  const S=ctx.S, L=svcLayout(ctx,W,H), {win,P}=L, ee=dolly(e);
+  const cam=camLerp(L.cin,L.rest,ee,P[0],P[1]);
+  const phi=L.phi0*(1-sstep(0,.65,e));   // the roll settles before the zoom does
+  ctx.win.style.clipPath=`inset(${win.y}px ${W-win.x-win.w}px ${H-win.y-win.h}px ${win.x}px)`;
+  if(S.roll){ ctx.rig.style.transformOrigin=`${P[0]}px ${P[1]}px`; ctx.rig.style.transform=Math.abs(phi)>1e-4?`rotate(${phi.toFixed(5)}rad)`:'none'; }
+  let q;
+  if(S.focusDissolve){ q=S.q.map(p=>ap(cam,p));
+    const cb=ctx.clip, rb={x:cam.x,y:cam.y,w:S.sw*cam.s,h:S.sh*cam.s};
+    cb.style.left=rb.x+'px'; cb.style.top=rb.y+'px'; cb.style.width=rb.w+'px'; cb.style.height=rb.h+'px';
+    setFrame(ctx.frClip,q.map(p=>[p[0]-rb.x,p[1]-rb.y]),1);
+    const fo=1-sstep(.22,.7,e);
+    setFrame(ctx.fr,rectQ(L.flat),fo,lerp(0,14,sstep(.05,.6,e)));
+    setPh(ctx.set,cam,1,lerp(6,0,sstep(.15,.75,e)),lerp(.6,1,sstep(.1,.75,e)));
+    ctx.fade.style.opacity=sstep(.5,.82,e);
+    ctx.mon.classList.toggle('busy',ctx.pushE!==null);
+    placeBtn(ctx.mon,fo>.5?rectQ(L.flat):q,true,win);
+    ctx.e=e; return;
+  }
+  if(S.rect){ const r=S.rect; q=rectQ({x:r.x*cam.s+cam.x,y:r.y*cam.s+cam.y,w:r.w*cam.s,h:r.h*cam.s}); }
+  else if(S.roll) q=S.q.map(p=>ap(cam,p));
+  else q=pullCorners(L.flat,L.cin,cam,S.q,e);
+  setPh(ctx.set,cam,1,lerp(6,0,sstep(.05,.85,e)),lerp(.6,1,sstep(0,.8,e)));
+  const fb=(S.fb||0)*sstep(.5,1,e);
+  if(S.clip){
+    // the part of the frame inside the photograph stays; whatever hangs past the photo fades early
+    const cb=ctx.clip, rb={x:cam.x,y:cam.y,w:S.sw*cam.s,h:S.sh*cam.s};
+    cb.style.left=rb.x+'px'; cb.style.top=rb.y+'px'; cb.style.width=rb.w+'px'; cb.style.height=rb.h+'px';
+    const ql=q.map(p=>[p[0]-rb.x,p[1]-rb.y]);
+    const dis=S.rect?1-sstep(.42,.8,e):1;
+    setFrame(ctx.frClip,ql,dis,fb);
+    setFrame(ctx.fr,q,S.alignRight?0:1-sstep(.15,.32,e),fb);
+  } else setFrame(ctx.fr,q,1,fb);
+  ctx.fade.style.opacity=sstep(.5,.82,e);
+  ctx.mon.classList.toggle('busy',ctx.pushE!==null);
+  placeBtn(ctx.mon,phi?q.map(p=>rotAbout(p,P,phi)):q,true,win);
+  ctx.e=e;
+}
+
+/* =====================================================================
+   CTA: the white cyc fills the screen, the empty studio appears around it, the question lands at the bottom
+   ===================================================================== */
+const CTA_LEN=()=>narrow?1.9:2, CTA_HOLD=.22;
+function ctaRender(ctx,e,W=VW,H=VH){
+  const n=narrow, sw=1067, sh=800, cap=W>1600?1.5:Infinity;
+  const cin=fitCam({x:676,y:176,w:230,h:150},{x:0,y:0,w:W,h:H},'cover');
+  const s=Math.min(Math.max(W/sw,H/sh),cap), pw=sw*s, ph=sh*s, fx=n?560:533, fy=n?380:430;
+  const rest={s, x:pw>=W?clamp(W/2-fx*s,W-pw,0):(W-pw)/2, y:ph>=H?clamp(H/2-fy*s,H-ph,0):(H-ph)/2};
+  const cam=camLerp(cin,rest,dolly(e),W/2,H/2);
+  setPh(ctx.set,cam,1,lerp(3,0,sstep(0,.5,e)),lerp(1.06,1,sstep(0,.6,e)));
+  const k=sstep(.58,.86,e);
+  ctx.shade.style.opacity=sstep(.4,.8,e); ctx.copy.style.opacity=k; ctx.copy.style.pointerEvents=k<.5?'none':'';
+  ctx.e=e;
+}
+
+/* ---------- scroll driving ---------- */
+const hdr=$('#hdr');
+const hero={sec:$('#top'), ctx:null, intro:0, introT:1, pushT:null};
+hero.ctx=heroCtx($('#hero-stage'));
+const svcs=$$('.svc').map(sec=>{
+  const st=$('.stage',sec), k=n=>st.querySelector(`[data-k="${n}"]`);
+  const S=Object.assign({},SVC[sec.dataset.svc]);
+  const fi=k('fr').querySelector('img'); S.fw=+fi.getAttribute('width');
+  const ctx={sec,stage:st,S,side:sec.dataset.side,win:k('win'),rig:k('rig'),set:k('set'),fr:k('fr'),mon:k('mon'),fade:$('.fade',sec),copy:k('copy'),anc:$('.anc',sec),pushE:null};
+  if(S.clip){ const cb=D.createElement('div'); cb.className='clipbox'; const cl=ctx.fr.cloneNode(true); cl.removeAttribute('data-k'); cl.querySelector('img').alt=''; cl.setAttribute('aria-hidden','true'); cb.appendChild(cl); ctx.rig.insertBefore(cb,ctx.fr); ctx.clip=cb; ctx.frClip=cl; }
+  return ctx;
+});
+const cta={sec:$('.cta')}; cta.ctx={set:$('[data-k="set"]',cta.sec),copy:$('[data-k="copy"]',cta.sec),shade:$('[data-k="shade"]',cta.sec)}; cta.anc=$('.anc',cta.sec);
+
+const restOff=(len,hold)=>Math.ceil((len-1)*(1-hold)*VH)+2;  // scroll offset where a pinned section has finished its move
+function layoutTracks(){
+  const seg=HSEG(), tot=seg.reduce((a,b)=>a+b,0);
+  hero.seg=seg;
+  if(!RM){
+    hero.sec.style.setProperty('--len',1+tot);
+    svcs.forEach(s=>{ s.sec.style.setProperty('--len',SVC_LEN()); s.anc.style.top=restOff(SVC_LEN(),SVC_HOLD)+'px'; });
+    cta.sec.style.setProperty('--len',CTA_LEN()); cta.anc.style.top=restOff(CTA_LEN(),CTA_HOLD)+'px';
+  }
+}
+function heroT(){
+  const u=(scrollY-hero.sec.offsetTop)/VH;
+  if(u<=0) return 1;
+  let acc=0;
+  for(let i=0;i<hero.seg.length;i++){
+    const L=hero.seg[i];
+    if(u<=acc+L){ const [a,b]=HT[i]; return lerp(a,b,(u-acc)/L); }
+    acc+=L;
+  }
+  return 5;
+}
+function secE(sec,hold){ const u=(scrollY-sec.offsetTop)/VH; const len=parseFloat(sec.style.getPropertyValue('--len'))||2; return clamp(u/((len-1)*(1-hold))); }
+
+let raf=0;
+function frame(){
+  raf=0;
+  if(RM) return;
+  // hero
+  let t;
+  if(hero.pushT!==null) t=hero.pushT;
+  else if(hero.intro<1 && scrollY<2) t=hero.introT;
+  else t=heroT();
+  hero.ctx.pushing=hero.pushT!==null;
+  const hr=hero.sec.getBoundingClientRect();
+  if(hr.bottom>-50 && hr.top<VH+50) heroRender(hero.ctx,t);
+  hdr.classList.toggle('solid', scrollY>40 || t>1.02);
+  // services
+  svcs.forEach(s=>{
+    const r=s.sec.getBoundingClientRect();
+    if(r.bottom<-50||r.top>VH+50) return;
+    const e=s.pushE!==null?s.pushE:secE(s.sec,SVC_HOLD);
+    svcRender(s,e);
+  });
+  const cr=cta.sec.getBoundingClientRect();
+  if(cr.bottom>-50 && cr.top<VH+50) ctaRender(cta.ctx,secE(cta.sec,CTA_HOLD));
+  loops();
+}
+const req=()=>{ if(!raf) raf=requestAnimationFrame(frame); };
+
+/* ---------- the hero pulls back once on its own at load ---------- */
+function runIntro(){
+  if(RM || scrollY>2 || location.hash){ hero.intro=1; hero.introT=1; return; }
+  hero.intro=0; hero.introT=0;
+  const start=performance.now()+700, dur=2600; let fast=null;
+  const stop=()=>{ if(hero.intro<1 && fast===null) fast={t0:performance.now(),from:hero.introT}; };
+  ['wheel','touchstart','keydown','pointerdown'].forEach(ev=>addEventListener(ev,stop,{passive:true,once:true}));
+  const tick=now=>{
+    if(fast){ const k=clamp((now-fast.t0)/320); hero.introT=lerp(fast.from,1,ease(k)); if(k>=1){hero.intro=1; hero.introT=1; req(); return;} }
+    else { const k=clamp((now-start)/dur); hero.introT=k; if(k>=1){hero.intro=1; req(); return;} }
+    req(); requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
+}
+
+/* ---------- a silent loop inside the SmallHD: real visitors only, desktop, no reduced motion, no Save-Data ----------
+   Empty on purpose. The spot cuts away from the couch, and the monitor must show what the actors behind it are doing,
+   so this waits for a short client-only loop of the couch shot. Set its Vimeo id here. */
+const HERO_LOOP=null;
+const LOOPS_OK=!navigator.webdriver && !RM && !SAVE && VW>=760;
+const loopSlots=(LOOPS_OK && HERO_LOOP)?[{sec:hero.sec, frame:hero.ctx.r0, id:HERO_LOOP, btn:hero.ctx.loopbtn}]:[];
+function loops(){
+  for(const L of loopSlots){
+    const r=L.sec.getBoundingClientRect(); const near=r.bottom>-VH*.5 && r.top<VH*1.2;
+    if(near && !L.ifr && !L.off){
+      const f=D.createElement('iframe');
+      f.src=`https://player.vimeo.com/video/${L.id}?background=1&autoplay=1&loop=1&muted=1&dnt=1&quality=720p`;
+      f.title=''; f.setAttribute('aria-hidden','true'); f.tabIndex=-1; f.allow='autoplay; fullscreen';
+      f.addEventListener('load',()=>setTimeout(()=>f.classList.add('on'),900));
+      L.frame.appendChild(f); L.ifr=f; if(L.btn){L.btn.hidden=false;}
+    } else if(!near && L.ifr){ L.ifr.remove(); L.ifr=null; if(L.btn) L.btn.hidden=true; }
+  }
+}
+if(hero.ctx.loopbtn) hero.ctx.loopbtn.addEventListener('click',()=>{
+  const L=loopSlots[0]; if(!L) return;
+  if(L.ifr){ L.ifr.remove(); L.ifr=null; L.off=true; hero.ctx.loopbtn.textContent='Play'; }
+  else { L.off=false; hero.ctx.loopbtn.textContent='Pause'; loops(); }
+});
+
+/* ---------- Featured Projects grid ---------- */
+const grid=$('#grid');
+function tileHTML(id,i){
+  const p=P[id];
+  const sub=p.c||p.cr||'';
+  return `<li class="tile${i===0?' big':''}" data-id="${id}"><button class="tile-btn" type="button" data-play="${id}" aria-label="Play ${p.t.replace(/"/g,'&quot;')}${p.c?', '+p.c:''}">
+    <span class="t-img"><img src="${src(p.img)}" width="${p.w}" height="${p.h}" ${i>0?'loading="lazy"':''} alt="${p.alt.replace(/"/g,'&quot;')}"${p.pos?` style="object-position:${p.pos}"`:''}${p.cls?` class="${p.cls}"`:''}><span class="cue" aria-hidden="true"><svg viewBox="0 0 11 13"><path d="M0 0l11 6.5L0 13z"/></svg></span></span>
+    <span class="t-title">${p.t}</span>${sub?`<span class="t-client">${sub}</span>`:''}</button></li>`;
+}
+function buildGrid(f){
+  grid.innerHTML=SETS[f].map(tileHTML).join('');
+  const li=grid.firstElementChild;
+  hero.ctx.landLi = f==='all'?li:null;
+  hero.ctx.landTile = f==='all'?$('.t-img',li):null;
+}
+buildGrid('all');
+$$('.filters button').forEach(b=>b.addEventListener('click',()=>{
+  $$('.filters button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));
+  if(RM) buildGrid(b.dataset.f);
+  else { grid.style.transition='opacity .25s'; grid.style.opacity=0; setTimeout(()=>{buildGrid(b.dataset.f); grid.style.opacity=1;},250); }
+}));
+
+/* ---------- dialog (and the push back in before it opens) ---------- */
+const dlg=$('#dlg'), mainEl=$('#main'), footEl=$('.foot');
+let lastTrigger=null, afterClose=null;
+function openDialog(id,trigger){
+  const p=P[id]; if(!p) return;
+  lastTrigger=trigger;
+  const pl=$('#dlg-player');
+  const url=p.yt?`https://www.youtube-nocookie.com/embed/${p.yt}?autoplay=1&rel=0`:`https://player.vimeo.com/video/${p.v}?${p.h_?'h='+p.h_+'&':''}autoplay=1&dnt=1`;
+  pl.innerHTML=`<iframe src="${url}" title="${p.t.replace(/"/g,'&quot;')}" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
+  const cat=p.cat?p.cat[0].toUpperCase()+p.cat.slice(1):'';
+  $('#dlg-meta').textContent=[cat,p.c].filter(Boolean).join(' · ');
+  $('#dlg-title').textContent=p.t;
+  $('#dlg-cr').textContent=p.cr||''; $('#dlg-cr').hidden=!p.cr;
+  const cs=CS[id], box=$('#dlg-case');
+  box.innerHTML=cs?['The Challenge','Our Approach','The Results'].map((h,i)=>`<div><h3>${h}</h3><p>${cs[i]}</p></div>`).join(''):'';
+  box.hidden=!cs;
+  dlg.hidden=false; mainEl.inert=true; footEl.inert=true; hdr.inert=true;
+  root.style.overflow='hidden';
+  requestAnimationFrame(()=>dlg.classList.add('open'));
+  $('.dlg-close').focus();
+}
+function closeDialog(){
+  if(dlg.hidden) return;
+  $('#dlg-player').innerHTML='';
+  dlg.classList.remove('open'); dlg.hidden=true;
+  mainEl.inert=false; footEl.inert=false; hdr.inert=false; root.style.overflow='';
+  const cb=afterClose; afterClose=null;
+  if(lastTrigger && lastTrigger.isConnected && !lastTrigger.hidden) lastTrigger.focus({preventScroll:true});
+  else if(lastTrigger && lastTrigger.dataset.play){ const alt=$(`[data-play="${lastTrigger.dataset.play}"]:not([hidden])`); (alt||$('#h1')).focus({preventScroll:true}); }
+  if(cb) cb();
+}
+$('.dlg-close').addEventListener('click',closeDialog);
+D.addEventListener('keydown',ev=>{
+  if(dlg.hidden) return;
+  if(ev.key==='Escape'){ev.preventDefault();closeDialog();return;}
+  if(ev.key==='Tab'){ // two stops: Close and the player
+    const cl=$('.dlg-close'), fr=$('#dlg-player iframe');
+    ev.preventDefault();
+    (D.activeElement===cl && fr ? fr : cl).focus();
+  }
+});
+D.addEventListener('focusin',ev=>{ if(!dlg.hidden && !dlg.contains(ev.target)) $('.dlg-close').focus(); });
+dlg.addEventListener('click',ev=>{ if(ev.target===dlg) closeDialog(); });
+
+function animate(from,to,dur,set,done){
+  const t0=performance.now();
+  const step=now=>{ const k=clamp((now-t0)/dur); set(lerp(from,to,ease(k))); req(); if(k<1) requestAnimationFrame(step); else done&&done(); };
+  requestAnimationFrame(step);
+}
+function pushHero(id,btn){
+  const t=hero.ctx.t??1; btn.dataset.keep=1;
+  const target = t<2 ? 0 : 2.24;   // back onto the SmallHD shot, or onto the edit-suite monitor
+  hero.pushT=t;
+  animate(t,target,950,v=>hero.pushT=v,()=>{
+    openDialog(id,btn);
+    afterClose=()=>animate(target,heroT(),900,v=>hero.pushT=v,()=>{hero.pushT=null; delete btn.dataset.keep; req();});
+  });
+}
+function pushSvc(s,id,btn){
+  const e=s.e??1; s.pushE=e; btn.dataset.keep=1;
+  animate(e,0,900,v=>s.pushE=v,()=>{
+    openDialog(id,btn);
+    afterClose=()=>animate(0,secE(s.sec,SVC_HOLD),850,v=>s.pushE=v,()=>{s.pushE=null; delete btn.dataset.keep; req();});
+  });
+}
+function pushTile(id,btn){
+  const im=$('.t-img img',btn), r=im.getBoundingClientRect();
+  const fx=D.createElement('div'); fx.className='pushfx'; fx.innerHTML=`<img src="${im.currentSrc||im.src}" alt="">`;
+  const set=(k)=>{ fx.style.left=lerp(r.left,0,k)+'px'; fx.style.top=lerp(r.top,0,k)+'px'; fx.style.width=lerp(r.width,VW,k)+'px'; fx.style.height=lerp(r.height,VH,k)+'px'; };
+  set(0); D.body.appendChild(fx);
+  const t0=performance.now();
+  const step=now=>{ const k=ease(clamp((now-t0)/700)); set(k); if(k<1) requestAnimationFrame(step); else { openDialog(id,btn); fx.remove(); } };
+  requestAnimationFrame(step);
+}
+D.addEventListener('click',ev=>{
+  const b=ev.target.closest('[data-play]'); if(!b) return;
+  const id=b.dataset.play;
+  if(RM || id==='reel'){ openDialog(id,b); return; }
+  if(b.closest('#hero-stage') && b.classList.contains('mon-btn')) return pushHero(id,b);
+  if(b.closest('#hero-stage') && b.classList.contains('c-play')) return openDialog(id,b);
+  const s=svcs.find(x=>x.sec.contains(b)); if(s) return pushSvc(s,id,b);
+  if(b.classList.contains('tile-btn')) return pushTile(id,b);
+  openDialog(id,b);
+});
+
+$('#hero-stage [data-k="copy"]').addEventListener('focusin',()=>{ if(!RM && scrollY>hero.sec.offsetTop+2) scrollTo(0,hero.sec.offsetTop); });
+// keyboard focus inside a pinned section jumps it to its resting frame, where the copy and buttons are fully shown
+svcs.forEach(s=>s.sec.addEventListener('focusin',()=>{ if(!RM && s.pushE===null && secE(s.sec,SVC_HOLD)<1) scrollTo(0,s.sec.offsetTop+restOff(SVC_LEN(),SVC_HOLD)); }));
+cta.sec.addEventListener('focusin',()=>{ if(!RM && secE(cta.sec,CTA_HOLD)<1) scrollTo(0,cta.sec.offsetTop+restOff(CTA_LEN(),CTA_HOLD)); });
+
+/* ---------- nav: Services disclosure and the phone menu ---------- */
+const subBtn=$('.sub-btn'), sub=$('#svc-menu');
+const setSub=o=>{subBtn.setAttribute('aria-expanded',String(o)); sub.hidden=!o;};
+subBtn.addEventListener('click',()=>setSub(sub.hidden));
+$('.has-sub').addEventListener('keydown',ev=>{ if(ev.key==='Escape' && !sub.hidden){ setSub(false); subBtn.focus(); }
+  if(ev.key==='ArrowDown' && !sub.hidden){ ev.preventDefault(); const ls=$$('a',sub); const i=ls.indexOf(D.activeElement); (ls[i+1]||ls[0]).focus(); }
+  if(ev.key==='ArrowUp' && !sub.hidden){ ev.preventDefault(); const ls=$$('a',sub); const i=ls.indexOf(D.activeElement); (ls[i-1]||ls[ls.length-1]).focus(); } });
+$('.has-sub').addEventListener('focusout',ev=>{ if(!$('.has-sub').contains(ev.relatedTarget)) setSub(false); });
+D.addEventListener('click',ev=>{ if(!ev.target.closest('.has-sub')) setSub(false); });
+sub.addEventListener('click',ev=>{ if(ev.target.closest('a')) setSub(false); });
+const mnav=$('#mnav'), mbtn=$('.menu-btn');
+const setMenu=o=>{ mnav.hidden=!o; mbtn.setAttribute('aria-expanded',String(o)); mainEl.inert=o; footEl.inert=o; root.style.overflow=o?'hidden':''; if(o) $('.mnav-close').focus(); else mbtn.focus({preventScroll:true}); };
+mbtn.addEventListener('click',()=>setMenu(true));
+$('.mnav-close').addEventListener('click',()=>setMenu(false));
+mnav.addEventListener('keydown',ev=>{ if(ev.key==='Escape') setMenu(false);
+  if(ev.key==='Tab'){ const f=$$('a,button',mnav); const a=f[0],z=f[f.length-1]; if(ev.shiftKey&&D.activeElement===a){ev.preventDefault();z.focus();} else if(!ev.shiftKey&&D.activeElement===z){ev.preventDefault();a.focus();} } });
+mnav.addEventListener('click',ev=>{ const a=ev.target.closest('a'); if(a){ mnav.hidden=true; mbtn.setAttribute('aria-expanded','false'); mainEl.inert=false; footEl.inert=false; root.style.overflow=''; } });
+
+/* ---------- reduced motion: every move becomes still frames, no scrubbing ---------- */
+function buildRM(){
+  // hero: the set with the frame on its monitor (H1 and buttons), then the crew, the edit suite with the sentence, and the numbers, as stills
+  const st=$('#hero-stage');
+  const clones=[2,3,4].map(t=>{ const c=st.cloneNode(true); c.removeAttribute('id'); c.setAttribute('aria-hidden','true'); c.classList.add('rm-frame');
+    $$('button,a',c).forEach(x=>{x.tabIndex=-1}); $$('[id]',c).forEach(x=>x.removeAttribute('id')); $$('img',c).forEach(i=>i.alt='');
+    st.parentNode.appendChild(c); return {t,ctx:heroCtx(c)}; });
+  hero.rm=clones;
+  svcs.forEach(s=>{ s.fade.style.opacity=1; });
+}
+function renderRM(){
+  heroRender(hero.ctx,1);
+  hero.rm.forEach(c=>{ c.ctx.landTile=null; heroRender(c.ctx,c.t); c.ctx.root.style.pointerEvents='none'; c.ctx.copy.style.visibility='hidden'; c.ctx.credit.style.visibility='hidden'; });
+  // no repeats: on a phone the crew still is just the photo (the sentence follows), and the numbers stand on black without a second edit suite
+  hero.rm.forEach(c=>{ const x=c.ctx, C=heroCams(VW,VH);
+    if(c.t===2 && narrow){ x.verbs.forEach(v=>v.style.visibility='hidden'); x.root.style.height=Math.round(C.c2.y+800*C.c2.s+24)+'px'; }
+    if(c.t===4){ [x.r0,x.r3,x.mon].forEach(el=>el.style.visibility='hidden'); x.verbs.forEach(v=>v.style.visibility='hidden');
+      const pad=narrow?36:72; x.root.style.height=(x.statsBox.offsetHeight+2*pad)+'px';
+      x.statsBox.style.transform=`translate(${(narrow?gutPx():VW*.046).toFixed(1)}px,${pad}px)`; }
+  });
+  hero.ctx.verbs.forEach(v=>v.style.opacity=0); hero.ctx.stats.forEach(v=>v.style.opacity=0);
+  svcs.forEach(s=>svcRender(s,1));
+  ctaRender(cta.ctx,1);
+  hdr.classList.add('solid');
+}
+
+/* ---------- boot ---------- */
+layoutTracks();
+if(RM){ buildRM(); renderRM(); }
+else { runIntro(); frame(); }
+addEventListener('scroll',req,{passive:true});
+addEventListener('resize',()=>{ if(measure()){ layoutTracks(); if(RM) renderRM(); } req(); });
+addEventListener('load',()=>{ if(RM) renderRM(); else req(); });
+})();
+</script>
+</body>
+</html>

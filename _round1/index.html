@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MIM Redesign Concepts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wdth,wght@75..100,400..600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0c0b0a;
+    --panel: #151412;
+    --line: rgba(236,231,223,.14);
+    --paper: #ece7df;
+    --muted: #a8a298;
+    --faint: #7d776e;
+    --accent: #00e6f8;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--ink); color: var(--paper); font: 16px/1.55 "Instrument Sans", system-ui, sans-serif; }
+  a { color: inherit; }
+  .wrap { max-width: 1320px; margin: 0 auto; padding: 0 32px; }
+  .mono { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+  header.top { padding: 56px 0 40px; border-bottom: 1px solid var(--line); }
+  header.top .mark { display: flex; align-items: center; gap: 12px; margin-bottom: 40px; }
+  header.top .mark img { width: 26px; height: 26px; }
+  h1 { font-size: clamp(36px, 5.4vw, 72px); line-height: 1.02; letter-spacing: -.03em; font-weight: 500; font-stretch: 90%; margin: 0 0 24px; max-width: 16ch; }
+  .intro { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; color: var(--muted); max-width: 1100px; }
+  .intro p { margin: 0 0 12px; }
+  .intro strong { color: var(--paper); font-weight: 500; }
+  nav.jump { display: flex; flex-wrap: wrap; gap: 8px 28px; padding: 22px 0; border-bottom: 1px solid var(--line); position: sticky; top: 0; background: rgba(12,11,10,.92); backdrop-filter: blur(8px); z-index: 5; }
+  nav.jump a { text-decoration: none; }
+  nav.jump a:hover, nav.jump a:focus-visible { color: var(--paper); }
+  section.concept { padding: 72px 0; border-bottom: 1px solid var(--line); scroll-margin-top: 64px; }
+  .head { display: grid; grid-template-columns: 90px 1fr auto; align-items: baseline; gap: 24px; margin-bottom: 28px; }
+  .letter { font-family: "IBM Plex Mono", monospace; font-size: 14px; color: var(--faint); }
+  h2 { font-size: clamp(30px, 3.6vw, 48px); font-weight: 500; letter-spacing: -.025em; font-stretch: 90%; margin: 0; line-height: 1.05; }
+  .open { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; border-bottom: 1px solid var(--paper); padding-bottom: 4px; white-space: nowrap; }
+  .open:hover, .open:focus-visible { color: var(--accent); border-color: var(--accent); }
+  .open span { font-family: "IBM Plex Mono", monospace; }
+  .body { display: grid; grid-template-columns: 90px 1fr 330px; gap: 24px; }
+  .desc { grid-column: 2 / 3; display: grid; grid-template-columns: 1.4fr 1fr; gap: 36px; margin-bottom: 32px; }
+  .desc p { margin: 0 0 10px; color: var(--muted); }
+  .desc p.lead { color: var(--paper); font-size: 19px; line-height: 1.45; }
+  dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 6px 16px; font-size: 14px; }
+  dt { font-family: "IBM Plex Mono", monospace; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--faint); padding-top: 3px; }
+  dd { margin: 0; color: var(--muted); }
+  .shots { grid-column: 2 / 4; display: grid; grid-template-columns: 1fr 250px; gap: 20px; align-items: start; }
+  .shots a { display: block; border: 1px solid var(--line); background: var(--panel); }
+  .shots a:hover, .shots a:focus-visible { border-color: var(--paper); outline: none; }
+  .shots img { display: block; width: 100%; height: auto; }
+  .shots figcaption { margin-top: 8px; }
+  .swatches { display: flex; gap: 6px; margin-top: 4px; }
+  .swatches i { width: 18px; height: 18px; border: 1px solid var(--line); display: inline-block; }
+  .current { padding: 72px 0; border-bottom: 1px solid var(--line); }
+  .current .shots { grid-template-columns: 1fr 250px; }
+  .checks { padding: 72px 0 96px; }
+  .checks h2 { margin-bottom: 28px; }
+  .checks ol { margin: 0; padding: 0; list-style: none; counter-reset: c; display: grid; grid-template-columns: 1fr 1fr; gap: 20px 48px; max-width: 1100px; }
+  .checks li { counter-increment: c; display: grid; grid-template-columns: 36px 1fr; color: var(--muted); }
+  .checks li::before { content: counter(c, decimal-leading-zero); font-family: "IBM Plex Mono", monospace; font-size: 12px; color: var(--faint); padding-top: 3px; }
+  .checks li strong { color: var(--paper); font-weight: 500; }
+  footer { border-top: 1px solid var(--line); padding: 28px 0 48px; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  @media (max-width: 900px) {
+    .wrap { padding: 0 16px; }
+    .intro, .desc, .checks ol { grid-template-columns: 1fr; gap: 16px; }
+    .head { grid-template-columns: 1fr; gap: 10px; }
+    .body { grid-template-columns: 1fr; }
+    .desc, .shots { grid-column: 1 / -1; }
+    .shots, .current .shots { grid-template-columns: 1fr 34%; gap: 12px; }
+    section.concept, .current, .checks { padding: 48px 0; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="mark"><img src="../assets/img/mindinmotion-logo.png" alt="" width="205" height="205"><span class="mono">MindInMotion · redesign concepts · 27 Sept 2026</span></div>
+    <h1>Five dark directions for mindinmotion.tv</h1>
+    <div class="intro">
+      <div>
+        <p>Five homepage concepts, all dark and sleek. A24 and a handful of production-company sites served as general inspiration, not as a horror look. Every one leads with the nonprofit, public-agency and Hopkins work and treats the films as proof of craft.</p>
+        <p>Each concept is a working page built from your real stills, clients, testimonials and contact details. <strong>Click a screenshot to open the full concept.</strong> Every page works on a phone.</p>
+      </div>
+      <div>
+        <p>The copy is draft. It avoids anything still unconfirmed from the September audit (feature count, view counts, "award-winning"), and the open questions sit at the bottom of this page.</p>
+        <p>Nothing here touches the live site or GitHub. A chosen direction would go on a branch, and Netlify would give it a preview link before anything reaches <span class="mono">main</span>.</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="jump mono" aria-label="Concepts">
+  <div class="wrap" style="display:flex;flex-wrap:wrap;gap:8px 28px">
+    <a href="#a">A · Studio Slate</a>
+    <a href="#b">B · Production House</a>
+    <a href="#c">C · Screening Room</a>
+    <a href="#d">D · Title Sequence</a>
+    <a href="#e">E · Portraits</a>
+    <a href="#current">Current site</a>
+    <a href="#questions">Open questions</a>
+  </div>
+</nav>
+
+<main>
+  <section class="concept" id="a">
+    <div class="wrap">
+      <div class="head"><span class="letter">A</span><h2>Studio Slate</h2><a class="open" href="concept-a-studio-slate/index.html">Open concept <span>→</span></a></div>
+      <div class="body">
+        <div class="desc">
+          <div>
+            <p class="lead">The closest to A24 itself. Near-black ground, off-white type, and every film treated as a catalog entry with a number, title, client and format.</p>
+            <p>The centerpiece is a title index: hover, tab or scroll through the project names and the big still behind them changes. No cards, no icons. The spacing and the image choices carry it.</p>
+          </div>
+          <dl>
+            <dt>Type</dt><dd>Instrument Sans, IBM Plex Mono</dd>
+            <dt>Color</dt><dd><span class="swatches"><i style="background:#0b0b0a"></i><i style="background:#ece7df"></i><i style="background:#8e887e"></i><i style="background:#00e6f8"></i></span></dd>
+            <dt>Borrows</dt><dd>A24 films index, Annapurna title list, Somesuch credit lines</dd>
+            <dt>Watch for</dt><dd>Quietest of the five. Relies on strong stills, and a few are only 1200px wide.</dd>
+          </dl>
+        </div>
+        <div class="shots">
+          <figure style="margin:0"><a href="concept-a-studio-slate/index.html"><img src="concept-a-studio-slate/_shots/final-desk-fold.png" alt="Concept A desktop first screen" width="1440" height="900" loading="lazy"></a><figcaption class="mono">Desktop</figcaption></figure>
+          <figure style="margin:0"><a href="concept-a-studio-slate/index.html"><img src="concept-a-studio-slate/_shots/final-mob-fold.png" alt="Concept A phone first screen" width="390" height="844" loading="lazy"></a><figcaption class="mono">Phone</figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="concept" id="b">
+    <div class="wrap">
+      <div class="head"><span class="letter">B</span><h2>Production House</h2><a class="open" href="concept-b-production-house/index.html">Open concept <span>→</span></a></div>
+      <div class="body">
+        <div class="desc">
+          <div>
+            <p class="lead">Built like the commercial production companies (Smuggler, Park Pictures, Somesuch). One full-bleed frame fills the first screen, with the Baltimore and Orlando numbers pinned to its bottom corners.</p>
+            <p>Below it, each project is a heavy credit line ("Infinite Legacy, Joe") over a large still that pulls into focus as you scroll. It looks the most expensive of the five.</p>
+          </div>
+          <dl>
+            <dt>Type</dt><dd>Archivo Extended, IBM Plex Mono</dd>
+            <dt>Color</dt><dd><span class="swatches"><i style="background:#0e0d0b"></i><i style="background:#ece7dd"></i><i style="background:#8f887d"></i><i style="background:#00e6f8"></i></span></dd>
+            <dt>Borrows</dt><dd>Somesuch credit-line headlines, Smuggler city corners, Park Pictures focus-pull reveal</dd>
+            <dt>Watch for</dt><dd>Wants a silent reel loop behind the hero. The current loop has horror shots in it (see questions).</dd>
+          </dl>
+        </div>
+        <div class="shots">
+          <figure style="margin:0"><a href="concept-b-production-house/index.html"><img src="concept-b-production-house/_shots/final-desk-fold.png" alt="Concept B desktop first screen" width="1440" height="900" loading="lazy"></a><figcaption class="mono">Desktop</figcaption></figure>
+          <figure style="margin:0"><a href="concept-b-production-house/index.html"><img src="concept-b-production-house/_shots/final-mob-fold.png" alt="Concept B phone first screen" width="390" height="844" loading="lazy"></a><figcaption class="mono">Phone</figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="concept" id="c">
+    <div class="wrap">
+      <div class="head"><span class="letter">C</span><h2>Screening Room</h2><a class="open" href="concept-c-screening-room/index.html">Open concept <span>→</span></a></div>
+      <div class="body">
+        <div class="desc">
+          <div>
+            <p class="lead">A cinema's printed program, read at night. Warm charcoal, bone-colored type and one amber accent, set in a classical serif with real small caps and old-style numerals.</p>
+            <p>The work appears as numbered entries with credit blocks and journal-style captions, and Josh and Victor's story gets room. It's the warmest and most literate of the five.</p>
+          </div>
+          <dl>
+            <dt>Type</dt><dd>Cormorant Garamond, Cormorant SC, Newsreader</dd>
+            <dt>Color</dt><dd><span class="swatches"><i style="background:#14110e"></i><i style="background:#ede6d8"></i><i style="background:#e3a553"></i></span></dd>
+            <dt>Borrows</dt><dd>Criterion and Mubi journal layouts, Searchlight italic links</dd>
+            <dt>Watch for</dt><dd>Amber on brown can drift toward "wine bar" if pushed further. Drops the cyan.</dd>
+          </dl>
+        </div>
+        <div class="shots">
+          <figure style="margin:0"><a href="concept-c-screening-room/index.html"><img src="concept-c-screening-room/_shots/final-desk-fold.png" alt="Concept C desktop first screen" width="1440" height="900" loading="lazy"></a><figcaption class="mono">Desktop</figcaption></figure>
+          <figure style="margin:0"><a href="concept-c-screening-room/index.html"><img src="concept-c-screening-room/_shots/final-mob-fold.png" alt="Concept C phone first screen" width="390" height="844" loading="lazy"></a><figcaption class="mono">Phone</figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="concept" id="d">
+    <div class="wrap">
+      <div class="head"><span class="letter">D</span><h2>Title Sequence</h2><a class="open" href="concept-d-title-sequence/index.html">Open concept <span>→</span></a></div>
+      <div class="body">
+        <div class="desc">
+          <div>
+            <p class="lead">The homepage plays like a film's opening titles. Five client stories are pinned full-width scenes between letterbox bars, and the credits sit on the bars.</p>
+            <p>Scene numbers and timecode label every section. The boldest, most cinematic concept, and the one that best shows you think in shots.</p>
+          </div>
+          <dl>
+            <dt>Type</dt><dd>Archivo Condensed, Newsreader, IBM Plex Mono</dd>
+            <dt>Color</dt><dd><span class="swatches"><i style="background:#000"></i><i style="background:#ece6da"></i><i style="background:#e8b25c"></i><i style="background:#00e6f8"></i></span></dd>
+            <dt>Borrows</dt><dd>A24 hero title swap, IFC timecode, film slates</dd>
+            <dt>Watch for</dt><dd>The longest page, and the scroll scenes take the most care to build and test on iPhone.</dd>
+          </dl>
+        </div>
+        <div class="shots">
+          <figure style="margin:0"><a href="concept-d-title-sequence/index.html"><img src="concept-d-title-sequence/_shots/final-desk-fold.png" alt="Concept D desktop first screen" width="1440" height="900" loading="lazy"></a><figcaption class="mono">Desktop</figcaption></figure>
+          <figure style="margin:0"><a href="concept-d-title-sequence/index.html"><img src="concept-d-title-sequence/_shots/final-mob-fold.png" alt="Concept D phone first screen" width="390" height="844" loading="lazy"></a><figcaption class="mono">Phone</figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="concept" id="e">
+    <div class="wrap">
+      <div class="head"><span class="letter">E</span><h2>Portraits</h2><a class="open" href="concept-e-portraits/index.html">Open concept <span>→</span></a></div>
+      <div class="body">
+        <div class="desc">
+          <div>
+            <p class="lead">The people in your films carry the page: large, carefully cropped faces from the Infinite Legacy, Hopkins and Maryland EXCELS work, each with a credit and one plain line.</p>
+            <p>The pitch to a nonprofit buyer is that you're good with real people. It describes your process as "conversations, not depositions". Slow, warm and the most direct.</p>
+          </div>
+          <dl>
+            <dt>Type</dt><dd>Newsreader, Figtree</dd>
+            <dt>Color</dt><dd><span class="swatches"><i style="background:#14100d"></i><i style="background:#f0e8dc"></i><i style="background:#e3ab76"></i></span></dd>
+            <dt>Borrows</dt><dd>Janus black-and-white origin photo, Caviar plain-paragraph About, Neon pull quotes</dd>
+            <dt>Watch for</dt><dd>The designer kept the line under each face factual until you confirm what each film was for.</dd>
+          </dl>
+        </div>
+        <div class="shots">
+          <figure style="margin:0"><a href="concept-e-portraits/index.html"><img src="concept-e-portraits/_shots/final-desk-fold.png" alt="Concept E desktop first screen" width="1440" height="900" loading="lazy"></a><figcaption class="mono">Desktop</figcaption></figure>
+          <figure style="margin:0"><a href="concept-e-portraits/index.html"><img src="concept-e-portraits/_shots/final-mob-fold.png" alt="Concept E phone first screen" width="390" height="844" loading="lazy"></a><figcaption class="mono">Phone</figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="current" id="current">
+    <div class="wrap">
+      <div class="head"><span class="letter">Now</span><h2>The current site, for comparison</h2><a class="open" href="https://mindinmotion.tv" rel="noopener">mindinmotion.tv <span>↗</span></a></div>
+      <div class="body">
+        <div class="shots">
+          <figure style="margin:0"><img src="../research/current-site/home-desk-fold.png" alt="Current mindinmotion.tv desktop first screen" width="1440" height="900" loading="lazy"><figcaption class="mono">Desktop (the overlapping text is Vimeo blocking the screenshot tool, not something visitors see)</figcaption></figure>
+          <figure style="margin:0"><img src="../research/current-site/home-mob-fold.png" alt="Current mindinmotion.tv phone first screen" width="390" height="844" loading="lazy"><figcaption class="mono">Phone</figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="checks" id="questions">
+    <div class="wrap">
+      <h2>Open questions before any of these goes live</h2>
+      <ol>
+        <li><div><strong>The background reel loop.</strong> The silent loop behind the current homepage (Vimeo 848454220) comes from the reel, and the reel includes Don't Go Hiking, Bad Witch and Bennett's Curse shots. Every concept uses a still for now. A 30 to 60 second loop cut from client work only would fix it.</div></li>
+        <li><div><strong>The screening Q&amp;A photo.</strong> It shows three men. Which two are Josh and Victor, left to right? Then the captions can name them.</div></li>
+        <li><div><strong>Format labels.</strong> The concepts only use labels the current site already uses ("Organ donation testimonials", "Maryland EXCELS TV PSA"). Real titles are missing for Pearlstone and Tidewater Direct, and Hopkins "Engineering Management" needs a yes as a recruitment film.</div></li>
+        <li><div><strong>Cuba course.</strong> The homepage and brief say Johns Hopkins AAP (Advanced Academic Programs). The live portfolio page says Johns Hopkins SAIS. Which is right?</div></li>
+        <li><div><strong>Joe (Infinite Legacy).</strong> Is he from a donor family or a recipient? Concept E wants to say what each film was for, and that's on hold until you confirm.</div></li>
+        <li><div><strong>Low-resolution stills.</strong> Cuba (child on horse), Moms at the Playground and Pearlstone exist only at 1200px, and the black-and-white crew-on-the-hill photo is 576px. 2560px frame exports from the masters would let them run large.</div></li>
+        <li><div><strong>Carried over from the audit.</strong> Every concept leaves out the feature count, the 1.8M views and 100+ clients figures, and "award-winning" until you confirm them.</div></li>
+        <li><div><strong>Because Quality Matters is unlisted.</strong> The laughing-preschoolers still comes from this Maryland EXCELS spot, which is unlisted on Vimeo. Four concepts feature it, and C uses it as the hero. Is MSDE fine with it being public on your homepage? If not, it swaps out easily. "Checklist Moments" was dropped where it only had a 640px still; it can come back as a text row.</div></li>
+        <li><div><strong>New format labels.</strong> A calls the Mike Odom film a "Profile" for Teaching Writing at Hopkins AAP. That label is new, so it needs your yes along with the others.</div></li>
+        <li><div><strong>Video playback here.</strong> Some Vimeo videos may refuse to play from this local preview if their embed settings only allow mindinmotion.tv. They'll play on the real domain.</div></li>
+      </ol>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap mono">Built from the September 2026 audit, the content brief and design research on A24, Neon, Mubi, Criterion and ten production companies. Research notes and screenshots are in <a href="../research/A24.md">research/A24.md</a> and <a href="../research/PEERS.md">research/PEERS.md</a>.</div>
+</footer>
+</body>
+</html>

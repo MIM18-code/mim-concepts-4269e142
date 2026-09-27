@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MIM Redesign Round 2</title>
+<style>
+  :root { --bg:#0a0a0a; --panel:#141414; --line:#262626; --text:#f2f2f2; --muted:#a3a3a3; --cyan:#00e6f8; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:17px/1.55 -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; }
+  a { color:inherit; }
+  .wrap { max-width:1320px; margin:0 auto; padding:0 32px; }
+  header { padding:64px 0 40px; }
+  header img { width:36px; height:36px; display:block; margin-bottom:28px; }
+  h1 { font-size:clamp(36px,5vw,64px); line-height:1.02; letter-spacing:-.025em; margin:0 0 20px; font-weight:700; }
+  header p { color:var(--muted); max-width:760px; margin:0 0 12px; }
+  header p strong { color:var(--text); }
+  .toc { display:flex; flex-wrap:wrap; gap:10px; margin-top:28px; }
+  .toc a { text-decoration:none; padding:8px 14px; background:var(--panel); border:1px solid var(--line); font-size:15px; }
+  .toc a:hover, .toc a:focus-visible { border-color:var(--text); }
+  h2.group { font-size:15px; font-weight:600; color:var(--muted); margin:56px 0 0; padding-top:24px; border-top:1px solid var(--line); }
+  section.c { padding:40px 0 56px; scroll-margin-top:16px; }
+  .top { display:flex; align-items:baseline; justify-content:space-between; gap:24px; flex-wrap:wrap; margin-bottom:12px; }
+  h3 { font-size:clamp(28px,3.4vw,44px); margin:0; letter-spacing:-.02em; line-height:1.05; }
+  h3 span { color:var(--muted); font-weight:400; margin-right:12px; }
+  .open { font-weight:600; text-decoration:none; background:var(--text); color:var(--bg); padding:10px 18px; white-space:nowrap; }
+  .open:hover, .open:focus-visible { background:var(--cyan); }
+  .desc { color:var(--muted); max-width:820px; margin:0 0 24px; }
+  .desc strong { color:var(--text); font-weight:600; }
+  .row { display:grid; grid-template-columns:1fr 240px; gap:16px; align-items:start; }
+  .row + .row { margin-top:16px; }
+  figure { margin:0; }
+  figure a, video { display:block; width:100%; background:#000; border:1px solid var(--line); }
+  figure img { display:block; width:100%; height:auto; }
+  figcaption { font-size:14px; color:var(--muted); margin-top:6px; }
+  video { height:auto; }
+  .needs { padding:48px 0 96px; border-top:1px solid var(--line); margin-top:24px; }
+  .needs h2 { font-size:clamp(24px,3vw,34px); margin:0 0 20px; }
+  .needs ol { margin:0; padding-left:22px; max-width:900px; color:var(--muted); }
+  .needs li { margin-bottom:12px; }
+  .needs strong { color:var(--text); font-weight:600; }
+  :focus-visible { outline:2px solid var(--cyan); outline-offset:3px; }
+  @media (max-width:800px) {
+    .wrap { padding:0 16px; }
+    .row { grid-template-columns:1fr 34%; gap:10px; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <img src="assets/img/mindinmotion-logo.png" alt="" width="205" height="205">
+    <h1>MindInMotion redesign, round 2</h1>
+    <p>Six homepage concepts, all dark. <strong>The words on every one are exactly what's on mindinmotion.tv today.</strong> A checker compares each page against the live site, and all six pass with nothing added and nothing missing. Only the design changed.</p>
+    <p>A, B and D are the three you kept from round 1. F, G and H are new, built to be more immersive. Each concept has a scroll-through video, which is the quickest way to see the motion. Click a screenshot to open the working page.</p>
+    <p>Round 1 is still in <a href="_round1/index.html">its own folder</a>. Nothing here touches the live site or GitHub.</p>
+    <nav class="toc" aria-label="Concepts">
+      <a href="#a">A Studio Slate</a><a href="#b">B Production House</a><a href="#d">D Title Sequence</a>
+      <a href="#f">F Pull Back</a><a href="#g">G Blocking</a><a href="#h">H Throw</a><a href="#needs">What would make them better</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <h2 class="group">Kept from round 1, now with the site's copy</h2>
+
+  <section class="c" id="a">
+    <div class="top"><h3><span>A</span>Studio Slate</h3><a class="open" href="concept-a-studio-slate/index.html">Open A</a></div>
+    <p class="desc">The closest to A24's own site. Near-black, off-white type, and the work laid out as a catalog. Hover, tab or scroll through the project titles and the big still behind them changes.</p>
+    <div class="row">
+      <figure><a href="concept-a-studio-slate/index.html"><img src="concept-a-studio-slate/_shots/final-desk-fold.png" alt="Concept A, desktop first screen" width="1440" height="900" loading="lazy"></a><figcaption>Desktop</figcaption></figure>
+      <figure><a href="concept-a-studio-slate/index.html"><img src="concept-a-studio-slate/_shots/final-mob-fold.png" alt="Concept A, phone first screen" width="390" height="844" loading="lazy"></a><figcaption>Phone</figcaption></figure>
+    </div>
+    <div class="row">
+      <figure><video src="concept-a-studio-slate/_shots/scroll-desk.mp4" controls muted playsinline preload="none" poster="concept-a-studio-slate/_shots/final-desk-fold.png" aria-label="Scroll-through of concept A on desktop"></video><figcaption>Scroll-through, desktop</figcaption></figure>
+      <figure><video src="concept-a-studio-slate/_shots/scroll-mob.mp4" controls muted playsinline preload="none" poster="concept-a-studio-slate/_shots/final-mob-fold.png" aria-label="Scroll-through of concept A on a phone"></video><figcaption>Phone</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="c" id="b">
+    <div class="top"><h3><span>B</span>Production House</h3><a class="open" href="concept-b-production-house/index.html">Open B</a></div>
+    <p class="desc">Built like a commercial production company's site. One full-bleed frame with the phone numbers pinned to its corners, then each project as a heavy credit line over a big still that pulls into focus as you scroll.</p>
+    <div class="row">
+      <figure><a href="concept-b-production-house/index.html"><img src="concept-b-production-house/_shots/final-desk-fold.png" alt="Concept B, desktop first screen" width="1440" height="900" loading="lazy"></a><figcaption>Desktop</figcaption></figure>
+      <figure><a href="concept-b-production-house/index.html"><img src="concept-b-production-house/_shots/final-mob-fold.png" alt="Concept B, phone first screen" width="390" height="844" loading="lazy"></a><figcaption>Phone</figcaption></figure>
+    </div>
+    <div class="row">
+      <figure><video src="concept-b-production-house/_shots/scroll-desk.mp4" controls muted playsinline preload="none" poster="concept-b-production-house/_shots/final-desk-fold.png" aria-label="Scroll-through of concept B on desktop"></video><figcaption>Scroll-through, desktop</figcaption></figure>
+      <figure><video src="concept-b-production-house/_shots/scroll-mob.mp4" controls muted playsinline preload="none" poster="concept-b-production-house/_shots/final-mob-fold.png" aria-label="Scroll-through of concept B on a phone"></video><figcaption>Phone</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="c" id="d">
+    <div class="top"><h3><span>D</span>Title Sequence</h3><a class="open" href="concept-d-title-sequence/index.html">Open D</a></div>
+    <p class="desc">The homepage plays like a film's opening titles. Client stories run as pinned full-width scenes between letterbox bars, and scene numbers and timecode mark the sections.</p>
+    <div class="row">
+      <figure><a href="concept-d-title-sequence/index.html"><img src="concept-d-title-sequence/_shots/final-desk-fold.png" alt="Concept D, desktop first screen" width="1440" height="900" loading="lazy"></a><figcaption>Desktop</figcaption></figure>
+      <figure><a href="concept-d-title-sequence/index.html"><img src="concept-d-title-sequence/_shots/final-mob-fold.png" alt="Concept D, phone first screen" width="390" height="844" loading="lazy"></a><figcaption>Phone</figcaption></figure>
+    </div>
+    <div class="row">
+      <figure><video src="concept-d-title-sequence/_shots/scroll-desk.mp4" controls muted playsinline preload="none" poster="concept-d-title-sequence/_shots/final-desk-fold.png" aria-label="Scroll-through of concept D on desktop"></video><figcaption>Scroll-through, desktop</figcaption></figure>
+      <figure><video src="concept-d-title-sequence/_shots/scroll-mob.mp4" controls muted playsinline preload="none" poster="concept-d-title-sequence/_shots/final-mob-fold.png" aria-label="Scroll-through of concept D on a phone"></video><figcaption>Phone</figcaption></figure>
+    </div>
+  </section>
+
+  <h2 class="group">New: immersive</h2>
+
+  <section class="c" id="f">
+    <div class="top"><h3><span>F</span>Pull Back</h3><a class="open" href="concept-f-pull-back/index.html">Open F</a></div>
+    <p class="desc">Every finished frame sits on a real monitor on your real set. The page opens inside the MSDE couch shot and backs out onto the SmallHD in the set photo, then out to the crew, then into the edit suite. Along the way, <strong>"We Create, Produce, Direct, Film"</strong> lands beside the people doing each job. The frame ends up as the first Featured Projects tile. Click a monitor and the camera pushes back in.</p>
+    <div class="row">
+      <figure><a href="concept-f-pull-back/index.html"><img src="concept-f-pull-back/_shots/final-desk-fold.png" alt="Concept F, desktop first screen" width="1440" height="900" loading="lazy"></a><figcaption>Desktop</figcaption></figure>
+      <figure><a href="concept-f-pull-back/index.html"><img src="concept-f-pull-back/_shots/final-mob-fold.png" alt="Concept F, phone first screen" width="390" height="844" loading="lazy"></a><figcaption>Phone</figcaption></figure>
+    </div>
+    <div class="row">
+      <figure><video src="concept-f-pull-back/_shots/scroll-desk.mp4" controls muted playsinline preload="none" poster="concept-f-pull-back/_shots/final-desk-fold.png" aria-label="Scroll-through of concept F on desktop"></video><figcaption>Scroll-through, desktop</figcaption></figure>
+      <figure><video src="concept-f-pull-back/_shots/scroll-mob.mp4" controls muted playsinline preload="none" poster="concept-f-pull-back/_shots/final-mob-fold.png" aria-label="Scroll-through of concept F on a phone"></video><figcaption>Phone</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="c" id="g">
+    <div class="top"><h3><span>G</span>Blocking</h3><a class="open" href="concept-g-blocking/index.html">Open G</a></div>
+    <p class="desc">Every heading is blocked into a real frame like an actor, standing behind the people and in front of the room. The Cuba hiker's hat breaks into <strong>MINDINMOTION</strong>, a boom pole cuts through "Behind the Scenes", and the woman in the library looks up at "Full-Service Production". Scrolling pushes the camera in, and the room, the words and the person each move at their own depth.</p>
+    <div class="row">
+      <figure><a href="concept-g-blocking/index.html"><img src="concept-g-blocking/_shots/final-desk-fold.png" alt="Concept G, desktop first screen" width="1440" height="900" loading="lazy"></a><figcaption>Desktop</figcaption></figure>
+      <figure><a href="concept-g-blocking/index.html"><img src="concept-g-blocking/_shots/final-mob-fold.png" alt="Concept G, phone first screen" width="390" height="844" loading="lazy"></a><figcaption>Phone</figcaption></figure>
+    </div>
+    <div class="row">
+      <figure><video src="concept-g-blocking/_shots/scroll-desk.mp4" controls muted playsinline preload="none" poster="concept-g-blocking/_shots/final-desk-fold.png" aria-label="Scroll-through of concept G on desktop"></video><figcaption>Scroll-through, desktop</figcaption></figure>
+      <figure><video src="concept-g-blocking/_shots/scroll-mob.mp4" controls muted playsinline preload="none" poster="concept-g-blocking/_shots/final-mob-fold.png" aria-label="Scroll-through of concept G on a phone"></video><figcaption>Phone</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="c" id="h">
+    <div class="top"><h3><span>H</span>Throw</h3><a class="open" href="concept-h-throw/index.html">Open H</a></div>
+    <p class="desc">A dark room with a projector behind you. Your stills are thrown on the far wall, and every headline hangs in the beam and casts a shadow that swings as you move the mouse. Each of the five verbs lights up only when the wall cuts to the WellPoint crew doing that job.</p>
+    <div class="row">
+      <figure><a href="concept-h-throw/index.html"><img src="concept-h-throw/_shots/final-desk-fold.png" alt="Concept H, desktop first screen" width="1440" height="900" loading="lazy"></a><figcaption>Desktop</figcaption></figure>
+      <figure><a href="concept-h-throw/index.html"><img src="concept-h-throw/_shots/final-mob-fold.png" alt="Concept H, phone first screen" width="390" height="844" loading="lazy"></a><figcaption>Phone</figcaption></figure>
+    </div>
+    <div class="row">
+      <figure><video src="concept-h-throw/_shots/scroll-desk.mp4" controls muted playsinline preload="none" poster="concept-h-throw/_shots/final-desk-fold.png" aria-label="Scroll-through of concept H on desktop"></video><figcaption>Scroll-through, desktop</figcaption></figure>
+      <figure><video src="concept-h-throw/_shots/scroll-mob.mp4" controls muted playsinline preload="none" poster="concept-h-throw/_shots/final-mob-fold.png" aria-label="Scroll-through of concept H on a phone"></video><figcaption>Phone</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="needs" id="needs">
+    <h2>What would make them better</h2>
+    <ol>
+      <li><strong>A silent loop cut from client work only.</strong> The loop behind the current homepage comes from the reel, which includes horror shots. Every concept shows a still for now. Thirty to sixty seconds of client footage would let B, F and H move on arrival.</li>
+      <li><strong>Bigger exports of a few frames.</strong> Cuba (child on horse), Moms at the Playground, Pearlstone, the stage Q&amp;A and the black-and-white crew hike exist only at 1200px or smaller. The Checklist Moments thumbnail is 640px. 2400px exports from the masters would let them run full screen.</li>
+      <li><strong>More behind-the-scenes photos that show a finished shot on a monitor.</strong> F is built on four real set-and-monitor pairs. You probably have more on your drives, and each one adds another pull-back.</li>
+      <li><strong>A check in your normal browser and on an iPhone.</strong> Vimeo blocks my test browsers, so video playback is unconfirmed. F, G and H are the heaviest pages and haven't been tested in Safari yet.</li>
+    </ol>
+  </section>
+</main>
+</body>
+</html>
