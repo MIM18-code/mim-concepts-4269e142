@@ -18,7 +18,7 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="../assets/img/cdspg-building-friendships.webp" fetchpriority="high">
 <style>
 @property --close { syntax: '<number>'; inherits: true; initial-value: 0; }
@@ -679,159 +679,175 @@ html:not(.seq) .sl-shot { display: none; }
   .roll dd a[href^="mailto"], .ec-credits a[href^="mailto"] { overflow-wrap: anywhere; }
 }
 </style>
-<style id="type-option-grotesk">
-/* fonts: https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600&display=swap */
-/* House grotesk. One neutral grotesk in three weights: 400 for reading, 500 for labels, buttons and
-   every title, 600 for the wordmark and the IMDb text mark. Sentence case everywhere (the CSS shows the
-   copy's own case), tight negative tracking only at display sizes, no tracked caps. */
+<style id="type-option-credits">
+/* fonts: https://fonts.googleapis.com/css2?family=Jost:wght@400;500&display=swap */
+/* Type option "credits": Jost only, the Futura line of film title cards.
+   500 caps with even tracking for titles, 400 sentence case for reading, small 500 capitals for labels.
+   Jost is far wider than Archivo at 62%, so every size that depends on glyph width is retuned here. */
 
 :root {
-  --house: 'Schibsted Grotesk', 'Helvetica Neue', Arial, sans-serif;
-  --display: var(--house);
-  --serif: var(--house);
-  --mono: var(--house);
+  --display: 'Jost', 'Futura', 'Century Gothic', sans-serif;
+  --serif: 'Jost', 'Futura', 'Century Gothic', sans-serif;
+  --mono: 'Jost', 'Futura', 'Century Gothic', sans-serif;
+  --trk: .06em;     /* titles */
+  --trk-l: .09em;   /* small caps labels */
 }
-body { font-size: 17px; line-height: 1.5; font-kerning: normal; }
 
-/* ---------- type roles ---------- */
-.disp {
-  font-stretch: normal; font-weight: 500; text-transform: none;
-  line-height: .98; letter-spacing: -.03em;
-}
-.wide {
-  font-stretch: normal; font-weight: 500; text-transform: none;
-  letter-spacing: 0; font-size: 13px; line-height: 1.35;
-}
-.mono {
-  font-size: 13px; font-weight: 400; letter-spacing: 0; text-transform: none; line-height: 1.35;
-}
-/* The clock ticks in place, so it uses tabular figures. Schibsted's tnum also swaps in a digit-wide
-   colon, so the digits get a touch of negative tracking. Numbered lists use tabular figures so the
-   names after 01 to 04 start on one line. */
-.tc { font-variant-numeric: tabular-nums; }
-.tc .tc-val { letter-spacing: -.02em; }
-.nav .dd-panel .mono, .svc-n, .menu nav .mono { font-variant-numeric: tabular-nums; }
+body { font-size: 19px; line-height: 1.55; font-weight: 400; font-kerning: normal; }
 
-.btn, .link-arrow {
-  font-stretch: normal; font-weight: 500; font-size: 15px; letter-spacing: 0; text-transform: none;
+/* ---------- roles ---------- */
+.disp { font-stretch: normal; font-weight: 500; letter-spacing: var(--trk); line-height: .98; }
+.wide { font-stretch: normal; font-weight: 500; letter-spacing: var(--trk-l); font-size: 13px; line-height: 1.4; }
+.mono { font-weight: 400; letter-spacing: .06em; font-size: 13px; line-height: 1.4; font-variant-numeric: tabular-nums; }
+.tc { font-weight: 500; letter-spacing: .05em; font-variant-numeric: tabular-nums; }
+
+.btn, .link-arrow, .nav a, .dd-btn, .js .menu-btn, .menu-close {
+  font-stretch: normal; font-weight: 500; font-size: 13px; letter-spacing: var(--trk-l);
 }
 .skip { font-weight: 500; }
-
-/* ---------- header ---------- */
-.brand span { font-stretch: normal; font-weight: 600; font-size: 19px; letter-spacing: -.02em; text-transform: none; }
-.nav a, .dd-btn { font-stretch: normal; font-weight: 400; font-size: 15px; letter-spacing: 0; text-transform: none; }
-.nav .dd-panel .mono { font-size: 13px; letter-spacing: 0; }
-.hdr-tel { font-stretch: normal; font-weight: 400; font-size: 15px; letter-spacing: 0; }
-/* Sentence-case nav runs about 200px narrower than the tracked caps did, so from 1081 to 1219px the
-   bar keeps about 100px spare with the clock on it. The clock stays beside the wordmark from 440px up;
-   the hero slate shows it only on narrow phones. Exactly one of the two is displayed at any width. */
-@media (min-width: 1081px) and (max-width: 1219px) {
+.hdr-tel { font-stretch: normal; font-weight: 500; font-size: 13px; letter-spacing: .06em; }
+.brand span { font-stretch: normal; font-weight: 500; font-size: 17px; letter-spacing: .12em; }
+.nav .dd-panel .mono { font-size: 12px; letter-spacing: .04em; }
+/* The Jost nav is narrower than the wide Archivo one, so the header keeps its clock down to 1120px.
+   Below that, and below 440px, the clock moves to the hero slate row as before. One clock at every width. */
+@media (min-width: 1120px) and (max-width: 1219px) {
   .hdr-tc { display: inline; }
   .hero-slate .clock { display: none; }
 }
-.js .menu-btn, .menu-close { font-stretch: normal; font-weight: 500; font-size: 15px; letter-spacing: 0; text-transform: none; }
 
-/* ---------- phone menu ---------- */
-.menu nav a, .menu-group > p { font-size: clamp(36px, 10.5vw, 52px); letter-spacing: -.03em; }
-.menu nav .menu-sub a { font-size: 16px; }
+/* ---------- SC 00 ---------- */
+.presents { font-size: 14px; letter-spacing: .14em; }
+/* MINDINMOTION is 7.67em plus tracking in Jost 500. The second term is the title column
+   (viewport, minus gutters, the 420px side column and the 48px gap) divided by that width. */
+.hero h1 { font-size: clamp(48px, min(15vh, calc((100vw - 2 * var(--gut) - 468px) / 8.6)), 164px); letter-spacing: .05em; }
+.hero-sub { font-size: clamp(21px, 1.75vw, 29px); line-height: 1.32; }
+.stats dt { font-size: 12px; }
+.stats dd { font-size: clamp(19px, 1.45vw, 22px); }
 
-/* ---------- hero ---------- */
-/* MindInMotion runs about 6.1em at this weight and tracking (measured). The third term keeps it inside the
-   title column (viewport minus gutters, the 420px side column and the 48px gap). */
-.hero h1 {
-  font-weight: 500; letter-spacing: -.04em; line-height: .94;
-  font-size: clamp(56px, min(9vw, 15vh, calc((93.8vw - 468px) / 6.3)), 160px);
-  padding-bottom: .08em; margin-bottom: -.08em;
+/* ---------- intertitles and scenes ---------- */
+.inter h2, .sec-h, .roll-h, .ec-bar h2 { font-size: clamp(30px, 3.3vw, 54px); line-height: 1.02; }
+.roll-h { padding-left: var(--trk); }
+.inter-side p { font-size: 18px; }
+
+.intertitle p:first-child {
+  font-style: normal; font-weight: 500; text-transform: uppercase; letter-spacing: .07em;
+  font-size: clamp(24px, min(3.2vw, 5.6vh), 52px); line-height: 1.18;
 }
-.presents { font-size: 15px; }
-.hero-sub { font-size: clamp(20px, 1.6vw, 26px); line-height: 1.3; letter-spacing: -.01em; }
-.stats dt { font-size: 13px; }
-.stats dd { font-size: clamp(18px, 1.35vw, 21px); }
+.intertitle p + p { font-size: clamp(18px, 1.45vw, 22px); line-height: 1.5; }
 
-/* ---------- section heads ---------- */
-.inter h2, .sec-h, .roll-h, .ec-bar h2 { font-size: clamp(32px, 3.4vw, 56px); letter-spacing: -.03em; line-height: 1.04; }
-.inter-side p, .sheet-head p { font-size: 17px; }
+/* Scene titles: second only to the H1. 4.6vw keeps "CUBA FIELD COURSE" on one line of the 1.7fr title
+   column, so the longest title takes two lines and the credit stays on the 30vh bar. */
+.cr-title { font-size: clamp(34px, min(4.6vw, 7.4vh), 80px); }
+.shot + .shot .cr-title { font-size: clamp(32px, 3vw, 48px); }
+.seq .shot + .shot .cr-title { font-size: clamp(34px, min(4.6vw, 7.4vh), 80px); }
+.cr-title.long { font-size: clamp(26px, min(3.4vw, 5.4vh), 56px); line-height: 1.04; }
+.cr-sub { font-size: .5em; margin-top: .32em; letter-spacing: .08em; }
+.cr-kind { text-transform: none; letter-spacing: 0; font-size: 15px; line-height: 1.45; }
+.cr-desc { font-size: 17px; line-height: 1.5; }
+/* index.html shrinks "Because Quality Matters" from 1081 to 1199px; at these sizes it already holds two lines there. */
+@media (min-width: 1081px) and (max-width: 1199px) { #sc-02 .cr-title { font-size: clamp(34px, min(4.6vw, 7.4vh), 80px); } }
 
-/* ---------- scenes ---------- */
-.intertitle p:first-child { font-style: normal; font-weight: 500; font-size: clamp(30px, min(3.9vw, 7vh), 62px); line-height: 1.1; letter-spacing: -.028em; }
-.intertitle p + p { font-size: clamp(17px, 1.4vw, 21px); }
-.cr-title { font-size: clamp(36px, min(5.4vw, 8.6vh), 92px); letter-spacing: -.035em; line-height: 1; }
-.shot + .shot .cr-title { font-size: clamp(36px, 3.5vw, 56px); }
-.seq .shot + .shot .cr-title { font-size: clamp(36px, min(5.4vw, 8.6vh), 92px); }
-.cr-title.long { font-size: clamp(30px, min(3.9vw, 6.4vh), 66px); letter-spacing: -.03em; }
-.cr-sub { font-size: .5em; letter-spacing: -.02em; margin-top: .22em; color: var(--bone-2); }
-.cr-desc { font-size: 16px; line-height: 1.5; }
-.subs p { font-style: normal; font-size: clamp(19px, 1.6vw, 24px); line-height: 1.4; letter-spacing: -.005em; text-wrap: balance; }
-.subs footer b { font-weight: 500; }
+.subs p { font-style: normal; font-size: clamp(19px, 1.6vw, 24px); line-height: 1.45; }
+.subs footer b { font-weight: 500; letter-spacing: var(--trk-l); }
+.subs footer .by-role { text-transform: none; letter-spacing: 0; font-size: 14px; }
 
-/* ---------- contact sheet, services, films ---------- */
-.tile-title { font-stretch: normal; font-weight: 500; font-size: clamp(20px, 1.55vw, 25px); line-height: 1.15; letter-spacing: -.015em; text-transform: none; }
-.endcta p { font-stretch: normal; font-weight: 500; font-size: clamp(22px, 2vw, 32px); line-height: 1.15; letter-spacing: -.02em; text-transform: none; }
-.svc-t { font-stretch: normal; font-weight: 500; font-size: clamp(24px, 2.2vw, 34px); line-height: 1.08; letter-spacing: -.022em; text-transform: none; }
-.svc-lede, .about-lede { font-size: clamp(19px, 1.45vw, 22px); letter-spacing: -.005em; }
-.svc-d, .about-p, .cast dd { font-size: 17px; }
-.film-t { font-size: clamp(26px, 2.5vw, 40px); letter-spacing: -.028em; line-height: 1.06; }
-.film-t sup { font-size: 13px; font-weight: 400; letter-spacing: 0; top: .3em; }
-.film-meta { font-size: 15px; }
-.card .disp { font-size: clamp(34px, 3.4vw, 54px); }
+/* ---------- SC 06 contact sheet ---------- */
+.tile-title { font-stretch: normal; font-weight: 500; font-size: clamp(18px, 1.5vw, 23px); line-height: 1.18; letter-spacing: .05em; }
+.tile-client { font-size: 12px; }
+.tile-cr { text-transform: none; letter-spacing: 0; font-size: 14px; }
+.tile-cue { font-weight: 500; letter-spacing: var(--trk-l); }
+.endcta p { font-stretch: normal; font-weight: 500; font-size: clamp(20px, 1.9vw, 30px); line-height: 1.15; letter-spacing: .05em; }
+
+/* ---------- SC 07 services ---------- */
+.svc-lede { font-size: clamp(20px, 1.55vw, 23px); line-height: 1.45; }
+.svc-t { font-stretch: normal; font-weight: 500; font-size: clamp(22px, 2.2vw, 34px); line-height: 1.05; letter-spacing: .05em; }
+.svc-n { padding-top: 4px; }
+.svc-d { font-size: 18px; }
+
+/* ---------- reel 2 ---------- */
+.film-t { font-size: clamp(26px, 2.6vw, 40px); letter-spacing: .05em; }
+.film-t sup { font-family: var(--mono); font-size: 13px; font-weight: 400; letter-spacing: .04em; top: .2em; font-variant-numeric: tabular-nums; }
+.film-meta { font-size: 16px; }
+.card .disp { font-size: clamp(28px, 2.8vw, 44px); }
 .quote p { font-style: normal; }
-.cast dt { font-stretch: normal; font-weight: 500; font-size: 17px; letter-spacing: 0; text-transform: none; }
 
-/* ---------- end credits and closing card ---------- */
-.credits dd { font-size: clamp(19px, 1.6vw, 24px); }
-.say blockquote p { font-style: normal; font-size: clamp(19px, 1.6vw, 24px); line-height: 1.4; text-indent: -.46em; letter-spacing: -.005em; }
-.say .role, .ec-credits dt { font-size: 13px; }
-.cta-lede { font-size: clamp(18px, 1.4vw, 21px); }
-.ec-credits dd { font-size: clamp(19px, 1.5vw, 23px); }
-.roll dd { font-size: clamp(16px, 1.2vw, 18px); }
-.end-brand .wide { font-size: 13px; }
-.end-bottom .brand span { font-size: 18px; }
-.socials .imdb { font-stretch: normal; font-weight: 600; font-size: 13px; letter-spacing: 0; }
-.player-bar h2 { font-weight: 500; font-size: 18px; }
+/* ---------- SC 09 about ---------- */
+.about-lede { font-size: clamp(20px, 1.55vw, 23px); }
+.about-p { font-size: 18px; }
+.cast dt { font-stretch: normal; font-weight: 500; font-size: 15px; letter-spacing: var(--trk-l); }
+.cast dd { font-size: 18px; }
+
+/* ---------- SC 10 end credits ---------- */
+.credits dd { font-size: clamp(20px, 1.7vw, 26px); }
+.say blockquote p { font-style: normal; font-size: clamp(20px, 1.7vw, 26px); line-height: 1.42; text-indent: -.48em; }
+.say .role { text-transform: none; letter-spacing: 0; font-size: 14px; font-weight: 400; }
+
+/* ---------- SC 11 + footer ---------- */
+.ec-credits dt { font-size: 12px; }
+.ec-credits dd { font-size: clamp(19px, 1.55vw, 24px); }
+.end-brand .wide { font-size: 12px; }
+.end-bottom .brand span { font-size: 16px; }
+.legal { text-transform: none; letter-spacing: .01em; font-size: 13px; }
+.socials .imdb { font-stretch: normal; font-weight: 500; font-size: 13px; letter-spacing: .06em; }
+.player-bar h2 { font-weight: 400; }
+
+/* ---------- menu ---------- */
+.menu nav a { font-size: clamp(30px, 9vw, 44px); }
+.menu-group > p { font-size: clamp(30px, 9vw, 44px); }
+.menu nav .menu-sub a { font-size: 13px; }
 
 /* ---------- tablet ---------- */
 @media (max-width: 1100px) {
-  /* Title column here is the viewport minus gutters, the 320px side column and the 40px gap. */
-  .hero h1 { font-size: clamp(44px, min(9vw, calc((93.8vw - 360px) / 6.4)), 96px); }
+  /* Title column: viewport minus gutters, the 320px side column and the 40px gap. */
+  .hero h1 { font-size: clamp(40px, calc((100vw - 2 * var(--gut) - 360px) / 8.6), 96px); }
 }
-@media (min-width: 1081px) and (max-width: 1199px) { #sc-02 .cr-title { font-size: clamp(36px, min(5vw, 8.6vh), 92px); } }
-
-/* From 761 to 900px the two-column hero left MindInMotion a 360px column (about 56px type, phone
-   size). Stack it as the phone layout does, so the title takes the full width. */
-@media (min-width: 761px) and (max-width: 900px) {
-  .hero-body { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+/* Below 940px that column would hold MINDINMOTION at under 60px, smaller than a scene title.
+   The titles stack in one column instead, as on the phone, and the H1 takes the full measure. */
+@media (min-width: 761px) and (max-width: 940px) {
+  .hero-body { grid-template-columns: minmax(0, 1fr); gap: 22px; padding-top: 34px; }
   .hero-main, .hero-side { display: contents; }
-  .hero h1 { order: 1; font-size: clamp(64px, calc(93.8vw / 6.4), 96px); }
-  .hero-sub { order: 2; font-size: 22px; max-width: 30em; }
+  .hero h1 { order: 1; font-size: clamp(40px, calc((100vw - 2 * var(--gut)) / 8.6), 96px); }
+  .hero-sub { order: 2; max-width: 30ch; }
   .hero-ctas { order: 3; }
   .stats { order: 4; }
 }
 
+/* From 761 to 1080px the credit stacks (title over description) on a 30vh bar. Smaller titles and a
+   shorter top pad keep the longest stack (SC 03 at 1024x768) on the bar. */
+@media (min-width: 761px) and (max-width: 1080px) {
+  .cr-title, .seq .shot + .shot .cr-title { font-size: clamp(30px, min(4.2vw, 6.2vh), 60px); }
+  .cr-title.long { font-size: clamp(24px, min(3.2vw, 4.8vh), 44px); }
+  .seq .scene .credit { padding-top: 12px; }
+}
+
 /* ---------- phone ---------- */
 @media (max-width: 760px) {
-  body { font-size: 16px; }
-  .btn { letter-spacing: 0; }
-  .brand span { font-size: 18px; }
-  .hero h1 { font-size: clamp(40px, calc((100vw - 32px) / 6.3), 72px); }
+  body { font-size: 17px; }
+  .btn { letter-spacing: .07em; }
+  .brand span { font-size: 15px; letter-spacing: .1em; }
+  .hero h1 { font-size: clamp(34px, calc((100vw - 2 * var(--gut)) / 8.5), 72px); letter-spacing: .04em; }
   .hero-sub { font-size: 20px; }
-  .cr-title, .seq .shot + .shot .cr-title, .shot + .shot .cr-title { font-size: clamp(36px, 10.4vw, 52px); }
-  .cr-title.long { font-size: clamp(28px, 8vw, 36px); }
-  .cr-desc { font-size: 15px; }
+  .cr-title, .seq .shot + .shot .cr-title, .shot + .shot .cr-title { font-size: clamp(30px, 9vw, 40px); }
+  .cr-title.long { font-size: clamp(22px, 6.2vw, 28px); }
+  .cr-desc { font-size: 16px; }
   .cr-kind, .tile-cr { font-size: 13px; }
   .seq .subs p { font-size: 17px; }
-  .seq .subs footer { font-size: 13px; }
-  .film-t { font-size: clamp(24px, 6.8vw, 34px); }
-  .film-meta { font-size: 14px; }
-  .film .thumb.card .disp { font-size: 13px; letter-spacing: -.01em; }
-  .credits dd { font-size: 19px; }
+  .seq .subs footer { font-size: 12px; }
+  .svc-t { font-size: clamp(19px, 5.7vw, 26px); }
+  .film-t { font-size: clamp(20px, 6.4vw, 28px); }
+  .film .thumb.card .disp { font-size: 10px; letter-spacing: .06em; }
   .say blockquote p { font-size: 19px; text-indent: 0; }
+  .credits dd { font-size: 19px; }
   .ec-credits dd { font-size: 18px; }
 }
 @media (max-width: 400px) {
-  .film .thumb.card .disp { font-size: 12px; }
-  .roll dt { font-size: 13px; }
-  .roll dd { font-size: 16px; }
+  .film .thumb.card .disp { font-size: 9px; }
+  .ec-credits dd { font-size: 17px; }
 }
+
+/* SC 03 ("Cuba Field Course Experience") is the longest title without the .long class. Hold it to two lines at 1081-1199px and on phones, where it ran to three and pushed the Play button to the screen's bottom edge. */
+@media (min-width: 1081px) and (max-width: 1199px) { #sc-03 .cr-title { font-size: clamp(30px, min(4vw, 6.6vh), 70px); } }
+@media (max-width: 760px) { #sc-03 .cr-title { font-size: clamp(24px, 7.2vw, 32px); } }
 
 </style>
 </head>
