@@ -1131,6 +1131,8 @@ def main():
     (SITE / 'pages.css').write_text((HERE / 'pages.css').read_text())
     (SITE / 'pages.js').write_text((HERE / 'pages.js').read_text())
     (SITE / 'index.html').write_text(relink(SRC))
+    # The monitor hero (REC button) is still a candidate, so it gets its own homepage for comparison.
+    (SITE / 'home-monitor.html').write_text(relink((D / 'hero-monitor.html').read_text()))
     for p in PAGES:
         (SITE / (p['slug'] + '.html')).write_text(page_html(p, p['body']()))
     print('built', 1 + len(PAGES), 'pages into', SITE)
