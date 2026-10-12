@@ -851,7 +851,24 @@ body { font-size: 17px; line-height: 1.5; font-kerning: normal; }
   outline: 1px solid rgba(236, 230, 218, .32); outline-offset: 0;
 }
 .mon-hero .frame::after { display: none; }
-.mon-hero .frame > img, .mon-hero .frame > video { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 62% 40%; }
+.mon-hero .frame > video { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 62% 40%; }
+/* Takes: stacked stills, one on at a time. A hard cut between them, and a slow push-in while each one holds. */
+.takes, .take { position: absolute; inset: 0; margin: 0; overflow: hidden; }
+.take { visibility: hidden; }
+.take.is-on { visibility: visible; }
+.take img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: var(--pos); transform-origin: var(--pos); }
+.take-cr { display: none; }
+.standby .take img { animation-play-state: paused !important; }
+@media (prefers-reduced-motion: no-preference) {
+  .take.is-on img { animation: dolly var(--hold, 5.2s) linear both; }
+  @keyframes dolly { from { transform: scale(1.005); } to { transform: scale(1.065); } }
+}
+/* With footage, the meters show sound; with stills there's none, so the corner names the take instead. */
+.now { justify-self: end; display: grid; gap: 3px; text-align: right; max-width: min(320px, 26vw); line-height: 1.2; text-shadow: 0 1px 6px rgba(0,0,0,.6); }
+.now-c { font-size: 11px; color: var(--bone-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.now-t { font-size: 14px; font-weight: 500; color: var(--bone); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mon-hero:not(.has-video) .meters { display: none; }
+.mon-hero.has-video .now { display: none; }
 
 .hud { font-variant-numeric: tabular-nums; color: var(--bone); }
 .hud i { font-style: normal; }
@@ -926,7 +943,13 @@ html:not(.js) .rec { visibility: hidden; }
 
 /* Short laptop screens: a slimmer readout bar so the picture keeps its height. */
 @media (max-height: 700px) and (min-width: 1101px) {
-  .mon-hero { --hud: 56px; --barT: var(--hdr); --bb: 304px; }
+  .mon-hero { --hud: 52px; --barT: var(--hdr); --bb: 236px; }
+  .mon-hero .hero-body { padding-bottom: 22px; }
+  .mon-hero .hero-main { gap: 10px; }
+  .mon-hero h1 { font-size: clamp(56px, min(7vw, 13vh), 120px); }
+  .mon-hero h1 br { display: none; }
+  .mon-hero .hero-side { gap: 10px; }
+  .mon-hero .hero-sub { font-size: clamp(19px, 1.5vw, 24px); }
 }
 
 /* Tablet: the hero stacks, readouts, then the picture, then the titles on black. */
@@ -939,13 +962,14 @@ html:not(.js) .rec { visibility: hidden; }
 @media (max-width: 900px) { .hud-x { display: none; } }
 /* Phone: REC, the clock and frame rate. The histogram and meters are too small to read here. */
 @media (max-width: 760px) {
-  :root { --hud: 56px; }
   .hud-top { gap: 12px; }
   .hud-guide { display: none; }
   .hud-tc { font-size: clamp(24px, 7.4vw, 32px); }
-  .mon-hero .frame { height: 40svh; }
-  .mon-hero .frame > img, .mon-hero .frame > video { object-position: 64% 30%; }
-  .histo, .meters { display: none; }
+  :root { --hud: 50px; }
+  .mon-hero .frame { height: 31vh; height: 31svh; min-height: 210px; }
+  .mon-hero .frame > video { object-position: 64% 30%; }
+  .take img { object-position: var(--mpos); transform-origin: var(--mpos); }
+  .histo, .meters, .now { display: none; }
   .hud-bot { grid-template-columns: minmax(0, 1fr); justify-items: center; height: 72px; padding-bottom: 10px; }
   .mon-hero .presents { order: 0; }
 }
@@ -1031,9 +1055,12 @@ html:not(.js) .rec { visibility: hidden; }
 <main id="main">
 
   <!-- SC 00 · Main titles, on the field monitor -->
-  <!-- PLACEHOLDER picture: a still from the Johns Hopkins AAP interview. To run real footage, replace the <img> with
+  <!-- Until there's a clip, the monitor rolls through takes: five stills from client work, each held about five
+       seconds with a slow push-in, then a hard cut. The clip number and the credit change with each take, and
+       REC pauses the takes with the clock. The audio meters stay hidden, since stills have no sound.
+       To run real footage, replace the .takes block with
        <video src="..." poster="..." muted playsinline loop autoplay preload="auto"></video>
-       The REC button then pauses the picture with the clock, and the audio meters become the sound-on button. -->
+       The REC button then pauses the video with the clock, and the audio meters come back as the sound-on button. -->
   <section class="stage hero mon-hero" aria-labelledby="hero-title">
     <div class="hud hud-top in1">
       <div class="hud-l" aria-hidden="true">
@@ -1052,14 +1079,35 @@ html:not(.js) .rec { visibility: hidden; }
     </div>
 
     <div class="frame">
-      <img src="../assets/img/mike-odom.webp" width="1920" height="1080" fetchpriority="high"
-           alt="A man in glasses looks past the camera during an interview, trees out of focus behind him.">
+      <div class="takes">
+        <figure class="take is-on" data-clip="A001" style="--pos:50% 14%;--mpos:50% 28%">
+          <img src="../assets/img/cdspg-building-friendships.webp" width="1920" height="1080" fetchpriority="high" alt="Two boys hug on a front lawn. One wears glasses and a red sweater.">
+          <figcaption class="take-cr"><span>Chesapeake Down Syndrome Parent Group</span><b>Building Friendships</b></figcaption>
+        </figure>
+        <figure class="take" data-clip="A002" style="--pos:50% 40%;--mpos:42% 40%" aria-hidden="true">
+          <img src="../assets/img/Screen-Shot-2022-10-19-at-3.10.25-PM.webp" width="2500" height="1406" loading="lazy" decoding="async" alt="A mother and daughter read together on a bedroom floor.">
+          <figcaption class="take-cr"><span>InterPublic</span><b>WellPoint</b></figcaption>
+        </figure>
+        <figure class="take" data-clip="A003" style="--pos:50% 25%;--mpos:40% 25%" aria-hidden="true">
+          <img src="../assets/img/residency.webp" width="1920" height="1080" loading="lazy" decoding="async" alt="A woman looks up in a wood-paneled library.">
+          <figcaption class="take-cr"><span>Johns Hopkins AAP</span><b>Teaching Writing - 2018 Residency</b></figcaption>
+        </figure>
+        <figure class="take" data-clip="A004" style="--pos:62% 40%;--mpos:72% 40%" aria-hidden="true">
+          <img src="../assets/img/ghost-light-thumbnail.webp" width="2500" height="1250" loading="lazy" decoding="async" alt="A singer at a grand piano in gold stage light and haze.">
+          <figcaption class="take-cr"><span>Juliet Lloyd</span><b>Ghost Light</b></figcaption>
+        </figure>
+        <figure class="take" data-clip="A005" style="--pos:62% 14%;--mpos:64% 30%" aria-hidden="true">
+          <img src="../assets/img/mike-odom.webp" width="1920" height="1080" loading="lazy" decoding="async" alt="A man in glasses looks past the camera during an interview, trees out of focus behind him.">
+          <figcaption class="take-cr"><span>Johns Hopkins AAP</span><b>Teaching Writing Profile - Mike Odom</b></figcaption>
+        </figure>
+      </div>
       <div class="hud hud-bot">
         <svg class="histo" viewBox="0 0 64 32" preserveAspectRatio="none" aria-hidden="true"><path class="h-r" d=""/><path class="h-g" d=""/><path class="h-b" d=""/></svg>
         <div class="hud-rec">
           <span class="clip" aria-hidden="true">A001</span>
           <button class="rec" type="button" aria-pressed="false" aria-label="Pause the timecode" data-rec><i></i></button>
         </div>
+        <p class="now mono" aria-live="off"><span class="now-c">Chesapeake Down Syndrome Parent Group</span><b class="now-t">Building Friendships</b></p>
         <div class="meters" aria-hidden="true">
           <span class="ch"><b>1</b><span class="trk"><i class="lvl"></i></span></span>
           <span class="ch"><b>2</b><span class="trk"><i class="lvl"></i></span></span>
@@ -1071,7 +1119,7 @@ html:not(.js) .rec { visibility: hidden; }
     <div class="hero-body">
       <div class="hero-main">
         <p class="presents wide in2">Baltimore</p>
-        <h1 id="hero-title" class="disp"><span class="h1-in">Made to<br>be seen.</span></h1>
+        <h1 id="hero-title" class="disp"><span class="h1-in">Made to <br>be seen.</span></h1>
         <div class="hero-ctas in4">
           <a class="btn btn-solid" href="https://mindinmotion.tv/contact">Tell us what you need <svg class="arr"><use href="#arr"/></svg></a>
           <button class="btn" type="button" data-vimeo="851026180" data-title="Demo reel"><svg class="tri"><use href="#tri"/></svg>Watch the reel</button>
@@ -1638,8 +1686,10 @@ html:not(.js) .rec { visibility: hidden; }
   var vid = hero && hero.querySelector('video');
   var toggles = slots.concat([].slice.call(d.querySelectorAll('[data-rec]')));
   var pressable = toggles.filter(function (t) { return t.tagName === 'BUTTON'; });
+  var rollTakes = null; // set below when the monitor runs on stills
   function setPaused(p) {
     paused = p;
+    if (rollTakes) rollTakes();
     pressable.forEach(function (o) { o.setAttribute('aria-pressed', paused ? 'true' : 'false'); });
     html.classList.toggle('standby', paused);
     if (vid) { if (paused) vid.pause(); else { var pr = vid.play(); if (pr && pr.catch) pr.catch(function () {}); } }
@@ -1647,6 +1697,7 @@ html:not(.js) .rec { visibility: hidden; }
   }
   toggles.forEach(function (t) { t.addEventListener('click', function () { setPaused(!paused); }); });
   if (vid) {
+    hero.classList.add('has-video');
     pressable.forEach(function (o) { if (o.hasAttribute('data-rec')) o.setAttribute('aria-label', 'Pause the video and timecode'); });
     if (reduce.matches) { vid.removeAttribute('autoplay'); vid.pause(); }
   }
@@ -1694,9 +1745,44 @@ html:not(.js) .rec { visibility: hidden; }
       vid.addEventListener('loadeddata', function () { drawHisto(vid); });
       vid.addEventListener('play', function () { if (!hTimer) hLoop(); });
     } else {
-      var still = hero.querySelector('.frame > img');
-      if (still.complete) drawHisto(still); else still.addEventListener('load', function () { drawHisto(still); });
+      var still = hero.querySelector('.take.is-on img');
+      if (still) { if (still.complete) drawHisto(still); else still.addEventListener('load', function () { drawHisto(still); }); }
     }
+  }
+
+  // Takes: with stills instead of footage, the monitor cuts to the next take every few seconds. REC pauses
+  // the takes with the clock; they also wait while the hero is off screen or the tab is hidden. With
+  // reduced motion the first take stays up.
+  var takes = hero && !vid ? [].slice.call(hero.querySelectorAll('.take')) : [];
+  if (takes.length > 1) {
+    var HOLD = 5200, ti = 0, tTimer = 0, tLeft = HOLD, tStart = 0, heroOn = true;
+    var clipEl = hero.querySelector('.clip'), nowC = hero.querySelector('.now-c'), nowT = hero.querySelector('.now-t');
+    hero.style.setProperty('--hold', HOLD + 'ms');
+    var cut = function () {
+      var prev = takes[ti];
+      ti = (ti + 1) % takes.length;
+      var t = takes[ti], im = t.querySelector('img'), cr = t.querySelector('.take-cr');
+      // restart the push-in on the incoming take
+      im.style.animation = 'none'; void im.offsetWidth; im.style.animation = '';
+      t.classList.add('is-on'); t.removeAttribute('aria-hidden');
+      prev.classList.remove('is-on'); prev.setAttribute('aria-hidden', 'true');
+      if (clipEl) clipEl.textContent = t.getAttribute('data-clip');
+      if (nowC && cr) { nowC.textContent = cr.querySelector('span').textContent; nowT.textContent = cr.querySelector('b').textContent; }
+      if (typeof drawHisto === 'function') { if (im.complete) drawHisto(im); else im.addEventListener('load', function () { drawHisto(im); }, { once: true }); }
+      tLeft = HOLD; arm();
+    };
+    var arm = function () { clearTimeout(tTimer); tStart = Date.now(); tTimer = setTimeout(cut, tLeft); };
+    rollTakes = function () {
+      var run = !paused && heroOn && !d.hidden && !reduce.matches;
+      if (run && !tTimer) arm();
+      else if (!run && tTimer) { clearTimeout(tTimer); tTimer = 0; tLeft = Math.max(400, tLeft - (Date.now() - tStart)); }
+    };
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (en) { heroOn = en[en.length - 1].isIntersecting; rollTakes(); }).observe(hero.querySelector('.frame'));
+    }
+    d.addEventListener('visibilitychange', rollTakes);
+    pressable.forEach(function (o) { if (o.hasAttribute('data-rec')) o.setAttribute('aria-label', 'Pause the timecode and takes'); });
+    rollTakes();
   }
 
   // Audio meters: flat while the picture is a still or muted. With a video they become the sound-on
