@@ -200,3 +200,20 @@ html:not(.js) .strip-nav { display: none; }
 @media (max-width: 760px) { .sheet.two { grid-template-columns: minmax(0, 1fr); } }
 .field select:has(option[value=""]:checked) { color: var(--bone-3); }
 @media (max-width: 760px) { .ph .hero-slate .slate-l > b { display: none; } }
+
+/* ----- intro copy with no heading (the live page has none): the first paragraph leads ----- */
+.copy.solo { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); }
+.solo-lede { font-size: clamp(21px, 1.9vw, 28px); line-height: 1.38; letter-spacing: -.01em; text-wrap: pretty; position: sticky; top: calc(var(--hdr) + 32px); }
+@media (max-width: 900px) { .copy.solo { grid-template-columns: minmax(0, 1fr); } .solo-lede { position: static; } }
+
+/* ----- About: the feature-film row from the live page ----- */
+.posters { list-style: none; margin: clamp(32px, 4vw, 52px) 0 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: clamp(12px, 1.6vw, 24px); }
+.posters figure { margin: 0; }
+.posters .poster { aspect-ratio: 2 / 3; overflow: hidden; background: var(--ink); }
+.posters img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.posters figcaption { margin-top: 12px; }
+.posters h3 { font-size: clamp(17px, 1.3vw, 21px); line-height: 1.1; }
+.posters figcaption p { margin-top: 4px; color: var(--bone-3); }
+.posters-note { margin-top: clamp(24px, 3vw, 36px); color: var(--bone-2, var(--bone)); }
+.posters-note a { text-decoration-color: var(--line-2); text-underline-offset: 4px; }
+@media (max-width: 760px) { .posters { grid-template-columns: repeat(2, minmax(0, 1fr)); } .posters li:last-child { grid-column: span 1; } }

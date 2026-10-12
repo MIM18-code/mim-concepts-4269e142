@@ -16,7 +16,7 @@
         li.hidden = !on;
         if (on) shown++;
       });
-      if (count) count.textContent = shown + (shown === 1 ? ' film' : ' films');
+      if (count) count.textContent = shown + (shown === 1 ? ' project' : ' projects');
     });
   }
 

@@ -224,6 +224,20 @@ def hero(page):
 
 
 def copy_sec(sc, h2, lede, paras, cast=None, black=False, link=None, figs=None, hid=None):
+    if h2 is None:
+        return f'''
+  <section class="copy-sec{' black' if black else ''}" aria-label="{e(hid or 'Introduction')}">
+    <div class="wrap">
+      <p class="sec-slate mono" aria-hidden="true"><b>{sc}</b></p>
+      <div class="copy solo">
+        <p class="solo-lede rv">{lede}</p>
+        <div class="copy-body">
+          {''.join('<p class="about-p">%s</p>' % p for p in paras)}
+        </div>
+      </div>
+    </div>
+  </section>
+'''
     hid = hid or 'h-' + re.sub(r'[^a-z0-9]+', '-', re.sub('<[^>]+>', '', h2).lower()).strip('-')[:32]
     cast_html = ''
     if cast:
@@ -348,7 +362,7 @@ def sheet_sec(sc, h2, p, works, endcta=None, hid=None, black=True, filters=False
     if filters:
         counts = {k: sum(1 for w in works if k in w['cat'].split()) for k in CAT_LABEL}
         order = ['commercial', 'corporate', 'film', 'music-video', 'nonprofit']
-        fl = '<div class="filters" role="group" aria-label="Filter by type"><button type="button" data-f="all" aria-pressed="true">All<span class="n">%d</span></button>%s</div><p class="sheet-count mono" aria-live="polite">%d films</p>' % (
+        fl = '<div class="filters" role="group" aria-label="Filter by type"><button type="button" data-f="all" aria-pressed="true">All<span class="n">%d</span></button>%s</div><p class="sheet-count mono" aria-live="polite">%d projects</p>' % (
             len(works), ''.join('<button type="button" data-f="%s" aria-pressed="false">%s<span class="n">%d</span></button>' % (k, CAT_LABEL[k], counts[k]) for k in order),
             len(works))
     end = ''
@@ -385,8 +399,8 @@ def strip_sec(sc, h2, p, folder, items):
         from PIL import Image  # only needed at build time
         w, h = Image.open(path).size
         lis.append('''
-          <li><figure><img src="%sbts/%s/%s" width="%d" height="%d" loading="lazy" alt="%s"><figcaption class="mono"><b>%02d</b><span>%s</span></figcaption></figure></li>''' % (
-            A, folder, f, w, h, e(alt), i + 1, e(alt)))
+          <li><figure><img src="%sbts/%s/%s" width="%d" height="%d" loading="lazy" alt="%s"></figure></li>''' % (
+            A, folder, f, w, h, e(alt)))
     return f'''
   <section class="strip-sec" aria-labelledby="{hid}">
     <div class="wrap">
@@ -572,7 +586,7 @@ PAGES.append(dict(
               sub='Commercials live or die in the first three seconds. We get that.',
               ctas=[('contact.html', 'Tell Us About Your Project', True), ('reel', 'Watch the reel', False)]),
     body=lambda: ''.join([
-        copy_sec('SC 01', 'Our background in narrative filmmaking',
+        copy_sec('SC 01', None,
                  "Our team has spent years crafting spots that grab attention and hold it—for broadcast TV, streaming platforms, YouTube pre-roll, and social feeds. We've partnered with ad agencies and brands directly to produce campaigns that actually perform, not just look good in a conference room.",
                  ["What sets us apart is our background in narrative filmmaking. Every commercial we produce has intention behind every frame: motivated lighting, purposeful camera movement, performances that feel real. Whether it's a 15-second social cut or a 60-second broadcast spot, we approach it with the same discipline we bring to feature films. That's how you make something memorable when you're competing with a skip button.",
                   "We work fast when you need it and thorough when you don't. From concept through final delivery, we handle production and post under one roof—which means fewer handoffs, tighter timelines, and creative that stays consistent from first frame to last. If you've got a campaign coming up, <a href=\"contact.html\">let's talk</a>."]),
@@ -584,13 +598,11 @@ PAGES.append(dict(
             desc='The result was a multi-video campaign that aired statewide and drove traffic to the Maryland Excels program.',
             play='vimeo:723874620', ptitle='Maryland Excels - Moms at the Playground')]),
         scene('SC 03', 'InterPublic', [
-            dict(img='Screen-Shot-2022-10-19-at-3.10.25-PM.webp', w=2500, h=1406, pos='50% 40%', hold=True, id='p-wellpoint',
+            dict(img='Screen-Shot-2022-10-19-at-3.10.25-PM.webp', w=2500, h=1406, pos='50% 40%', id='p-wellpoint',
                  alt='A mother and daughter read together on a bedroom floor.',
                  client='Client: InterPublic', title='WellPoint', kind='Commercial',
-                 play='vimeo:762000615', ptitle='WellPoint'),
-            dict(img='wellpoint_md_2022--29---131231-1.webp', w=2500, h=1668, pos='60% 35%', **{'for': 'p-wellpoint'},
-                 alt='On the WellPoint set: an actor in a lab coat checks his phone, the camera rig in the foreground.',
-                 quote=('Super professional, a lot of fun to work with and always on schedule. Would recommend them for virtually any project!', 'Nate Lanzino', 'Entrepreneur'))]),
+                 play='vimeo:762000615', ptitle='WellPoint')]),
+        pull('Super professional, a lot of fun to work with and always on schedule. Would recommend them for virtually any project!', 'Nate Lanzino', 'Entrepreneur'),
         sheet_sec('SC 04', 'Selected Work', 'A few of the commercials we’ve produced — tap any frame to watch it right here.',
                   works('goodmom', 'aacpd', 'wouldnt', 'checklist', 'wellpoint', 'playground', 'illegal', 'quality', 'bennetts'),
                   endcta=('Have a campaign in mind?', 'Tell Us About Your Project')),
@@ -618,7 +630,7 @@ PAGES.append(dict(
 # ---------------------------------------------------------------- corporate
 PAGES.append(dict(
     slug='corporate-video-production',
-    title='Corporate & Nonprofit Video Production in Baltimore | MindInMotion',
+    title='Corporate Video Production in Baltimore | MindInMotion',
     desc='Training videos, testimonials & internal communications. Corporate and nonprofit video production in Baltimore trusted by Johns Hopkins. Get a free quote.',
     crumbs=[('Home', ''), ('Services', None), ('Corporate', 'corporate-video-production')],
     service='Corporate and nonprofit video production',
@@ -628,7 +640,7 @@ PAGES.append(dict(
               sub="Not every video needs to sell something. Sometimes you need to train a team, share a patient's story, or help donors understand where their money goes.",
               ctas=[('contact.html', 'Tell Us About Your Project', True), ('reel', 'Watch the reel', False)]),
     body=lambda: ''.join([
-        copy_sec('SC 01', 'We let real people tell real stories',
+        copy_sec('SC 01', None,
                  "That's corporate video—and it's work we take seriously. We've produced training modules for hospital systems, testimonial campaigns for nonprofits, recruitment videos for universities, and internal communications for organizations that actually want their employees to watch.",
                  ["Our approach comes from documentary filmmaking. We let real people tell real stories. We set up interviews that feel like conversations, not depositions. We capture b-roll that shows your organization as it actually is, not a stock-photo version of it. The result is content people connect with because it feels honest.",
                   "We've worked with Johns Hopkins, the Maryland State Department of Education, healthcare systems, and dozens of nonprofits and foundations across the Mid-Atlantic. If you need video that informs, inspires, or moves people to action without feeling like a commercial, <a href=\"contact.html\">we should talk</a>."]),
@@ -761,7 +773,7 @@ PAGES.append(dict(
               sub='Production and post-production support for features, shorts, documentaries, and music videos.',
               ctas=[('contact.html', 'Tell Us About Your Project', True), ('reel', 'Watch the reel', False)]),
     body=lambda: ''.join([
-        copy_sec('SC 01', "We've been there",
+        copy_sec('SC 01', None,
                  'MindInMotion is a full service film production company in Maryland based in Baltimore. We have extensive experience with the entire process of producing and finishing shorts and feature films, and to date our company has produced five feature films that have screened at festivals across the globe and secured worldwide distribution.',
                  ["If you're looking to get your next film project started and you don't know where to begin, you're not alone. We've been there. Making a film is rarely a simple, easy, or straightforward process, and although every project is different, our years of experience working on a multitude of film projects in various capacities has helped us learn how to make the process simpler and more manageable.",
                   "To say we love making films is an understatement. It's a difficult process, but it's always rewarding. We continuously strive to be one of the best film production companies in Baltimore and up and down the east coast, and actively try to improve with each project. We promise to always be upfront and honest about every step of the process of completing the film, and help you determine what is possible and how the most can be achieved for any budget. If you're looking for help getting your next film off the ground, or you're looking to fill specific production roles, fill out the <a href=\"contact.html\">contact form</a> and we'll let you know how we can help."],
@@ -769,8 +781,6 @@ PAGES.append(dict(
         films_list(),
         pull('Not only are Josh and Victor an amazing creative team with a TON of knowledge on every facet of filmmaking, they&#39;re just great people.', 'Chris Perillo', 'Director'),
         strip_sec('SC 03', 'Behind the Scenes', '', 'film', [
-            ('02-forest-scene.webp', 'Camera operator filming two actors sitting in a palmetto forest'),
-            ('03-palmetto-forest.webp', 'Crew holding reflector and camera rig in palmetto forest location'),
             ('06-tunnel-scene.webp', 'Crew filming a scene in a graffiti-covered tunnel'),
             ('07-guitar-field.webp', 'Crew filming a woman playing guitar in a grassy field'),
             ('08-car-scene.webp', 'Camera monitor framing actors gathered behind an open car hatch'),
@@ -798,7 +808,7 @@ PAGES.append(dict(
     service='Video post-production',
     hero=dict(img='011A5550.webp', w=2500, h=1667, pos='50% 45%',
               alt='A colorist at a grading desk in a dark edit suite, three monitors glowing in front of him.',
-              h1='Post-production',
+              h1='Post-Production',
               sub='Post-production is where everything comes together.',
               ctas=[('contact.html', 'Get a Quote', True), ('#h-work', 'See Our Work', False)]),
     body=lambda: ''.join([
@@ -811,8 +821,10 @@ PAGES.append(dict(
                       ('Project Rescue', 'Stalled project? Previous editor unavailable? We regularly take over in-progress work and get it to the finish line.'),
                   ], fig=('011A1266.webp', 2500, 1264, 'A color grading panel and monitors in a dark edit suite.'), hid='h-post', black=True),
         sheet_sec('SC 02', 'Finished In-House', 'Every project on this site was edited, colored, and finished by us. A few pieces that show the range — tap any frame to watch.',
-                  works('goodmom', 'ghost', 'cuba', 'checklist'), hid='h-work', cols=2,
-                  endcta=('Need Post‑Production Help?', 'Get in Touch')),
+                  [dict(W['goodmom'], title='Maryland Excels "Good Mom"', label='Commercial spot'),
+                   W['ghost'],
+                   dict(W['cuba'], title='Cuba Field Course', label='Documentary'),
+                   dict(W['checklist'], label='PSA campaign')], hid='h-work', cols=2),
         copy_sec('SC 03', 'Collaboration Is the Point',
                  "We've built our post-production process around collaboration. You'll have direct access to your editor throughout the project. We share cuts early and often, incorporate feedback quickly, and keep you in the loop at every stage.",
                  ['Our workflow is built for revision. We know that the best work comes from iteration, so we’ve structured our process to make changes easy rather than painful.',
@@ -826,10 +838,31 @@ PAGES.append(dict(
     ])))
 
 # ---------------------------------------------------------------- about
+POSTERS = [('still-lotus-eyes.webp', 1280, 720, 'Lotus Eyes feature film — two leads against an industrial skyline', 'Lotus Eyes', 'Feature'),
+           ('poster-i-like-me.webp', 608, 900, 'I Like Me feature film poster', 'I Like Me', 'Feature'),
+           ('poster-ape-canyon.webp', 600, 900, 'Ape Canyon feature film poster', 'Ape Canyon', 'Feature'),
+           ('still-bad-witch.webp', 1280, 720, 'Bad Witch feature film — profile of a bloodied young man at dusk', 'Bad Witch', 'Co-Directed'),
+           ('poster-incubation.webp', 600, 900, 'Incubation feature film poster', 'Incubation', 'In Post')]
+ABOUT_FILMS = '''
+  <section class="copy-sec black" aria-labelledby="h-features">
+    <div class="wrap">
+      <p class="sec-slate mono" aria-hidden="true"><b>SC 04</b><span>The Films</span></p>
+      <div class="sec-head">
+        <h2 id="h-features" class="sec-h disp rv">Our Feature Films</h2>
+        <p>Five features and counting—available on all major VOD platforms</p>
+      </div>
+      <ul class="posters">%s
+      </ul>
+      <p class="posters-note"><a href="film-production.html#films">Plus shorts, music videos, and commercials</a>—available on all major VOD platforms</p>
+    </div>
+  </section>
+''' % ''.join('''
+        <li><figure><div class="poster"><img src="%sfilms/%s" width="%d" height="%d" loading="lazy" alt="%s"></div><figcaption><h3 class="disp">%s</h3><p class="mono">%s</p></figcaption></figure></li>''' % (A, f, w, h, e(alt), t, k) for f, w, h, alt, t, k in POSTERS)
+
 PAGES.append(dict(
     slug='about',
     title='About MindInMotion | Baltimore Video Production',
-    desc='Meet Josh & Victor—film school friends turned production partners since 2012. Five feature films and clients including Johns Hopkins.',
+    desc='Meet Josh & Victor—film school friends turned production partners since 2012. Five feature films, and clients including Johns Hopkins.',
     crumbs=[('Home', ''), ('About', 'about')],
     hero=dict(img='11698893_10205059638871667_6520616449341988197_o-1.webp', w=2048, h=1712, pos='50% 55%',
               alt='A small crew films two actors in a graffiti-covered tunnel, a boom pole overhead.',
@@ -837,7 +870,7 @@ PAGES.append(dict(
               sub="We met in a 16mm filmmaking class at Johns Hopkins. Five feature films later, we're still making movies and videos for clients who care about quality.",
               ctas=[('contact.html', 'Start a Conversation', True), ('portfolio.html', 'View Our Work', False)]),
     body=lambda: ''.join([
-        copy_sec('SC 01', 'Josh and Victor',
+        copy_sec('SC 01', 'Our Story',
                  'Joshua Land and Victor Fink met in a 16mm filmmaking class at Johns Hopkins University and have been collaborating ever since. Josh grew up in Baltimore; Victor in Boston. Together they co-founded MindInMotion, a video production company based in Baltimore.',
                  ['Over the past decade-plus, they’ve produced features, shorts, music videos, and commercials together. Their narrative work includes "Lotus Eyes" and "I Like Me"—Victor shooting, Josh directing—before they stepped into co-directing with "Ape Canyon" and "Bad Witch." "Incubation" is their latest feature as a directing team.',
                   'The company has grown beyond their personal film projects to serve a wide range of clients. Their work spans documentary and fiction, and has taken them everywhere from Baltimore and Washington DC to the mountains of Washington state and the rainforests of Cuba.',
@@ -874,17 +907,13 @@ PAGES.append(dict(
           <a class="link-arrow" href="https://www.imdb.com/name/nm5227903/">IMDb {ARR}</a>
         </article>
       </div>
-      <div class="endcta">
-        <p>Our Feature Films</p>
-        <div class="btns"><a class="btn" href="film-production.html#films">Five features and counting</a></div>
-      </div>
     </div>
   </section>
-''',
+''' + ABOUT_FILMS,
         '''
   <section class="clients-sec" aria-labelledby="says-title">
     <div class="wrap">
-      <p class="sec-slate mono" aria-hidden="true"><b>SC 04</b></p>
+      <p class="sec-slate mono" aria-hidden="true"><b>SC 05</b></p>
       <h2 id="says-title" class="roll-h disp rv">In their words</h2>
       <div class="says">
         <figure class="say">
@@ -919,7 +948,7 @@ PAGES.append(dict(
     </div>
   </section>
 ''',
-        closing('SC 05', 'wellpoint_md_2022--932---140101.webp', 2500, 1668,
+        closing('SC 06', 'wellpoint_md_2022--932---140101.webp', 2500, 1668,
                 "Two crew members laugh over a printout, seen through the doorway of a child's bedroom set."),
     ])))
 
@@ -993,7 +1022,7 @@ ALL = ['reel', 'playground', 'goodmom', 'ghost', 'cyw', 'joe', 'checklist', 'eng
 
 PAGES.append(dict(
     slug='portfolio',
-    title='Our Work | MindInMotion Video Production, Baltimore',
+    title='Our Work | MindInMotion Video Production',
     desc='Watch our commercials, corporate videos & films. Work for Johns Hopkins, MSDE & more. See what we can create for you.',
     crumbs=[('Home', ''), ('Portfolio', 'portfolio')],
     hero=dict(img='ghost-light-thumbnail.webp', w=2500, h=1250, pos='50% 40%', short=True,
@@ -1032,15 +1061,15 @@ CONTACT_BODY = lambda: f'''
           <form class="form" name="contact" method="POST" action="thank-you" data-netlify="true" netlify-honeypot="bot-field">
             <input type="hidden" name="form-name" value="contact">
             <p class="hp"><label>Don't fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
-            <div class="field"><label for="f-name">Your Name *</label><input id="f-name" name="name" autocomplete="name" required></div>
-            <div class="field"><label for="f-org">Company / Organization</label><input id="f-org" name="company" autocomplete="organization"></div>
-            <div class="field"><label for="f-email">Email Address *</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
-            <div class="field"><label for="f-phone">Phone Number</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+            <div class="field"><label for="f-name">Your Name *</label><input id="f-name" name="name" autocomplete="name" required placeholder="John Smith"></div>
+            <div class="field"><label for="f-org">Company / Organization</label><input id="f-org" name="company" autocomplete="organization" placeholder="Acme Corp"></div>
+            <div class="field"><label for="f-email">Email Address *</label><input id="f-email" name="email" type="email" autocomplete="email" required placeholder="john@company.com"></div>
+            <div class="field"><label for="f-phone">Phone Number</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="(555) 123-4567"></div>
             <div class="field"><label for="f-type">Project Type *</label><select id="f-type" name="project-type" required>{opt([('commercial', 'Commercial / Advertising'), ('corporate', 'Corporate Video'), ('recruitment', 'Recruitment / HR Video'), ('testimonial', 'Testimonial / Case Study'), ('documentary', 'Documentary'), ('film', 'Film / Narrative'), ('music-video', 'Music Video'), ('post-production', 'Post-Production Only'), ('other', 'Other')], 'Select a project type')}</select></div>
             <div class="field"><label for="f-budget">Budget Range *</label><select id="f-budget" name="budget" required>{opt([('under-2.5k', 'Under $2,500'), ('2.5-5k', '$2,500 - $5,000'), ('5-10k', '$5,000 - $10,000'), ('10-20k', '$10,000 - $20,000'), ('20k+', '$20,000+'), ('not-sure', 'Not sure yet')], 'Select your budget')}</select></div>
             <div class="field"><label for="f-when">Timeline</label><select id="f-when" name="timeline">{opt([('asap', 'As soon as possible'), ('1-month', 'Within 1 month'), ('1-3-months', '1-3 months'), ('3-6-months', '3-6 months'), ('flexible', 'Flexible / Not urgent')], 'When do you need this?')}</select></div>
             <div class="field"><label for="f-how">How did you hear about us?</label><select id="f-how" name="how-found">{opt([('google', 'Google Search'), ('referral', 'Referral'), ('social', 'Social Media'), ('vimeo', 'Vimeo'), ('previous-client', 'Previous Client'), ('other', 'Other')], 'Select an option')}</select></div>
-            <div class="field full"><label for="f-msg">Tell Us About Your Project *</label><textarea id="f-msg" name="message" required></textarea></div>
+            <div class="field full"><label for="f-msg">Tell Us About Your Project *</label><textarea id="f-msg" name="message" required placeholder="Share your vision, goals, and any other details that would help us understand your project..."></textarea></div>
             <p class="note full">By submitting this form, you agree that MindInMotion may use the information you provide to respond to your inquiry. Read our <a href="https://mindinmotion.tv/privacy-policy">Privacy Policy</a>.</p>
             <button class="btn btn-solid full" type="submit">Get My Free Quote {ARR}</button>
             <p class="note full">We respond within 24 hours.</p>
@@ -1083,8 +1112,8 @@ CONTACT_BODY = lambda: f'''
 
 PAGES.append(dict(
     slug='contact',
-    title='Contact Us | MindInMotion Video Production, Baltimore',
-    desc='Contact MindInMotion for a free video production quote. We serve Baltimore, Maryland, DC, and the Mid-Atlantic region. Get a response within 24 hours.',
+    title='Contact Us | MindInMotion Video Production',
+    desc='Contact MindInMotion for a free video production quote. We serve Baltimore and the Mid-Atlantic region. Get a response within 24 hours.',
     crumbs=[('Home', ''), ('Contact', 'contact')],
     faq=FAQ,
     hero=dict(img='wellpoint_md_2022--612---131231.webp', w=1199, h=800, pos='50% 45%', short=True,
