@@ -274,7 +274,7 @@ def scene(num, label, shots, nfac=None):
         pid = s.get('id') or 'p-%s-%d' % (num, i)
         frame_play = '<button class="frame-play" type="button" tabindex="-1" aria-hidden="true" data-for="%s"><svg><use href="#tri-lg"/></svg></button>' % (s.get('for') or pid)
         if s.get('card'):
-            pic = '<div class="frame card-frame"><div class="intertitle"><p>%s</p><p>%s</p></div>%s</div>' % (s['card'][0], s['card'][1], frame_play)
+            pic = '<div class="frame card-frame"><div class="intertitle">%s</div>%s</div>' % (''.join('<p>%s</p>' % t for t in s['card'] if t), frame_play)
         else:
             pic = '''<div class="frame">
             <img src="%s%s" width="%d" height="%d" loading="lazy" style="object-position:%s"
@@ -971,10 +971,10 @@ CASES = [
          text=['Johns Hopkins School of Advanced International Studies needed to capture their Cuba field course for program recruitment. The logistics were complicated: international travel, limited crew, working around academic schedules, and navigating Cuban filming restrictions.',
                'We embedded with the students for the duration of the course. A small crew meant we could move fast—classroom discussions, street interviews, cultural experiences—without disrupting the academic program. The final documentary has been used by Hopkins for years to recruit students into their international studies programs.'],
          deliv='Documentary, recruitment content, program materials'),
-    dict(n='04', client='American Lung Association', title='Lung Cancer Patient Stories', card=('No scripts, no acting—just real people sharing experiences that might help others facing similar situations.', 'Ashley and Dr. Reed talk about the patient-doctor relationship during diagnosis.'),
+    dict(n='04', client='American Lung Association', title='Lung Cancer Patient Stories', card=('Ashley and Dr. Reed talk about the patient-doctor relationship during diagnosis.',),
          play='youtube:dxUx8L3rQos', ptitle='Ashley & Dr. Reed - Patient-Provider Story',
          text=['The American Lung Association asked us to tell the stories of lung cancer patients and their healthcare providers, and to explain biomarker testing along the way.',
-               "We worked closely with patients and doctors. Sydney's story shows how biomarker testing changed her prognosis. Ashley and Dr. Reed's video explores the patient-provider relationship during diagnosis. No scripts, no acting—just real people sharing experiences that might help others facing similar situations. The campaign has been used nationally by the American Lung Association for patient education and advocacy."],
+               "We worked closely with patients and doctors. Sydney's story shows how biomarker testing changed her prognosis. Ashley and Dr. Reed's video explores the patient-provider relationship during diagnosis. The campaign has been used nationally by the American Lung Association for patient education and advocacy."],
          deliv='Patient testimonial series, provider education content, advocacy campaign'),
 ]
 
@@ -983,8 +983,11 @@ def cases():
     out = []
     for c in CASES:
         if c.get('card'):
-            fr = '<button class="case-frame card-frame" type="button" %s data-title="%s" aria-label="Play %s"><span class="intertitle"><span style="display:block;font-weight:500;font-size:clamp(28px,3.4vw,54px);line-height:1.1;letter-spacing:-.028em">%s</span><span style="display:block;margin-top:14px;color:var(--bone-2);font-size:clamp(16px,1.3vw,20px)">%s</span></span><span class="tile-cue mono">%sPlay</span></button>' % (
-                play_attrs(c['play']), e(c['ptitle']), e(c['ptitle']), c['card'][0], c['card'][1], TRI)
+            lines = '<span style="display:block;font-weight:500;font-size:clamp(24px,2.6vw,40px);line-height:1.2;letter-spacing:-.02em;max-width:22em">%s</span>' % c['card'][0]
+            if len(c['card']) > 1:
+                lines += '<span style="display:block;margin-top:14px;color:var(--bone-2);font-size:clamp(16px,1.3vw,20px)">%s</span>' % c['card'][1]
+            fr = '<button class="case-frame card-frame" type="button" %s data-title="%s" aria-label="Play %s"><span class="intertitle">%s</span><span class="tile-cue mono">%sPlay</span></button>' % (
+                play_attrs(c['play']), e(c['ptitle']), e(c['ptitle']), lines, TRI)
         else:
             fr = '<button class="case-frame" type="button" %s data-title="%s" aria-label="Play %s"><img src="%s%s" width="%d" height="%d" loading="lazy" style="object-position:%s" alt="%s"><span class="tile-cue mono">%sPlay</span></button>' % (
                 play_attrs(c['play']), e(c['ptitle']), e(c['ptitle']), A, c['img'], c['w'], c['h'], c['pos'], e(c['alt']), TRI)
