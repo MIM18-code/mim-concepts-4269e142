@@ -92,7 +92,7 @@ Portfolio and Contact titles are unchanged from live.
 
 ## Third pass: slogans, taglines and agency talk (October 14)
 
-Rule from Joshua (October 14): no slogan, tagline or pull-quote lines anywhere on the site, whether they're clipped fragments or full sentences, and even when the line is on the live site. Search ranking must not suffer, so the Baltimore, Maryland and service keywords stay, and page titles, H1s, H2s and meta descriptions are unchanged. Headings and descriptions that read as slogans are listed under "Flagged, not changed" for a decision.
+Rule from Joshua (October 14): no slogan, tagline or pull-quote lines anywhere on the site, whether they're clipped fragments or full sentences, and even when the line is on the live site. Search ranking must not suffer, so the Baltimore, Maryland and service keywords stay. Page titles are unchanged. Headings and meta descriptions that read as slogans were flagged first, and Joshua chose to rename them all (table below).
 
 The "No scripts, no acting" line came off the Lung Association title card and the Portfolio case study in the previous change. Testimonials are clients' own words and stay word for word.
 
@@ -146,24 +146,26 @@ Homepage changes also apply to the monitor-hero homepage and the four typeface c
 | Homepage, About p2 | Since then we've made five feature films together and grown a company making film and video for all kinds of clients. Our work spans documentary and fiction, and has taken us everywhere from Baltimore and Washington DC to the mountains of Washington state and the rainforests of Cuba. | Since then we've made five feature films together and grown a company that makes film and video for clients. We've shot documentary and fiction in Baltimore, Washington DC, the mountains of Washington state and the rainforests of Cuba. | "All kinds of clients" and "everywhere from... to..." are filler. Same places. |
 | Homepage, About p3 | When we're not working for clients, we're working on our own projects. Our new feature film... | Our new feature film... | Filler sentence. |
 
-### Flagged, not changed
+### Headings and descriptions (Joshua picked "Rename all", October 14)
 
-These are headings or meta descriptions, which stay as they are until Joshua decides.
-
-| Where | Line | Problem | Suggested replacement |
+| Where | Old | New | Why |
 |---|---|---|---|
-| Homepage, H1 | Made to be seen. | A slogan. The H1 is the strongest on-page search signal, and this one has no keyword in it. | Film and video production in Baltimore |
-| About, H1 | Film School Friends. Business Partners. | A two-part tagline. | About MindInMotion |
-| Homepage, About section H2 | Film school friends. Business partners. | Same tagline. | Josh and Victor |
-| About, H2 and item headings | How We Think About Work: Story First / Collaboration / Craft Matters | A stock agency values section. The text under each one is now plain, but the headings still read as values. | Cut the section, or rename it "How we work" with "Documentary interviews", "Working with Josh and Victor" and "In-house post" |
-| Post, H2 | Collaboration Is the Point | A slogan. | Working with your editor |
-| Commercial, meta description | TV commercials, digital ads & brand videos that convert. ... | "That convert" is ad-agency talk. | TV commercials, digital ads & brand videos. Commercial video production in Baltimore. Request a free quote today. |
-| Portfolio, meta description | ... See what we can create for you. | Filler. | Drop the last sentence. |
-| Commercial and Film, full-width testimonial blocks | Nate Lanzino and Chris Perillo quotes set as big pull quotes | The words are real client quotes and stay, but the big standalone layout is the same pull-quote look as the rejected card. | Keep them in the About "In their words" section only, or keep as is. |
+| Homepage, H1 | Made to be seen. | Film and video production in Baltimore | A slogan. The H1 is the strongest on-page search signal, and the old one had no keyword in it. The title is set smaller to fit two lines, and the black title bar under the picture is shorter to match, so the picture gets the space back. |
+| Homepage, About section H2 | Film school friends. Business partners. | About MindInMotion | A two-part tagline. ("Josh and Victor" was the first suggestion, but the photo caption and the link in the same section already say it.) |
+| About, H1 | Film School Friends. Business Partners. | About MindInMotion | Same tagline. Now matches the page title. |
+| About, H2 | How We Think About Work | How We Work | Stock agency heading. |
+| About, item headings | Story First / Collaboration / Craft Matters | Documentary Interviews / Working With Josh and Victor / In-House Post-Production | Values-list headings. The new ones name what the text under them says. The text under the last two is adjusted so it doesn't repeat its heading: "You talk to us directly. We ask questions..." and "We edit and color grade everything we shoot ourselves." |
+| Post, H2 | Collaboration Is the Point | Working With Your Editor | A slogan. |
+| Commercial, meta description | TV commercials, digital ads & brand videos that convert. Commercial video production in Baltimore. Request a free quote today. | TV commercials, digital ads & brand videos. Commercial video production in Baltimore. Request a free quote today. | "That convert" is ad-agency talk. |
+| Portfolio, meta description | Watch our commercials, corporate videos & films. Work for Johns Hopkins, MSDE & more. See what we can create for you. | Watch our commercials, corporate videos & films. Work for Johns Hopkins, MSDE & more. | Filler. |
+
+The four typeface comparison pages keep "Made to be seen." and the old About heading, because their type sizes are tuned to that headline.
+
+Still open: the Nate Lanzino and Chris Perillo testimonials on Commercial and Film are set as big standalone pull quotes. The words are real client quotes, but the layout is the same pull-quote look as the rejected card. They could stay only in the About "In their words" section.
 
 ### Search check for this pass
 
-Measured on the built pages before and after. Titles, meta descriptions, H1s and H2s are identical.
+Measured on the built pages before and after. Page titles are identical. The only heading and description changes are the ones in the table above.
 
 | Page | Words on the page | Keyword changes |
 |---|---|---|
@@ -171,9 +173,9 @@ Measured on the built pages before and after. Titles, meta descriptions, H1s and
 | Corporate | 608 to 559 | Body now says "corporate video production". Baltimore and Maryland unchanged. |
 | Film | 458 to 421 | "Film production company in Baltimore, Maryland" stays in the first paragraph, title and description. The plural "one of the best film production companies in Baltimore" boast is gone. Baltimore, Maryland and VOD unchanged. |
 | Post | 470 to 430 | "Post-Production" stays in the title, H1 and description. Baltimore and Maryland unchanged. |
-| About | 630 to 563 | Baltimore 7 to 6. "Video production", "post-production" and VOD unchanged. |
+| About | 630 to 563 | Baltimore 7 to 6. "Video production", "post-production" and VOD unchanged, and an item heading now says "In-House Post-Production". |
 | Portfolio | 1033 to 953 | Unchanged. |
-| Homepage | 924 to 884 | Unchanged. |
+| Homepage | 924 to 884 | The H1 now says "film and video production in Baltimore". Otherwise unchanged. |
 
 ## Content moved or added from elsewhere on the live site
 

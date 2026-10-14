@@ -577,7 +577,7 @@ PAGES = []
 PAGES.append(dict(
     slug='commercial-video-production',
     title='Commercial Video Production in Baltimore | MindInMotion',
-    desc='TV commercials, digital ads & brand videos that convert. Commercial video production in Baltimore. Request a free quote today.',
+    desc='TV commercials, digital ads & brand videos. Commercial video production in Baltimore. Request a free quote today.',
     crumbs=[('Home', ''), ('Services', None), ('Commercial', 'commercial-video-production')],
     service='Commercial video production',
     hero=dict(img='Screen-Shot-2022-06-24-at-6.14.31-PM-2.webp', w=2500, h=1406, pos='50% 45%',
@@ -825,7 +825,7 @@ PAGES.append(dict(
                    W['ghost'],
                    dict(W['cuba'], title='Cuba Field Course', label='Documentary'),
                    dict(W['checklist'], label='PSA campaign')], hid='h-work', cols=2),
-        copy_sec('SC 03', 'Collaboration Is the Point',
+        copy_sec('SC 03', 'Working With Your Editor',
                  "You'll talk to your editor directly, and we share rough cuts early in the edit.",
                  ['Whether you’re in Baltimore or across the country, you can watch cuts, leave timestamped notes, and approve versions through secure remote review.'],
                  cast=[('Tools We Work With', "DaVinci Resolve, Final Cut Pro, Premiere Pro, Avid Media Composer, After Effects, Fusion, Frame.io")]),
@@ -865,7 +865,7 @@ PAGES.append(dict(
     crumbs=[('Home', ''), ('About', 'about')],
     hero=dict(img='11698893_10205059638871667_6520616449341988197_o-1.webp', w=2048, h=1712, pos='50% 55%',
               alt='A small crew films two actors in a graffiti-covered tunnel, a boom pole overhead.',
-              h1='Film School Friends. Business Partners.',
+              h1='About MindInMotion',
               sub="We met in a 16mm filmmaking class at Johns Hopkins. Five feature films later, we're still making movies and videos for clients.",
               ctas=[('contact.html', 'Get in Touch', True), ('portfolio.html', 'View Our Work', False)]),
     body=lambda: ''.join([
@@ -878,10 +878,10 @@ PAGES.append(dict(
             <div class="fr" style="overflow:hidden"><img src="%sJoshua-and-Victor-on-stage-1.webp" width="1200" height="798" loading="lazy" alt="Josh and Victor on stage at a screening Q&amp;A, one holding a microphone, both wearing lanyards." style="aspect-ratio:3/2;object-fit:cover;width:100%%"></div>
             <figcaption class="about-cap"><span class="wide">Since 2012</span><span>Josh and Victor</span></figcaption>
           </figure>''' % A),
-        svc_block('SC 02', 'How We Think About Work', '', [
-            ('Story First', 'Much of our client work is documentary. We interview the people involved and build the edit around what they say.'),
-            ('Collaboration', 'You work with Josh and Victor directly. We ask questions, offer ideas, and say so when we think something could be better.'),
-            ('Craft Matters', 'We shoot, edit and color grade in-house.'),
+        svc_block('SC 02', 'How We Work', '', [
+            ('Documentary Interviews', 'Much of our client work is documentary. We interview the people involved and build the edit around what they say.'),
+            ('Working With Josh and Victor', 'You talk to us directly. We ask questions, offer ideas, and say so when we think something could be better.'),
+            ('In-House Post-Production', 'We edit and color grade everything we shoot ourselves.'),
         ], fig=('crew-hike-bw.webp', 576, 322, 'Black-and-white photo of a small crew hiking up a foggy hillside with a camera and a boom pole.'), hid='h-how', black=True),
         f'''
   <section class="copy-sec" aria-labelledby="h-team">
@@ -1026,7 +1026,7 @@ ALL = ['reel', 'playground', 'goodmom', 'ghost', 'cyw', 'joe', 'checklist', 'eng
 PAGES.append(dict(
     slug='portfolio',
     title='Our Work | MindInMotion Video Production',
-    desc='Watch our commercials, corporate videos & films. Work for Johns Hopkins, MSDE & more. See what we can create for you.',
+    desc='Watch our commercials, corporate videos & films. Work for Johns Hopkins, MSDE & more.',
     crumbs=[('Home', ''), ('Portfolio', 'portfolio')],
     hero=dict(img='ghost-light-thumbnail.webp', w=2500, h=1250, pos='50% 40%', short=True,
               alt='From Juliet Lloyd "Ghost Light": a singer at a grand piano in gold stage light and haze.',
