@@ -207,7 +207,7 @@ html:not(.js) .clock { display: none; }
 
 /* ---------- SC 00: main titles ---------- */
 /* The whole title block sits on the bottom bar. Only "MindInMotion presents" is set over the picture. */
-.hero { --bb: clamp(300px, 44vh, 440px); height: 100vh; height: 100svh; min-height: 600px; overflow: hidden; }
+.hero { --bb: clamp(240px, 35vh, 350px); height: 100vh; height: 100svh; min-height: 600px; overflow: hidden; }
 .hero .frame { position: absolute; top: var(--barT); bottom: var(--bb); left: 0; right: 0; z-index: 1; }
 .hero .frame > img { object-position: 50% 30%; }
 .hero .frame::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0) 55%, rgba(0,0,0,.62) 100%); }
@@ -244,7 +244,7 @@ html:not(.js) .clock { display: none; }
   .hero-slate { display: none; }
 }
 @media (max-height: 700px) and (min-width: 1101px) {
-  .hero { --bb: 280px; }
+  .hero { --bb: 236px; }
   .hero-side { gap: 12px; }
 }
 
@@ -741,11 +741,11 @@ body { font-size: 17px; line-height: 1.5; font-kerning: normal; }
 .menu nav .menu-sub a { font-size: 16px; }
 
 /* ---------- hero ---------- */
-/* MindInMotion runs about 6.1em at this weight and tracking (measured). The third term keeps it inside the
-   title column (viewport minus gutters, the 420px side column and the 48px gap). */
+/* Two lines. "production in Baltimore" runs about 10.1em at this weight and tracking (measured), so 9.6cqi
+   keeps it inside the title column (.hero-main is the container) with a little to spare. */
 .hero h1 {
   font-weight: 500; letter-spacing: -.04em; line-height: .94;
-  font-size: clamp(56px, min(9vw, 15vh, calc((93.8vw - 468px) / 6.3)), 160px);
+  font-size: clamp(44px, min(6vw, 11vh, 9.6cqi), 124px);
   padding-bottom: .08em; margin-bottom: -.08em;
 }
 .presents { font-size: 15px; }
@@ -798,7 +798,7 @@ body { font-size: 17px; line-height: 1.5; font-kerning: normal; }
 /* ---------- tablet ---------- */
 @media (max-width: 1100px) {
   /* Title column here is the viewport minus gutters, the 320px side column and the 40px gap. */
-  .hero h1 { font-size: clamp(44px, min(9vw, calc((93.8vw - 360px) / 6.4)), 96px); }
+  .hero h1 { font-size: clamp(36px, calc((93.8vw - 360px) / 10.4), 80px); }
 }
 @media (min-width: 1081px) and (max-width: 1199px) { #sc-02 .cr-title { font-size: clamp(36px, min(5vw, 8.6vh), 92px); } }
 
@@ -807,7 +807,7 @@ body { font-size: 17px; line-height: 1.5; font-kerning: normal; }
 @media (min-width: 761px) and (max-width: 900px) {
   .hero-body { grid-template-columns: minmax(0, 1fr); gap: 22px; }
   .hero-main, .hero-side { display: contents; }
-  .hero h1 { order: 1; font-size: clamp(64px, calc(93.8vw / 6.4), 96px); }
+  .hero h1 { order: 1; font-size: clamp(48px, calc(93.8vw / 10.4), 80px); }
   .hero-sub { order: 2; font-size: 22px; max-width: 30em; }
   .hero-ctas { order: 3; }
   .stats { order: 4; }
@@ -818,7 +818,8 @@ body { font-size: 17px; line-height: 1.5; font-kerning: normal; }
   body { font-size: 16px; }
   .btn { letter-spacing: 0; }
   .brand span { font-size: 18px; }
-  .hero h1 { font-size: clamp(40px, calc((100vw - 32px) / 6.3), 72px); }
+  /* On a phone the second line wraps, so only "Film and video" (about 6.3em) has to fit. */
+  .hero h1 { font-size: clamp(36px, calc((100vw - 32px) / 6.6), 60px); }
   .hero-sub { font-size: 20px; }
   .cr-title, .seq .shot + .shot .cr-title, .shot + .shot .cr-title { font-size: clamp(36px, 10.4vw, 52px); }
   .cr-title.long { font-size: clamp(28px, 8vw, 36px); }
@@ -944,7 +945,7 @@ html:not(.js) .rec { visibility: hidden; }
 @media (min-width: 1101px) {
   .mon-hero .hero-body { padding-top: 0; }
   .mon-hero .hero-main { gap: clamp(12px, 2vh, 24px); }
-  .mon-hero h1 { font-size: clamp(56px, min(9vw, 13.5vh, calc((93.8vw - 468px) / 6.3)), 160px); }
+  .mon-hero h1 { font-size: clamp(44px, min(6vw, 10vh, 9.6cqi), 124px); }
 }
 
 /* Short laptop screens: a slimmer readout bar so the picture keeps its height. */
@@ -952,8 +953,7 @@ html:not(.js) .rec { visibility: hidden; }
   .mon-hero { --hud: 52px; --barT: var(--hdr); --bb: 236px; }
   .mon-hero .hero-body { padding-bottom: 22px; }
   .mon-hero .hero-main { gap: 10px; }
-  .mon-hero h1 { font-size: clamp(56px, min(7vw, 13vh), 120px); }
-  .mon-hero h1 br { display: none; }
+  .mon-hero h1 { font-size: clamp(40px, min(5vw, 9vh, 9.6cqi), 96px); }
   .mon-hero .hero-side { gap: 10px; }
   .mon-hero .hero-sub { font-size: clamp(19px, 1.5vw, 24px); }
 }
@@ -1125,7 +1125,7 @@ html:not(.js) .rec { visibility: hidden; }
     <div class="hero-body">
       <div class="hero-main">
         <p class="presents wide in2">Baltimore</p>
-        <h1 id="hero-title" class="disp"><span class="h1-in">Made to <br>be seen.</span></h1>
+        <h1 id="hero-title" class="disp"><span class="h1-in">Film and video<br>production in Baltimore</span></h1>
         <div class="hero-ctas in4">
           <a class="btn btn-solid" href="contact.html">Tell us what you need <svg class="arr"><use href="#arr"/></svg></a>
           <button class="btn" type="button" data-vimeo="851026180" data-title="Demo reel"><svg class="tri"><use href="#tri"/></svg>Watch the reel</button>
@@ -1181,7 +1181,7 @@ html:not(.js) .rec { visibility: hidden; }
           <figcaption class="credit">
             <div class="cr-main"><p class="cr-client wide">Corporate</p><h3 class="cr-title disp">Infinite Legacy <span class="cr-sub">- Chelsea</span></h3></div>
             <div class="cr-body">
-              <p class="cr-desc">We let people share their stories in their own words, on their own timeline.</p>
+              <p class="cr-desc">We filmed each interview with a small crew and no time limit.</p>
             </div>
             <button class="btn play" id="p-chelsea" type="button" data-vimeo="836990393" data-title="Infinite Legacy - Chelsea" aria-label="Play Infinite Legacy - Chelsea"><svg class="tri"><use href="#tri"/></svg>Play</button>
           </figcaption>
@@ -1208,7 +1208,7 @@ html:not(.js) .rec { visibility: hidden; }
             <div class="cr-main"><p class="cr-client wide">MD State Dept of Education</p><h3 class="cr-title disp">Because Quality Matters</h3></div>
             <div class="cr-body">
               <p class="cr-kind mono">Commercial</p>
-              <p class="cr-desc">We filmed real families at Maryland childcare centers to help parents choose licensed, quality childcare.</p>
+              <p class="cr-desc">We filmed parents and kids at Maryland childcare centers to help parents choose licensed, quality childcare.</p>
             </div>
             <button class="btn play" id="p-quality" type="button" data-vimeo="1021087594?h=2c0add4aa6" data-title="Because Quality Matters" aria-label="Play Because Quality Matters"><svg class="tri"><use href="#tri"/></svg>Play</button>
           </figcaption>
@@ -1373,8 +1373,8 @@ html:not(.js) .rec { visibility: hidden; }
           <h2 id="svc-title" class="sec-h disp rv">Production and post</h2>
           <p class="svc-lede rv">We plan, shoot, edit and finish films. Bring us in for the whole production or for the part you need.</p>
           <ol class="svc-list">
-            <li><span class="svc-n mono" aria-hidden="true">01</span><h3 class="svc-t"><a href="commercial-video-production.html">Commercial<svg class="arr" aria-hidden="true"><use href="#arr"/></svg></a></h3><p class="svc-d">TV spots and social cuts. Commercials live or die in the first three seconds. Our Maryland Excels PSAs aired statewide, and we made a WellPoint spot for InterPublic.</p></li>
-            <li><span class="svc-n mono" aria-hidden="true">02</span><h3 class="svc-t"><a href="corporate-video-production.html">Corporate<svg class="arr" aria-hidden="true"><use href="#arr"/></svg></a></h3><p class="svc-d">Not every video needs to sell something. Some recruit, train a team or show donors where their money goes. Our interviews run like conversations, not depositions.</p></li>
+            <li><span class="svc-n mono" aria-hidden="true">01</span><h3 class="svc-t"><a href="commercial-video-production.html">Commercial<svg class="arr" aria-hidden="true"><use href="#arr"/></svg></a></h3><p class="svc-d">TV spots and social cuts. Our Maryland Excels PSAs aired statewide, and we made a WellPoint spot for InterPublic.</p></li>
+            <li><span class="svc-n mono" aria-hidden="true">02</span><h3 class="svc-t"><a href="corporate-video-production.html">Corporate<svg class="arr" aria-hidden="true"><use href="#arr"/></svg></a></h3><p class="svc-d">Videos that recruit, train a team or show donors where their money goes, for universities, hospitals and nonprofits.</p></li>
             <li><span class="svc-n mono" aria-hidden="true">03</span><h3 class="svc-t"><a href="film-production.html">Film<svg class="arr" aria-hidden="true"><use href="#arr"/></svg></a></h3><p class="svc-d">Features, shorts, documentaries and music videos. We can produce the whole film or join your crew. Tell us your budget and we'll talk through what's possible.</p></li>
             <li><span class="svc-n mono" aria-hidden="true">04</span><h3 class="svc-t"><a href="post-production.html">Post-Production<svg class="arr" aria-hidden="true"><use href="#arr"/></svg></a></h3><p class="svc-d">Editing, color grading, VFX and motion graphics. We can handle the full post workflow or pick up a project already in progress.</p></li>
           </ol>
@@ -1530,10 +1530,10 @@ html:not(.js) .rec { visibility: hidden; }
           </figure>
         </div>
         <div>
-          <h2 id="about-title" class="sec-h disp rv"><span class="ln">Film school friends.</span> <span class="ln">Business partners.</span></h2>
+          <h2 id="about-title" class="sec-h disp rv">About MindInMotion</h2>
           <p class="about-lede">Baltimore native Joshua Land and Boston transplant Victor Fink founded MindInMotion in 2012. We met in a 16mm filmmaking class at Johns Hopkins and quickly bonded over being obsessed with movies and wanting to spend as much time outside of school working on film projects as possible.</p>
-          <p class="about-p">Since then we've made five feature films together and grown a company making film and video for all kinds of clients. Our work spans documentary and fiction, and has taken us everywhere from Baltimore and Washington DC to the mountains of Washington state and the rainforests of Cuba.</p>
-          <p class="about-p">Our feature films "I Like Me" and "Bad Witch" have screened at festivals and are available on major VOD platforms. When we're not working for clients, we're working on our own projects. Our new feature film, "Incubation," is now screening at festivals.</p>
+          <p class="about-p">Since then we've made five feature films together and grown a company that makes film and video for clients. We've shot documentary and fiction in Baltimore, Washington DC, the mountains of Washington state and the rainforests of Cuba.</p>
+          <p class="about-p">Our feature films "I Like Me" and "Bad Witch" have screened at festivals and are available on major VOD platforms. Our new feature film, "Incubation," is now screening at festivals.</p>
           <dl class="cast">
             <div><dt>Joshua Land</dt><dd>Co-Founder / Director / Editor</dd></div>
             <div><dt>Victor Fink</dt><dd>Co-Founder / Cinematographer / Producer</dd></div>
