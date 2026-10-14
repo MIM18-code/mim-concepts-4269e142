@@ -192,6 +192,17 @@ Joshua on the films section line "Victor shot "Lotus Eyes" and "I Like Me" while
 
 Search check: page titles, descriptions, headings and keyword counts are unchanged on every page. Word counts went from 562 to 525 on About, 421 to 407 on Film, and 857 to 819 on the homepage.
 
+### Films section heading
+
+Joshua: "why does the heading say our feature films then its got sections for features shorts and music videos". The heading now names what's in the list below it.
+
+| Where | Old | New | Why |
+|---|---|---|---|
+| Homepage, films section (SC 08) | Our feature films | Feature films and music videos | The list has a Feature films group and a Music videos group. |
+| Film, films section (SC 02) | Our feature films | Feature films, shorts and music videos | The list has Feature films, Short films and Music videos groups. |
+
+About's "Our Feature Films" stays, because that section shows only the five features. "Feature films" is still in both headings and in the group labels, so the keyword stays.
+
 ## Content moved or added from elsewhere on the live site
 
 These aren't new words, but they now appear on a page where they didn't before.
