@@ -438,8 +438,8 @@ def pull(q, who, role):
 
 # Related services reuse the homepage's own section (approved copy).
 SVC = {
-    'commercial-video-production': ('Commercial', 'TV spots and social cuts. Commercials live or die in the first three seconds. Our Maryland Excels PSAs aired statewide, and we made a WellPoint spot for InterPublic.'),
-    'corporate-video-production': ('Corporate', 'Not every video needs to sell something. Some recruit, train a team or show donors where their money goes. Our interviews run like conversations, not depositions.'),
+    'commercial-video-production': ('Commercial', 'TV spots and social cuts. Our Maryland Excels PSAs aired statewide, and we made a WellPoint spot for InterPublic.'),
+    'corporate-video-production': ('Corporate', 'Videos that recruit, train a team or show donors where their money goes, for universities, hospitals and nonprofits.'),
     'film-production': ('Film', "Features, shorts, documentaries and music videos. We can produce the whole film or join your crew. Tell us your budget and we'll talk through what's possible."),
     'post-production': ('Post-Production', 'Editing, color grading, VFX and motion graphics. We can handle the full post workflow or pick up a project already in progress.'),
 }
@@ -583,19 +583,19 @@ PAGES.append(dict(
     hero=dict(img='Screen-Shot-2022-06-24-at-6.14.31-PM-2.webp', w=2500, h=1406, pos='50% 45%',
               alt='From the Maryland Excels "Good Mom" spot: a woman in a dark bathroom at night, lit by cold blue light.',
               h1='Commercial Video Production',
-              sub='Commercials live or die in the first three seconds.',
+              sub='TV spots, PSAs, recruitment ads and social cuts.',
               ctas=[('contact.html', 'Tell Us About Your Project', True), ('reel', 'Watch the reel', False)]),
     body=lambda: ''.join([
         copy_sec('SC 01', None,
-                 "Our team has spent years crafting spots that grab attention and hold it—for broadcast TV, streaming platforms, YouTube pre-roll, and social feeds. We've partnered with ad agencies and brands directly to produce campaigns that actually perform, not just look good in a conference room.",
-                 ["What sets us apart is our background in narrative filmmaking. Every commercial we produce has intention behind every frame: motivated lighting, purposeful camera movement, performances that feel real. Whether it's a 15-second social cut or a 60-second broadcast spot, we approach it with the same discipline we bring to feature films. That's how you make something memorable when you're competing with a skip button.",
-                  "From concept through final delivery, we handle production and post under one roof—which means fewer handoffs, tighter timelines, and creative that stays consistent from first frame to last. If you've got a campaign coming up, <a href=\"contact.html\">let's talk</a>."]),
+                 "MindInMotion handles commercial video production in Baltimore for broadcast TV, streaming platforms, YouTube pre-roll and social feeds. Some spots come through ad agencies, like our WellPoint spot for InterPublic. Others we make directly for the client, like the Maryland Excels PSAs for the Maryland State Department of Education.",
+                 ["Josh and Victor also direct feature films. They plan the lighting, camera moves and performances in a 15-second social cut or a 60-second broadcast spot the same way they do on their features.",
+                  "We handle concept, production and post-production in-house, so one team takes your spot from script to delivery. If you have a campaign coming up, <a href=\"contact.html\">tell us about it</a>."]),
         scene('SC 02', 'Maryland State Department of Education', [dict(
             img='Screen-Shot-2022-06-24-at-5.18.24-PM.webp', w=1200, h=675, pos='50% 45%',
             alt='A girl in a yellow dress runs past two mothers sitting on a playground bench.',
             client='Maryland State Department of Education', title='Maryland Excels', sub='Moms at the Playground',
             kind='Commercial &middot; <span class="nw">Director: Josh Land &amp; Victor Fink,</span> <span class="nw">DP: John Grove</span>',
-            desc='The result was a multi-video campaign that aired statewide and drove traffic to the Maryland Excels program.',
+            desc='Part of a multi-video campaign that aired statewide and drove traffic to the Maryland Excels program.',
             play='vimeo:723874620', ptitle='Maryland Excels - Moms at the Playground')]),
         scene('SC 03', 'InterPublic', [
             dict(img='Screen-Shot-2022-10-19-at-3.10.25-PM.webp', w=2500, h=1406, pos='50% 40%', id='p-wellpoint',
@@ -637,13 +637,13 @@ PAGES.append(dict(
     hero=dict(img='mike-odom.webp', w=1920, h=1080, pos='38% 35%',
               alt='From a Johns Hopkins AAP profile: a man in glasses looks off camera, trees soft behind him.',
               h1='Corporate Video Production',
-              sub="Not every video needs to sell something. Sometimes you need to train a team, share a patient's story, or help donors understand where their money goes.",
+              sub="Videos to train a team, tell a patient's story, or show donors where their money goes.",
               ctas=[('contact.html', 'Tell Us About Your Project', True), ('reel', 'Watch the reel', False)]),
     body=lambda: ''.join([
         copy_sec('SC 01', None,
-                 "That's corporate video—and it's work we take seriously. We've produced training modules for hospital systems, testimonial campaigns for nonprofits, recruitment videos for universities, and internal communications for organizations that want their employees to watch.",
-                 ["Our approach comes from documentary filmmaking. We let real people tell real stories. We set up interviews that feel like conversations, not depositions. We capture b-roll that shows your organization as it is, not a stock-photo version of it.",
-                  "We've worked with Johns Hopkins, the Maryland State Department of Education, healthcare systems, and dozens of nonprofits and foundations across the Mid-Atlantic. If you need video that doesn't feel like a commercial, <a href=\"contact.html\">we should talk</a>."]),
+                 "Our corporate video production work includes training modules for hospital systems, testimonial campaigns for nonprofits, recruitment videos for universities, and internal communications for organizations that want their employees to watch.",
+                 ["Our approach comes from documentary filmmaking. We interview the people involved with a small crew, and film b-roll at your own locations.",
+                  "We've worked with Johns Hopkins, the Maryland State Department of Education, healthcare systems, and dozens of nonprofits and foundations across the Mid-Atlantic. <a href=\"contact.html\">Tell us what you're working on</a>."]),
         scene('SC 02', 'Infinite Legacy', [
             dict(img='Joe-ILF.webp', w=2500, h=1406, pos='40% 32%', id='p-joe',
                  alt='A man in silhouette against an evening sky, his head resting in his hand.',
@@ -653,7 +653,7 @@ PAGES.append(dict(
             dict(img='chelsea-ilf.webp', w=1920, h=1080, pos='50% 24%', id='p-chelsea',
                  alt='A mother holds her baby close, cheek to cheek, in warm light.',
                  client='Client: Infinite Legacy', title='Infinite Legacy', sub='Chelsea', kind='Organ donation testimonials',
-                 desc='We let people share their stories in their own words, on their own timeline.',
+                 desc='We filmed each interview with a small crew and no time limit.',
                  play='vimeo:836990393', ptitle='Infinite Legacy - Chelsea')]),
         scene('SC 03', 'Johns Hopkins Advanced Academic Programs', [
             dict(img='residency.webp', w=1920, h=1080, pos='50% 30%', hold=True, id='p-residency',
@@ -775,8 +775,8 @@ PAGES.append(dict(
     body=lambda: ''.join([
         copy_sec('SC 01', None,
                  'MindInMotion is a full-service film production company in Baltimore, Maryland. We produce and finish shorts and feature films, and have made five features of our own that screened at festivals across the globe and are on major VOD platforms.',
-                 ["Making a film is rarely simple. We've been there, on film projects of every size, and we know how to make the process more manageable.",
-                  "We aim to be one of the best film production companies in Baltimore and on the east coast. We'll be upfront about every step, and help you work out what's possible for your budget. If you need help getting a film off the ground, or need to fill specific production roles, fill out the <a href=\"contact.html\">contact form</a>."],
+                 ["We can produce a whole film or join your crew for part of it, on productions in Baltimore and up and down the east coast.",
+                  "We'll walk you through each step and tell you what your budget can cover. If you need help getting a film off the ground, or need to fill specific production roles, fill out the <a href=\"contact.html\">contact form</a>."],
                  black=True),
         films_list(),
         pull('Not only are Josh and Victor an amazing creative team with a TON of knowledge on every facet of filmmaking, they&#39;re just great people.', 'Chris Perillo', 'Director'),
@@ -809,30 +809,30 @@ PAGES.append(dict(
     hero=dict(img='011A5550.webp', w=2500, h=1667, pos='50% 45%',
               alt='A colorist at a grading desk in a dark edit suite, three monitors glowing in front of him.',
               h1='Post-Production',
-              sub='Post-production is where everything comes together.',
+              sub='Editing, color grading, VFX and motion graphics for films, commercials and corporate video.',
               ctas=[('contact.html', 'Get a Quote', True), ('#h-work', 'See Our Work', False)]),
     body=lambda: ''.join([
         svc_block('SC 01', 'Our Services',
-                  'Based in Baltimore, we’ve built our editing and color capabilities over a decade of feature films and commercial work. Whether you need a full post workflow or help with a specific piece—color, VFX—we can help.', [
-                      ('Editing', "Story-driven editing from editors who've cut features, commercials, and everything in between. We work in DaVinci Resolve, Final Cut Pro, Premiere, and Avid."),
-                      ('Color Grading', 'Professional color work in DaVinci Resolve. From technical corrections to establishing a cinematic look, we handle everything from LOG footage to final delivery.'),
-                      ('VFX &amp; Motion Graphics', 'Compositing, cleanup, and motion graphics. We partner with trusted specialists for complex VFX work while handling standard effects in-house.'),
-                      ('Delivery &amp; Mastering', "Final files in any format—broadcast specs, streaming platforms, social media, or theatrical DCPs."),
-                      ('Project Rescue', 'Stalled project? Previous editor unavailable? We regularly take over in-progress work and get it to the finish line.'),
+                  "We're based in Baltimore and have edited and colored feature films and commercials for more than a decade. We can run the full post workflow or take on one piece of it, like color or VFX.", [
+                      ('Editing', "Our editors have cut feature films, commercials, documentaries and corporate videos. We work in DaVinci Resolve, Final Cut Pro, Premiere, and Avid."),
+                      ('Color Grading', 'Color correction and grading in DaVinci Resolve. We work from LOG camera footage through to the graded master.'),
+                      ('VFX &amp; Motion Graphics', 'Compositing, cleanup, and motion graphics. We do standard effects in-house and bring in VFX specialists for complex shots.'),
+                      ('Delivery &amp; Mastering', "Final files to broadcast specs, for streaming platforms and social media, or as theatrical DCPs."),
+                      ('Project Rescue', 'We take over projects that have stalled or lost their editor, and finish them.'),
                   ], fig=('011A1266.webp', 2500, 1264, 'A color grading panel and monitors in a dark edit suite.'), hid='h-post', black=True),
-        sheet_sec('SC 02', 'Finished In-House', 'Every project on this site was edited, colored, and finished by us. A few pieces that show the range.',
+        sheet_sec('SC 02', 'Finished In-House', 'We edited, colored and finished every project on this site. Here are four.',
                   [dict(W['goodmom'], title='Maryland Excels "Good Mom"', label='Commercial spot'),
                    W['ghost'],
                    dict(W['cuba'], title='Cuba Field Course', label='Documentary'),
                    dict(W['checklist'], label='PSA campaign')], hid='h-work', cols=2),
         copy_sec('SC 03', 'Collaboration Is the Point',
-                 "Our post-production process is built around collaboration. You'll have direct access to your editor, and we share cuts early and often.",
+                 "You'll talk to your editor directly, and we share rough cuts early in the edit.",
                  ['Whether you’re in Baltimore or across the country, you can watch cuts, leave timestamped notes, and approve versions through secure remote review.'],
                  cast=[('Tools We Work With', "DaVinci Resolve, Final Cut Pro, Premiere Pro, Avid Media Composer, After Effects, Fusion, Frame.io")]),
         related('SC 04', 'post-production'),
         closing('SC 05', '011A1266.webp', 2500, 1264, 'A color grading panel and monitors in a dark edit suite.', pos='50% 50%',
                 h2='Need Post‑Production Help?',
-                lede="Tell us about your project. Whether you need a full post workflow or just help with one piece of it, we can take it on.",
+                lede="Tell us about your project, what stage it's at, and when you need it finished.",
                 btn='Get in Touch'),
     ])))
 
@@ -848,7 +848,7 @@ ABOUT_FILMS = '''
       <p class="sec-slate mono" aria-hidden="true"><b>SC 04</b><span>The Films</span></p>
       <div class="sec-head">
         <h2 id="h-features" class="sec-h disp rv">Our Feature Films</h2>
-        <p>Five features and counting—available on all major VOD platforms</p>
+        <p>Five features, available on all major VOD platforms</p>
       </div>
       <ul class="posters">%s
       </ul>
@@ -867,21 +867,21 @@ PAGES.append(dict(
               alt='A small crew films two actors in a graffiti-covered tunnel, a boom pole overhead.',
               h1='Film School Friends. Business Partners.',
               sub="We met in a 16mm filmmaking class at Johns Hopkins. Five feature films later, we're still making movies and videos for clients.",
-              ctas=[('contact.html', 'Start a Conversation', True), ('portfolio.html', 'View Our Work', False)]),
+              ctas=[('contact.html', 'Get in Touch', True), ('portfolio.html', 'View Our Work', False)]),
     body=lambda: ''.join([
         copy_sec('SC 01', 'Our Story',
                  'Joshua Land and Victor Fink met in a 16mm filmmaking class at Johns Hopkins University and have been collaborating ever since. Josh grew up in Baltimore; Victor in Boston. Together they co-founded MindInMotion, a video production company based in Baltimore.',
-                 ['Over the past decade-plus, they’ve produced features, shorts, music videos, and commercials together. Their narrative work includes "Lotus Eyes" and "I Like Me"—Victor shooting, Josh directing—before they stepped into co-directing with "Ape Canyon" and "Bad Witch." "Incubation" is their latest feature as a directing team.',
-                  'The company has grown beyond their personal film projects to serve a wide range of clients. Their work spans documentary and fiction, and has taken them everywhere from Baltimore and Washington DC to the mountains of Washington state and the rainforests of Cuba.',
-                  'Their feature films have screened at festivals across the world and are available on all major VOD platforms. When they’re not working for clients, they’re working on their own projects—"Incubation" is currently screening at festivals.'],
+                 ['Over the past decade-plus, they’ve produced features, shorts, music videos, and commercials together. Victor shot and Josh directed "Lotus Eyes" and "I Like Me," and they co-directed "Ape Canyon," "Bad Witch" and their latest feature, "Incubation."',
+                  "Alongside their own films, they make video for nonprofits, universities, public agencies and brands. They've shot documentary and fiction in Baltimore, Washington DC, the mountains of Washington state and the rainforests of Cuba.",
+                  'Their feature films have screened at festivals across the world and are available on all major VOD platforms. "Incubation" is currently screening at festivals.'],
                  figs='''<figure style="margin:0">
             <div class="fr" style="overflow:hidden"><img src="%sJoshua-and-Victor-on-stage-1.webp" width="1200" height="798" loading="lazy" alt="Josh and Victor on stage at a screening Q&amp;A, one holding a microphone, both wearing lanyards." style="aspect-ratio:3/2;object-fit:cover;width:100%%"></div>
             <figcaption class="about-cap"><span class="wide">Since 2012</span><span>Josh and Victor</span></figcaption>
           </figure>''' % A),
         svc_block('SC 02', 'How We Think About Work', '', [
-            ('Story First', "Every video—whether it's a 30-second spot or a feature film—tells a story, even when the subject is a police recruitment drive or a graduate program."),
-            ('Collaboration', "We don't just take orders. We ask questions, offer ideas, and push back when something could be better."),
-            ('Craft Matters', 'The right lens, the right color grade, a music cue that lands. The details are what people remember.'),
+            ('Story First', 'Much of our client work is documentary. We interview the people involved and build the edit around what they say.'),
+            ('Collaboration', 'You work with Josh and Victor directly. We ask questions, offer ideas, and say so when we think something could be better.'),
+            ('Craft Matters', 'We shoot, edit and color grade in-house.'),
         ], fig=('crew-hike-bw.webp', 576, 322, 'Black-and-white photo of a small crew hiking up a foggy hillside with a camera and a boom pole.'), hid='h-how', black=True),
         f'''
   <section class="copy-sec" aria-labelledby="h-team">
@@ -895,14 +895,14 @@ PAGES.append(dict(
           <h3 class="disp">Joshua Land</h3>
           <p class="role wide">Co-Founder / Director / Editor</p>
           <p>Josh grew up in Baltimore and studied Film &amp; Media Studies at Johns Hopkins. He's directed features that have screened at festivals worldwide and stream on major VOD platforms, first on his own and now co-directing with Victor.</p>
-          <p>As lead editor and colorist, Josh brings a meticulous post-production eye to every project.</p>
+          <p>He runs post-production as MindInMotion's lead editor and colorist.</p>
           <a class="link-arrow" href="https://www.imdb.com/name/nm4644677/">IMDb {ARR}</a>
         </article>
         <article class="bio">
           <h3 class="disp">Victor Fink</h3>
           <p class="role wide">Co-Founder / Cinematographer / Producer</p>
-          <p>Victor grew up in Boston and met Josh in that 16mm filmmaking class at Johns Hopkins—they've been collaborating ever since. As cinematographer, his visual style has defined the look of MindInMotion's features and dozens of commercial and corporate projects.</p>
-          <p>He shot their early features while Josh directed, and they now co-direct. He and Josh share production logistics and client relationships, keeping shoots running smoothly whether they're in Baltimore or Cuba.</p>
+          <p>Victor grew up in Boston and met Josh in that 16mm filmmaking class at Johns Hopkins. He's the cinematographer on MindInMotion's features and on dozens of commercial and corporate projects.</p>
+          <p>He shot their early features while Josh directed, and they now co-direct. He and Josh share production logistics and client relationships.</p>
           <a class="link-arrow" href="https://www.imdb.com/name/nm5227903/">IMDb {ARR}</a>
         </article>
       </div>
@@ -956,26 +956,26 @@ CASES = [
     dict(n='01', client='Maryland State Department of Education', title='Maryland Excels Campaign', img='checklist.webp', w=2500, h=1406, pos='50% 38%',
          alt='From Because Quality Matters: preschoolers laugh and shape clay at a classroom table.',
          play='vimeo:1021087594?h=2c0add4aa6', ptitle='Because Quality Matters',
-         text=['The Maryland State Department of Education needed videos that would reach parents across the state and convince them to choose licensed, quality childcare. The challenge: government messaging that doesn\'t feel like government messaging.',
-               'We took a documentary approach. Instead of actors, we filmed real families at real childcare centers throughout Maryland. We followed parents through their actual routines, and captured kids being kids. The result was a multi-video campaign that aired statewide and drove traffic to the Maryland Excels program.'],
+         text=['The Maryland State Department of Education needed videos that would reach parents across the state and convince them to choose licensed, quality childcare, without sounding like government ads.',
+               'We took a documentary approach and filmed families at childcare centers around Maryland instead of casting actors. We followed parents through their daily routines. The result was a multi-video campaign that aired statewide and drove traffic to the Maryland Excels program.'],
          deliv='TV spots, digital campaign, social cuts'),
     dict(n='02', client='Infinite Legacy', title='Organ Donation Testimonials', img='chelsea-ilf.webp', w=1920, h=1080, pos='50% 24%',
          alt='From Infinite Legacy: a mother holds her baby close, cheek to cheek, in warm light.',
          play='vimeo:836990393', ptitle='Infinite Legacy - Chelsea',
-         text=['How do you tell stories about loss, grief, and hope without exploiting any of it? That was the question when Infinite Legacy asked us to create testimonial videos featuring donor families and organ recipients.',
-               "We approached each interview like a conversation, not a production. Small crew, intimate setups, no rush. We let people share their stories in their own words, on their own timeline. The editing focused on honoring those stories rather than manipulating emotion. These videos have been used at fundraising galas, in hospital partner communications, and across the organization's awareness campaigns."],
+         text=['Infinite Legacy asked us to film donor families and organ recipients talking about loss, grief and hope, without exploiting their stories.',
+               "We filmed each interview with a small crew and no time limit. These videos have been used at fundraising galas, in hospital partner communications, and across the organization's awareness campaigns."],
          deliv='Testimonial series, gala content, awareness campaign'),
     dict(n='03', client='Johns Hopkins SAIS', title='Cuba Field Course Documentary', img='child-horse-cuba.webp', w=1200, h=675, pos='50% 40%',
          alt='From the Cuba field course film: a boy in a yellow shirt on a horse beside a thatched hut, under a storm sky.',
          play='vimeo:376001457', ptitle='Cuba, The Field Course Experience',
          text=['Johns Hopkins School of Advanced International Studies needed to capture their Cuba field course for program recruitment. The logistics were complicated: international travel, limited crew, working around academic schedules, and navigating Cuban filming restrictions.',
-               'We embedded with the students for the duration of the course. A small crew meant we could move fast—classroom discussions, street interviews, cultural experiences—without disrupting the academic program. The final documentary has been used by Hopkins for years to recruit students into their international studies programs.'],
+               'We traveled with the students for the whole course. With a small crew we could film classroom discussions and street interviews without disrupting the program. Hopkins has used the documentary for years to recruit students into its international studies programs.'],
          deliv='Documentary, recruitment content, program materials'),
     dict(n='04', client='American Lung Association', title='Lung Cancer Patient Stories', img='ala-ashley-dr-reed.webp', w=1920, h=1080, pos='50% 22%',
          alt='From the Ashley and Dr. Reed film: Dr. Reed and Ashley talk across a small round table in his office.',
          play='youtube:dxUx8L3rQos', ptitle='Ashley & Dr. Reed - Patient-Provider Story',
          text=['The American Lung Association asked us to tell the stories of lung cancer patients and their healthcare providers, and to explain biomarker testing along the way.',
-               "We worked closely with patients and doctors. Sydney's story shows how biomarker testing changed her prognosis. Ashley and Dr. Reed's video explores the patient-provider relationship during diagnosis. The campaign has been used nationally by the American Lung Association for patient education and advocacy."],
+               "Sydney's story shows how biomarker testing changed her prognosis. Ashley and Dr. Reed talk about the patient-provider relationship during diagnosis. The American Lung Association has used the series nationally for patient education and advocacy."],
          deliv='Patient testimonial series, provider education content, advocacy campaign'),
 ]
 
@@ -1031,7 +1031,7 @@ PAGES.append(dict(
     hero=dict(img='ghost-light-thumbnail.webp', w=2500, h=1250, pos='50% 40%', short=True,
               alt='From Juliet Lloyd "Ghost Light": a singer at a grand piano in gold stage light and haze.',
               h1='Our Work',
-              sub='Commercials, corporate videos, documentaries and feature films: our video production work for clients in Baltimore, Maryland and beyond. Tap any frame to watch.',
+              sub='Our video production work: commercials, corporate videos and documentaries for clients in Baltimore, Maryland and elsewhere, plus our own feature films. Tap any frame to watch.',
               ctas=[('reel', 'Watch the reel', False), ('contact.html', 'Tell Us About Your Project', True)]),
     body=lambda: ''.join([
         cases(),
