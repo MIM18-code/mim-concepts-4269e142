@@ -737,7 +737,8 @@ body { font-size: 17px; line-height: 1.5; font-kerning: normal; }
 .inter-side p, .sheet-head p { font-size: 17px; }
 
 /* ---------- scenes ---------- */
-.intertitle p:first-child { font-style: normal; font-weight: 500; font-size: clamp(30px, min(3.9vw, 7vh), 62px); line-height: 1.1; letter-spacing: -.028em; }
+/* The card carries a full sentence from the live portfolio (Joshua, 2026-10-14), so it sets as a line of thought, not a slogan. */
+.intertitle p:first-child { font-style: normal; font-weight: 500; font-size: clamp(24px, min(2.7vw, 5vh), 40px); line-height: 1.22; letter-spacing: -.02em; }
 .intertitle p + p { font-size: clamp(17px, 1.4vw, 21px); }
 .cr-title { font-size: clamp(36px, min(5.4vw, 8.6vh), 92px); letter-spacing: -.035em; line-height: 1; }
 .shot + .shot .cr-title { font-size: clamp(36px, 3.5vw, 56px); }
