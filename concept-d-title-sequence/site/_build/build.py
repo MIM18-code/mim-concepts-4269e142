@@ -686,7 +686,7 @@ FILM_ROWS = [
         ('I Like Me', '2018', 'Director: Joshua Land', 'i-like-me.webp', 1200, 675, 'link:https://www.amazon.com/dp/b07v5qtljq', 'I Like Me (feature film, 2018)'),
         ('Bad Witch', '2018', 'Directors: <span class="nw">Joshua Land &amp; Victor Fink</span>', 'bad-witch.webp', 1920, 1081, 'youtube:ecRv4nLSXaE', 'Bad Witch (feature film, 2018)'),
         ('Ape Canyon', '2019', 'Directors: <span class="nw">Joshua Land &amp; Victor Fink</span>', 'ape-canyon.webp', 1842, 1036, 'link:https://www.amazon.com/gp/video/detail/B091SXZYT8', 'Ape Canyon (feature film, 2019)'),
-        ('Incubation', '', 'Directors: <span class="nw">Joshua Land &amp; Victor Fink</span>', None, 0, 0, None, 'Incubation'),
+        ('Incubation', '', 'Directors: <span class="nw">Joshua Land &amp; Victor Fink</span>', 'incubation-teaser.webp', 1920, 1036, 'youtube:nHacNsApMkU', 'Incubation (teaser)'),
     ]),
     ('Short films', [
         ('The Farmhouse', '2023', 'Director: <span class="nw">Josh Land &amp; Victor Fink</span>', None, 0, 0, 'youtube:8oQABz68coc', 'The Farmhouse (short film, 2023)'),

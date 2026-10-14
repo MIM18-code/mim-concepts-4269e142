@@ -644,7 +644,7 @@ html:not(.seq) .sl-shot { display: none; }
   .mon-col { position: static; }
   .film-row { grid-template-columns: 96px minmax(0, 1fr) auto; gap: 4px 14px; }
   .film .thumb { display: block; grid-row: 1 / span 2; width: 96px; aspect-ratio: 16 / 9; object-fit: cover; align-self: center; }
-  /* Incubation has no still yet, so its thumb is a small title card, the same move as the desktop monitor. */
+  /* Films with no still yet get a small title card as the thumb, the same move as the desktop monitor. */
   .film .thumb.card { display: grid; place-content: center; position: static; opacity: 1; background: #121110; }
   .film .thumb.card .disp { font-size: 13px; line-height: 1; letter-spacing: .04em; color: var(--bone-2); }
   .film-t { font-size: clamp(28px, 8.2vw, 40px); grid-column: 2; }
@@ -1436,10 +1436,10 @@ html:not(.js) .rec { visibility: hidden; }
             </li>
             <li class="film" data-i="4">
               <div class="film-row">
-                <span class="thumb card" aria-hidden="true"><span class="disp">Incubation</span></span>
+                <img class="thumb" src="../../assets/img/incubation-teaser.webp" width="1920" height="1036" loading="lazy" alt="">
                 <p class="film-t disp">Incubation</p>
                 <p class="film-meta">Directors: <span class="nw">Joshua Land &amp; Victor Fink</span></p>
-                <a class="act icon-btn" href="film-production.html" aria-label="Incubation"><svg class="arr"><use href="#arr"/></svg></a>
+                <button class="act icon-btn" type="button" data-youtube="nHacNsApMkU" data-title="Incubation (teaser)" aria-label="Play Incubation (teaser)"><svg class="tri"><use href="#tri"/></svg></button>
               </div>
             </li>
           </ol>
@@ -1491,7 +1491,7 @@ html:not(.js) .rec { visibility: hidden; }
           <img src="../../assets/img/i-like-me.webp" width="1200" height="675" loading="lazy" alt="">
           <img src="../../assets/img/bad-witch.webp" width="1920" height="1081" loading="lazy" alt="">
           <img src="../../assets/img/ape-canyon.webp" width="1842" height="1036" loading="lazy" alt="">
-          <div class="card"><span class="disp">Incubation</span></div>
+          <img src="../../assets/img/incubation-teaser.webp" width="1920" height="1036" loading="lazy" alt="">
           <img src="../../assets/img/ghost-light-thumbnail.webp" width="2500" height="1250" loading="lazy" alt="">
           <img src="../../assets/img/vimeo-1937932446.webp" width="640" height="360" loading="lazy" alt="">
           <img src="../../assets/img/fives-lovers.webp" width="2179" height="1226" loading="lazy" alt="">
