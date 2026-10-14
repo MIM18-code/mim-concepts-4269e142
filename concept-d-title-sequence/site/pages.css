@@ -24,8 +24,10 @@
 .crumbs a:hover { color: var(--bone); }
 .crumbs [aria-current] { color: var(--bone); }
 .ph .stats dd { font-size: clamp(16px, 1.15vw, 19px); }
-/* A short hero for Contact and Portfolio: less picture, the form or grid starts sooner. */
-.ph.short { height: 74vh; height: 74svh; min-height: 560px; --bb: clamp(280px, 40vh, 380px); }
+/* A short hero for Contact and Portfolio: less picture, the form or grid starts sooner. The bottom bar is
+   sized to its two or three lines of content, so the picture keeps about a third of the screen instead of
+   a 110px strip over a bar that was mostly empty black. */
+.ph.short { height: 78vh; height: 78svh; min-height: 560px; --bb: clamp(230px, 28vh, 290px); }
 @media (max-height: 760px) and (min-width: 1101px) { .ph { --bb: 300px; } .ph .hero-side { gap: 12px; } .ph .stats { display: none; } }
 @media (max-width: 1100px) {
   .ph, .ph.short { height: auto; min-height: 0; }
@@ -89,7 +91,7 @@ a.tile-btn { text-decoration: none; }
 .case-frame { position: relative; display: block; width: 100%; padding: 0; border: 0; cursor: pointer; background: #000; aspect-ratio: 2.39 / 1; overflow: hidden; }
 .case-frame img { width: 100%; height: 100%; object-fit: cover; transition: filter .3s; }
 .case-frame:hover img { filter: brightness(1.08); }
-.case-frame.card-frame { display: grid; place-items: center; background: #121110; padding: 24px; }
+.case-frame.card-frame { display: grid; place-items: center; background: #121110; padding: 24px; box-shadow: inset 0 0 0 1px var(--line); }
 .case-frame .tile-cue { padding: 12px 18px 12px 16px; }
 .case-body { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 24px clamp(28px, 5vw, 88px); margin-top: 24px; }
 .case-body .cr-title { font-size: clamp(34px, 4vw, 64px); }

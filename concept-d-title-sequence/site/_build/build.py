@@ -1079,7 +1079,7 @@ CONTACT_BODY = lambda: f'''
         <aside class="side-card" aria-labelledby="h-touch">
           <h2 id="h-touch" class="disp">Get In Touch</h2>
           <dl class="ec-credits">
-            <div><dt class="wide">Baltimore HQ</dt><dd>3617 Chestnut Ave<br>Baltimore, MD 21211<br><span style="color:var(--bone-3)">Serving Maryland, DC &amp; the Mid-Atlantic</span></dd></div>
+            <div><dt class="wide">Baltimore HQ</dt><dd>3617 Chestnut Ave<br>Baltimore, MD 21211<br><span style="color:var(--bone-3)">Serving Maryland, DC &amp; the <span class="nw">Mid-Atlantic</span></span></dd></div>
             <div><dt class="wide">Phone</dt><dd><a href="tel:+14435275181">(443) 527-5181</a></dd></div>
             <div><dt class="wide">Email</dt><dd><a href="mailto:mindinmotionpro@gmail.com">mindinmotionpro@gmail.com</a></dd></div>
           </dl>
