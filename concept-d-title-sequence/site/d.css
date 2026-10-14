@@ -623,7 +623,7 @@ html:not(.seq) .sl-shot { display: none; }
   .mon-col { position: static; }
   .film-row { grid-template-columns: 96px minmax(0, 1fr) auto; gap: 4px 14px; }
   .film .thumb { display: block; grid-row: 1 / span 2; width: 96px; aspect-ratio: 16 / 9; object-fit: cover; align-self: center; }
-  /* Incubation has no still yet, so its thumb is a small title card, the same move as the desktop monitor. */
+  /* Films with no still yet get a small title card as the thumb, the same move as the desktop monitor. */
   .film .thumb.card { display: grid; place-content: center; position: static; opacity: 1; background: #121110; }
   .film .thumb.card .disp { font-size: 13px; line-height: 1; letter-spacing: .04em; color: var(--bone-2); }
   .film-t { font-size: clamp(28px, 8.2vw, 40px); grid-column: 2; }
