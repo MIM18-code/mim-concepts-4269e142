@@ -161,7 +161,7 @@ Homepage changes also apply to the monitor-hero homepage and the four typeface c
 
 The four typeface comparison pages keep "Made to be seen." and the old About heading, because their type sizes are tuned to that headline.
 
-Still open: the Nate Lanzino and Chris Perillo testimonials on Commercial and Film are set as big standalone pull quotes. The words are real client quotes, but the layout is the same pull-quote look as the rejected card. They could stay only in the About "In their words" section.
+Kept: the Nate Lanzino and Chris Perillo testimonials on Commercial and Film stay as they are. They're real client quotes, and the no-pull-quote rule is about our own slogan lines, not clients' words (Joshua, October 14).
 
 ### Search check for this pass
 
