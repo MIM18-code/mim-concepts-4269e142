@@ -286,7 +286,8 @@ html:not(.js) .clock { display: none; }
 .scene .frame { aspect-ratio: 2.39 / 1; }
 .scene .shot + .shot .frame { aspect-ratio: 16 / 9; }
 /* SC 04: an intertitle card in place of a picture */
-.frame.card-frame { display: grid; place-items: center; background: #121110; padding: 24px var(--gut); }
+/* The plate is only a step above black, so a hairline marks the frame's edges between the bars. */
+.frame.card-frame { display: grid; place-items: center; background: #121110; padding: 24px var(--gut); box-shadow: inset 0 0 0 1px var(--line); }
 .intertitle { width: min(760px, 100%); text-align: center; display: grid; justify-items: center; gap: 18px; }
 .intertitle p:first-child { font-style: italic; font-size: clamp(34px, min(4.6vw, 8vh), 76px); line-height: 1.08; color: var(--bone); text-wrap: balance; }
 .intertitle p + p { max-width: 30em; font-size: clamp(18px, 1.6vw, 24px); line-height: 1.45; color: var(--bone-2); text-wrap: balance; }
@@ -607,6 +608,10 @@ html:not(.seq) .sl-shot { display: none; }
   .hero-ctas { order: 3; }
   .stats { order: 4; }
   .hero-ctas .btn { flex: 1 1 auto; justify-content: space-between; }
+  /* Stretched buttons read label first, glyph at the right edge. The play buttons put their triangle
+     first, which left it alone at the far left with the label at the far right; on a phone it moves right
+     to match the arrow buttons. */
+  .btn > .tri:first-child { order: 1; }
 
   .inter { padding-top: 88px; }
   .inter-grid, .sheet-head, .svc, .films-grid, .about, .ec-bar { grid-template-columns: minmax(0, 1fr); }
@@ -753,7 +758,8 @@ body { font-size: 17px; line-height: 1.5; font-kerning: normal; }
 .inter-side p, .sheet-head p { font-size: 17px; }
 
 /* ---------- scenes ---------- */
-.intertitle p:first-child { font-style: normal; font-weight: 500; font-size: clamp(30px, min(3.9vw, 7vh), 62px); line-height: 1.1; letter-spacing: -.028em; }
+/* The card carries a full sentence from the live portfolio (Joshua, 2026-10-14), so it sets as a line of thought, not a slogan. */
+.intertitle p:first-child { font-style: normal; font-weight: 500; font-size: clamp(24px, min(2.7vw, 5vh), 40px); line-height: 1.22; letter-spacing: -.02em; }
 .intertitle p + p { font-size: clamp(17px, 1.4vw, 21px); }
 .cr-title { font-size: clamp(36px, min(5.4vw, 8.6vh), 92px); letter-spacing: -.035em; line-height: 1; }
 .shot + .shot .cr-title { font-size: clamp(36px, 3.5vw, 56px); }
@@ -1064,7 +1070,7 @@ body { font-size: 17px; line-height: 1.5; font-kerning: normal; }
         <figure class="shot is-on">
           <div class="frame card-frame">
             <div class="intertitle">
-              <p>No scripts. No acting.</p>
+              <p>No scripts, no acting—just real people sharing experiences that might help others facing similar situations.</p>
               <p>Ashley and Dr. Reed talk about the patient-doctor relationship during diagnosis.</p>
             </div>
             <button class="frame-play" type="button" tabindex="-1" aria-hidden="true" data-for="p-ala"><svg><use href="#tri-lg"/></svg></button>
