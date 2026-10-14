@@ -741,9 +741,6 @@ def films_list():
       <div class="inter-grid wrap">
         <p class="reel mono"><b aria-hidden="true">Reel 1</b><span>SC 02</span></p>
         <h2 id="films-title" class="disp rv">Our feature films</h2>
-        <div class="inter-side rv">
-          <p>Victor shot "Lotus Eyes" and "I Like Me" while Josh directed. Now we co-direct.</p>
-        </div>
       </div>
     </div>
     <div class="wrap films-grid">
@@ -871,7 +868,7 @@ PAGES.append(dict(
     body=lambda: ''.join([
         copy_sec('SC 01', 'Our Story',
                  'Joshua Land and Victor Fink met in a 16mm filmmaking class at Johns Hopkins University and have been collaborating ever since. Josh grew up in Baltimore; Victor in Boston. Together they co-founded MindInMotion, a video production company based in Baltimore.',
-                 ['Over the past decade-plus, they’ve produced features, shorts, music videos, and commercials together. Victor shot and Josh directed "Lotus Eyes" and "I Like Me," and they co-directed "Ape Canyon," "Bad Witch" and their latest feature, "Incubation."',
+                 ['Over the past decade-plus, they’ve produced features, shorts, music videos, and commercials together. Their features are "Lotus Eyes," "I Like Me," "Bad Witch," "Ape Canyon" and their latest, "Incubation."',
                   "Alongside their own films, they make video for nonprofits, universities, public agencies and brands. They've shot documentary and fiction in Baltimore, Washington DC, the mountains of Washington state and the rainforests of Cuba.",
                   'Their feature films have screened at festivals across the world and are available on all major VOD platforms. "Incubation" is currently screening at festivals.'],
                  figs='''<figure style="margin:0">
@@ -894,7 +891,7 @@ PAGES.append(dict(
         <article class="bio">
           <h3 class="disp">Joshua Land</h3>
           <p class="role wide">Co-Founder / Director / Editor</p>
-          <p>Josh grew up in Baltimore and studied Film &amp; Media Studies at Johns Hopkins. He's directed features that have screened at festivals worldwide and stream on major VOD platforms, first on his own and now co-directing with Victor.</p>
+          <p>Josh grew up in Baltimore and studied Film &amp; Media Studies at Johns Hopkins. He's directed features that have screened at festivals worldwide and stream on major VOD platforms.</p>
           <p>He runs post-production as MindInMotion's lead editor and colorist.</p>
           <a class="link-arrow" href="https://www.imdb.com/name/nm4644677/">IMDb {ARR}</a>
         </article>
@@ -902,7 +899,6 @@ PAGES.append(dict(
           <h3 class="disp">Victor Fink</h3>
           <p class="role wide">Co-Founder / Cinematographer / Producer</p>
           <p>Victor grew up in Boston and met Josh in that 16mm filmmaking class at Johns Hopkins. He's the cinematographer on MindInMotion's features and on dozens of commercial and corporate projects.</p>
-          <p>He shot their early features while Josh directed, and they now co-direct. He and Josh share production logistics and client relationships.</p>
           <a class="link-arrow" href="https://www.imdb.com/name/nm5227903/">IMDb {ARR}</a>
         </article>
       </div>

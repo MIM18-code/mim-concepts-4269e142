@@ -177,6 +177,21 @@ Measured on the built pages before and after. Page titles are identical. The onl
 | Portfolio | 1033 to 953 | Unchanged. |
 | Homepage | 924 to 884 | The H1 now says "film and video production in Baltimore". Otherwise unchanged. |
 
+## Fourth pass: inside-baseball lines (October 14)
+
+Joshua on the films section line "Victor shot "Lotus Eyes" and "I Like Me" while Josh directed. Now we co-direct.": "who gives a shit?" The rule is that we cut trivia about which of us did what on which film, because a client doesn't need it. Film titles stay, because people search for them. Credit lines under each video ("Director: …, DP: …") are credits, not copy, so they stay too.
+
+| Where | Old | New | Why |
+|---|---|---|---|
+| Homepage, "Our feature films" (SC 08) | Victor shot "Lotus Eyes" and "I Like Me" while Josh directed. Now we co-direct. | Removed. The heading and film list stand on their own. | Joshua's call. The director credit is already under each film. |
+| Film, "Our feature films" (SC 02) | Same line | Removed | Same |
+| Homepage, About | …We met in a 16mm filmmaking class at Johns Hopkins and quickly bonded over being obsessed with movies and wanting to spend as much time outside of school working on film projects as possible. | …We met in a 16mm filmmaking class at Johns Hopkins. | Film-school backstory a client doesn't need. "Baltimore native" and "Johns Hopkins" stay. |
+| About, Our Story | Victor shot and Josh directed "Lotus Eyes" and "I Like Me," and they co-directed "Ape Canyon," "Bad Witch" and their latest feature, "Incubation." | Their features are "Lotus Eyes," "I Like Me," "Bad Witch," "Ape Canyon" and their latest, "Incubation." | Keeps all five titles and drops who shot and who directed which. |
+| About, Josh's bio | …stream on major VOD platforms, first on his own and now co-directing with Victor. | …stream on major VOD platforms. | Same trivia. |
+| About, Victor's bio | He shot their early features while Josh directed, and they now co-direct. He and Josh share production logistics and client relationships. | Removed. The bio keeps "He's the cinematographer on MindInMotion's features and on dozens of commercial and corporate projects." | The first sentence is the same trivia. The second describes how they split their own work, and "You talk to us directly" already says it for clients. |
+
+Search check: page titles, descriptions, headings and keyword counts are unchanged on every page. Word counts went from 562 to 525 on About, 421 to 407 on Film, and 857 to 819 on the homepage.
+
 ## Content moved or added from elsewhere on the live site
 
 These aren't new words, but they now appear on a page where they didn't before.
