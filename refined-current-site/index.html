@@ -487,12 +487,23 @@
   </section>
 
   <section class="sec" aria-labelledby="h-close">
-    <div class="wrap">
+    <div class="wrap close-form">
       <div class="close-sec">
         <h2 id="h-close">Tell us about your project</h2>
         <p class="lede">Get a custom quote within 24 hours.</p>
-        <div class="btns"><a class="btn btn-solid" href="contact.html">Get Your Free Quote</a><a class="btn" href="tel:+14435275181">(443) 527-5181</a></div>
+        <div class="btns"><a class="btn" href="tel:+14435275181">(443) 527-5181</a></div>
       </div>
+      <form class="form form-short" name="contact-home" method="POST" action="thank-you" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact-home">
+        <p class="hp"><label>Don't fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+        <div class="field full"><label for="q-name">Your Name *</label><input id="q-name" name="name" autocomplete="name" required></div>
+        <div class="field"><label for="q-email">Email Address *</label><input id="q-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="q-phone">Phone Number</label><input id="q-phone" name="phone" type="tel" autocomplete="tel"></div>
+        <div class="field full"><label for="q-msg">Tell Us About Your Project *</label><textarea id="q-msg" name="message" required placeholder="What are you making, who is it for, and when do you need it?"></textarea></div>
+        <p class="note full">By submitting this form, you agree that MindInMotion may use the information you provide to respond to your inquiry. Read our <a href="https://mindinmotion.tv/privacy-policy">Privacy Policy</a>.</p>
+        <button class="btn btn-solid full" type="submit">Get My Free Quote</button>
+        <p class="form-status full" role="status" tabindex="-1" hidden></p>
+      </form>
     </div>
   </section>
 </main>

@@ -184,9 +184,8 @@
     schedule();
   });
 
-  /* ----- contact form: this is the review copy, so it checks the fields and says it didn't send ----- */
-  var form = d.querySelector('form.form');
-  if (form) {
+  /* ----- quote forms: this is the review copy, so they check the fields and say they didn't send ----- */
+  d.querySelectorAll('form.form').forEach(function (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       if (!form.reportValidity()) return;
@@ -195,5 +194,5 @@
       st.textContent = 'This is the review copy of the site, so the form doesn’t send. On mindinmotion.tv it goes to Josh and Victor.';
       st.focus();
     });
-  }
+  });
 })();

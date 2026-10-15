@@ -46,6 +46,7 @@ The list of changes that search engines see, written for the SEO consultant, is 
 | Since then we've made six feature films together, and grown a company making film and video for a wide range of clients. Our work spans the realms of documentary and fiction, and has taken us everywhere from Baltimore, Washington DC, and Orlando, Florida to the mountains of Washington state and the rainforests of Cuba. | Since then we've made our own feature films together and grown a company that makes film and video for clients. We've shot documentary and fiction in Baltimore, Washington DC, the mountains of Washington state and the rainforests of Cuba. | Brag, Orlando, and slogan filler (Oct 14) |
 | When we're not working for clients, we're working on our own projects. | Removed | Slogan filler (Oct 14) |
 | "Since 2012 / Making movies and videos for clients who care about quality" card | A photo of Josh and Victor, captioned "Josh (left) and Victor on set" | Slogan card (Oct 14 rule: a real still or a plain caption instead) |
+| Closing: heading and two buttons ("Get Your Free Quote" and the phone number) | The heading and the phone number, with a short form beside them: "Your Name *", "Email Address *", "Phone Number", "Tell Us About Your Project *", the privacy line and "Get My Free Quote" | Layout: Squarespace's homepage ended with a short form (Joshua approved, 2026-10-15). Every label is the live Contact form's own. |
 
 ## Commercial
 
@@ -80,6 +81,7 @@ The list of changes that search engines see, written for the SEO consultant, is 
 | H1: Where the Magic Actually Happens | Post-Production | His pick |
 | Post-production is where everything comes together. ...we can take your project across the finish line. | Line under the H1: "Editing, color grading, VFX and motion graphics for films, commercials and corporate video." The rest opens "Our Services". | Slogan (Oct 14) |
 | The five service descriptions ("Story-driven", "whatever your workflow requires", "Professional color work", "partner with trusted specialists", "We handle the technical so you don't have to", "Stalled project? Previous editor unavailable?") | The Oct 14 versions | Slogan (Oct 14) |
+| (no mention of sound) | A "Sound Mixing" row in the services list: "We work with sound-mixing partners for the final mix." | Joshua, 2026-10-15: "we work with sound mixing partners". Squarespace's post page said: "In addition, our partners in the fields of sound mixing, visual effects, graphic design, and animation allow us to be a one stop resource for post-production." This keeps the fact without "one stop resource". |
 | See Our Work → | See Our Work | Layout (no arrows) |
 | ...A few pieces that show the range — tap any frame to watch. | We edited, colored and finished every project on this site. Here are four. | Filler (Oct 14) |
 | H2: Collaboration Is the Point, and its three paragraphs | Working With Your Editor, and the Oct 14 two-paragraph version | His pick, slogan (Oct 14) |

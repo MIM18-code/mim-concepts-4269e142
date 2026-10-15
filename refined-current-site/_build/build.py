@@ -758,6 +758,32 @@ def closing(h2='Tell us about your project', lede='Get a custom quote within 24 
   </section>'''
 
 
+def closing_form():
+    """The homepage ends with a short quote form beside the closing heading, as Squarespace's did.
+    It is its own Netlify form (contact-home) and posts to the same thank-you page as the Contact form."""
+    return f'''
+  <section class="sec" aria-labelledby="h-close">
+    <div class="wrap close-form">
+      <div class="close-sec">
+        <h2 id="h-close">Tell us about your project</h2>
+        <p class="lede">Get a custom quote within 24 hours.</p>
+        <div class="btns"><a class="btn" href="tel:+14435275181">(443) 527-5181</a></div>
+      </div>
+      <form class="form form-short" name="contact-home" method="POST" action="thank-you" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact-home">
+        <p class="hp"><label>Don't fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+        <div class="field full"><label for="q-name">Your Name *</label><input id="q-name" name="name" autocomplete="name" required></div>
+        <div class="field"><label for="q-email">Email Address *</label><input id="q-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="q-phone">Phone Number</label><input id="q-phone" name="phone" type="tel" autocomplete="tel"></div>
+        <div class="field full"><label for="q-msg">Tell Us About Your Project *</label><textarea id="q-msg" name="message" required placeholder="What are you making, who is it for, and when do you need it?"></textarea></div>
+        <p class="note full">By submitting this form, you agree that MindInMotion may use the information you provide to respond to your inquiry. Read our <a href="{LIVE}/privacy-policy">Privacy Policy</a>.</p>
+        <button class="btn btn-solid full" type="submit">Get My Free Quote</button>
+        <p class="form-status full" role="status" tabindex="-1" hidden></p>
+      </form>
+    </div>
+  </section>'''
+
+
 def grid_sec(h2, hid, lede, grid_html, alt=False):
     ld_ = '<p class="lede">%s</p>' % lede if lede else ''
     return f'''
@@ -822,7 +848,7 @@ HOME_BODY = f'''
     </div>
   </section>
 {quotes_sec()}
-{closing()}'''
+{closing_form()}'''
 
 PAGES.append(dict(
     slug='index',
@@ -842,12 +868,13 @@ PAGES.append(dict(
     og_desc='TV commercials, digital ads, and brand videos in Baltimore.',
     crumbs=[('Home', ''), ('Services', None), ('Commercial', 'commercial-video-production')],
     service='Commercial video production',
-    preload=A + 'Screen-Shot-2022-06-24-at-6.14.31-PM-2.webp',
+    preload=A + 'Screenshot-2024-01-18-at-2.56.49-PM.webp',
     body=''.join([
-        phero(A + 'Screen-Shot-2022-06-24-at-6.14.31-PM-2.webp', 'From the Maryland Excels "Good Mom" spot: a woman in a dark bathroom at night, lit by cold blue light.',
+        # Header stills are frames that aren't in the page's own grid, as Squarespace's header footage wasn't.
+        phero(A + 'Screenshot-2024-01-18-at-2.56.49-PM.webp', 'Two young girls play in a purple and yellow toy car outdoors.',
               'Commercial Video Production', 'TV spots, PSAs, recruitment ads and social cuts.',
               [('contact.html', 'Tell Us About Your Project', True)],
-              crumbs=[('Home', ''), ('Services', None), ('Commercial', 'commercial-video-production')], pos='50% 45%'),
+              crumbs=[('Home', ''), ('Services', None), ('Commercial', 'commercial-video-production')], pos='50% 40%'),
         copy_split(None,
                    "MindInMotion handles commercial video production in Baltimore for broadcast TV, streaming platforms, YouTube pre-roll and social feeds. Some spots come through ad agencies, like our WellPoint spot for InterPublic. Others we make directly for the client, like the Maryland Excels PSAs for the Maryland State Department of Education.",
                    ["Josh and Victor also direct feature films. They plan the lighting, camera moves and performances in a 15-second social cut or a 60-second broadcast spot the same way they do on their features.",
@@ -869,12 +896,12 @@ PAGES.append(dict(
     og_desc='Training videos, testimonials, and corporate communications in Baltimore.',
     crumbs=[('Home', ''), ('Services', None), ('Corporate', 'corporate-video-production')],
     service='Corporate and nonprofit video production',
-    preload=A + 'mike-odom.webp',
+    preload=A + 'Screen-Shot-2019-12-11-at-3.34.02-PM-copy.webp',
     body=''.join([
-        phero(A + 'mike-odom.webp', 'From a Johns Hopkins AAP profile: a man in glasses looks off camera, trees soft behind him.',
+        phero(A + 'Screen-Shot-2019-12-11-at-3.34.02-PM-copy.webp', 'From the Cuba field course film: two hikers with backpacks below green mountains.',
               'Corporate Video Production', "Videos to train a team, tell a patient's story, or show donors where their money goes.",
               [('contact.html', 'Tell Us About Your Project', True)],
-              crumbs=[('Home', ''), ('Services', None), ('Corporate', 'corporate-video-production')], pos='38% 35%'),
+              crumbs=[('Home', ''), ('Services', None), ('Corporate', 'corporate-video-production')], pos='62% 30%'),
         copy_split(None,
                    "Our corporate video production work includes training modules for hospital systems, testimonial campaigns for nonprofits, recruitment videos for universities, and internal communications for organizations that want their employees to watch.",
                    ["Our approach comes from documentary filmmaking. We interview the people involved with a small crew, and film b-roll at your own locations.",
@@ -933,12 +960,12 @@ PAGES.append(dict(
     og_desc='Full service film production. Feature films, shorts, and documentaries screened at festivals worldwide.',
     crumbs=[('Home', ''), ('Services', None), ('Film', 'film-production')],
     service='Film production',
-    preload=A + 'lotus-eyes.webp',
+    preload=A + 'heart-thunder-fog.webp',
     body=''.join([
-        phero(A + 'lotus-eyes.webp', 'From Lotus Eyes: a woman and a boy at a window in soft side light.',
+        phero(A + 'heart-thunder-fog.webp', 'From the FIVES video Heart & Thunder: a drummer mid-hit, backlit in blue haze.',
               'Film Production', 'Production and post-production support for features, shorts, documentaries, and music videos.',
               [('contact.html', 'Tell Us About Your Project', True)],
-              crumbs=[('Home', ''), ('Services', None), ('Film', 'film-production')], pos='50% 35%'),
+              crumbs=[('Home', ''), ('Services', None), ('Film', 'film-production')], pos='50% 40%'),
         copy_split(None,
                    'MindInMotion is a full-service film production company in Baltimore, Maryland. We produce and finish shorts and feature films, and our own features have screened at festivals across the globe; most are on major VOD platforms.',
                    ["We can produce a whole film or join your crew for part of it, on productions in Baltimore and up and down the east coast.",
@@ -954,6 +981,7 @@ PAGES.append(dict(
 POST_ROWS = [
     ('Editing', "Our editors have cut feature films, commercials, documentaries and corporate videos. We work in DaVinci Resolve, Final Cut Pro, Premiere, and Avid."),
     ('Color Grading', 'Color correction and grading in DaVinci Resolve. We work from LOG camera footage through to the graded master.'),
+    ('Sound Mixing', 'We work with sound-mixing partners for the final mix.'),
     ('VFX &amp; Motion Graphics', 'Compositing, cleanup, and motion graphics. We do standard effects in-house and bring in VFX specialists for complex shots.'),
     ('Delivery &amp; Mastering', "Final files to broadcast specs, for streaming platforms and social media, or as theatrical DCPs."),
     ('Project Rescue', 'We take over projects that have stalled or lost their editor, and finish them.'),
@@ -1149,12 +1177,17 @@ def opt(pairs, placeholder):
     return '<option value="" disabled selected>%s</option>' % placeholder + ''.join('<option value="%s">%s</option>' % (v, e(l)) for v, l in pairs)
 
 
+# Laid out like Squarespace's Contact page: heading and details on the left, the form on the right,
+# so the form is in the first screen. Same form name, fields and option values as the live form.
 CONTACT_BODY = ''.join([
-    phero(None, None, 'Contact Us', "Tell us about your project and we'll get back to you within 24 hours with a custom quote.", [], bare=True),
     f'''
-  <section class="sec" aria-labelledby="h-form">
-    <div class="wrap form-grid">
-      <div>
+  <section class="contact-top" aria-labelledby="h-page">
+    <div class="wrap contact-grid">
+      <div class="contact-intro">
+        <h1 id="h-page">Contact Us</h1>
+        <p class="lede">Tell us about your project and we&#39;ll get back to you within 24 hours with a custom quote.</p>
+      </div>
+      <div class="contact-form">
         <h2 id="h-form" class="form-h">Get Your Free Quote</h2>
         <form class="form" name="contact" method="POST" action="thank-you" data-netlify="true" netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="contact">

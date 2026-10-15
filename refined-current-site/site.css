@@ -19,7 +19,7 @@
 
   /* The whole type scale: six sizes, 390px phone -> 1440px desktop. Nothing else sets a font-size. */
   --t-hero: clamp(2.625rem, 1.929rem + 2.857vw, 4.5rem);    /* 42 -> 72  home hero h1 only            */
-  --t-xl:   clamp(2.125rem, 1.618rem + 2.095vw, 3.5rem);    /* 34 -> 56  page h1, section h2           */
+  --t-xl:   clamp(2.125rem, 1.429rem + 2.857vw, 4rem);      /* 34 -> 64  page h1, section h2 (Squarespace's 64) */
   --t-l:    clamp(1.4375rem, 1.321rem + .476vw, 1.75rem);   /* 23 -> 28  testimonials, standfirst, feature and bio titles */
   --t-m:    clamp(1.25rem, 1.18rem + .286vw, 1.4375rem);    /* 20 -> 23  h3, tile titles, ledes        */
   --t-body: clamp(1.125rem, 1.055rem + .286vw, 1.3125rem);  /* 18 -> 21  running text                  */
@@ -303,9 +303,20 @@ main > :last-child { padding-bottom: var(--sec); }
 .contact-list dd a { text-decoration: none; }
 .contact-list dd a:hover { text-decoration: underline; }
 
-/* ---------- contact page ---------- */
-.form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px var(--cgap); align-items: start; }
-@media (max-width: 960px) { .form-grid { grid-template-columns: minmax(0, 1fr); } }
+/* ---------- contact page: heading and details left, form right, as on Squarespace ---------- */
+.contact-top .wrap { padding-top: clamp(32px, 4vw, 56px); }
+.contact-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); grid-template-rows: auto 1fr; grid-template-areas: "intro form" "side form"; gap: 48px var(--cgap); align-items: start; }
+.contact-intro { grid-area: intro; }
+.contact-form { grid-area: form; }
+.contact-grid .side { grid-area: side; }
+.contact-intro h1 { font-size: var(--t-xl); line-height: 1; letter-spacing: -.045em; }
+.contact-intro .lede { margin-top: 20px; }
+@media (max-width: 960px) { .contact-grid { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; grid-template-areas: "intro" "form" "side"; } }
+@media (min-width: 961px) { .contact-form .form { gap: 18px 20px; } .contact-form .field textarea { min-height: 120px; } }   /* whole form in the first screen at 1440x900 */
+/* homepage closing: heading left, short form right */
+.close-form { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 40px var(--cgap); align-items: start; }
+@media (max-width: 960px) { .close-form { grid-template-columns: minmax(0, 1fr); } }
+.form-short textarea { min-height: 140px; }
 .form { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 20px; font-size: var(--t-s); }
 @media (max-width: 620px) { .form { grid-template-columns: minmax(0, 1fr); } }
 .form .full { grid-column: 1 / -1; }
