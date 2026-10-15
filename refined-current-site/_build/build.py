@@ -208,7 +208,6 @@ W = {
     'bennetts': dict(cats='commercial', label='Commercial', title="Bennett's Curse St. Patrick's Day", cr="Client: Bennett's Curse", img=L + 'bennetts-curse-st-patricks-day.webp', play='vimeo:1019980973?h=63b47d2669', alt='A rotting, green-lit zombie face in close-up.'),
 }
 
-ARR = '<svg viewBox="0 0 16 12" aria-hidden="true" style="width:15px;height:11px;fill:none;stroke:currentColor;stroke-width:1.5"><path d="M0 6h14M9 1l5 5-5 5"/></svg>'
 TRI = '<svg class="tri" viewBox="0 0 10 12" aria-hidden="true"><path d="M0 0v12l10-6z"/></svg>'
 
 
@@ -486,7 +485,7 @@ def phero(img_src, alt, h1, sub, ctas, crumbs=None, short=False, pos=None):
 
 
 def reel_btn(text='Watch the reel', solid=False):
-    return '<button class="btn%s" type="button" data-vimeo="851026180" data-title="MindInMotion demo reel">%s %s</button>' % (' btn-solid' if solid else '', TRI, text)
+    return '<button class="btn%s" type="button" data-vimeo="851026180" data-title="MindInMotion demo reel">%s</button>' % (' btn-solid' if solid else '', text)
 
 
 def copy_split(h2, lede, paras, side, hid, alt=False, rev=False):

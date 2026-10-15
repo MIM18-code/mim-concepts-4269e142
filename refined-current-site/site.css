@@ -78,7 +78,6 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .btn:hover { border-color: var(--bone); background: rgba(236, 230, 218, .06); }
 .btn-solid { background: var(--bone); color: var(--ink); border-color: var(--bone); }
 .btn-solid:hover { background: #fff; border-color: #fff; color: var(--ink); }
-.btn .tri { width: 10px; height: 12px; fill: currentColor; }
 .btns { display: flex; flex-wrap: wrap; gap: 12px; }
 .text-link { font-family: var(--sans); font-size: 16px; font-weight: 500; text-decoration: underline; text-decoration-color: var(--line-2); }
 .text-link:hover { text-decoration-color: var(--bone); }
