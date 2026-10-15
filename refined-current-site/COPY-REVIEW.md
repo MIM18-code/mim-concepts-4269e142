@@ -1,81 +1,134 @@
 # Copy review: refined current site
 
-The copy on these pages is the copy Joshua already approved for Concept D (three passes, logged in `../concept-d-title-sequence/site/COPY-REVIEW.md`). Concept D in turn kept the live site's copy except where a reviewed change made it better. This file lists only what differs from that approved copy, with the reason for each change. Nothing else was rewritten.
+**The base is the live site's copy.** Every page uses the wording on mindinmotion.tv today (the live repo's `main` at `184e528`, 2026-10-15), word for word, including its capitalisation and button labels. Joshua, 2026-10-15: "except for mistakes i want the current copy mostly unless it had to change."
 
-## 1. "Five feature films" cut everywhere (Joshua: the brags are bad)
+A line differs from the live site only for one of these reasons:
 
-| Where | Old (Concept D, approved) | New | Why |
-|---|---|---|---|
-| Home, About section, 2nd paragraph | Since then we've made **five feature films** together and grown a company that makes film and video for clients. | Since then we've made **our own feature films** together and grown a company that makes film and video for clients. | Joshua named "5 feature films made" as a brag to cut. The sentence keeps "feature films", which is a search term. |
-| Film page intro | We produce and finish shorts and feature films, and **have made five features of our own that screened** at festivals across the globe and are on major VOD platforms. | We produce and finish shorts and feature films, and **our own features have screened** at festivals across the globe and are on major VOD platforms. | Same brag cut. The claim about festivals and VOD stays. |
-| About page, header line | We met in a 16mm filmmaking class at Johns Hopkins. **Five feature films later,** we're still making movies and videos for clients. | We met in a 16mm filmmaking class at Johns Hopkins. We're still making movies and videos for clients. | Same brag cut. |
-| About page, meta description (search result snippet) | Meet Josh & Victor—film school friends turned production partners since 2012. **Five feature films, and clients including Johns Hopkins.** | Meet Josh & Victor—film school friends turned production partners since 2012, **making feature films and client work for organizations including Johns Hopkins.** | Same brag cut. **SEO flag:** this is the only meta description that changed. It keeps "feature films", "Johns Hopkins" and "since 2012". |
-| About page, Feature Films heading line | **Five features,** available on all major VOD platforms | **Most are** available on all major VOD platforms. | Same brag cut. "Most" stops the line implying Incubation is already on VOD (the live fix uses the same word). Its poster label already says "Screening at festivals", so the line no longer repeats it; the page said it three times, twice side by side. |
+- **Orlando**: Joshua dropped everything Orlando on 2026-10-07 ("abandon everything orlando").
+- **Fact**: the live line is wrong, or Joshua settled the fact (the "Fix live site errors" thread).
+- **Brag**: feature-film counts and the stats row. Joshua named these as brags to cut.
+- **Slogan**: Joshua's standing rule (2026-10-14) of no slogans, taglines, pull-quote lines, rhetorical-question headings or stock agency phrases, "even when the line is on the live site". The cuts listed as "Oct 14" are the ones he reviewed and had merged on the Concept D review site (its COPY-REVIEW.md has old and new side by side).
+- **Trivia**: who shot or directed which film, and film-school backstory (Joshua, 2026-10-14: "who gives a shit?").
+- **His pick**: headings Joshua chose to rename on 2026-10-14 ("Rename all").
+- **Layout**: words that belonged to a template element the design removed: eyebrow labels, "Case Study" badges, client chips on thumbnails, "Learn More" links, arrows.
 
-The live site's stats row ("100+ Clients Served / 2012 Founded / 1.8M+ Video Views / 5 Feature Films") and the "5 features screened" in the live Film page's meta description were already gone from Concept D.
+Testimonials, client names, video titles and credit lines are the live site's own. "Award-winning" stays wherever the live site has it (Joshua, 2026-10-15: the films have won many festival awards).
 
-## 2. Photo captions corrected (confirmed by Joshua in the "Fix live site errors" thread)
+The list of changes that search engines see, written for the SEO consultant, is in [SEO-CHANGES.md](SEO-CHANGES.md).
 
-| Where | Old | New | Why |
-|---|---|---|---|
-| Home, About photo | (Concept D) on-stage photo, "Josh and Victor at a screening Q&A" | The on-set photo, "Josh (left) and Victor on set" | The same photo and caption the live fix now uses. Josh really is on the left. |
-| About page, Our Story photo | Josh and Victor at a screening Q&A | Josh (with the microphone) and Victor at a screening Q&A | There are three people in the photo, so the caption now says which one is Josh. |
-| About page, bios | No photos (Concept D), or the crew photo of a woman labeled as Josh (live) | Josh's on-stage photo and Victor's on-set photo | The "Hannah" error. These are the crops the live fix uses. |
+## Every page
 
-## 3. Small labels that are new
-
-| Where | New label | Why |
+| Live | Demo | Why |
 |---|---|---|
-| Film page header | "See the films" (a second button next to "Get a quote") | Jumps to the film list. The live page has only the contact button. |
-| Ape Canyon tile | "Watch on Prime Video" | Ape Canyon has no embeddable video, so the tile links to Amazon. Concept D's label was "Prime Video". |
-| About page, Incubation poster | "Screening at festivals" | The live page says "In Post" under the poster but "currently screening at festivals" in the text. The demo uses the text's version in both places. Joshua confirmed on 2026-10-15 that it's screening at festivals. |
-| Contact form (demo only) | "This is the review copy of the site, so the form doesn't send. On mindinmotion.tv it goes to Josh and Victor." | Stops anyone thinking a message went out from the review site. It won't appear on the live site. |
-| Homepage logo wall | "Clients include", now read out to screen readers only | Concept D's label, which replaced the live site's "Trusted by industry leaders". The design pass hid it: a logo wall under the hero needs no caption. |
-| About page, poster labels | The release year (2016, 2018, 2021, 2021) and "Screening at festivals" | Concept D labelled them "Feature" / "Co-Directed". The year is more useful, and who directed which film is the kind of inside detail Joshua cut. |
-| Work filters | "Film & music videos" (one button) | Concept D had films and music videos as separate filters with very few items each. |
-| About page, IMDb links | "Joshua Land on IMDb", "Victor Fink on IMDb" | Concept D's link text was "IMDb" twice; a link should say where it goes. |
-| Contact page, side panel | "Reply time: We respond within 24 hours" | The same promise the live contact page makes, as a labelled line. |
+| "Orlando" menu link, "Orlando: (407) 584-8891" in the header, Orlando office in the footer | Removed | Orlando |
+| Three different footer lines: "Creative Production & Post", "Video production for clients who care about quality. Based in Baltimore and Orlando.", "Video production based in Baltimore and Orlando." | "Creative Production & Post" on every page | The homepage's line. The other two carry Orlando, and one is a slogan. |
+| Social icons in the footer | The same links as words, under "Follow" | Layout (no decorative icons) |
+| Eyebrow labels: "OUR WORK", "SERVICES", "ABOUT US", "TESTIMONIALS", "TRUSTED BY INDUSTRY LEADERS", "OUR STORY", "THE TEAM", "GET STARTED", "POST-PRODUCTION", "Baltimore · Orlando" | Removed | Layout, and Orlando |
+| Closing headings "Ready to Bring Your Vision to Life?" (Home), "Ready to Create Something Amazing?" (Portfolio), "Let's Make Something Together" (About) | "Tell us about your project" | Slogan |
+| Closing lines "We'd love to hear about your project." (Home, About) and "Let's discuss your next video project and bring your vision to life." (Portfolio) | Dropped; Portfolio uses the homepage's "Get a custom quote within 24 hours." | Slogan (filler closers) |
+| Commercial, Corporate and Film end at Behind the Scenes | They end with the homepage's closing card ("Get Your Free Quote" and the phone number) | Layout. Same words as the live homepage. |
+| (none) | A client testimonial on Commercial, Corporate, Film and About, and the four testimonials on About | Verbatim from the live homepage |
+| (none) | Client logo wall under the homepage hero and on About; its heading "Clients include" is read out to screen readers only | Joshua asked for a logo wall |
 
-## 4. Facts Joshua settled on 2026-10-15 (in the "Fix live site errors" thread)
+## Homepage
 
-| Where | Old | New | Why |
-|---|---|---|---|
-| Portfolio and Film page, About posters | Bad Witch (feature film, **2018**) | Bad Witch (feature film, **2021**) | Filmed in late 2018, fully released in 2021. |
-| About page, Josh's title | Co-Founder / Director / Editor | Co-Founder / Director / **Cinematographer** / Editor | Josh and Victor are both cinematographers. |
-| About page, Victor's bio | He's **the cinematographer** on MindInMotion's features and on dozens of commercial and corporate projects. | He **shoots MindInMotion's features with Josh**, along with dozens of commercial and corporate projects. | Same: the old line said only Victor shot the features. |
-| Portfolio, Cuba case study | Johns Hopkins SAIS / Johns Hopkins School of Advanced International Studies; "its international studies programs" | Johns Hopkins Advanced Academic Programs; "its international programs" | The client is AAP (Vimeo title and Squarespace caption). Matches the live fix. |
-| Portfolio, engineering video title | Johns Hopkins Masters in Science and Engineering Management | Johns Hopkins Master of Science in Engineering Management | The program's real name (Vimeo title). Matches the live fix. |
-| Post-Production page, Good Mom tile | Commercial spot | Maryland Excels "Good Mom" TV PSA (in the title, since tiles no longer carry a category label) | Squarespace calls it a TV PSA. The play button and video player now use the same title. |
-| Ape Canyon, everywhere | (feature film, **2019**) | (feature film, **2021**) | Released April 2021, the same release-year rule as Bad Witch. Matches the live fix. |
-| About page, Our Story | Their features **are** "Lotus Eyes," "I Like Me," "Bad Witch," "Ape Canyon" and their latest, "Incubation." | Their features **include** ... | There are six features. "Are" read as a complete list of five; "include" keeps The Summer Before unnamed without saying the list is complete. |
-| About page, Our Story; Film page intro and meta description | ...and **are** available on all major VOD platforms / ...and are on major VOD platforms | ...and **most are** available on all major VOD platforms / ...; **most are** on major VOD platforms | Incubation isn't on VOD yet. Same wording as the live fix. **SEO flag:** the Film page meta description gains one word ("most"); the keywords are unchanged. |
-| Commercial page, "You Wouldn't" picture description (alt text) | Extreme close-up of an older man looking through a jeweler's loupe. | Seen from inside a patient's mouth: a man in a surgical mask and magnifying loupes raises a drill. | The old description didn't match the picture. |
-| Work filters, Maryland Excels "Finding Childcare" | Filed under Nonprofit | Filed under Commercial | It's one of the MSDE Maryland Excels spots, and the live site files it with them. |
+| Live | Demo | Why |
+|---|---|---|
+| H1: We are MindInMotion | Film and video production in Baltimore | His pick |
+| We Create, Produce, Direct, Film, and Edit. Let's Create Something Amazing Together. | We create, produce, direct, film, and edit. | The second sentence is a slogan. The first keeps its words, in normal sentence capitals. |
+| Stats row: 100+ Clients Served / 2012 Founded / 1.8M+ Video Views / 6 Feature Films | Removed | Brag |
+| Featured grid: the reel plus eight projects, each with a "Case Study" badge, client chip and credit line | The same eight projects in the same order with their live titles; the reel is the hero's "Watch Our Reel" button | Layout. Credit lines stay on Portfolio and Film. |
+| First filter "All" | "Featured" | The grid now holds every project, so "All" would show only eight of them. |
+| Services: "...with expertise built since 2012 across six feature films." | "...with expertise built since 2012." | Brag |
+| Corporate card: "...and InterPublic for professional corporate storytelling." | "...and InterPublic." | Slogan (agency talk) |
+| "Learn More" under each service | The picture and the service name are the links | Layout |
+| H2: Film School Friends. Production Partners. | About MindInMotion | His pick |
+| MindInMotion was founded by Baltimore native Joshua Land, and Boston transplant Victor Fink in 2012. | ...Joshua Land and Boston transplant... | Stray comma |
+| ...in college and quickly bonded over being obsessed with movies and wanting to spend as much time outside of school working on film projects as possible. | ...in college. | Trivia (Oct 14) |
+| Since then we've made six feature films together, and grown a company making film and video for a wide range of clients. Our work spans the realms of documentary and fiction, and has taken us everywhere from Baltimore, Washington DC, and Orlando, Florida to the mountains of Washington state and the rainforests of Cuba. | Since then we've made our own feature films together and grown a company that makes film and video for clients. We've shot documentary and fiction in Baltimore, Washington DC, the mountains of Washington state and the rainforests of Cuba. | Brag, Orlando, and slogan filler (Oct 14) |
+| When we're not working for clients, we're working on our own projects. | Removed | Slogan filler (Oct 14) |
+| "Since 2012 / Making movies and videos for clients who care about quality" card | A photo of Josh and Victor, captioned "Josh (left) and Victor on set" | Slogan card (Oct 14 rule: a real still or a plain caption instead) |
 
-Checked and unchanged: the About page still names "Lotus Eyes," "I Like Me," "Bad Witch," "Ape Canyon" and "Incubation" and gives no count; Joshua doesn't want The Summer Before highlighted, so it isn't named. Incubation is "screening at festivals" everywhere; the Maryland Excels "instead of casting actors" line is true (real families); the 2019 color reel stays off; nothing says how many years they've known each other.
+## Commercial
 
-## 5. Headings and search terms
+| Live | Demo | Why |
+|---|---|---|
+| Commercials live or die in the first three seconds. We get that. | Line under the H1: "TV spots, PSAs, recruitment ads and social cuts." | Slogan (Oct 14) |
+| The three intro paragraphs ("crafting spots that grab attention", "What sets us apart", "under one roof... let's talk") | The Oct 14 versions: two real examples (WellPoint for InterPublic, the Maryland Excels PSAs), the feature-film background, production and post in-house | Slogan (Oct 14) |
+| A few of the commercials we've produced — tap any frame to watch it right here. | A few of the commercials we've produced. | Filler (Oct 14); every tile has a Play cue |
+| (none) | "Watch Our Reel" button beside the intro | The live homepage's reel button |
 
-Every page title, meta description (apart from About and the one-word Film change, above) and H1 matches Concept D's approved versions, which are listed in Concept D's COPY-REVIEW.md. URLs are unchanged. Compared with the live site, those already drop Orlando (Joshua, 2026-10-07) and the template headings ("We are MindInMotion", "Where the Magic Actually Happens", "Let's Create Something Amazing", "Film School Friends. Business Partners."). Three service H1s match the live site exactly: Commercial Video Production, Corporate Video Production and Film Production. Post-Production replaces the live "Where the Magic Actually Happens" (Concept D's approved change).
+## Corporate
 
-Section headings carried over from the live site keep its wording and title case: Our Story, How We Work, Meet Josh & Victor, Our Feature Films, Behind the Scenes, Finished In-House.
+| Live | Demo | Why |
+|---|---|---|
+| Not every video needs to sell something. Sometimes you need to... | Line under the H1: "Videos to train a team, tell a patient's story, or show donors where their money goes." | Slogan (Oct 14) |
+| Intro paragraphs ("work we take seriously", "real people tell real stories", "conversations, not depositions", "...and Florida", "we should talk") | The Oct 14 versions | Slogan (Oct 14), Orlando |
+| ...across the Mid-Atlantic — tap any frame to watch. | ...across the Mid-Atlantic. | Filler (Oct 14) |
+| Grid: "Orlando Car Wash commercial" and two untitled tiles | Removed; the two American Lung Association films are added at the end | Orlando; the untitled tiles have no title anywhere on the live site |
+| Need a video your audience will actually watch? | Have a project in mind? | Rhetorical question (Oct 14) |
 
-## 6. Buttons, labels and headings changed by the design pass (2026-10-15)
+## Film
 
-No running copy changed here. These are button names, small labels and section headings.
+| Live | Demo | Why |
+|---|---|---|
+| The three intro paragraphs ("extensive experience", "six feature films", "you're not alone. We've been there.", "one of the best film production companies... in locations like Orlando") | The Oct 14 versions: "full-service film production company in Baltimore, Maryland", produce a whole film or join your crew, upfront about budget. "Most are on major VOD platforms" (Joshua, 2026-10-15). | Slogan (Oct 14), brag, Orlando |
+| One mixed grid of nine films, no heading | Grouped under "Feature films, shorts and music videos" (Feature films / Short films / Music videos), same titles, plus the Incubation teaser and FIVES "Heart & Thunder" from Portfolio, with their credit lines | Joshua asked on Oct 14 why a "feature films" heading sat over shorts and music videos |
 
-| Where | Old | New | Why |
-|---|---|---|---|
-| Every button that goes to the contact page | "Tell Us About Your Project", "Get a free quote", "Get a Quote", "Get in Touch", "Talk to us", "Tell us what you need" | "Get a quote" | Seven names for one button. "Get a quote" is the header button's wording. Buttons are in sentence case ("See our work", "View our work"). |
-| Home, under the work grid | "Got a gala or a campaign coming up?" with "See all projects" and "Talk to us" buttons | A plain "See all projects" link | A rhetorical-question opener, which the copy rules cut, and a second contact button a screen above the closing one. |
-| Commercial and Corporate pages | A "Featured" section (H2 "Featured") | Removed. Its projects lead the "Selected Work" grid instead | The same projects appeared twice on one page. The two descriptions it carried are still on the Portfolio case studies. **SEO flag:** two pages lose an H2 and two sentences; their H1, intro copy and keywords are unchanged. |
-| All four service pages | A "Production and post" strip linking the other three services (H2 plus the three service blurbs) | Removed | It repeated the Services menu and the footer. **SEO flag:** each service page loses an H2 and the blurbs about the other services; nothing about its own service. |
-| Commercial, Corporate, Film and Post intros | A hidden H2, "About this service" | Removed | A heading only screen readers saw, added by the template, not copy. |
-| Contact page | H2 "Get a Quote" above the form | Kept, but read out to screen readers only | It sat right under the H1 "Contact Us" at the same size. |
-| Closing section on every page | Phone, email and studio address beside the heading | Removed | The footer lists all three on every page. |
-| Portfolio and Contact headers | A photo, breadcrumbs and buttons behind the H1 | The H1 and its line only, as on Squarespace | The H1s and lines are word for word the same. |
-| Inner pages | Visible breadcrumbs (Home / Services / ...) | Not drawn | The breadcrumb data search engines read (BreadcrumbList) is still in every page. |
-| Home and service work grids | "Commercial · Client: ..." under each title | The title only | The filter row already names the category. Portfolio and the Film page keep the credit line. |
-| Film page tiles | "Lotus Eyes" with "2016" run into it; "Ghost Light" with "Juliet Lloyd" | "Lotus Eyes (2016)", "Juliet Lloyd – Ghost Light" | One heading in one color, the way the live portfolio writes them. |
-| Home, service headings under "Production and post" | Commercial, Corporate, Film, Post-Production | Commercial Video Production, Corporate Video Production, Film Production, Post-Production | Back to the live homepage's link text. Links that name the service in full help those pages rank for it. |
-| Home, first work filter | All | Featured | It shows a selection of eight, while "Commercial" alone shows more, so "All" was wrong. |
+## Post-Production
+
+| Live | Demo | Why |
+|---|---|---|
+| H1: Where the Magic Actually Happens | Post-Production | His pick |
+| Post-production is where everything comes together. ...we can take your project across the finish line. | Line under the H1: "Editing, color grading, VFX and motion graphics for films, commercials and corporate video." The rest opens "Our Services". | Slogan (Oct 14) |
+| The five service descriptions ("Story-driven", "whatever your workflow requires", "Professional color work", "partner with trusted specialists", "We handle the technical so you don't have to", "Stalled project? Previous editor unavailable?") | The Oct 14 versions | Slogan (Oct 14) |
+| See Our Work → | See Our Work | Layout (no arrows) |
+| ...A few pieces that show the range — tap any frame to watch. | We edited, colored and finished every project on this site. Here are four. | Filler (Oct 14) |
+| H2: Collaboration Is the Point, and its three paragraphs | Working With Your Editor, and the Oct 14 two-paragraph version | His pick, slogan (Oct 14) |
+| We're comfortable in whatever workflow your project requires. | Removed; the tool list stays | Filler (Oct 14) |
+| ...or just need help getting across the finish line, we'd love to hear from you. | ...or just help with one piece of it, we can take it on. | Slogan (Oct 14) |
+
+## About
+
+| Live | Demo | Why |
+|---|---|---|
+| H1: Film School Friends. Business Partners. | About MindInMotion | His pick |
+| Fourteen years and six feature films later, we're still making movies and videos for clients who care about quality. | Fourteen years later, we're still making movies and videos for clients. | Brag, slogan (Oct 14) |
+| Their narrative work includes "Lotus Eyes" and "I Like Me"—Victor shooting, Josh directing—before they stepped into co-directing... | Their features include "Lotus Eyes," "I Like Me," "Bad Witch," "Ape Canyon" and their latest, "Incubation." | Trivia (Oct 14) |
+| The company has grown beyond their personal film projects... everywhere from Baltimore, Washington DC, and Orlando to... | Alongside their own films, they make video for nonprofits, universities, public agencies and brands. They've shot documentary and fiction in Baltimore, Washington DC, ... | Slogan (Oct 14), Orlando |
+| ...and are available on all major VOD platforms. When they're not working for clients, they're working on their own projects—"Incubation"... | ...and most are available on all major VOD platforms. "Incubation" is currently screening at festivals. | Fact (Incubation isn't on VOD yet), slogan filler (Oct 14) |
+| Photo: Josh (left) and Victor on set | The festival Q&A photo, captioned "Josh (with the microphone) and Victor at a screening Q&A" | The on-set photo is already on the homepage. Caption says which one is Josh. |
+| How We Think About Work: Story First / Collaboration / Craft Matters | How We Work: Documentary Interviews / Working With Josh and Victor / In-House Post-Production, with the Oct 14 text | His pick, slogan (Oct 14) |
+| Josh's bio: directed features including "Lotus Eyes" and "I Like Me"... stepped into co-directing... "brings a meticulous post-production eye" | He's directed features that have screened at festivals worldwide and stream on major VOD platforms. He runs post-production as MindInMotion's lead editor and colorist. | Trivia, slogan (Oct 14) |
+| Victor's bio: "—they've been collaborating ever since. As cinematographers, he and Josh have defined the look..."; "He shot... while Josh directed... keeping shoots running smoothly whether they're in Baltimore, Orlando, or Cuba." | ...at Johns Hopkins. He shoots MindInMotion's features with Josh, along with dozens of commercial and corporate projects. | Slogan, trivia (Oct 14), Orlando. Both are cinematographers (Joshua). |
+| IMDb → | IMDb | Layout (no arrows). Screen readers also hear whose IMDb page it is. |
+| Six features and counting—most available on all major VOD platforms | Most are available on all major VOD platforms. | Brag, slogan ("and counting") |
+| Bad Witch poster label: Co-Directed | Feature | Trivia |
+| Plus shorts, music videos, and commercials—available on all major VOD platforms | Plus shorts, music videos, and commercials | Fact: commercials aren't on VOD |
+| Start a Conversation | Get in Touch | Stock phrase (Oct 14) |
+
+## Portfolio
+
+| Live | Demo | Why |
+|---|---|---|
+| From commercials to feature films, explore our diverse portfolio of video production work for clients across industries. | Our video production work: commercials, corporate videos and documentaries for clients in Baltimore, Maryland and elsewhere, plus our own feature films. Tap any frame to watch. | Slogan filler (Oct 14); keeps the search terms |
+| The four featured project write-ups ("The challenge:", "let the authenticity speak for itself", "How do you tell stories about loss...?", "a conversation, not a production", "nimble crew... genuine moments", "a critical mission", "No scripts, no acting—just real people...") | The Oct 14 versions, with the same facts and deliverables. The Cuba client is Johns Hopkins Advanced Academic Programs. | Slogan and pull-quote (Oct 14), fact |
+| (none) | "All Work" heading over the grid, and the Incubation teaser tile | Layout |
+
+## Contact
+
+| Live | Demo | Why |
+|---|---|---|
+| H1: Let's Create Something Amazing | Contact Us | Slogan |
+| ...with a custom quote. No obligation, no pressure—just a conversation about how we can help. | ...with a custom quote. | Slogan |
+| Orlando Office block; FAQ "based in Baltimore and Orlando" | Removed | Orlando |
+| (no label) | "Phone" label on the phone number, to match "Email" | Layout |
+| We'll review your project details and schedule a quick discovery call | ...and set up a call | Agency jargon (Oct 14) |
+| Absolutely! / Yes! (FAQ) | Yes. | Slogan tone (Oct 14) |
+| ...to ensure videos integrate with your existing marketing materials. | ...so the videos match the rest of your marketing. | Agency talk (Oct 14) |
+| Share your vision, goals, and any other details that would help us understand your project... (form placeholder) | What are you making, who is it for, and when do you need it? | Agency talk (Oct 14) |
+| Project type option "Testimonial / Case Study" | "Testimonial" | Joshua, 2026-10-15: no "case study" anywhere. The value the form sends (`testimonial`) is unchanged. |
+
+## Changed back to the live wording on 2026-10-15
+
+Earlier versions of this demo had reworded these. They now read as on the live site: every page title and meta description (apart from the changes in SEO-CHANGES.md); the header button "Get a Quote"; "Get a Quote in 24 Hours", "Watch Our Reel", "Featured Projects", "View All Projects", "Full-Service Production", "Behind the Scenes", "What Our Clients Say", "Read Our Full Story", "Get Your Free Quote", "Tell Us About Your Project", "Start Your Project", "Get in Touch", "Get My Free Quote", "See Our Work"; the homepage service names and descriptions; the homepage About paragraphs; the video titles under each service page's grid; "2025 Demo Reel"; the film titles on the Film page; the Finished In-House titles and labels; the About poster labels and their order; "Fourteen years later"; the contact intro's "within 24 hours with a custom quote", the visible "Get Your Free Quote" form heading and "We respond within 24 hours"; the Portfolio filters (All, Commercial, Corporate, Film, Music Video, Nonprofit); "Have a campaign in mind?" under the Commercial grid; and the footer's "Privacy".
