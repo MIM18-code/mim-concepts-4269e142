@@ -169,7 +169,7 @@ MSDE = 'Client: Maryland State Department of Education'
 JHAAP = 'Client: Johns Hopkins Advanced Academic Programs'
 ALA = 'Client: American Lung Association'
 W = {
-    'reel': dict(cats='', label='Reel', title='2025 Demo Reel', cr='MindInMotion', img=A + 'reel-tile.webp', play='vimeo:851026180', alt='The MindInMotion wordmark over blurred city lights.'),
+    'reel': dict(cats='', label='Reel', title='Demo Reel', cr='MindInMotion', img=A + 'reel-tile.webp', play='vimeo:851026180', alt='The MindInMotion wordmark over blurred city lights.'),
     'playground': dict(cats='commercial nonprofit', label='Commercial', title='Maryland Excels - Moms at the Playground', cr=DIR + ', DP: John Grove', img=A + 'Screen-Shot-2022-06-24-at-5.18.24-PM.webp', play='vimeo:723874620', alt='A girl in a yellow dress runs past two mothers sitting on a playground bench.'),
     'goodmom': dict(cats='commercial nonprofit', label='Commercial', title='Good Mom MD Excels TV PSA', cr=DIR + ', DP: Alex Guckert', img=A + 'Screen-Shot-2022-06-24-at-6.14.31-PM-2.webp', play='vimeo:794207449', alt='A woman stands in a dark bathroom at night, lit by cold blue light.'),
     'ghost': dict(cats='music', label='Music video', title='Juliet Lloyd - Ghost Light', cr=DIR + ', DP: Ryan Celli', img=A + 'ghost-light-thumbnail.webp', play='youtube:lxHxaH-awBM', alt='A singer at a grand piano in gold stage light and haze.'),

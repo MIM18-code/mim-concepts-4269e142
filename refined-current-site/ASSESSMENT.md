@@ -127,7 +127,6 @@ Ten of the 11 small fixes are done (see "Brought back on 2026-10-15" above). Jos
 - Portfolio credit lines mix "Director: Josh Land & Victor Fink" and "Directors: Joshua Land & Victor Fink". Which form should they use?
 - Squarespace had "Badging - Families" (Vimeo 952434464) on its Nonprofit page and two untitled Corporate films (Vimeo 442503640 and 378829912). Should any of them go in, and with what title and client?
 - LUNG FORCE Advocacy Day 2025 uses the video's title card, which carries the American Lung Association's tagline. Can you send a real frame from the film?
-- The reel is "2025 Demo Reel", as on the live site. Squarespace called the same video "2024 Demo Reel". Which year is right?
 - The demo says "Johns Hopkins Master of Science in Engineering Management". Squarespace and the live Portfolio say "Masters in Science and Engineering Management". Which is right?
 - About mentions the 16mm class three times: in the hero line, in Our Story and in Victor's bio. These are live lines. Keep all three or trim to one?
 - The footer is now a grey band like Squarespace's. Keep it, or go back to plain black?
