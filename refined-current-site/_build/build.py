@@ -176,7 +176,7 @@ W = {
     'cyw': dict(cats='film', label='Music video', title='Juliet Lloyd - Call Your Wife', cr=DIR, img=A + 'vimeo-1937932446.webp', play='vimeo:1019535308', alt='A woman with a guitar in an overgrown field, the sun flaring behind her.'),
     'joe': dict(cats='nonprofit corporate', label='Nonprofit', title='Infinite Legacy - Joe', cr='Client: Infinite Legacy', img=A + 'Joe-ILF.webp', pos='40% 32%', play='vimeo:836987067', alt='A man in silhouette against an evening sky, his head resting in his hand.'),
     'checklist': dict(cats='commercial', label='Commercial', title='Maryland Excels - Checklist Moments', cr=MSDE, img=A + 'vimeo-1784674291.webp', play='vimeo:904194910', alt="A small child with curly hair holds a parent's hand."),
-    'eng': dict(cats='corporate', label='Corporate', title='Johns Hopkins Masters in Science and Engineering Management', cr='Client: Johns Hopkins', img=A + 'vimeo-1864108460.webp', play='vimeo:953655351', alt='A program director in a gray jacket, interviewed in an engineering lab.'),
+    'eng': dict(cats='corporate', label='Corporate', title='Johns Hopkins Master of Science in Engineering Management', cr='Client: Johns Hopkins', img=A + 'vimeo-1864108460.webp', play='vimeo:953655351', alt='A program director in a gray jacket, interviewed in an engineering lab.'),
     'illegal': dict(cats='commercial', label='Commercial', title='Maryland State Department of Education - Illegal Childcare', cr=DIR + ', DP: Alex Guckert', img=A + 'Screenshot-2024-01-18-at-2.33.57-PM.webp', play='vimeo:794249489', alt='A couple sits on a living room couch, one of them working on a laptop.'),
     'cuba': dict(cats='corporate', label='Corporate', title='Cuba, The Field Course Experience', cr=JHAAP, img=A + 'child-horse-cuba.webp', play='vimeo:376001457', alt='A boy in a yellow shirt sits on a horse beside a thatched hut under a storm sky.'),
     'pearlstone': dict(cats='nonprofit', label='Nonprofit', title='Pearlstone', cr='Client: Pearlstone', img=A + 'vimeo-1458914655.webp', play='vimeo:724562331', alt='Kids in life jackets wave from a canoe on a lake.'),
@@ -199,7 +199,7 @@ W = {
     'hiking': dict(cats='film', label='Short film', title="Don't Go Hiking (short film, 2019)", cr=DIR, img=A + 'Screen-Shot-2022-06-24-at-6.17.35-PM-2.webp', play='vimeo:567645681', alt='A frightened young man in a backpack peers through autumn brush.'),
     'odom': dict(cats='corporate', label='Corporate', title='Teaching Writing Profile - Mike Odom', cr=JHAAP, img=A + 'mike-odom.webp', play='youtube:FTm7CsQ0ug0', alt='A man in glasses looks off camera, trees soft behind him.'),
     'tidewater': dict(cats='corporate', label='Corporate', title='Tidewater Direct', cr='Client: Tidewater Direct', img=A + 'Screenshot-2024-09-10-at-2.02.32-PM.webp', play='vimeo:967087552', alt='The Tidewater Direct warehouse, a blue building across a green lawn.'),
-    'badwitch': dict(cats='film', label='Feature film', title='Bad Witch (feature film, 2018)', cr='Directors: Joshua Land & Victor Fink', img=A + 'bad-witch.webp', play='youtube:ecRv4nLSXaE', alt='A young man at dusk, lit by hard orange light against a dark forest.'),
+    'badwitch': dict(cats='film', label='Feature film', title='Bad Witch (feature film, 2021)', cr='Directors: Joshua Land & Victor Fink', img=A + 'bad-witch.webp', play='youtube:ecRv4nLSXaE', alt='A young man at dusk, lit by hard orange light against a dark forest.'),
     'lotus': dict(cats='film', label='Feature film', title='Lotus Eyes (feature film, 2016)', cr='Director: Joshua Land', img=A + 'lotus-eyes.webp', play='youtube:D4CIiTOL16c', alt='A woman and a boy at a window in soft side light.'),
     'incubation': dict(cats='film', label='Feature film', title='Incubation (teaser)', cr='Directors: Joshua Land & Victor Fink', img=A + 'incubation-teaser.webp', play='youtube:nHacNsApMkU', alt='A frame from the teaser for Incubation.'),
     'lovers': dict(cats='film', label='Music video', title='FIVES - Lovers in Lullaby', cr='Production/Post: MindInMotion', img=A + 'fives-lovers.webp', play='youtube:95TjgxYdpVo', alt='Two women at a lit makeup mirror, one in a red dress.'),
@@ -863,7 +863,7 @@ PAGES.append(dict(
 
 # ---------------------------------------------------------------- film
 FILM_GROUPS = [
-    ('Feature films', [('lotus', 'Lotus Eyes', '2016'), ('ilikeme', 'I Like Me', '2018'), ('badwitch', 'Bad Witch', '2018'),
+    ('Feature films', [('lotus', 'Lotus Eyes', '2016'), ('ilikeme', 'I Like Me', '2018'), ('badwitch', 'Bad Witch', '2021'),
                        ('ape', 'Ape Canyon', '2019'), ('incubation', 'Incubation', 'Teaser')]),
     ('Short films', [('farmhouse', 'The Farmhouse', '2023'), ('hiking', "Don't Go Hiking", '2019')]),
     ('Music videos', [('ghost', 'Ghost Light', 'Juliet Lloyd'), ('cyw', 'Call Your Wife', 'Juliet Lloyd'),
@@ -965,7 +965,7 @@ PAGES.append(dict(
   </section>''',
         grid_sec('Finished In-House', 'h-work', 'We edited, colored and finished every project on this site. Here are four.',
                  '<ul class="grid two" id="post-grid">%s</ul>' % ''.join([
-                     tile('goodmom').replace('Good Mom MD Excels TV PSA</h3>', 'Maryland Excels &quot;Good Mom&quot;</h3>').replace('Commercial &middot;', 'Commercial spot &middot;'),
+                     tile('goodmom').replace('Good Mom MD Excels TV PSA</h3>', 'Maryland Excels &quot;Good Mom&quot;</h3>').replace('Commercial &middot;', 'TV PSA &middot;'),
                      tile('ghost'),
                      tile('cuba').replace('Cuba, The Field Course Experience</h3>', 'Cuba Field Course</h3>').replace('Corporate &middot;', 'Documentary &middot;'),
                      tile('checklist').replace('Commercial &middot;', 'PSA campaign &middot;')]), alt=True),
@@ -989,7 +989,7 @@ PAGES.append(dict(
 # ---------------------------------------------------------------- about
 POSTERS = [('still-lotus-eyes.webp', 'Lotus Eyes feature film — two leads against an industrial skyline', 'Lotus Eyes', '2016'),
            ('poster-i-like-me.webp', 'I Like Me feature film poster', 'I Like Me', '2018'),
-           ('still-bad-witch.webp', 'Bad Witch feature film — profile of a bloodied young man at dusk', 'Bad Witch', '2018'),
+           ('still-bad-witch.webp', 'Bad Witch feature film — profile of a bloodied young man at dusk', 'Bad Witch', '2021'),
            ('poster-ape-canyon.webp', 'Ape Canyon feature film poster', 'Ape Canyon', '2019'),
            ('poster-incubation.webp', 'Incubation feature film poster', 'Incubation', 'Screening at festivals')]
 
@@ -1005,7 +1005,7 @@ ABOUT_BODY = ''.join([
         <h2 id="h-story" class="h2">Our Story</h2>
         <div class="prose">
           <p>Joshua Land and Victor Fink met in a 16mm filmmaking class at Johns Hopkins University and have been collaborating ever since. Josh grew up in Baltimore; Victor in Boston. Together they co-founded MindInMotion, a video production company based in Baltimore.</p>
-          <p>Over the past decade-plus, they’ve produced features, shorts, music videos, and commercials together. Their features are "Lotus Eyes," "I Like Me," "Bad Witch," "Ape Canyon" and their latest, "Incubation."</p>
+          <p>Over the past decade-plus, they’ve produced features, shorts, music videos, and commercials together. Their features are "The Summer Before," "Lotus Eyes," "I Like Me," "Bad Witch," "Ape Canyon" and their latest, "Incubation."</p>
           <p>Alongside their own films, they make video for nonprofits, universities, public agencies and brands. They've shot documentary and fiction in Baltimore, Washington DC, the mountains of Washington state and the rainforests of Cuba.</p>
           <p>Their feature films have screened at festivals across the world and are available on all major VOD platforms. "Incubation" is currently screening at festivals.</p>
         </div>
@@ -1036,7 +1036,7 @@ ABOUT_BODY = ''.join([
         <article class="bio">
           <div class="bio-photo">{img(L + 'team-joshua-land.webp', 'Joshua Land speaking into a microphone at a screening.')}</div>
           <h3>Joshua Land</h3>
-          <p class="label">Co-Founder / Director / Editor</p>
+          <p class="label">Co-Founder / Director / Cinematographer / Editor</p>
           <p>Josh grew up in Baltimore and studied Film &amp; Media Studies at Johns Hopkins. He's directed features that have screened at festivals worldwide and stream on major VOD platforms.</p>
           <p>He runs post-production as MindInMotion's lead editor and colorist.</p>
           <a class="text-link" href="https://www.imdb.com/name/nm4644677/" target="_blank" rel="noopener">Joshua Land on IMDb</a>
@@ -1045,7 +1045,7 @@ ABOUT_BODY = ''.join([
           <div class="bio-photo">{img(L + 'team-victor-fink.webp', 'Victor Fink on set, looking down at a camera monitor.')}</div>
           <h3>Victor Fink</h3>
           <p class="label">Co-Founder / Cinematographer / Producer</p>
-          <p>Victor grew up in Boston and met Josh in that 16mm filmmaking class at Johns Hopkins. He's the cinematographer on MindInMotion's features and on dozens of commercial and corporate projects.</p>
+          <p>Victor grew up in Boston and met Josh in that 16mm filmmaking class at Johns Hopkins. He shoots MindInMotion's features with Josh, along with dozens of commercial and corporate projects.</p>
           <a class="text-link" href="https://www.imdb.com/name/nm5227903/" target="_blank" rel="noopener">Victor Fink on IMDb</a>
         </article>
       </div>
@@ -1083,10 +1083,10 @@ CASES = [
          text=['Infinite Legacy asked us to film donor families and organ recipients talking about loss, grief and hope, without exploiting their stories.',
                "We filmed each interview with a small crew and no time limit. These videos have been used at fundraising galas, in hospital partner communications, and across the organization's awareness campaigns."],
          deliv='Testimonial series, gala content, awareness campaign'),
-    dict(key='cuba', client='Johns Hopkins SAIS', title='Cuba Field Course Documentary',
+    dict(key='cuba', client='Johns Hopkins Advanced Academic Programs', title='Cuba Field Course Documentary',
          alt='From the Cuba field course film: a boy in a yellow shirt on a horse beside a thatched hut, under a storm sky.',
-         text=['Johns Hopkins School of Advanced International Studies needed to capture their Cuba field course for program recruitment. The logistics were complicated: international travel, limited crew, working around academic schedules, and navigating Cuban filming restrictions.',
-               'We traveled with the students for the whole course. With a small crew we could film classroom discussions and street interviews without disrupting the program. Hopkins has used the documentary for years to recruit students into its international studies programs.'],
+         text=['Johns Hopkins Advanced Academic Programs needed to capture their Cuba field course for program recruitment. The logistics were complicated: international travel, limited crew, working around academic schedules, and navigating Cuban filming restrictions.',
+               'We traveled with the students for the whole course. With a small crew we could film classroom discussions and street interviews without disrupting the program. Hopkins has used the documentary for years to recruit students into its international programs.'],
          deliv='Documentary, recruitment content, program materials'),
     dict(key='ashley', client='American Lung Association', title='Lung Cancer Patient Stories',
          alt='From the Ashley and Dr. Reed film: Dr. Reed and Ashley talk across a small round table in his office.',

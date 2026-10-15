@@ -28,11 +28,25 @@ The live site's stats row ("100+ Clients Served / 2012 Founded / 1.8M+ Video Vie
 |---|---|---|
 | Film page header | "See the films" (a second button next to "Tell Us About Your Project") | Jumps to the film list. The live page has only the contact button. |
 | Ape Canyon tile | "Watch on Prime Video" | Ape Canyon has no embeddable video, so the tile links to Amazon. Concept D's label was "Prime Video". |
-| About page, Incubation poster | "Screening at festivals" | The live page says "In Post" under the poster but "currently screening at festivals" in the text. The demo uses the text's version in both places. **Joshua: please confirm which is current.** |
+| About page, Incubation poster | "Screening at festivals" | The live page says "In Post" under the poster but "currently screening at festivals" in the text. The demo uses the text's version in both places. Joshua confirmed on 2026-10-15 that it's screening at festivals. |
 | Contact form (demo only) | "This is the review copy of the site, so the form doesn't send. On mindinmotion.tv it goes to Josh and Victor." | Stops anyone thinking a message went out from the review site. It won't appear on the live site. |
 | Homepage logo wall | "Clients include" | Concept D's label. It replaces the live site's "Trusted by industry leaders". |
 
-## 4. Headings and search terms
+## 4. Facts Joshua settled on 2026-10-15 (in the "Fix live site errors" thread)
+
+| Where | Old | New | Why |
+|---|---|---|---|
+| Portfolio and Film page, About posters | Bad Witch (feature film, **2018**) | Bad Witch (feature film, **2021**) | Filmed in late 2018, fully released in 2021. |
+| About page, Our Story | Their features are "Lotus Eyes," "I Like Me," "Bad Witch," "Ape Canyon" and their latest, "Incubation." | Their features are **"The Summer Before,"** "Lotus Eyes," "I Like Me," "Bad Witch," "Ape Canyon" and their latest, "Incubation." | Six features, including The Summer Before, which was missing. No count is stated anywhere. |
+| About page, Josh's title | Co-Founder / Director / Editor | Co-Founder / Director / **Cinematographer** / Editor | Josh and Victor are both cinematographers. |
+| About page, Victor's bio | He's **the cinematographer** on MindInMotion's features and on dozens of commercial and corporate projects. | He **shoots MindInMotion's features with Josh**, along with dozens of commercial and corporate projects. | Same: the old line said only Victor shot the features. |
+| Portfolio, Cuba case study | Johns Hopkins SAIS / Johns Hopkins School of Advanced International Studies; "its international studies programs" | Johns Hopkins Advanced Academic Programs; "its international programs" | The client is AAP (Vimeo title and Squarespace caption). Matches the live fix. |
+| Portfolio, engineering video title | Johns Hopkins Masters in Science and Engineering Management | Johns Hopkins Master of Science in Engineering Management | The program's real name (Vimeo title). Matches the live fix. |
+| Post-Production page, Good Mom tile | Commercial spot | TV PSA | Squarespace calls it a TV PSA. |
+
+Checked and unchanged: Incubation is "screening at festivals" everywhere; the Maryland Excels "instead of casting actors" line is true (real families); the 2019 color reel stays off; nothing says how many years they've known each other.
+
+## 5. Headings and search terms
 
 Every page title, meta description (apart from About, above) and H1 matches Concept D's approved versions. Compared with the live site, those already drop Orlando (Joshua, 2026-10-07) and the template headings ("We are MindInMotion", "Where the Magic Actually Happens", "Let's Create Something Amazing", "Film School Friends. Business Partners."). The service H1s match the live site exactly: Commercial Video Production, Corporate Video Production, Film Production and Post-Production.
 
