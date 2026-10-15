@@ -148,9 +148,6 @@ main > :last-child { padding-bottom: var(--sec); }
 .hero h1 { font-size: var(--t-hero); line-height: 1; letter-spacing: -.045em; max-width: 11em; }
 .hero .lede { margin-top: 24px; color: var(--bone); }
 .hero .btns { margin-top: 32px; }
-.hero-pp { position: absolute; top: calc(var(--hdr) + 8px); right: var(--gut); z-index: 3; width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; color: var(--bone-2); background: rgba(0, 0, 0, .5); }
-.hero-pp:hover { color: var(--bone); }
-.hero-pp svg { width: 14px; height: 14px; fill: currentColor; }
 .hero h1, .hero .lede, .phero h1, .phero .lede { text-shadow: 0 1px 2px rgba(0, 0, 0, .35); }
 
 /* ---------- inner page hero ---------- */
