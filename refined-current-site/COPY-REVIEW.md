@@ -77,3 +77,5 @@ No running copy changed here. These are button names, small labels and section h
 | Inner pages | Visible breadcrumbs (Home / Services / ...) | Not drawn | The breadcrumb data search engines read (BreadcrumbList) is still in every page. |
 | Home and service work grids | "Commercial · Client: ..." under each title | The title only | The filter row already names the category. Portfolio and the Film page keep the credit line. |
 | Film page tiles | "Lotus Eyes" with "2016" run into it; "Ghost Light" with "Juliet Lloyd" | "Lotus Eyes (2016)", "Juliet Lloyd – Ghost Light" | One heading in one color, the way the live portfolio writes them. |
+| Home, service headings under "Production and post" | Commercial, Corporate, Film, Post-Production | Commercial Video Production, Corporate Video Production, Film Production, Post-Production | Back to the live homepage's link text. Links that name the service in full help those pages rank for it. |
+| Home, first work filter | All | Featured | It shows a selection of eight, while "Commercial" alone shows more, so "All" was wrong. |
