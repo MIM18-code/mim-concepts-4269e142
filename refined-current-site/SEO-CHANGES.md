@@ -56,14 +56,15 @@ The H1s on Home ("We are MindInMotion"), Commercial, Corporate, Film and Portfol
 **H2s and H3s.**
 
 - Home: "Film School Friends. Production Partners." becomes "About MindInMotion". The closing "Ready to Bring Your Vision to Life?" becomes "Tell us about your project".
-- About: "How We Think About Work" becomes "How We Work", and its three H3s ("Story First", "Collaboration", "Craft Matters") become "Documentary Interviews", "Working With Josh and Victor" and "In-House Post-Production". New H2s are "Our Story" and "What Our Clients Say" (the homepage testimonials, shown here too). The closing "Let's Make Something Together" becomes "Tell us about your project".
+- About: "How We Think About Work" becomes "How We Work", and its three H3s ("Story First", "Collaboration", "Craft Matters") become "Documentary Interviews", "Working With Josh and Victor" and "Post-Production" (it was "In-House Post-Production" until 2026-10-15; they also use sound-mixing partners). New H2s are "Our Story" and "What Our Clients Say" (the homepage testimonials, shown here too). The closing "Let's Make Something Together" becomes "Tell us about your project".
 - Post-Production: "Collaboration Is the Point" becomes "Working With Your Editor". The "Tools We Work With" label stays, with the same tool names, but is no longer a heading.
 - Portfolio: the closing "Ready to Create Something Amazing?" becomes "Tell us about your project", and "All Work" is added over the full grid.
 - Film: the films are grouped under the new H2 "Feature films, shorts and music videos", with H3s "Feature films", "Short films" and "Music videos". The film titles become H4s.
 - Commercial, Corporate and Film gain a closing section with the H2 "Tell us about your project", the quote button and the phone number. Live, these pages end after Behind the Scenes.
 - Contact: "Get Your Free Quote" and "What happens next?" move up from H3 to H2. The five FAQ questions are still on the page but are no longer headings. They are now marked up as FAQ structured data instead.
 - Video titles in each work grid are H3s. On the homepage, every project is in the page and the "Featured" filter shows the same eight as live.
-- The homepage and About gain a client logo wall. Its heading, "Clients include", is visually hidden and is read out to screen readers only. Each logo's alt text is the client's name.
+- The homepage and About gain a client logo wall under the visible H2 "Trusted by industry leaders" (the live homepage's own label for its logo row; it was a hidden "Clients include" until 2026-10-15). Each logo's alt text is the client's name.
+- About: the "Our Feature Films" titles are H3s, as before; their labels are now release years. The films are the playable stills used on the Film page instead of the posters.
 - Footer labels ("Services", "Baltimore", "Follow") are plain text, not headings, as on the live site.
 - Post-Production: the services list gains an H3, "Sound Mixing", with one line saying MindInMotion works with sound-mixing partners.
 - Home: the closing "Tell us about your project" section gains the short form above. Its field labels are not headings.
@@ -71,6 +72,7 @@ The H1s on Home ("We are MindInMotion"), Commercial, Corporate, Film and Portfol
 ## Body text
 
 - **Service-page intros.** The intros on Commercial, Corporate, Film and Post-Production are the shorter versions Joshua approved on 2026-10-14, with the slogan lines cut. Each page keeps its main phrase ("commercial video production", "corporate video", "film production company in Baltimore, Maryland", "post-production") in its title, description, H1 and intro. A few repeat mentions went with the cut sentences. If the consultant wrote the longer intros, they can go back word for word.
+- **Homepage services intro.** The sentence "From initial concept to final delivery, we handle every aspect of your video production with expertise built since 2012." is cut (Victor, 2026-10-15). The H2 "Full-Service Production" and the four service descriptions stay word for word.
 - **Removed site-wide.** Orlando, the stats row (100+ clients, 1.8M+ video views, 6 feature films) and the feature-film counts.
 - **Added.** The client logo wall, a client testimonial on Commercial, Corporate, Film and About (verbatim from the homepage), and the phone number in every closing section, where CallRail can swap it.
 

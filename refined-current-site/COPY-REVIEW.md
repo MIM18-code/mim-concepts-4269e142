@@ -134,3 +134,16 @@ The list of changes that search engines see, written for the SEO consultant, is 
 ## Changed back to the live wording on 2026-10-15
 
 Earlier versions of this demo had reworded these. They now read as on the live site: the homepage H1 "We are MindInMotion" and the line under it, "We Create, Produce, Direct, Film, and Edit. Let's Create Something Amazing Together." (Joshua, 2026-10-15: "it should have this from the live site for now"); every page title and meta description (apart from the changes in SEO-CHANGES.md); the header button "Get a Quote"; "Get a Quote in 24 Hours", "Watch Our Reel", "Featured Projects", "View All Projects", "Full-Service Production", "Behind the Scenes", "What Our Clients Say", "Read Our Full Story", "Get Your Free Quote", "Tell Us About Your Project", "Start Your Project", "Get in Touch", "Get My Free Quote", "See Our Work"; the homepage service names and descriptions; the homepage About paragraphs; the video titles under each service page's grid; the film titles on the Film page; the Finished In-House titles and labels; the About poster labels and their order; "Fourteen years later"; the contact intro's "within 24 hours with a custom quote", the visible "Get Your Free Quote" form heading and "We respond within 24 hours"; the Portfolio filters (All, Commercial, Corporate, Film, Music Video, Nonprofit); "Have a campaign in mind?" under the Commercial grid; and the footer's "Privacy".
+
+## Victor's notes, 2026-10-15
+
+| Live | Demo | Why |
+|---|---|---|
+| Homepage services intro: "From initial concept to final delivery, we handle every aspect of your video production with expertise built since 2012." | Removed. The four services and their descriptions stay as on live. | Victor: it doesn't make sense. Cut rather than reworded, so no new copy. |
+| About, How We Work: "In-House Post-Production: We edit and color grade everything we shoot ourselves." | "Post-Production: We edit and color grade what we shoot, and work with sound-mixing partners for the final mix." | Fact: they work with sound-mixing partners, so post isn't only in-house (Victor, Joshua) |
+| Logo wall heading (screen readers only): "Clients include" | Visible: "Trusted by industry leaders" | Victor: the logos need a title. The words are the live homepage's own label over its logo row. |
+| About, Our Feature Films labels: Feature, Feature, Feature, Feature, At Festivals | 2016, 2018, 2021, 2021, Now screening at festivals | Victor: the section read oddly. Years say more than "Feature" five times. |
+
+Flagged, not changed (same "post is all in-house" issue, your call):
+- Commercial intro: "We handle concept, production and post-production in-house, so one team takes your spot from script to delivery."
+- Post-Production: "Finished In-House" and "We edited, colored and finished every project on this site."

@@ -43,8 +43,9 @@
   }
 
   /* ----- home hero: background reel starts only when motion is fine ----- */
-  var heroMedia = d.querySelector('.hero-media[data-bg]');
-  if (heroMedia && !reduce.matches && !(navigator.connection && navigator.connection.saveData)) {
+  /* (the service banners use the same thing once they have a reel) */
+  d.querySelectorAll('.hero-media[data-bg]').forEach(function (heroMedia) {
+  if (!reduce.matches && !(navigator.connection && navigator.connection.saveData)) {
     var startBg = function () {
       var f = d.createElement('iframe');
       f.src = 'https://player.vimeo.com/video/' + heroMedia.getAttribute('data-bg') + '?background=1&autoplay=1&loop=1&muted=1&dnt=1';
@@ -56,6 +57,32 @@
       heroMedia.appendChild(f);
     };
     if (d.readyState === 'complete') setTimeout(startBg, 600); else window.addEventListener('load', function () { setTimeout(startBg, 600); });
+  }
+  });
+
+  /* ----- timecode on the service banners: the viewer's time of day, HH:MM:SS:FF at 24 fps.
+     Decoration only, no control. With reduced motion it shows the time once and stays still. ----- */
+  var tcs = [].slice.call(d.querySelectorAll('.tc-val'));
+  if (tcs.length) {
+    var pad = function (n) { return (n < 10 ? '0' : '') + n; };
+    var tcOn = true, tcTimer = 0;
+    var paintTc = function () {
+      var now = new Date();
+      var f = Math.floor(now.getMilliseconds() * 24 / 1000);
+      var t = pad(now.getHours()) + ':' + pad(now.getMinutes()) + ':' + pad(now.getSeconds()) + ':' + pad(f);
+      tcs.forEach(function (c) { c.textContent = t; });
+      return now.getMilliseconds();
+    };
+    var tickTc = function () {
+      tcTimer = 0;
+      var ms = paintTc();
+      if (tcOn && !d.hidden && !reduce.matches) tcTimer = setTimeout(tickTc, 1000 / 24 - ms % (1000 / 24) + 2);
+    };
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (en) { tcOn = en[0].isIntersecting; if (tcOn && !tcTimer) tickTc(); }).observe(tcs[0].parentNode);
+    }
+    d.addEventListener('visibilitychange', function () { if (!d.hidden && !tcTimer) tickTc(); });
+    tickTc();
   }
 
   /* ----- video player ----- */

@@ -25,10 +25,10 @@
   --t-body: clamp(1.125rem, 1.055rem + .286vw, 1.3125rem);  /* 18 -> 21  running text                  */
   --t-s:    1rem;                                            /* 16        nav, buttons, credits, footer, forms */
 
-  --measure: 62ch;
+  --measure: 70ch;
   --gut: clamp(20px, 4vw, 56px);
   --cgap: clamp(24px, 4vw, 56px);
-  --max: 1360px;
+  --max: 1600px;   /* was 1360 (Victor, 2026-10-15: the column read a little narrow) */
   --hdr: 72px;
   --sec: clamp(64px, 7.5vw, 112px);
 }
@@ -63,14 +63,14 @@ main > :last-child { padding-bottom: var(--sec); }
 
 /* ---------- type ---------- */
 .h2, .close-sec h2 { font-size: var(--t-xl); line-height: 1.02; letter-spacing: -.045em; }
-.lede { font-size: var(--t-m); line-height: 1.4; letter-spacing: -.015em; color: var(--bone-2); max-width: 36em; }
+.lede { font-size: var(--t-m); line-height: 1.4; letter-spacing: -.015em; color: var(--bone-2); max-width: 42em; }
 .meta, .label { font-size: var(--t-s); line-height: 1.4; letter-spacing: 0; color: var(--bone-3); }
 .prose { max-width: var(--measure); }
 .prose p + p { margin-top: .9em; }
 .prose a { color: var(--bone); }
 
 .sec-head { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px var(--cgap); align-items: end; margin-bottom: clamp(32px, 4vw, 56px); }
-.sec-head .lede { max-width: 30em; }
+.sec-head .lede { max-width: 36em; }
 .sec-head.solo { grid-template-columns: minmax(0, 1fr); }
 @media (max-width: 760px) { .sec-head { grid-template-columns: minmax(0, 1fr); align-items: start; } }
 
@@ -159,6 +159,11 @@ main > :last-child { padding-bottom: var(--sec); }
 .phero h1 { font-size: var(--t-xl); line-height: 1; letter-spacing: -.045em; }
 .phero .lede { margin-top: 20px; color: var(--bone); }
 .phero .btns { margin-top: 28px; }
+/* running timecode in the banner corner, grey, the one thing kept from concept D */
+.tc { position: absolute; right: var(--gut); bottom: clamp(40px, 6vh, 72px); z-index: 2; margin: 0; font-size: var(--t-s); color: var(--bone-2); font-variant-numeric: tabular-nums; letter-spacing: .02em; text-shadow: 0 1px 8px rgba(0, 0, 0, .6); }
+.tc-lbl { color: var(--bone-3); }
+html:not(.js) .tc { display: none; }
+@media (max-width: 620px) { .tc { top: 16px; bottom: auto; } }
 /* Portfolio and Contact open straight on the heading, as on Squarespace */
 .phero.bare { min-height: 0; background: none; }
 .phero.bare::after { display: none; }
@@ -168,6 +173,7 @@ main > :last-child { padding-bottom: var(--sec); }
 
 /* ---------- client logos ---------- */
 .clients { padding-top: clamp(40px, 5vw, 64px); }
+.clients-h { font-size: var(--t-m); color: var(--bone-2); margin-bottom: clamp(24px, 3vw, 36px); }
 .logo-row { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); align-items: center; gap: 40px 48px; }
 .logo-row li { display: flex; align-items: center; min-height: 64px; }
 .logo-row img { height: auto; width: auto; max-height: var(--lh, 40px); max-width: 100%; opacity: .82; }
@@ -184,16 +190,20 @@ main > :last-child { padding-bottom: var(--sec); }
 .filters button:hover { color: var(--bone); }
 .filters button[aria-pressed="true"] { color: var(--bone); border-bottom-color: var(--bone); }
 .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(40px, 4.5vw, 64px) var(--cgap); }
-@media (max-width: 620px) { .grid { grid-template-columns: minmax(0, 1fr); gap: 40px; } }
+.grid.g3 { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px var(--cgap); }
+@media (max-width: 900px) { .grid.g3 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 620px) { .grid { grid-template-columns: minmax(0, 1fr); gap: 40px; } .grid.g3 { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 12px; } .g3 .tile-t { font-size: var(--t-s); } }
 .tile[hidden] { display: none; }
 .tile-frame { position: relative; display: block; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; background: var(--ink-3); text-align: left; text-decoration: none; }
 .tile-frame img { width: 100%; height: 100%; object-fit: cover; }
+/* play cue: a plain white triangle in the middle of the frame (Victor, 2026-10-15) */
 .cue {
-  position: absolute; left: 14px; bottom: 14px; display: inline-flex; align-items: center; gap: 8px;
-  height: 34px; padding: 0 12px; background: rgba(0, 0, 0, .72); color: var(--bone);
-  font-size: var(--t-s); font-weight: 700; opacity: 0;
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: inline-flex; align-items: center;
+  color: var(--bone); font-size: var(--t-s); font-weight: 700; opacity: 0; transition: opacity .2s ease;
+  filter: drop-shadow(0 1px 10px rgba(0, 0, 0, .55));
 }
-.cue svg { width: 9px; height: 11px; fill: currentColor; }
+.cue svg { width: clamp(30px, 3.4vw, 44px); height: auto; aspect-ratio: 10 / 12; fill: currentColor; margin-left: .12em; }
+.cue-txt { height: 34px; padding: 0 12px; background: rgba(0, 0, 0, .72); filter: none; }
 .tile-frame:hover .cue, .tile-frame:focus-visible .cue { opacity: 1; }   /* on hover (Joshua, 2026-10-15) */
 @media (hover: none) { .cue { opacity: 1; } }   /* phones can't hover */
 .tile-cap { margin-top: 14px; }
@@ -212,17 +222,17 @@ main > :last-child { padding-bottom: var(--sec); }
 .svc h3 { margin-top: 18px; }
 .svc h3 a { text-decoration: none; }
 .svc h3 a:hover { text-decoration: underline; }
-.svc p { margin-top: 8px; color: var(--bone-2); max-width: 30em; }
+.svc p { margin-top: 8px; color: var(--bone-2); max-width: 40em; }
 
 /* ---------- slideshow: just the pictures, controls over the corner ---------- */
-.show { position: relative; background: #000; }
-.show-stage { position: relative; aspect-ratio: 16 / 9; max-height: 82vh; width: 100%; overflow: hidden; }
+.show { position: relative; background: #000; width: min(100%, 60vh * 16 / 9); }   /* in the column, about 60% of the screen tall (Victor, 2026-10-15: it dominated) */
+.show-stage { position: relative; aspect-ratio: 16 / 9; width: 100%; overflow: hidden; }
 .show-stage figure { position: absolute; inset: 0; opacity: 0; transition: opacity 1.1s ease; }
 .show-stage figure.on { opacity: 1; }
 .show-stage img { width: 100%; height: 100%; object-fit: cover; }
-@media (max-width: 620px) { .show-stage { aspect-ratio: 4 / 5; max-height: 75svh; } }   /* fills most of a phone, as Squarespace's did */
+@media (max-width: 620px) { .show { width: 100%; } .show-stage { aspect-ratio: 4 / 3; } }
 .show-stage figure.tall img { object-fit: contain; }   /* portrait photos: whole, on black */
-.show-bar { position: absolute; right: var(--gut); bottom: 12px; z-index: 2; background: rgba(0, 0, 0, .5); }
+.show-bar { position: absolute; right: 12px; bottom: 12px; z-index: 2; background: rgba(0, 0, 0, .5); }
 .show-ctl { display: flex; align-items: center; }
 .show-ctl button { min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; color: var(--bone-2); }
 .show-ctl button:hover { color: var(--bone); }
@@ -235,7 +245,13 @@ main > :last-child { padding-bottom: var(--sec); }
 @media (max-width: 900px) { .split, .split.rev { grid-template-columns: minmax(0, 1fr); } .split.rev > :first-child { order: 0; } }
 .split h2 { margin-bottom: 24px; }
 .split figure img { width: 100%; }
-.intro .intro-lede { font-size: var(--t-l); line-height: 1.3; letter-spacing: -.02em; color: var(--bone); max-width: 22em; }
+.split.pair { align-items: stretch; }
+@media (min-width: 901px) {
+  .split.pair > figure { display: flex; flex-direction: column; }
+  .split.pair > figure img { flex: 1 1 auto; min-height: 0; height: 100%; max-height: 34em; object-fit: cover; }
+}
+.split.pair .rows > li:first-child { padding-top: 0; border-top: 0; }
+.intro .intro-lede { font-size: var(--t-l); line-height: 1.3; letter-spacing: -.02em; color: var(--bone); max-width: 28em; }
 .intro .prose { color: var(--bone-2); }
 .intro-side:not(:empty) { margin-top: 28px; }
 .cap { margin-top: 12px; }
@@ -274,7 +290,8 @@ main > :last-child { padding-bottom: var(--sec); }
 @media (max-width: 620px) {   /* two a row on phones, titles only, as Squarespace's Film page */
   #films .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 12px; }
   #films .tile-t { font-size: var(--t-s); }
-  #films .cue { height: 28px; padding: 0 8px; left: 8px; bottom: 8px; }
+  #films .cue svg { width: 24px; }
+  #films .cue-txt { height: 28px; padding: 0 8px; }
 }
 .posters { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 28px 20px; }
 @media (max-width: 1000px) { .posters { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
