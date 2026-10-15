@@ -768,7 +768,6 @@ HOME_TITLES = {'eng': 'Johns Hopkins Engineering Management', 'cuba': 'Cuba Fiel
 # ---------------------------------------------------------------- home
 HOME_BODY = f'''
   <section class="hero" aria-labelledby="h-hero">
-    <button class="hero-pp" type="button" aria-label="Pause background video" hidden></button>
     <div class="hero-media" data-bg="848454220">
       <img src="{L}hero-poster-1920.webp" srcset="{L}hero-poster-960.webp 960w, {L}hero-poster-1920.webp 1920w" sizes="100vw" width="1920" height="1080" alt="" fetchpriority="high">
     </div>

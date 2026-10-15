@@ -54,22 +54,6 @@
       f.allow = 'autoplay; fullscreen';
       f.addEventListener('load', function () { setTimeout(function () { f.classList.add('ready'); }, 900); });
       heroMedia.appendChild(f);
-      /* the reel loops, so it gets a pause button */
-      var hpp = d.querySelector('.hero-pp');
-      if (hpp) {
-        var paused = false;
-        var icon = function () {
-          hpp.setAttribute('aria-label', paused ? 'Play background video' : 'Pause background video');
-          hpp.innerHTML = paused
-            ? '<svg viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11l9-5.5z"/></svg>'
-            : '<svg viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5h3v11H3zM8 1.5h3v11H8z"/></svg>';
-        };
-        icon(); hpp.hidden = false;
-        hpp.addEventListener('click', function () {
-          paused = !paused; icon();
-          if (f.contentWindow) f.contentWindow.postMessage(JSON.stringify({ method: paused ? 'pause' : 'play' }), 'https://player.vimeo.com');
-        });
-      }
     };
     if (d.readyState === 'complete') setTimeout(startBg, 600); else window.addEventListener('load', function () { setTimeout(startBg, 600); });
   }
