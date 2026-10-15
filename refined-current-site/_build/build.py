@@ -773,8 +773,8 @@ HOME_BODY = f'''
       <img src="{L}hero-poster-1920.webp" srcset="{L}hero-poster-960.webp 960w, {L}hero-poster-1920.webp 1920w" sizes="100vw" width="1920" height="1080" alt="" fetchpriority="high">
     </div>
     <div class="wrap hero-body">
-      <h1 id="h-hero">Film and video production in Baltimore</h1>
-      <p class="lede">We create, produce, direct, film, and edit.</p>
+      <h1 id="h-hero">We are MindInMotion</h1>
+      <p class="lede">We Create, Produce, Direct, Film, and Edit. Let&#39;s Create Something Amazing Together.</p>
       <div class="btns">{reel_btn(solid=True)}<a class="btn" href="contact.html">Get a Quote in 24 Hours</a></div>
     </div>
   </section>
