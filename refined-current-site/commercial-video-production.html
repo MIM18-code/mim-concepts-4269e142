@@ -15,11 +15,11 @@
 <meta property="og:url" content="https://mindinmotion.tv/commercial-video-production">
 <meta property="og:image" content="https://mindinmotion.tv/images/og-share.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#0d0c0a">
+<meta name="theme-color" content="#000000">
 <link rel="icon" type="image/png" href="../assets/img/mindinmotion-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Schibsted+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;700&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="../assets/img/Screen-Shot-2022-06-24-at-6.14.31-PM-2.webp" fetchpriority="high">
 <link rel="stylesheet" href="site.css">
 <script type="application/ld+json">
@@ -151,6 +151,7 @@
   <ul>
     <li><a href="index.html">Home</a></li>
     <li><a href="portfolio.html">Portfolio</a></li>
+    <li class="mnav-label">Services</li>
     <li class="sub"><a href="commercial-video-production.html" aria-current="page">Commercial</a></li><li class="sub"><a href="corporate-video-production.html">Corporate</a></li><li class="sub"><a href="film-production.html">Film</a></li><li class="sub"><a href="post-production.html">Post-Production</a></li>
     <li><a href="about.html">About</a></li>
     <li><a href="contact.html">Contact</a></li>
@@ -165,16 +166,15 @@
   <section class="phero">
     <img src="../assets/img/Screen-Shot-2022-06-24-at-6.14.31-PM-2.webp" width="2500" height="1406" alt="From the Maryland Excels &quot;Good Mom&quot; spot: a woman in a dark bathroom at night, lit by cold blue light." style="object-position:50% 45%" fetchpriority="high">
     <div class="wrap">
-      <nav aria-label="Breadcrumb"><ol class="crumbs"><li><a href="index.html">Home</a></li><li>Services</li><li><span aria-current="page">Commercial</span></li></ol></nav>
       <h1>Commercial Video Production</h1>
       <p class="lede">TV spots, PSAs, recruitment ads and social cuts.</p>
-      <div class="btns"><a class="btn btn-solid" href="contact.html">Tell Us About Your Project</a></div>
+      <div class="btns"><a class="btn btn-solid" href="contact.html">Get a quote</a></div>
     </div>
   </section>
-  <section class="sec" aria-labelledby="h-intro">
+  <section class="sec">
     <div class="wrap split intro">
       <div>
-        <h2 id="h-intro" class="vh">About this service</h2>
+        
         <p class="lede intro-lede">MindInMotion handles commercial video production in Baltimore for broadcast TV, streaming platforms, YouTube pre-roll and social feeds. Some spots come through ad agencies, like our WellPoint spot for InterPublic. Others we make directly for the client, like the Maryland Excels PSAs for the Maryland State Department of Education.</p>
       </div>
       <div>
@@ -183,26 +183,59 @@
       </div>
     </div>
   </section>
-  <section class="sec alt" aria-labelledby="h-feat">
+  <section class="sec" aria-labelledby="h-work">
     <div class="wrap">
-      <div class="sec-head solo"><h2 id="h-feat" class="h2">Featured</h2></div>
-      
-      <article class="feat">
-        <div><button class="tile-frame" type="button" data-vimeo="723874620" data-title="Maryland Excels - Moms at the Playground" aria-label="Play Maryland Excels - Moms at the Playground"><img src="../assets/img/Screen-Shot-2022-06-24-at-5.18.24-PM.webp" width="1200" height="675" alt="A girl in a yellow dress runs past two mothers sitting on a playground bench." loading="lazy" decoding="async"><span class="cue" aria-hidden="true"><svg class="tri" viewBox="0 0 10 12" aria-hidden="true"><path d="M0 0v12l10-6z"/></svg> Play</span></button></div>
-        <div class="feat-body">
-          <p class="label">Maryland State Department of Education</p>
-          <h3>Maryland Excels <span style="color:var(--bone-3)">&ndash; Moms at the Playground</span></h3>
-          <p class="meta">Commercial &middot; <span class="nw">Director: Josh Land &amp; Victor Fink,</span> <span class="nw">DP: John Grove</span></p><p class="d">Part of a multi-video campaign that aired statewide and drove traffic to the Maryland Excels program.</p>
-        </div>
-      </article>
-      <article class="feat">
-        <div><button class="tile-frame" type="button" data-vimeo="762000615" data-title="WellPoint" aria-label="Play WellPoint"><img src="../assets/img/Screen-Shot-2022-10-19-at-3.10.25-PM.webp" width="2500" height="1406" alt="A mother and daughter read together on a bedroom floor." loading="lazy" decoding="async"><span class="cue" aria-hidden="true"><svg class="tri" viewBox="0 0 10 12" aria-hidden="true"><path d="M0 0v12l10-6z"/></svg> Play</span></button></div>
-        <div class="feat-body">
-          <p class="label">Client: InterPublic</p>
-          <h3>WellPoint</h3>
-          <p class="meta">Commercial</p>
-        </div>
-      </article>
+      <div class="sec-head"><h2 id="h-work" class="h2">Selected Work</h2><p class="lede">A few of the commercials we’ve produced.</p></div>
+      <ul class="grid" id="work-grid">
+        <li class="tile" data-cats="commercial">
+          <button class="tile-frame" type="button" data-vimeo="794207449" data-title="Good Mom MD Excels TV PSA" aria-label="Play Good Mom MD Excels TV PSA"><img src="../assets/img/Screen-Shot-2022-06-24-at-6.14.31-PM-2.webp" width="2500" height="1406" alt="A woman stands in a dark bathroom at night, lit by cold blue light." loading="lazy" decoding="async"><span class="cue" aria-hidden="true"><svg class="tri" viewBox="0 0 10 12" aria-hidden="true"><path d="M0 0v12l10-6z"/></svg> Play</span></button>
+          <div class="tile-cap">
+            <h3 class="tile-t">Good Mom MD Excels TV PSA</h3>
+          </div>
+        </li>
+        <li class="tile" data-cats="commercial">
+          <button class="tile-frame" type="button" data-vimeo="723880294" data-title="AACPD Recruitment" aria-label="Play AACPD Recruitment"><img src="../assets/img/Screen-Shot-2022-06-24-at-5.40.56-PM.webp" width="2500" height="1406" alt="A young woman at night, rim-lit, with red and blue police lights blurred behind her." loading="lazy" decoding="async"><span class="cue" aria-hidden="true"><svg class="tri" viewBox="0 0 10 12" aria-hidden="true"><path d="M0 0v12l10-6z"/></svg> Play</span></button>
+          <div class="tile-cap">
+            <h3 class="tile-t">AACPD Recruitment</h3>
+          </div>
+        </li>
+        <li class="tile" data-cats="commercial">
+          <button class="tile-frame" type="button" data-vimeo="794227360" data-title="Maryland State Department of Education - You Wouldn&#x27;t" aria-label="Play Maryland State Department of Education - You Wouldn&#x27;t"><img src="../assets/img/Screen-Shot-2023-01-30-at-2.23.33-PM.webp" width="2500" height="1406" alt="Seen from inside a patient&#x27;s mouth: a man in a surgical mask and magnifying loupes raises a drill." loading="lazy" decoding="async"><span class="cue" aria-hidden="true"><svg class="tri" viewBox="0 0 10 12" aria-hidden="true"><path d="M0 0v12l10-6z"/></svg> Play</span></button>
+          <div class="tile-cap">
+            <h3 class="tile-t">Maryland State Department of Education - You Wouldn&#x27;t</h3>
+          </div>
+        </li>
+        <li class="tile" data-cats="commercial">
+          <button class="tile-frame" type="button" data-vimeo="904194910" data-title="Maryland Excels - Checklist Moments" aria-label="Play Maryland Excels - Checklist Moments"><img src="../assets/img/vimeo-1784674291.webp" width="640" height="360" alt="A small child with curly hair holds a parent&#x27;s hand." loading="lazy" decoding="async"><span class="cue" aria-hidden="true"><svg class="tri" viewBox="0 0 10 12" aria-hidden="true"><path d="M0 0v12l10-6z"/></svg> Play</span></button>
+          <div class="tile-cap">
+            <h3 class="tile-t">Maryland Excels - Checklist Moments</h3>
+          </div>
+        </li>
+        <li class="tile" data-cats="commercial">
+          <button class="tile-frame" type="button" data-vimeo="762000615" data-title="WellPoint" aria-label="Play WellPoint"><img src="../assets/img/Screen-Shot-2022-10-19-at-3.10.25-PM.webp" width="2500" height="1406" alt="A mother and daughter read together on a bedroom floor." loading="lazy" decoding="async"><span class="cue" aria-hidden="true"><svg class="tri" viewBox="0 0 10 12" aria-hidden="true"><path d="M0 0v12l10-6z"/></svg> Play</span></button>
+          <div class="tile-cap">
+            <h3 class="tile-t">WellPoint</h3>
+          </div>
+        </li>
+        <li class="tile" data-cats="commercial">
+          <button class="tile-frame" type="button" data-vimeo="723874620" data-title="Maryland Excels - Moms at the Playground" aria-label="Play Maryland Excels - Moms at the Playground"><img src="../assets/img/Screen-Shot-2022-06-24-at-5.18.24-PM.webp" width="1200" height="675" alt="A girl in a yellow dress runs past two mothers sitting on a playground bench." loading="lazy" decoding="async"><span class="cue" aria-hidden="true"><svg class="tri" viewBox="0 0 10 12" aria-hidden="true"><path d="M0 0v12l10-6z"/></svg> Play</span></button>
+          <div class="tile-cap">
+            <h3 class="tile-t">Maryland Excels - Moms at the Playground</h3>
+          </div>
+        </li>
+        <li class="tile" data-cats="commercial">
+          <button class="tile-frame" type="button" data-vimeo="794249489" data-title="Maryland State Department of Education - Illegal Childcare" aria-label="Play Maryland State Department of Education - Illegal Childcare"><img src="../assets/img/Screenshot-2024-01-18-at-2.33.57-PM.webp" width="2500" height="1406" alt="A couple sits on a living room couch, one of them working on a laptop." loading="lazy" decoding="async"><span class="cue" aria-hidden="true"><svg class="tri" viewBox="0 0 10 12" aria-hidden="true"><path d="M0 0v12l10-6z"/></svg> Play</span></button>
+          <div class="tile-cap">
+            <h3 class="tile-t">Maryland State Department of Education - Illegal Childcare</h3>
+          </div>
+        </li>
+        <li class="tile" data-cats="commercial">
+          <button class="tile-frame" type="button" data-vimeo="1019980973?h=63b47d2669" data-title="Bennett&#x27;s Curse St. Patrick&#x27;s Day" aria-label="Play Bennett&#x27;s Curse St. Patrick&#x27;s Day"><img src="img/bennetts-curse-st-patricks-day.webp" width="2500" height="1406" alt="A rotting, green-lit zombie face in close-up." loading="lazy" decoding="async"><span class="cue" aria-hidden="true"><svg class="tri" viewBox="0 0 10 12" aria-hidden="true"><path d="M0 0v12l10-6z"/></svg> Play</span></button>
+          <div class="tile-cap">
+            <h3 class="tile-t">Bennett&#x27;s Curse St. Patrick&#x27;s Day</h3>
+          </div>
+        </li>
+      </ul>
     </div>
   </section>
   <section class="sec" aria-label="What a client said">
@@ -213,76 +246,6 @@
       </figure>
     </div>
   </section>
-  <section class="sec alt" aria-labelledby="h-work">
-    <div class="wrap">
-      <div class="sec-head"><h2 id="h-work" class="h2">Selected Work</h2><p class="lede">A few of the commercials we’ve produced.</p></div>
-      <ul class="grid" id="work-grid">
-        <li class="tile" data-cats="commercial">
-          <button class="tile-frame" type="button" data-vimeo="794207449" data-title="Good Mom MD Excels TV PSA" aria-label="Play Good Mom MD Excels TV PSA"><img src="../assets/img/Screen-Shot-2022-06-24-at-6.14.31-PM-2.webp" width="2500" height="1406" alt="A woman stands in a dark bathroom at night, lit by cold blue light." loading="lazy" decoding="async"><span class="cue" aria-hidden="true"><svg class="tri" viewBox="0 0 10 12" aria-hidden="true"><path d="M0 0v12l10-6z"/></svg> Play</span></button>
-          <div class="tile-cap">
-            <h3 class="tile-t">Good Mom MD Excels TV PSA</h3>
-            <p class="meta">Commercial &middot; Director: Josh Land &amp; Victor Fink, DP: Alex Guckert</p>
-          </div>
-        </li>
-        <li class="tile" data-cats="commercial">
-          <button class="tile-frame" type="button" data-vimeo="723880294" data-title="AACPD Recruitment" aria-label="Play AACPD Recruitment"><img src="../assets/img/Screen-Shot-2022-06-24-at-5.40.56-PM.webp" width="2500" height="1406" alt="A young woman at night, rim-lit, with red and blue police lights blurred behind her." loading="lazy" decoding="async"><span class="cue" aria-hidden="true"><svg class="tri" viewBox="0 0 10 12" aria-hidden="true"><path d="M0 0v12l10-6z"/></svg> Play</span></button>
-          <div class="tile-cap">
-            <h3 class="tile-t">AACPD Recruitment</h3>
-            <p class="meta">Commercial &middot; Director: Josh Land &amp; Victor Fink, DP: Alex Guckert</p>
-          </div>
-        </li>
-        <li class="tile" data-cats="commercial">
-          <button class="tile-frame" type="button" data-vimeo="794227360" data-title="Maryland State Department of Education - You Wouldn&#x27;t" aria-label="Play Maryland State Department of Education - You Wouldn&#x27;t"><img src="../assets/img/Screen-Shot-2023-01-30-at-2.23.33-PM.webp" width="2500" height="1406" alt="Extreme close-up of an older man looking through a jeweler&#x27;s loupe." loading="lazy" decoding="async"><span class="cue" aria-hidden="true"><svg class="tri" viewBox="0 0 10 12" aria-hidden="true"><path d="M0 0v12l10-6z"/></svg> Play</span></button>
-          <div class="tile-cap">
-            <h3 class="tile-t">Maryland State Department of Education - You Wouldn&#x27;t</h3>
-            <p class="meta">Commercial &middot; Client: Maryland State Department of Education</p>
-          </div>
-        </li>
-        <li class="tile" data-cats="commercial">
-          <button class="tile-frame" type="button" data-vimeo="904194910" data-title="Maryland Excels - Checklist Moments" aria-label="Play Maryland Excels - Checklist Moments"><img src="../assets/img/vimeo-1784674291.webp" width="640" height="360" alt="A small child with curly hair holds a parent&#x27;s hand." loading="lazy" decoding="async"><span class="cue" aria-hidden="true"><svg class="tri" viewBox="0 0 10 12" aria-hidden="true"><path d="M0 0v12l10-6z"/></svg> Play</span></button>
-          <div class="tile-cap">
-            <h3 class="tile-t">Maryland Excels - Checklist Moments</h3>
-            <p class="meta">Commercial &middot; Client: Maryland State Department of Education</p>
-          </div>
-        </li>
-        <li class="tile" data-cats="commercial">
-          <button class="tile-frame" type="button" data-vimeo="762000615" data-title="WellPoint" aria-label="Play WellPoint"><img src="../assets/img/Screen-Shot-2022-10-19-at-3.10.25-PM.webp" width="2500" height="1406" alt="A mother and daughter read together on a bedroom floor." loading="lazy" decoding="async"><span class="cue" aria-hidden="true"><svg class="tri" viewBox="0 0 10 12" aria-hidden="true"><path d="M0 0v12l10-6z"/></svg> Play</span></button>
-          <div class="tile-cap">
-            <h3 class="tile-t">WellPoint</h3>
-            <p class="meta">Commercial &middot; Client: InterPublic</p>
-          </div>
-        </li>
-        <li class="tile" data-cats="commercial">
-          <button class="tile-frame" type="button" data-vimeo="723874620" data-title="Maryland Excels - Moms at the Playground" aria-label="Play Maryland Excels - Moms at the Playground"><img src="../assets/img/Screen-Shot-2022-06-24-at-5.18.24-PM.webp" width="1200" height="675" alt="A girl in a yellow dress runs past two mothers sitting on a playground bench." loading="lazy" decoding="async"><span class="cue" aria-hidden="true"><svg class="tri" viewBox="0 0 10 12" aria-hidden="true"><path d="M0 0v12l10-6z"/></svg> Play</span></button>
-          <div class="tile-cap">
-            <h3 class="tile-t">Maryland Excels - Moms at the Playground</h3>
-            <p class="meta">Commercial &middot; Director: Josh Land &amp; Victor Fink, DP: John Grove</p>
-          </div>
-        </li>
-        <li class="tile" data-cats="commercial">
-          <button class="tile-frame" type="button" data-vimeo="794249489" data-title="Maryland State Department of Education - Illegal Childcare" aria-label="Play Maryland State Department of Education - Illegal Childcare"><img src="../assets/img/Screenshot-2024-01-18-at-2.33.57-PM.webp" width="2500" height="1406" alt="A couple sits on a living room couch, one of them working on a laptop." loading="lazy" decoding="async"><span class="cue" aria-hidden="true"><svg class="tri" viewBox="0 0 10 12" aria-hidden="true"><path d="M0 0v12l10-6z"/></svg> Play</span></button>
-          <div class="tile-cap">
-            <h3 class="tile-t">Maryland State Department of Education - Illegal Childcare</h3>
-            <p class="meta">Commercial &middot; Director: Josh Land &amp; Victor Fink, DP: Alex Guckert</p>
-          </div>
-        </li>
-        <li class="tile" data-cats="commercial">
-          <button class="tile-frame" type="button" data-vimeo="1021087594?h=2c0add4aa6" data-title="Because Quality Matters" aria-label="Play Because Quality Matters"><img src="../assets/img/checklist.webp" width="2500" height="1406" alt="Preschoolers laugh and shape clay at a classroom table." loading="lazy" decoding="async" style="object-position:50% 38%"><span class="cue" aria-hidden="true"><svg class="tri" viewBox="0 0 10 12" aria-hidden="true"><path d="M0 0v12l10-6z"/></svg> Play</span></button>
-          <div class="tile-cap">
-            <h3 class="tile-t">Because Quality Matters</h3>
-            <p class="meta">Commercial &middot; Client: Maryland State Department of Education</p>
-          </div>
-        </li>
-        <li class="tile" data-cats="commercial">
-          <button class="tile-frame" type="button" data-vimeo="1019980973?h=63b47d2669" data-title="Bennett&#x27;s Curse St. Patrick&#x27;s Day" aria-label="Play Bennett&#x27;s Curse St. Patrick&#x27;s Day"><img src="img/bennetts-curse-st-patricks-day.webp" width="2500" height="1406" alt="A rotting, green-lit zombie face in close-up." loading="lazy" decoding="async"><span class="cue" aria-hidden="true"><svg class="tri" viewBox="0 0 10 12" aria-hidden="true"><path d="M0 0v12l10-6z"/></svg> Play</span></button>
-          <div class="tile-cap">
-            <h3 class="tile-t">Bennett&#x27;s Curse St. Patrick&#x27;s Day</h3>
-            <p class="meta">Commercial &middot; Client: Bennett&#x27;s Curse</p>
-          </div>
-        </li>
-      </ul><div class="grid-foot"><p>Have a campaign in mind?</p><div class="btns"><a class="btn btn-solid" href="contact.html">Tell Us About Your Project</a></div></div>
-    </div>
-  </section>
   <section aria-labelledby="h-bts" class="show-sec">
     <div class="wrap show-head">
       <div class="sec-head solo" style="margin-bottom:0"><h2 id="h-bts" class="h2">Behind the Scenes</h2></div>
@@ -290,37 +253,23 @@
     <div class="show" data-interval="5000" role="region" aria-roledescription="carousel" aria-label="Behind the Scenes photos">
       <div class="show-stage">
         <figure class="on"><img src="../assets/img/bts/commercial/01-dolly-track.webp" width="2000" height="1500" alt="Camera operator on dolly track filming alongside lighting setup outdoors" decoding="async"></figure><figure><img src="../assets/img/bts/commercial/02-living-room-crew.webp" width="2000" height="1500" alt="Film crew shooting a family scene on a living room set" decoding="async" loading="lazy"></figure><figure><img data-src="../assets/img/bts/commercial/03-living-room-monitor.webp" width="2000" height="1500" alt="Monitor showing the family scene being filmed in a living room" decoding="async"></figure><figure><img data-src="../assets/img/bts/commercial/04-park-shoot.webp" width="2000" height="1334" alt="Crew filming an actor in a park under tall trees" decoding="async"></figure><figure><img data-src="../assets/img/bts/commercial/05-park-boom.webp" width="2000" height="1334" alt="Boom operator and camera operator filming an actor in a park" decoding="async"></figure><figure><img data-src="../assets/img/bts/commercial/06-assistant-director.webp" width="2000" height="1334" alt="Assistant director with radio and clipboard on an outdoor set" decoding="async"></figure><figure><img data-src="../assets/img/bts/commercial/07-crew-monitor-outdoors.webp" width="2000" height="1334" alt="Crew gathered around a camera monitor during an outdoor shoot" decoding="async"></figure><figure><img data-src="../assets/img/bts/commercial/08-building-entrance.webp" width="2000" height="1334" alt="Crew filming a scene outside a glass office building" decoding="async"></figure><figure><img data-src="../assets/img/bts/commercial/09-doctor-scene.webp" width="2000" height="1334" alt="Actor in a white coat on set between takes" decoding="async"></figure><figure><img data-src="../assets/img/bts/commercial/10-bedroom-monitor.webp" width="2000" height="1334" alt="Two crew members smiling behind a camera monitor in a child&#x27;s bedroom" decoding="async"></figure><figure><img data-src="../assets/img/bts/commercial/11-couch-scene.webp" width="2000" height="1334" alt="Actors reading papers on a couch during a scene" decoding="async"></figure><figure><img data-src="../assets/img/bts/commercial/12-laptop-scene.webp" width="2000" height="1334" alt="Camera framing an actor with a laptop on a living room couch" decoding="async"></figure><figure><img data-src="../assets/img/bts/commercial/13-studio-officers.webp" width="2000" height="1334" alt="Crew filming a uniformed officer on a dark studio set" decoding="async"></figure><figure><img data-src="../assets/img/bts/commercial/14-officer-smiling.webp" width="2000" height="1334" alt="Smiling officer on a black studio set during a recruitment shoot" decoding="async"></figure>
-        <span class="show-progress" aria-hidden="true"></span>
       </div>
       <div class="show-bar">
-        <p class="show-cap" aria-live="off"></p>
         <div class="show-ctl">
           <button class="prev" type="button" aria-label="Previous photo"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M9 2L4 7l5 5"/></svg></button>
-          <span class="show-n" aria-hidden="true">1 / 14</span>
           <button class="next" type="button" aria-label="Next photo"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M5 2l5 5-5 5"/></svg></button>
           <button class="pp" type="button" aria-label="Pause slideshow"></button>
         </div>
       </div>
     </div>
   </section>
-  <section class="sec" aria-labelledby="h-related">
+  <section class="sec" aria-labelledby="h-close">
     <div class="wrap">
-      <div class="sec-head solo"><h2 id="h-related" class="h2">Production and post</h2></div>
-      <nav class="related" aria-labelledby="h-related"><a href="corporate-video-production.html"><b>Corporate</b><span>Videos that recruit, train a team or show donors where their money goes, for universities, hospitals and nonprofits.</span></a><a href="film-production.html"><b>Film</b><span>Features, shorts, documentaries and music videos. We can produce the whole film or join your crew. Tell us your budget and we'll talk through what's possible.</span></a><a href="post-production.html"><b>Post-Production</b><span>Editing, color grading, VFX and motion graphics. We can handle the full post workflow or pick up a project already in progress.</span></a></nav>
-    </div>
-  </section>
-  <section class="sec alt" aria-labelledby="h-close">
-    <div class="wrap close-sec">
-      <div>
+      <div class="close-sec">
         <h2 id="h-close">Tell us about your project</h2>
         <p class="lede">Add your budget and deadline if you know them. Josh or Victor replies within 24 hours.</p>
-        <div class="btns"><a class="btn btn-solid" href="contact.html">Get a free quote</a></div>
+        <div class="btns"><a class="btn btn-solid" href="contact.html">Get a quote</a></div>
       </div>
-      <dl class="contact-list">
-        <div><dt>Phone</dt><dd><a href="tel:+14435275181">(443) 527-5181</a></dd></div>
-        <div><dt>Email</dt><dd><a href="mailto:mindinmotionpro@gmail.com">mindinmotionpro@gmail.com</a></dd></div>
-        <div><dt>Studio</dt><dd>3617 Chestnut Ave, Baltimore, MD 21211</dd></div>
-      </dl>
     </div>
   </section>
 </main>

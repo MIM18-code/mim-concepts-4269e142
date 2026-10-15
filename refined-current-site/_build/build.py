@@ -154,7 +154,7 @@ def logo_row():
     return '''
   <section class="clients" aria-labelledby="h-clients">
     <div class="wrap">
-      <h2 id="h-clients" class="label">Clients include</h2>
+      <h2 id="h-clients" class="vh">Clients include</h2>
       <ul class="logo-row">
         %s
       </ul>
@@ -187,13 +187,13 @@ W = {
     'sydney': dict(cats='nonprofit', label='Nonprofit', title='Sydney B. - Biomarker Testing Story', cr=ALA, yt='MkNrUkNgVfA', play='youtube:MkNrUkNgVfA', alt='A smiling couple lying on a beach towel, looking up at the camera.'),
     'ashley': dict(cats='nonprofit', label='Nonprofit', title='Ashley & Dr. Reed - Patient-Provider Story', cr=ALA, img=A + 'ala-ashley-dr-reed.webp', pos='50% 22%', play='youtube:dxUx8L3rQos', alt='Dr. Reed and Ashley talk across a small round table in his office.'),
     'lungforce': dict(cats='nonprofit', label='Nonprofit', title='LUNG FORCE Advocacy Day 2025', cr=ALA, yt='kaDZAOgjiR8', play='youtube:kaDZAOgjiR8', alt='The video\'s title card: the American Lung Association line "When you can\'t breathe, nothing else matters" over a hazy view of Washington, DC.'),
-    'ape': dict(cats='film', label='Feature film', title='Ape Canyon (feature film, 2019)', cr='Directors: Joshua Land & Victor Fink', img=A + 'ape-canyon.webp', link='https://www.amazon.com/gp/video/detail/B091SXZYT8', alt='Two young people lie in tall grass, alarmed.'),
+    'ape': dict(cats='film', label='Feature film', title='Ape Canyon (feature film, 2021)', cr='Directors: Joshua Land & Victor Fink', img=A + 'ape-canyon.webp', link='https://www.amazon.com/gp/video/detail/B091SXZYT8', alt='Two young people lie in tall grass, alarmed.'),
     'quality': dict(cats='commercial', label='Commercial', title='Because Quality Matters', cr=MSDE, img=A + 'checklist.webp', pos='50% 38%', play='vimeo:1021087594?h=2c0add4aa6', alt='Preschoolers laugh and shape clay at a classroom table.'),
     'aacpd': dict(cats='commercial', label='Commercial', title='AACPD Recruitment', cr=DIR + ', DP: Alex Guckert', img=A + 'Screen-Shot-2022-06-24-at-5.40.56-PM.webp', play='vimeo:723880294', alt='A young woman at night, rim-lit, with red and blue police lights blurred behind her.'),
     'farmhouse': dict(cats='film', label='Short film', title='The Farmhouse (short film, 2023)', cr=DIR, img=A + 'farmhouse-thumbnail.webp', play='youtube:8oQABz68coc', alt='A young woman with a smear of blood on her cheek looks past an older man in a hat.'),
     'chelsea': dict(cats='nonprofit corporate', label='Nonprofit', title='Infinite Legacy - Chelsea', cr='Client: Infinite Legacy', img=A + 'chelsea-ilf.webp', pos='50% 24%', play='vimeo:836990393', alt='A mother holds her baby close, cheek to cheek, in warm light.'),
-    'wouldnt': dict(cats='commercial', label='Commercial', title="Maryland State Department of Education - You Wouldn't", cr=MSDE, img=A + 'Screen-Shot-2023-01-30-at-2.23.33-PM.webp', play='vimeo:794227360', alt="Extreme close-up of an older man looking through a jeweler's loupe."),
-    'finding': dict(cats='nonprofit', label='Nonprofit', title='Maryland Excels - Finding Childcare', cr=DIR + ', DP: Alex Guckert', img=A + 'Screenshot-2024-01-18-at-2.36.22-PM.webp', play='vimeo:723892095?h=bef550ce0c', alt='A woman presents an on-screen graphic for the Maryland Excels program directory.'),
+    'wouldnt': dict(cats='commercial', label='Commercial', title="Maryland State Department of Education - You Wouldn't", cr=MSDE, img=A + 'Screen-Shot-2023-01-30-at-2.23.33-PM.webp', play='vimeo:794227360', alt="Seen from inside a patient's mouth: a man in a surgical mask and magnifying loupes raises a drill."),
+    'finding': dict(cats='commercial', label='Commercial', title='Maryland Excels - Finding Childcare', cr=DIR + ', DP: Alex Guckert', img=A + 'Screenshot-2024-01-18-at-2.36.22-PM.webp', play='vimeo:723892095?h=bef550ce0c', alt='A woman presents an on-screen graphic for the Maryland Excels program directory.'),
     'wellpoint': dict(cats='commercial', label='Commercial', title='WellPoint', cr='Client: InterPublic', img=A + 'Screen-Shot-2022-10-19-at-3.10.25-PM.webp', play='vimeo:762000615', alt='A mother and daughter read together on a bedroom floor.'),
     'ilikeme': dict(cats='film', label='Feature film', title='I Like Me (feature film, 2018)', cr='Director: Joshua Land', img=A + 'i-like-me.webp', play='youtube:RB5mmpYvsdo', alt='Two women laugh on the grass on a summer day.'),
     'hiking': dict(cats='film', label='Short film', title="Don't Go Hiking (short film, 2019)", cr=DIR, img=A + 'Screen-Shot-2022-06-24-at-6.17.35-PM-2.webp', play='vimeo:567645681', alt='A frightened young man in a backpack peers through autumn brush.'),
@@ -236,8 +236,8 @@ def frame(w, cls='tile-frame', eager=False):
         cls, play_attrs(w), e(w['title']), pic, TRI)
 
 
-def tile(key, all_set=None, label=True):
-    w = W[key]
+def tile(key, all_set=None, meta=True, title=None):
+    w = dict(W[key], title=title) if title else W[key]
     cats = w['cats']
     attrs = ' data-cats="%s"' % cats
     if all_set is not None:
@@ -245,30 +245,25 @@ def tile(key, all_set=None, label=True):
             attrs += ' data-all'
         else:
             attrs += ' hidden'
-    meta = e(w['cr'])
-    if label and w.get('label'):
-        meta = '%s &middot; %s' % (e(w['label']), meta)
+    m = '\n            <p class="meta">%s</p>' % e(w['cr']) if meta else ''
     return '''
         <li class="tile"%s>
           %s
           <div class="tile-cap">
-            <h3 class="tile-t">%s</h3>
-            <p class="meta">%s</p>
+            <h3 class="tile-t">%s</h3>%s
           </div>
-        </li>''' % (attrs, frame(w), e(w['title']), meta)
+        </li>''' % (attrs, frame(w), e(w['title']), m)
 
 
-def work_grid(keys, gid, all_keys=None, filters=None, cols='', foot=None):
+def work_grid(keys, gid, all_keys=None, filters=None, cols='', foot=None, meta=True):
     """A grid of work. With filters, every tile is in the page and the buttons show and hide them."""
     bar = ''
     if filters:
         btns = ''.join('<button type="button" data-cat="%s" aria-pressed="%s">%s</button>' % (c, 'true' if c == 'all' else 'false', t)
                        for c, t in filters)
         bar = '<div class="filters ui" data-filters="%s" role="group" aria-label="Filter the work">%s</div><p class="vh filter-status" role="status"></p>' % (gid, btns)
-    tiles = ''.join(tile(k, all_set=set(all_keys) if all_keys else None) for k in keys)
-    f = ''
-    if foot:
-        f = '<div class="grid-foot"><p>%s</p><div class="btns">%s</div></div>' % (foot[0], foot[1])
+    tiles = ''.join(tile(k, all_set=set(all_keys) if all_keys else None, meta=meta) for k in keys)
+    f = '<div class="grid-foot">%s</div>' % foot if foot else ''
     return '%s<ul class="grid%s" id="%s">%s\n      </ul>%s' % (bar, ' ' + cols if cols else '', gid, tiles, f)
 
 
@@ -354,6 +349,7 @@ def header(slug, over=False):
   <ul>
     <li><a href="index.html"{cur('index')}>Home</a></li>
     <li><a href="portfolio.html"{cur('portfolio')}>Portfolio</a></li>
+    <li class="mnav-label">Services</li>
     {msub}
     <li><a href="about.html"{cur('about')}>About</a></li>
     <li><a href="contact.html"{cur('contact')}>Contact</a></li>
@@ -408,7 +404,7 @@ PLAYER = '''<dialog class="player" id="player" aria-labelledby="player-title">
 
 FONTS = '''<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Schibsted+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">'''
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;700&display=swap" rel="stylesheet">'''
 
 
 def page_html(page, body):
@@ -434,7 +430,7 @@ def page_html(page, body):
 <meta property="og:url" content="{canon}">
 <meta property="og:image" content="{LIVE}/images/og-share.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#0d0c0a">
+<meta name="theme-color" content="#000000">
 <link rel="icon" type="image/png" href="{A}mindinmotion-logo.png">
 {FONTS}
 {preload}
@@ -458,25 +454,23 @@ def page_html(page, body):
 
 
 # ---------------------------------------------------------------- building blocks
-def phero(img_src, alt, h1, sub, ctas, crumbs=None, short=False, pos=None):
-    cr = ''
-    if crumbs:
-        lis = []
-        for name, s in crumbs:
-            if s is None:
-                lis.append('<li>%s</li>' % name)
-            elif s == crumbs[-1][1]:
-                lis.append('<li><span aria-current="page">%s</span></li>' % name)
-            else:
-                lis.append('<li><a href="%s">%s</a></li>' % ('index.html' if s == '' else s + '.html', name))
-        cr = '<nav aria-label="Breadcrumb"><ol class="crumbs">%s</ol></nav>' % ''.join(lis)
+def phero(img_src, alt, h1, sub, ctas, crumbs=None, short=False, pos=None, bare=False):
+    """Inner-page hero. Breadcrumbs are not drawn; the page's crumbs still go out as BreadcrumbList JSON-LD.
+    bare=True opens straight on the heading with no picture or buttons, as Squarespace's Portfolio and Contact did."""
+    if bare:
+        return f'''
+  <section class="phero bare">
+    <div class="wrap">
+      <h1>{h1}</h1>
+      <p class="lede">{sub}</p>
+    </div>
+  </section>'''
     b = ''.join('<a class="btn%s" href="%s"%s>%s</a>' % (' btn-solid' if solid else '', href, extra, t) for href, t, solid, extra in [
         (c[0], c[1], c[2], c[3] if len(c) > 3 else '') for c in ctas])
     return f'''
   <section class="phero{' short' if short else ''}">
     {img(img_src, alt, lazy=False, pos=pos, extra='fetchpriority="high"')}
     <div class="wrap">
-      {cr}
       <h1>{h1}</h1>
       <p class="lede">{sub}</p>
       <div class="btns">{b}</div>
@@ -489,11 +483,11 @@ def reel_btn(text='Watch the reel', solid=False):
 
 
 def copy_split(h2, lede, paras, side, hid, alt=False, rev=False):
-    h = '<h2 id="%s" class="h2">%s</h2>' % (hid, h2) if h2 else '<h2 id="%s" class="vh">About this service</h2>' % hid
+    h = '<h2 id="%s" class="h2">%s</h2>' % (hid, h2) if h2 else ''
     ps = ''.join('<p>%s</p>' % p for p in paras)
     ld_ = '<p class="lede intro-lede">%s</p>' % lede if lede else ''
     return f'''
-  <section class="sec{' alt' if alt else ''}" aria-labelledby="{hid}">
+  <section class="sec"{' aria-labelledby="%s"' % hid if h2 else ''}>
     <div class="wrap split intro{' rev' if rev else ''}">
       <div>
         {h}
@@ -511,8 +505,8 @@ def feature(w_key, client, title, sub=None, kind=None, desc=None, alt_override=N
     w = dict(W[w_key])
     if alt_override:
         w['alt'] = alt_override
-    t = e(title) + (' <span style="color:var(--bone-3)">&ndash; %s</span>' % e(sub) if sub else '')
-    k = '<p class="meta">%s</p>' % kind if kind else ''
+    t = e(title) + (' &ndash; %s' % e(sub) if sub else '')
+    k = '<p class="meta">%s</p>' % (kind or e(client)) if (kind or client) else ''
     dsc = '<p class="d">%s</p>' % desc if desc else ''
     bd = '<div class="prose">%s</div>' % ''.join('<p>%s</p>' % p for p in body) if body else ''
     dl = '<dl><dt>Deliverables</dt><dd>%s</dd></dl>' % deliv if deliv else ''
@@ -520,7 +514,6 @@ def feature(w_key, client, title, sub=None, kind=None, desc=None, alt_override=N
       <article class="feat">
         <div>{frame(w, eager=eager)}</div>
         <div class="feat-body">
-          <p class="label">{e(client)}</p>
           <h3>{t}</h3>
           {k}{dsc}{bd}{dl}
         </div>
@@ -597,13 +590,10 @@ def slideshow(hid, title, folder_or_list, intro=None, interval=5000):
     <div class="show" data-interval="{interval}" role="region" aria-roledescription="carousel" aria-label="{e(title or 'Behind the scenes')} photos">
       <div class="show-stage">
         {''.join(figs)}
-        <span class="show-progress" aria-hidden="true"></span>
       </div>
       <div class="show-bar">
-        <p class="show-cap" aria-live="off"></p>
         <div class="show-ctl">
           <button class="prev" type="button" aria-label="Previous photo"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M9 2L4 7l5 5"/></svg></button>
-          <span class="show-n" aria-hidden="true">1 / {len(figs)}</span>
           <button class="next" type="button" aria-label="Next photo"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M5 2l5 5-5 5"/></svg></button>
           <button class="pp" type="button" aria-label="Pause slideshow"></button>
         </div>
@@ -709,20 +699,15 @@ def related(this):
   </section>'''
 
 
-def closing(h2='Tell us about your project', lede='Add your budget and deadline if you know them. Josh or Victor replies within 24 hours.', btn='Get a free quote', alt=True):
+def closing(h2='Tell us about your project', lede='Add your budget and deadline if you know them. Josh or Victor replies within 24 hours.', btn='Get a quote', alt=True):
     return f'''
-  <section class="sec{' alt' if alt else ''}" aria-labelledby="h-close">
-    <div class="wrap close-sec">
-      <div>
+  <section class="sec" aria-labelledby="h-close">
+    <div class="wrap">
+      <div class="close-sec">
         <h2 id="h-close">{h2}</h2>
         <p class="lede">{lede}</p>
         <div class="btns"><a class="btn btn-solid" href="contact.html">{btn}</a></div>
       </div>
-      <dl class="contact-list">
-        <div><dt>Phone</dt><dd><a href="tel:+14435275181">(443) 527-5181</a></dd></div>
-        <div><dt>Email</dt><dd><a href="mailto:mindinmotionpro@gmail.com">mindinmotionpro@gmail.com</a></dd></div>
-        <div><dt>Studio</dt><dd>3617 Chestnut Ave, Baltimore, MD 21211</dd></div>
-      </dl>
     </div>
   </section>'''
 
@@ -746,7 +731,7 @@ ALL_WORK = ['quality', 'joe', 'cuba', 'ashley', 'aacpd', 'wellpoint', 'eng', 'pa
             'sydney', 'lungforce', 'pearlstone', 'cdspg', 'finding',
             'lotus', 'ilikeme', 'badwitch', 'ape', 'incubation', 'farmhouse', 'hiking',
             'ghost', 'cyw', 'lovers', 'thunder']
-HOME_ALL = ['quality', 'joe', 'cuba', 'ashley', 'aacpd', 'wellpoint', 'eng', 'packard', 'chelsea']
+HOME_ALL = ['quality', 'joe', 'cuba', 'ashley', 'aacpd', 'wellpoint', 'eng', 'packard']
 
 # ---------------------------------------------------------------- home
 HOME_BODY = f'''
@@ -757,14 +742,14 @@ HOME_BODY = f'''
     <div class="wrap hero-body">
       <h1 id="h-hero">Film and video production in Baltimore</h1>
       <p class="lede">We make films for nonprofits, universities and public agencies.</p>
-      <div class="btns">{reel_btn(solid=True)}<a class="btn" href="contact.html">Tell us what you need</a></div>
+      <div class="btns">{reel_btn(solid=True)}<a class="btn" href="contact.html">Get a quote</a></div>
     </div>
   </section>
 {logo_row()}
 {grid_sec('Selected work', 'h-work', 'Donor stories, patient interviews, recruitment films and a statewide childcare campaign.',
-          work_grid(ALL_WORK, 'home-grid', all_keys=HOME_ALL, filters=FILTERS,
-                    foot=('Got a gala or a campaign coming up?', '<a class="btn" href="portfolio.html">See all projects</a><a class="btn btn-solid" href="contact.html">Talk to us</a>')))}
-{services_sec(alt=True)}
+          work_grid(ALL_WORK, 'home-grid', all_keys=HOME_ALL, filters=FILTERS, meta=False,
+                    foot='<a class="text-link" href="portfolio.html">See all projects</a>'))}
+{services_sec()}
 {slideshow('h-bts', 'Behind the scenes', BTS_HOME)}
   <section class="sec" aria-labelledby="h-about">
     <div class="wrap split">
@@ -783,8 +768,8 @@ HOME_BODY = f'''
       </figure>
     </div>
   </section>
-{quotes_sec(alt=True)}
-{closing(alt=False)}'''
+{quotes_sec()}
+{closing()}'''
 
 PAGES.append(dict(
     slug='index',
@@ -804,25 +789,17 @@ PAGES.append(dict(
     body=''.join([
         phero(A + 'Screen-Shot-2022-06-24-at-6.14.31-PM-2.webp', 'From the Maryland Excels "Good Mom" spot: a woman in a dark bathroom at night, lit by cold blue light.',
               'Commercial Video Production', 'TV spots, PSAs, recruitment ads and social cuts.',
-              [('contact.html', 'Tell Us About Your Project', True)],
+              [('contact.html', 'Get a quote', True)],
               crumbs=[('Home', ''), ('Services', None), ('Commercial', 'commercial-video-production')], pos='50% 45%'),
         copy_split(None,
                    "MindInMotion handles commercial video production in Baltimore for broadcast TV, streaming platforms, YouTube pre-roll and social feeds. Some spots come through ad agencies, like our WellPoint spot for InterPublic. Others we make directly for the client, like the Maryland Excels PSAs for the Maryland State Department of Education.",
                    ["Josh and Victor also direct feature films. They plan the lighting, camera moves and performances in a 15-second social cut or a 60-second broadcast spot the same way they do on their features.",
                     "We handle concept, production and post-production in-house, so one team takes your spot from script to delivery. If you have a campaign coming up, <a href=\"contact.html\">tell us about it</a>."],
                    '<div class="btns">%s</div>' % reel_btn(), 'h-intro'),
-        feature_sec('Featured', 'h-feat', [
-            feature('playground', 'Maryland State Department of Education', 'Maryland Excels', sub='Moms at the Playground',
-                    kind='Commercial &middot; <span class="nw">Director: Josh Land &amp; Victor Fink,</span> <span class="nw">DP: John Grove</span>',
-                    desc='Part of a multi-video campaign that aired statewide and drove traffic to the Maryland Excels program.'),
-            feature('wellpoint', 'Client: InterPublic', 'WellPoint', kind='Commercial'),
-        ], alt=True),
-        quote_block('Super professional, a lot of fun to work with and always on schedule. Would recommend them for virtually any project!', 'Nate Lanzino', 'Entrepreneur'),
         grid_sec('Selected Work', 'h-work', 'A few of the commercials we’ve produced.',
-                 work_grid(['goodmom', 'aacpd', 'wouldnt', 'checklist', 'wellpoint', 'playground', 'illegal', 'quality', 'bennetts'], 'work-grid',
-                           foot=('Have a campaign in mind?', '<a class="btn btn-solid" href="contact.html">Tell Us About Your Project</a>')), alt=True),
+                 work_grid(['goodmom', 'aacpd', 'wouldnt', 'checklist', 'wellpoint', 'playground', 'illegal', 'bennetts'], 'work-grid', meta=False)),
+        quote_block('Super professional, a lot of fun to work with and always on schedule. Would recommend them for virtually any project!', 'Nate Lanzino', 'Entrepreneur'),
         slideshow('h-bts', 'Behind the Scenes', BTS_COMMERCIAL),
-        related('commercial-video-production'),
         closing(),
     ])))
 
@@ -837,36 +814,27 @@ PAGES.append(dict(
     body=''.join([
         phero(A + 'mike-odom.webp', 'From a Johns Hopkins AAP profile: a man in glasses looks off camera, trees soft behind him.',
               'Corporate Video Production', "Videos to train a team, tell a patient's story, or show donors where their money goes.",
-              [('contact.html', 'Tell Us About Your Project', True)],
+              [('contact.html', 'Get a quote', True)],
               crumbs=[('Home', ''), ('Services', None), ('Corporate', 'corporate-video-production')], pos='38% 35%'),
         copy_split(None,
                    "Our corporate video production work includes training modules for hospital systems, testimonial campaigns for nonprofits, recruitment videos for universities, and internal communications for organizations that want their employees to watch.",
                    ["Our approach comes from documentary filmmaking. We interview the people involved with a small crew, and film b-roll at your own locations.",
                     "We've worked with Johns Hopkins, the Maryland State Department of Education, healthcare systems, and dozens of nonprofits and foundations across the Mid-Atlantic. <a href=\"contact.html\">Tell us what you're working on</a>."],
                    '<div class="btns">%s</div>' % reel_btn(), 'h-intro'),
-        feature_sec('Featured', 'h-feat', [
-            feature('joe', 'Client: Infinite Legacy', 'Infinite Legacy', sub='Joe', kind='Organ donation testimonials',
-                    desc="These videos have been used at fundraising galas, in hospital partner communications, and across the organization's awareness campaigns."),
-            feature('chelsea', 'Client: Infinite Legacy', 'Infinite Legacy', sub='Chelsea', kind='Organ donation testimonials',
-                    desc='We filmed each interview with a small crew and no time limit.'),
-            feature('residency', 'Client: Johns Hopkins Advanced Academic Programs', 'Teaching Writing', sub='2018 Residency'),
-        ], alt=True),
-        quote_block('They go the extra mile to create the best content and offer helpful input on ways to create the most appealing video for our audience.', 'Patrick Moody', 'Director of Marketing, Johns Hopkins AAP'),
         grid_sec('Selected Work', 'h-work', 'Recruitment, training, and brand films for organizations across the Mid-Atlantic.',
-                 work_grid(['eng', 'cuba', 'quality', 'finding', 'tidewater', 'pearlstone', 'risingtide', 'packard', 'cdspg', 'odom', 'ashley', 'sydney'], 'work-grid',
-                           foot=('Have a project in mind?', '<a class="btn btn-solid" href="contact.html">Tell Us About Your Project</a>')), alt=True),
+                 work_grid(['joe', 'chelsea', 'residency', 'eng', 'cuba', 'finding', 'tidewater', 'pearlstone', 'risingtide', 'packard', 'cdspg', 'odom', 'ashley', 'sydney'], 'work-grid', meta=False)),
+        quote_block('They go the extra mile to create the best content and offer helpful input on ways to create the most appealing video for our audience.', 'Patrick Moody', 'Director of Marketing, Johns Hopkins AAP'),
         slideshow('h-bts', 'Behind the Scenes', BTS_CORPORATE),
-        related('corporate-video-production'),
         closing(),
     ])))
 
 # ---------------------------------------------------------------- film
 FILM_GROUPS = [
-    ('Feature films', [('lotus', 'Lotus Eyes', '2016'), ('ilikeme', 'I Like Me', '2018'), ('badwitch', 'Bad Witch', '2021'),
-                       ('ape', 'Ape Canyon', '2019'), ('incubation', 'Incubation', 'Teaser')]),
-    ('Short films', [('farmhouse', 'The Farmhouse', '2023'), ('hiking', "Don't Go Hiking", '2019')]),
-    ('Music videos', [('ghost', 'Ghost Light', 'Juliet Lloyd'), ('cyw', 'Call Your Wife', 'Juliet Lloyd'),
-                      ('lovers', 'Lovers in Lullaby', 'FIVES'), ('thunder', 'Heart &amp; Thunder', 'FIVES')]),
+    ('Feature films', [('lotus', 'Lotus Eyes (2016)'), ('ilikeme', 'I Like Me (2018)'), ('badwitch', 'Bad Witch (2021)'),
+                       ('ape', 'Ape Canyon (2021)'), ('incubation', 'Incubation (teaser)')]),
+    ('Short films', [('farmhouse', 'The Farmhouse (2023)'), ('hiking', "Don't Go Hiking (2019)")]),
+    ('Music videos', [('ghost', 'Juliet Lloyd &ndash; Ghost Light'), ('cyw', 'Juliet Lloyd &ndash; Call Your Wife'),
+                      ('lovers', 'FIVES &ndash; Lovers in Lullaby'), ('thunder', 'FIVES &ndash; Heart &amp; Thunder')]),
 ]
 
 
@@ -874,7 +842,7 @@ def films_sec(hid='h-films', h2='Feature films, shorts and music videos', alt=Fa
     groups = []
     for gname, rows in FILM_GROUPS:
         tiles = []
-        for key, t, yr in rows:
+        for key, t in rows:
             w = W[key]
             cr = w['cr']
             if key in ('ghost', 'cyw', 'lovers', 'thunder'):
@@ -885,17 +853,16 @@ def films_sec(hid='h-films', h2='Feature films, shorts and music videos', alt=Fa
           <li class="tile">
             %s
             <div class="tile-cap">
-              <h4 class="tile-t">%s<span class="yr">%s</span></h4>
+              <h4 class="tile-t">%s</h4>
               %s
             </div>
-          </li>''' % (frame(w), t, yr, '<p class="meta">%s</p>' % meta if meta else ''))
-        cols = '' if len(rows) != 2 else ' two'
+          </li>''' % (frame(w), t, '<p class="meta">%s</p>' % meta if meta else ''))
         groups.append('''
       <div class="film-group">
         <h3>%s</h3>
-        <ul class="grid%s">%s
+        <ul class="grid">%s
         </ul>
-      </div>''' % (gname, cols, ''.join(tiles)))
+      </div>''' % (gname, ''.join(tiles)))
     return f'''
   <section class="sec{' alt' if alt else ''}" id="films" aria-labelledby="{hid}">
     <div class="wrap">
@@ -908,24 +875,23 @@ def films_sec(hid='h-films', h2='Feature films, shorts and music videos', alt=Fa
 PAGES.append(dict(
     slug='film-production',
     title='Film Production Company in Baltimore | MindInMotion',
-    desc='Feature films, documentaries & narrative projects from Baltimore filmmakers. Our features have screened at festivals and are on major VOD platforms.',
+    desc='Feature films, documentaries & narrative projects from Baltimore filmmakers. Our features have screened at festivals and most are on major VOD platforms.',
     crumbs=[('Home', ''), ('Services', None), ('Film', 'film-production')],
     service='Film production',
     preload=A + 'lotus-eyes.webp',
     body=''.join([
         phero(A + 'lotus-eyes.webp', 'From Lotus Eyes: a woman and a boy at a window in soft side light.',
               'Film Production', 'Production and post-production support for features, shorts, documentaries, and music videos.',
-              [('contact.html', 'Tell Us About Your Project', True), ('#films', 'See the films', False)],
+              [('contact.html', 'Get a quote', True), ('#films', 'See the films', False)],
               crumbs=[('Home', ''), ('Services', None), ('Film', 'film-production')], pos='50% 35%'),
         copy_split(None,
-                   'MindInMotion is a full-service film production company in Baltimore, Maryland. We produce and finish shorts and feature films, and our own features have screened at festivals across the globe and are on major VOD platforms.',
+                   'MindInMotion is a full-service film production company in Baltimore, Maryland. We produce and finish shorts and feature films, and our own features have screened at festivals across the globe; most are on major VOD platforms.',
                    ["We can produce a whole film or join your crew for part of it, on productions in Baltimore and up and down the east coast.",
                     "We'll walk you through each step and tell you what your budget can cover. If you need help getting a film off the ground, or need to fill specific production roles, fill out the <a href=\"contact.html\">contact form</a>."],
                    '<div class="btns">%s</div>' % reel_btn(), 'h-intro'),
-        films_sec(alt=True),
+        films_sec(),
         quote_block('Not only are Josh and Victor an amazing creative team with a TON of knowledge on every facet of filmmaking, they&#39;re just great people.', 'Chris Perillo', 'Director'),
         slideshow('h-bts', 'Behind the Scenes', BTS_FILM),
-        related('film-production'),
         closing(),
     ])))
 
@@ -947,7 +913,7 @@ PAGES.append(dict(
     body=''.join([
         phero(A + '011A5550.webp', 'A colorist at a grading desk in a dark edit suite, three monitors glowing in front of him.',
               'Post-Production', 'Editing, color grading, VFX and motion graphics for films, commercials and corporate video.',
-              [('contact.html', 'Get a Quote', True), ('#h-work', 'See Our Work', False)],
+              [('contact.html', 'Get a quote', True), ('#h-work', 'See our work', False)],
               crumbs=[('Home', ''), ('Services', None), ('Post-Production', 'post-production')], pos='50% 45%'),
         f'''
   <section class="sec" aria-labelledby="h-post">
@@ -963,11 +929,11 @@ PAGES.append(dict(
     </div>
   </section>''',
         grid_sec('Finished In-House', 'h-work', 'We edited, colored and finished every project on this site. Here are four.',
-                 '<ul class="grid two" id="post-grid">%s</ul>' % ''.join([
-                     tile('goodmom').replace('Good Mom MD Excels TV PSA</h3>', 'Maryland Excels &quot;Good Mom&quot;</h3>').replace('Commercial &middot;', 'TV PSA &middot;'),
-                     tile('ghost'),
-                     tile('cuba').replace('Cuba, The Field Course Experience</h3>', 'Cuba Field Course</h3>').replace('Corporate &middot;', 'Documentary &middot;'),
-                     tile('checklist').replace('Commercial &middot;', 'PSA campaign &middot;')]), alt=True),
+                 '<ul class="grid" id="post-grid">%s</ul>' % ''.join([
+                     tile('goodmom', meta=False, title='Maryland Excels "Good Mom" TV PSA'),
+                     tile('ghost', meta=False),
+                     tile('cuba', meta=False, title='Cuba Field Course'),
+                     tile('checklist', meta=False)])),
         f'''
   <section class="sec" aria-labelledby="h-editor">
     <div class="wrap split">
@@ -981,22 +947,21 @@ PAGES.append(dict(
       </dl>
     </div>
   </section>''',
-        related('post-production'),
-        closing(h2='Need Post‑Production Help?', lede="Tell us about your project, what stage it's at, and when you need it finished.", btn='Get in Touch'),
+        closing(h2='Need Post‑Production Help?', lede="Tell us about your project, what stage it's at, and when you need it finished."),
     ])))
 
 # ---------------------------------------------------------------- about
 POSTERS = [('still-lotus-eyes.webp', 'Lotus Eyes feature film — two leads against an industrial skyline', 'Lotus Eyes', '2016'),
            ('poster-i-like-me.webp', 'I Like Me feature film poster', 'I Like Me', '2018'),
            ('still-bad-witch.webp', 'Bad Witch feature film — profile of a bloodied young man at dusk', 'Bad Witch', '2021'),
-           ('poster-ape-canyon.webp', 'Ape Canyon feature film poster', 'Ape Canyon', '2019'),
+           ('poster-ape-canyon.webp', 'Ape Canyon feature film poster', 'Ape Canyon', '2021'),
            ('poster-incubation.webp', 'Incubation feature film poster', 'Incubation', 'Screening at festivals')]
 
 ABOUT_BODY = ''.join([
     phero(A + '11698893_10205059638871667_6520616449341988197_o-1.webp', 'A small crew films two actors in a graffiti-covered tunnel, a boom pole overhead.',
           'About MindInMotion', "We met in a 16mm filmmaking class at Johns Hopkins. We're still making movies and videos for clients.",
-          [('contact.html', 'Get in Touch', True), ('portfolio.html', 'View Our Work', False)],
-          crumbs=[('Home', ''), ('About', 'about')], pos='50% 55%'),
+          [('contact.html', 'Get a quote', True), ('portfolio.html', 'View our work', False)],
+          crumbs=[('Home', ''), ('About', 'about')], pos='50% 18%'),
     f'''
   <section class="sec" aria-labelledby="h-story">
     <div class="wrap split">
@@ -1004,9 +969,9 @@ ABOUT_BODY = ''.join([
         <h2 id="h-story" class="h2">Our Story</h2>
         <div class="prose">
           <p>Joshua Land and Victor Fink met in a 16mm filmmaking class at Johns Hopkins University and have been collaborating ever since. Josh grew up in Baltimore; Victor in Boston. Together they co-founded MindInMotion, a video production company based in Baltimore.</p>
-          <p>Over the past decade-plus, they’ve produced features, shorts, music videos, and commercials together. Their features are "Lotus Eyes," "I Like Me," "Bad Witch," "Ape Canyon" and their latest, "Incubation."</p>
+          <p>Over the past decade-plus, they’ve produced features, shorts, music videos, and commercials together. Their features include "Lotus Eyes," "I Like Me," "Bad Witch," "Ape Canyon" and their latest, "Incubation."</p>
           <p>Alongside their own films, they make video for nonprofits, universities, public agencies and brands. They've shot documentary and fiction in Baltimore, Washington DC, the mountains of Washington state and the rainforests of Cuba.</p>
-          <p>Their feature films have screened at festivals across the world and are available on all major VOD platforms. "Incubation" is currently screening at festivals.</p>
+          <p>Their feature films have screened at festivals across the world, and most are available on all major VOD platforms. "Incubation" is currently screening at festivals.</p>
         </div>
       </div>
       <figure>
@@ -1015,7 +980,7 @@ ABOUT_BODY = ''.join([
       </figure>
     </div>
   </section>
-  <section class="sec alt" aria-labelledby="h-how">
+  <section class="sec" aria-labelledby="h-how">
     <div class="wrap split">
       <div>
         <h2 id="h-how" class="h2">How We Work</h2>
@@ -1050,16 +1015,16 @@ ABOUT_BODY = ''.join([
       </div>
     </div>
   </section>
-  <section class="sec alt" aria-labelledby="h-features">
+  <section class="sec" aria-labelledby="h-features">
     <div class="wrap">
-      <div class="sec-head"><h2 id="h-features" class="h2">Our Feature Films</h2><p class="lede">Available on all major VOD platforms. "Incubation" is screening at festivals.</p></div>
+      <div class="sec-head"><h2 id="h-features" class="h2">Our Feature Films</h2><p class="lede">Most are available on all major VOD platforms.</p></div>
       <ul class="posters">{''.join('<li><div class="poster">%s</div><h3>%s</h3><p class="meta">%s</p></li>' % (img(A + 'films/' + f, alt), t, k) for f, alt, t, k in POSTERS)}
       </ul>
       <p style="margin-top:32px"><a class="text-link" href="film-production.html#films">Plus shorts, music videos, and commercials</a></p>
     </div>
   </section>''',
     quotes_sec(),
-    logo_row().replace('class="clients"', 'class="clients" style="border-top:1px solid var(--line)"').replace('h-clients', 'h-clients-about'),
+    logo_row().replace('h-clients', 'h-clients-about'),
     closing(),
 ])
 PAGES.append(dict(
@@ -1098,17 +1063,16 @@ PAGES.append(dict(
     title='Our Work | MindInMotion Video Production',
     desc='Watch our commercials, corporate videos & films. Work for Johns Hopkins, MSDE & more.',
     crumbs=[('Home', ''), ('Portfolio', 'portfolio')],
-    preload=A + 'ghost-light-thumbnail.webp',
     body=''.join([
-        phero(A + 'ghost-light-thumbnail.webp', 'From Juliet Lloyd "Ghost Light": a singer at a grand piano in gold stage light and haze.',
+        phero(None, None,
               'Our Work', 'Our video production work: commercials, corporate videos and documentaries for clients in Baltimore, Maryland and elsewhere, plus our own feature films. Tap any frame to watch.',
-              [('contact.html', 'Tell Us About Your Project', True)], crumbs=[('Home', ''), ('Portfolio', 'portfolio')], short=True, pos='50% 40%'),
+              [], bare=True),
         feature_sec('Featured Projects', 'h-cases', [
             feature(c['key'], c['client'], c['title'], alt_override=c['alt'], body=c['text'], deliv=c['deliv'], eager=(i == 0))
             for i, c in enumerate(CASES)]),
         grid_sec('All Work', 'h-all', None,
-                 work_grid(['reel'] + ALL_WORK, 'all-grid', all_keys=['reel'] + ALL_WORK, filters=FILTERS), alt=True),
-        closing(alt=False),
+                 work_grid(['reel'] + ALL_WORK, 'all-grid', all_keys=['reel'] + ALL_WORK, filters=FILTERS)),
+        closing(),
     ])))
 
 # ---------------------------------------------------------------- contact
@@ -1126,15 +1090,12 @@ def opt(pairs, placeholder):
 
 
 CONTACT_BODY = ''.join([
-    phero(A + 'wellpoint_md_2022--612---131231.webp', 'A crew sets up a scene in a leafy park, lights and a camera among the trees.',
-          'Contact Us', "Tell us about your project and we'll get back to you with a quote.",
-          [('#h-form', 'Get a free quote', True), ('tel:+14435275181', '(443) 527-5181', False)],
-          crumbs=[('Home', ''), ('Contact', 'contact')], short=True, pos='50% 45%'),
+    phero(None, None, 'Contact Us', "Tell us about your project and we'll get back to you with a quote.", [], bare=True),
     f'''
   <section class="sec" aria-labelledby="h-form">
     <div class="wrap form-grid">
       <div>
-        <h2 id="h-form" class="h2" style="margin-bottom:32px">Get a Quote</h2>
+        <h2 id="h-form" class="vh">Get a Quote</h2>
         <form class="form" name="contact" method="POST" action="thank-you" data-netlify="true" netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="contact">
           <p class="hp"><label>Don't fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
@@ -1169,7 +1130,7 @@ CONTACT_BODY = ''.join([
       </aside>
     </div>
   </section>
-  <section class="sec alt" aria-labelledby="h-faq">
+  <section class="sec" aria-labelledby="h-faq">
     <div class="wrap">
       <div class="sec-head solo"><h2 id="h-faq" class="h2">Common Questions</h2></div>
       <div class="faq">
@@ -1184,7 +1145,6 @@ PAGES.append(dict(
     desc='Contact MindInMotion for a free video production quote. We serve Baltimore and the Mid-Atlantic region. Get a response within 24 hours.',
     crumbs=[('Home', ''), ('Contact', 'contact')],
     faq=FAQ,
-    preload=A + 'wellpoint_md_2022--612---131231.webp',
     body=CONTACT_BODY))
 
 
