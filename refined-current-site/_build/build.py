@@ -148,7 +148,7 @@ def logo_row():
     for key, name, src, mode, h in CLIENTS:
         path = make_logo(key, src, mode)
         if path:
-            items.append('<li style="--lh:%dpx">%s</li>' % (h, img(path, name)))
+            items.append('<li style="--lh:%dpx">%s</li>' % (h, img(path, name, lazy=False)))
         else:
             items.append('<li><span class="word">%s</span></li>' % e(name))
     return '''
@@ -169,15 +169,15 @@ MSDE = 'Client: Maryland State Department of Education'
 JHAAP = 'Client: Johns Hopkins Advanced Academic Programs'
 ALA = 'Client: American Lung Association'
 W = {
-    'reel': dict(cats='', label='Reel', title='2025 Demo Reel', cr='MindInMotion', img=A + 'reel-tile.webp', play='vimeo:851026180', alt='The MindInMotion wordmark over blurred city lights.'),
-    'playground': dict(cats='commercial', label='Commercial', title='Maryland Excels - Moms at the Playground', cr=DIR + ', DP: John Grove', img=A + 'Screen-Shot-2022-06-24-at-5.18.24-PM.webp', play='vimeo:723874620', alt='A girl in a yellow dress runs past two mothers sitting on a playground bench.'),
-    'goodmom': dict(cats='commercial', label='Commercial', title='Good Mom MD Excels TV PSA', cr=DIR + ', DP: Alex Guckert', img=A + 'Screen-Shot-2022-06-24-at-6.14.31-PM-2.webp', play='vimeo:794207449', alt='A woman stands in a dark bathroom at night, lit by cold blue light.'),
+    'reel': dict(cats='', label='Reel', title='Demo Reel', cr='MindInMotion', img=A + 'reel-tile.webp', play='vimeo:851026180', alt='The MindInMotion wordmark over blurred city lights.'),
+    'playground': dict(cats='commercial nonprofit', label='Commercial', title='Maryland Excels - Moms at the Playground', cr=DIR + ', DP: John Grove', img=A + 'Screen-Shot-2022-06-24-at-5.18.24-PM.webp', play='vimeo:723874620', alt='A girl in a yellow dress runs past two mothers sitting on a playground bench.'),
+    'goodmom': dict(cats='commercial nonprofit', label='Commercial', title='Good Mom MD Excels TV PSA', cr=DIR + ', DP: Alex Guckert', img=A + 'Screen-Shot-2022-06-24-at-6.14.31-PM-2.webp', play='vimeo:794207449', alt='A woman stands in a dark bathroom at night, lit by cold blue light.'),
     'ghost': dict(cats='music', label='Music video', title='Juliet Lloyd - Ghost Light', cr=DIR + ', DP: Ryan Celli', img=A + 'ghost-light-thumbnail.webp', play='youtube:lxHxaH-awBM', alt='A singer at a grand piano in gold stage light and haze.'),
-    'cyw': dict(cats='music', label='Music video', title='Juliet Lloyd - Call Your Wife', cr=DIR, img=A + 'vimeo-1937932446.webp', play='vimeo:1019535308', alt='A woman with a guitar in an overgrown field, the sun flaring behind her.'),
+    'cyw': dict(cats='music', label='Music video', title='Juliet Lloyd - Call Your Wife', cr=DIR, img=A + 'call-your-wife-masks.webp', play='vimeo:1019535308', alt='A singer at a vintage microphone between two men in white masks, red-lit fog behind.'),
     'joe': dict(cats='nonprofit corporate', label='Nonprofit', title='Infinite Legacy - Joe', cr='Client: Infinite Legacy', img=A + 'Joe-ILF.webp', pos='40% 32%', play='vimeo:836987067', alt='A man in silhouette against an evening sky, his head resting in his hand.'),
-    'checklist': dict(cats='commercial', label='Commercial', title='Maryland Excels - Checklist Moments', cr=MSDE, img=A + 'vimeo-1784674291.webp', play='vimeo:904194910', alt="A small child with curly hair holds a parent's hand."),
-    'eng': dict(cats='corporate', label='Corporate', title='Johns Hopkins Master of Science in Engineering Management', cr='Client: Johns Hopkins', img=A + 'vimeo-1864108460.webp', play='vimeo:953655351', alt='A program director in a gray jacket, interviewed in an engineering lab.'),
-    'illegal': dict(cats='commercial', label='Commercial', title='Maryland State Department of Education - Illegal Childcare', cr=DIR + ', DP: Alex Guckert', img=A + 'Screenshot-2024-01-18-at-2.33.57-PM.webp', play='vimeo:794249489', alt='A couple sits on a living room couch, one of them working on a laptop.'),
+    'checklist': dict(cats='commercial nonprofit', label='Commercial', title='Maryland Excels - Checklist Moments', cr=MSDE, img=A + 'vimeo-1784674291.webp', play='vimeo:904194910', alt="A small child with curly hair holds a parent's hand."),
+    'eng': dict(cats='corporate', label='Corporate', title='Johns Hopkins Master of Science in Engineering Management', cr='Client: Johns Hopkins', img=A + 'eng-lab.webp', play='vimeo:953655351', alt='A man in blue gloves shows a 3D-printed part to a student beside an orange 3D-printer cover.'),
+    'illegal': dict(cats='commercial nonprofit', label='Commercial', title='Maryland State Department of Education - Illegal Childcare', cr=DIR + ', DP: Alex Guckert', img=A + 'Screenshot-2024-01-18-at-2.33.57-PM.webp', play='vimeo:794249489', alt='A couple sits on a living room couch, one of them working on a laptop.'),
     'cuba': dict(cats='corporate', label='Corporate', title='Cuba, The Field Course Experience', cr=JHAAP, img=A + 'child-horse-cuba.webp', play='vimeo:376001457', alt='A boy in a yellow shirt sits on a horse beside a thatched hut under a storm sky.'),
     'pearlstone': dict(cats='nonprofit', label='Nonprofit', title='Pearlstone', cr='Client: Pearlstone', img=A + 'vimeo-1458914655.webp', play='vimeo:724562331', alt='Kids in life jackets wave from a canoe on a lake.'),
     'cdspg': dict(cats='nonprofit', label='Nonprofit', title='Chesapeake Down Syndrome Parent Group - Building Friendships', cr='Client: Chesapeake Down Syndrome Parent Group', img=A + 'cdspg-building-friendships.webp', play='youtube:G42RJGRNlGY', alt='Two boys hug on a front lawn. One wears glasses and a red sweater.'),
@@ -188,12 +188,12 @@ W = {
     'ashley': dict(cats='nonprofit', label='Nonprofit', title='Ashley & Dr. Reed - Patient-Provider Story', cr=ALA, img=A + 'ala-ashley-dr-reed.webp', pos='50% 22%', play='youtube:dxUx8L3rQos', alt='Dr. Reed and Ashley talk across a small round table in his office.'),
     'lungforce': dict(cats='nonprofit', label='Nonprofit', title='LUNG FORCE Advocacy Day 2025', cr=ALA, yt='kaDZAOgjiR8', play='youtube:kaDZAOgjiR8', alt='The video\'s title card: the American Lung Association line "When you can\'t breathe, nothing else matters" over a hazy view of Washington, DC.'),
     'ape': dict(cats='film', label='Feature film', title='Ape Canyon (feature film, 2021)', cr='Directors: Joshua Land & Victor Fink', img=A + 'ape-canyon.webp', link='https://www.amazon.com/gp/video/detail/B091SXZYT8', alt='Two young people lie in tall grass, alarmed.'),
-    'quality': dict(cats='commercial', label='Commercial', title='Because Quality Matters', cr=MSDE, img=A + 'checklist.webp', pos='50% 38%', play='vimeo:1021087594?h=2c0add4aa6', alt='Preschoolers laugh and shape clay at a classroom table.'),
+    'quality': dict(cats='commercial nonprofit', label='Commercial', title='Because Quality Matters', cr=MSDE, img=A + 'checklist.webp', pos='50% 38%', play='vimeo:1021087594?h=2c0add4aa6', alt='Preschoolers laugh and shape clay at a classroom table.'),
     'aacpd': dict(cats='commercial', label='Commercial', title='AACPD Recruitment', cr=DIR + ', DP: Alex Guckert', img=A + 'Screen-Shot-2022-06-24-at-5.40.56-PM.webp', play='vimeo:723880294', alt='A young woman at night, rim-lit, with red and blue police lights blurred behind her.'),
     'farmhouse': dict(cats='film', label='Short film', title='The Farmhouse (short film, 2023)', cr=DIR, img=A + 'farmhouse-thumbnail.webp', play='youtube:8oQABz68coc', alt='A young woman with a smear of blood on her cheek looks past an older man in a hat.'),
     'chelsea': dict(cats='nonprofit corporate', label='Nonprofit', title='Infinite Legacy - Chelsea', cr='Client: Infinite Legacy', img=A + 'chelsea-ilf.webp', pos='50% 24%', play='vimeo:836990393', alt='A mother holds her baby close, cheek to cheek, in warm light.'),
-    'wouldnt': dict(cats='commercial', label='Commercial', title="Maryland State Department of Education - You Wouldn't", cr=MSDE, img=A + 'Screen-Shot-2023-01-30-at-2.23.33-PM.webp', play='vimeo:794227360', alt="Seen from inside a patient's mouth: a man in a surgical mask and magnifying loupes raises a drill."),
-    'finding': dict(cats='commercial', label='Commercial', title='Maryland Excels - Finding Childcare', cr=DIR + ', DP: Alex Guckert', img=A + 'Screenshot-2024-01-18-at-2.36.22-PM.webp', play='vimeo:723892095?h=bef550ce0c', alt='A woman presents an on-screen graphic for the Maryland Excels program directory.'),
+    'wouldnt': dict(cats='commercial nonprofit', label='Commercial', title="Maryland State Department of Education - You Wouldn't", cr=MSDE, img=A + 'Screen-Shot-2023-01-30-at-2.23.33-PM.webp', play='vimeo:794227360', alt="Seen from inside a patient's mouth: a man in a surgical mask and magnifying loupes raises a drill."),
+    'finding': dict(cats='commercial nonprofit', label='Commercial', title='Maryland Excels - Finding Childcare', cr=DIR + ', DP: Alex Guckert', img=A + 'Screenshot-2024-01-18-at-2.36.22-PM.webp', play='vimeo:723892095?h=bef550ce0c', alt='A woman presents an on-screen graphic for the Maryland Excels program directory.'),
     'wellpoint': dict(cats='commercial', label='Commercial', title='WellPoint', cr='Client: InterPublic', img=A + 'Screen-Shot-2022-10-19-at-3.10.25-PM.webp', play='vimeo:762000615', alt='A mother and daughter read together on a bedroom floor.'),
     'ilikeme': dict(cats='film', label='Feature film', title='I Like Me (feature film, 2018)', cr='Director: Joshua Land', img=A + 'i-like-me.webp', play='youtube:RB5mmpYvsdo', alt='Two women laugh on the grass on a summer day.'),
     'hiking': dict(cats='film', label='Short film', title="Don't Go Hiking (short film, 2019)", cr=DIR, img=A + 'Screen-Shot-2022-06-24-at-6.17.35-PM-2.webp', play='vimeo:567645681', alt='A frightened young man in a backpack peers through autumn brush.'),
@@ -230,7 +230,7 @@ def frame(w, cls='tile-frame', eager=False):
     """The clickable picture: opens the player, or the film's page on Prime Video."""
     pic = img(still(w), w['alt'], lazy=not eager, pos=w.get('pos'))
     if w.get('link'):
-        return '<a class="%s" href="%s" target="_blank" rel="noopener">%s<span class="cue">Watch on Prime Video</span><span class="vh"> (opens in a new tab)</span></a>' % (
+        return '<a class="%s" href="%s" target="_blank" rel="noopener">%s<span class="cue">Prime Video</span><span class="vh"> (opens in a new tab)</span></a>' % (
             cls, e(w['link']), pic)
     return '<button class="%s" type="button" %s aria-label="Play %s">%s<span class="cue" aria-hidden="true">%s Play</span></button>' % (
         cls, play_attrs(w), e(w['title']), pic, TRI)
@@ -677,9 +677,26 @@ BTS_FILM = bts('film', [
     ('16-woods-camera.webp', 'Camera operator and crew member in the woods between takes'),
     ('17-night-shoot.webp', 'Two camera operators on a night shoot under a large light'),
 ])
-# The homepage mixes all three, as the Squarespace homepage slideshow did.
-BTS_HOME = [BTS_FILM[5], BTS_COMMERCIAL[0], BTS_FILM[11], BTS_CORPORATE[0], BTS_COMMERCIAL[9], BTS_FILM[1],
-            BTS_COMMERCIAL[12], BTS_FILM[10], BTS_CORPORATE[5], BTS_COMMERCIAL[4], BTS_FILM[16], BTS_FILM[6]]
+# The homepage uses the 17 photos the live site and Squarespace show there, in the live order.
+BTS_HOME = bts('home', [
+    ('01-crew-monitor-outdoors.webp', 'Crew gathered around a camera monitor during an outdoor shoot'),
+    ('02-dolly-track.webp', 'Camera operator on dolly track filming alongside lighting setup outdoors'),
+    ('03-hillside-boom.webp', 'Film crew hiking foggy hillside with boom mic in black-and-white'),
+    ('04-living-room-monitor.webp', 'Video monitor showing family scene being filmed in a living room'),
+    ('05-living-room-crew.webp', 'Film crew shooting family scene on couch in living room set'),
+    ('06-teal-set.webp', 'Crew filming with camera rig in a teal-lit bathroom set'),
+    ('07-bedroom-monitor.webp', "Two crew members smiling behind camera monitor in a child's bedroom"),
+    ('08-house-porch.webp', 'Film crew with boom mic capturing scene on a house porch'),
+    ('09-studio-teleprompter.webp', 'Woman filmed in studio with lighting rig, teleprompter and monitors'),
+    ('10-studio-interview.webp', 'Woman standing for interview shoot in front of green screen'),
+    ('11-forest-camera.webp', 'Two crew members checking a camera rig at the edge of a forest'),
+    ('12-color-suite.webp', 'Close-up of color grading control panel and monitors in edit suite'),
+    ('13-hotel-interview.webp', 'Woman seated for on-camera interview in a conference room setup'),
+    ('14-field-interview.webp', 'Interview set up with lights and camera in an open field'),
+    ('15-palmetto-forest.webp', 'Crew holding reflector and camera rig in palmetto forest location'),
+    ('16-wooded-set-boom.webp', 'Boom operator and crew filming an actor outdoors on a wooded set'),
+    ('17-gravel-road-scene.webp', 'Crew filming an actor with stage blood on a gravel road'),
+])
 
 SVC_COPY = {
     'commercial-video-production': ('Commercial', 'TV spots, social media ads, and branded content. We&#39;ve created campaigns for clients like Maryland State Department of Education that reach millions of viewers across broadcast and digital.', A + 'Screen-Shot-2022-06-24-at-6.14.31-PM-2.webp', 'A woman in a dark bathroom at night, from the Maryland Excels "Good Mom" spot.'),
@@ -760,6 +777,11 @@ ALL_WORK = ['quality', 'joe', 'cuba', 'ashley', 'aacpd', 'wellpoint', 'eng', 'pa
             'sydney', 'lungforce', 'pearlstone', 'cdspg', 'finding',
             'lotus', 'ilikeme', 'badwitch', 'ape', 'incubation', 'farmhouse', 'hiking',
             'ghost', 'cyw', 'lovers', 'thunder']
+# Portfolio's All Work opens as Squarespace's did; the four Featured Projects come after the client work.
+PORTFOLIO_OPEN = ['reel', 'goodmom', 'playground', 'aacpd', 'ghost', 'farmhouse']
+PORTFOLIO_FEATURED = ['quality', 'chelsea', 'cuba', 'ashley']
+_rest = [k for k in ALL_WORK if k not in PORTFOLIO_OPEN + PORTFOLIO_FEATURED]
+PORTFOLIO_ORDER = PORTFOLIO_OPEN + _rest[:_rest.index('lotus')] + PORTFOLIO_FEATURED + _rest[_rest.index('lotus'):]
 # The live homepage's featured eight, in its order (its ninth tile, the reel, is the hero button here).
 HOME_ALL = ['eng', 'cuba', 'checklist', 'aacpd', 'ashley', 'joe', 'chelsea', 'packard']
 HOME_TITLES = {'eng': 'Johns Hopkins Engineering Management', 'cuba': 'Cuba Field Course Experience'}
@@ -882,19 +904,13 @@ def films_sec(hid='h-films', h2='Feature films, shorts and music videos', alt=Fa
         tiles = []
         for key, t in rows:
             w = W[key]
-            cr = w['cr']
-            if key in ('ghost', 'cyw', 'lovers', 'thunder'):
-                meta = e(cr) if key != 'thunder' else ''
-            else:
-                meta = e(cr)
             tiles.append('''
           <li class="tile">
             %s
             <div class="tile-cap">
               <h4 class="tile-t">%s</h4>
-              %s
             </div>
-          </li>''' % (frame(w), t, '<p class="meta">%s</p>' % meta if meta else ''))
+          </li>''' % (frame(w), t))
         groups.append('''
       <div class="film-group">
         <h3>%s</h3>
@@ -1115,7 +1131,7 @@ PAGES.append(dict(
             feature(c['key'], c['client'], c['title'], alt_override=c['alt'], body=c['text'], deliv=c['deliv'], eager=(i == 0))
             for i, c in enumerate(CASES)]),
         grid_sec('All Work', 'h-all', None,
-                 work_grid(['reel'] + ALL_WORK, 'all-grid', all_keys=['reel'] + ALL_WORK, filters=FILTERS)),
+                 work_grid(PORTFOLIO_ORDER, 'all-grid', all_keys=PORTFOLIO_ORDER, filters=FILTERS)),
         closing(btn='Start Your Project'),
     ])))
 
@@ -1161,7 +1177,7 @@ CONTACT_BODY = ''.join([
       <aside class="side" aria-labelledby="h-touch">
         <h2 id="h-touch">Get In Touch</h2>
         <dl class="contact-list">
-          <div><dt>Baltimore HQ</dt><dd>3617 Chestnut Ave<br>Baltimore, MD 21211<br><span style="color:var(--bone-3)">Serving Maryland, DC &amp; the <span class="nw">Mid-Atlantic</span></span></dd></div>
+          <div><dt>Baltimore</dt><dd>3617 Chestnut Ave<br>Baltimore, MD 21211<br><span style="color:var(--bone-3)">Serving Maryland, DC &amp; the <span class="nw">Mid-Atlantic</span></span></dd></div>
           <div><dt>Phone</dt><dd><a href="tel:+14435275181">(443) 527-5181</a></dd></div>
           <div><dt>Email</dt><dd><a href="mailto:mindinmotionpro@gmail.com">mindinmotionpro@gmail.com</a></dd></div>
         </dl>
