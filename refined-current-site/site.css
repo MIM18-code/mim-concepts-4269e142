@@ -152,7 +152,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .phero { position: relative; min-height: clamp(460px, 68vh, 760px); display: flex; align-items: flex-end; overflow: hidden; background: #000; }
 .phero.short { min-height: clamp(380px, 52vh, 560px); }
 .phero > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.phero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(13, 12, 10, .94) 0%, rgba(13, 12, 10, .6) 38%, rgba(13, 12, 10, .12) 72%, rgba(13, 12, 10, .3) 100%); }
+.phero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(13, 12, 10, .55) 0%, rgba(13, 12, 10, .25) 45%, rgba(13, 12, 10, 0) 70%), linear-gradient(to top, rgba(13, 12, 10, .94) 0%, rgba(13, 12, 10, .62) 40%, rgba(13, 12, 10, .2) 72%, rgba(13, 12, 10, .3) 100%); }
 .phero .wrap { position: relative; z-index: 2; padding-block: 120px clamp(40px, 6vh, 72px); }
 .crumbs { display: flex; flex-wrap: wrap; gap: 8px; font-family: var(--sans); font-size: 14px; color: var(--bone-2); margin-bottom: 18px; }
 .crumbs li + li::before { content: '/'; margin-right: 8px; color: var(--bone-3); }
