@@ -37,14 +37,13 @@ The live site's stats row ("100+ Clients Served / 2012 Founded / 1.8M+ Video Vie
 | Where | Old | New | Why |
 |---|---|---|---|
 | Portfolio and Film page, About posters | Bad Witch (feature film, **2018**) | Bad Witch (feature film, **2021**) | Filmed in late 2018, fully released in 2021. |
-| About page, Our Story | Their features are "Lotus Eyes," "I Like Me," "Bad Witch," "Ape Canyon" and their latest, "Incubation." | Their features are **"The Summer Before,"** "Lotus Eyes," "I Like Me," "Bad Witch," "Ape Canyon" and their latest, "Incubation." | Six features, including The Summer Before, which was missing. No count is stated anywhere. |
 | About page, Josh's title | Co-Founder / Director / Editor | Co-Founder / Director / **Cinematographer** / Editor | Josh and Victor are both cinematographers. |
 | About page, Victor's bio | He's **the cinematographer** on MindInMotion's features and on dozens of commercial and corporate projects. | He **shoots MindInMotion's features with Josh**, along with dozens of commercial and corporate projects. | Same: the old line said only Victor shot the features. |
 | Portfolio, Cuba case study | Johns Hopkins SAIS / Johns Hopkins School of Advanced International Studies; "its international studies programs" | Johns Hopkins Advanced Academic Programs; "its international programs" | The client is AAP (Vimeo title and Squarespace caption). Matches the live fix. |
 | Portfolio, engineering video title | Johns Hopkins Masters in Science and Engineering Management | Johns Hopkins Master of Science in Engineering Management | The program's real name (Vimeo title). Matches the live fix. |
 | Post-Production page, Good Mom tile | Commercial spot | TV PSA | Squarespace calls it a TV PSA. |
 
-Checked and unchanged: Incubation is "screening at festivals" everywhere; the Maryland Excels "instead of casting actors" line is true (real families); the 2019 color reel stays off; nothing says how many years they've known each other.
+Checked and unchanged: the About page still names "Lotus Eyes," "I Like Me," "Bad Witch," "Ape Canyon" and "Incubation" and gives no count; Joshua doesn't want The Summer Before highlighted, so it isn't named. Incubation is "screening at festivals" everywhere; the Maryland Excels "instead of casting actors" line is true (real families); the 2019 color reel stays off; nothing says how many years they've known each other.
 
 ## 5. Headings and search terms
 

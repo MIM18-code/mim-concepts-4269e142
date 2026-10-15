@@ -1005,7 +1005,7 @@ ABOUT_BODY = ''.join([
         <h2 id="h-story" class="h2">Our Story</h2>
         <div class="prose">
           <p>Joshua Land and Victor Fink met in a 16mm filmmaking class at Johns Hopkins University and have been collaborating ever since. Josh grew up in Baltimore; Victor in Boston. Together they co-founded MindInMotion, a video production company based in Baltimore.</p>
-          <p>Over the past decade-plus, they’ve produced features, shorts, music videos, and commercials together. Their features are "The Summer Before," "Lotus Eyes," "I Like Me," "Bad Witch," "Ape Canyon" and their latest, "Incubation."</p>
+          <p>Over the past decade-plus, they’ve produced features, shorts, music videos, and commercials together. Their features are "Lotus Eyes," "I Like Me," "Bad Witch," "Ape Canyon" and their latest, "Incubation."</p>
           <p>Alongside their own films, they make video for nonprofits, universities, public agencies and brands. They've shot documentary and fiction in Baltimore, Washington DC, the mountains of Washington state and the rainforests of Cuba.</p>
           <p>Their feature films have screened at festivals across the world and are available on all major VOD platforms. "Incubation" is currently screening at festivals.</p>
         </div>
