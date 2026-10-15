@@ -624,7 +624,6 @@ def slideshow(hid, title, folder_or_list, intro=None, interval=5000):
         <div class="show-ctl">
           <button class="prev" type="button" aria-label="Previous photo"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M9 2L4 7l5 5"/></svg></button>
           <button class="next" type="button" aria-label="Next photo"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M5 2l5 5-5 5"/></svg></button>
-          <button class="pp" type="button" aria-label="Pause slideshow"></button>
         </div>
       </div>
     </div>

@@ -123,13 +123,12 @@
 
   /* ----- slideshows: advance on their own every few seconds.
      Pause on hover or keyboard focus, when off screen or the tab is hidden, and when the visitor
-     asks for reduced motion. The pause button stops it for good. ----- */
+     asks for reduced motion. No pause button (Joshua, 2026-10-15). ----- */
   d.querySelectorAll('.show').forEach(function (show) {
     var slides = [].slice.call(show.querySelectorAll('.show-stage figure'));
     if (slides.length < 2) return;
     var n = show.querySelector('.show-n');
     var cap = show.querySelector('.show-cap');
-    var pp = show.querySelector('.pp');
     var bar = show.querySelector('.show-progress');
     var dur = parseInt(show.getAttribute('data-interval') || '5000', 10);
     show.style.setProperty('--dur', dur + 'ms');
@@ -158,20 +157,8 @@
       restartBar();
       if (running()) timer = setTimeout(function () { go(1); }, dur);
     }
-    function setPP() {
-      if (!pp) return;
-      pp.setAttribute('aria-label', stopped ? 'Play slideshow' : 'Pause slideshow');
-      pp.innerHTML = stopped
-        ? '<svg viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11l9-5.5z"/></svg>'
-        : '<svg viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5h3v11H3zM8 1.5h3v11H8z"/></svg>';
-    }
     show.querySelector('.prev').addEventListener('click', function () { go(-1); });
     show.querySelector('.next').addEventListener('click', function () { go(1); });
-    if (pp) pp.addEventListener('click', function () {
-      stopped = !stopped;
-      if (!stopped) { focused = false; hovering = false; }  /* an explicit Play wins over the pause-on-focus rule */
-      setPP(); schedule();
-    });
     show.addEventListener('mouseenter', function () { hovering = true; schedule(); });
     show.addEventListener('mouseleave', function () { hovering = false; schedule(); });
     show.addEventListener('focusin', function (e) {
@@ -192,8 +179,7 @@
       new IntersectionObserver(function (en) { visible = en[0].isIntersecting; schedule(); }, { threshold: .25 }).observe(show);
     }
     d.addEventListener('visibilitychange', schedule);
-    if (reduce.addEventListener) reduce.addEventListener('change', function () { stopped = reduce.matches; setPP(); schedule(); });
-    setPP();
+    if (reduce.addEventListener) reduce.addEventListener('change', function () { stopped = reduce.matches; schedule(); });
     paint();
     schedule();
   });
