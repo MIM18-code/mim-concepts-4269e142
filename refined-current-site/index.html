@@ -14,13 +14,19 @@
 <meta property="og:description" content="Baltimore film and video production since 2012. Donor films, patient stories, PSAs and recruitment videos for nonprofits, universities and public agencies.">
 <meta property="og:url" content="https://mindinmotion.tv/">
 <meta property="og:image" content="https://mindinmotion.tv/images/og-share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/jpeg">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Baltimore video production for nonprofits | MindInMotion">
+<meta name="twitter:description" content="Baltimore film and video production since 2012. Donor films, patient stories, PSAs and recruitment videos for nonprofits, universities and public agencies.">
+<meta name="twitter:image" content="https://mindinmotion.tv/images/og-share.jpg">
 <meta name="theme-color" content="#000000">
 <link rel="icon" type="image/png" href="../assets/img/mindinmotion-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;700&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="img/hero-poster-1920.webp" fetchpriority="high">
+<link rel="preload" as="image" href="img/hero-poster-1920.webp" imagesrcset="img/hero-poster-960.webp 960w, img/hero-poster-1920.webp 1920w" imagesizes="100vw" fetchpriority="high">
 <link rel="stylesheet" href="site.css">
 <script type="application/ld+json">
 {
@@ -43,11 +49,13 @@
    "founder": [
     {
      "@type": "Person",
-     "name": "Joshua Land"
+     "name": "Joshua Land",
+     "sameAs": "https://www.imdb.com/name/nm4644677/"
     },
     {
      "@type": "Person",
-     "name": "Victor Fink"
+     "name": "Victor Fink",
+     "sameAs": "https://www.imdb.com/name/nm5227903/"
     }
    ],
    "address": {
@@ -69,14 +77,21 @@
     "Washington, DC",
     "Mid-Atlantic"
    ],
+   "hasMap": "https://g.page/r/Cebm122V_KOAEAE",
+   "priceRange": "$$",
+   "knowsAbout": [
+    "Video Production",
+    "Commercial Production",
+    "Corporate Video",
+    "Film Production",
+    "Post-Production"
+   ],
    "sameAs": [
     "https://www.instagram.com/mindinmotionpro",
     "https://vimeo.com/mindinmotionpro",
     "https://www.youtube.com/@mindinmotionpro",
     "https://www.facebook.com/mindinmotionpro",
-    "https://www.linkedin.com/company/mindinmotion",
-    "https://www.imdb.com/name/nm4644677/",
-    "https://www.imdb.com/name/nm5227903/"
+    "https://www.linkedin.com/company/mindinmotion"
    ]
   },
   {
@@ -133,6 +148,7 @@
 <main id="main">
 
   <section class="hero" aria-labelledby="h-hero">
+    <button class="hero-pp" type="button" aria-label="Pause background video" hidden></button>
     <div class="hero-media" data-bg="848454220">
       <img src="img/hero-poster-1920.webp" srcset="img/hero-poster-960.webp 960w, img/hero-poster-1920.webp 1920w" sizes="100vw" width="1920" height="1080" alt="" fetchpriority="high">
     </div>
@@ -164,7 +180,7 @@
   <section class="sec" aria-labelledby="h-work">
     <div class="wrap">
       <div class="sec-head"><h2 id="h-work" class="h2">Selected work</h2><p class="lede">Donor stories, patient interviews, recruitment films and a statewide childcare campaign.</p></div>
-      <div class="filters ui" data-filters="home-grid" role="group" aria-label="Filter the work"><button type="button" data-cat="all" aria-pressed="true">All</button><button type="button" data-cat="commercial" aria-pressed="false">Commercial</button><button type="button" data-cat="corporate" aria-pressed="false">Corporate</button><button type="button" data-cat="nonprofit" aria-pressed="false">Nonprofit</button><button type="button" data-cat="film" aria-pressed="false">Film &amp; music videos</button></div><p class="vh filter-status" role="status"></p><ul class="grid" id="home-grid">
+      <div class="filters ui" data-filters="home-grid" role="group" aria-label="Filter the work"><button type="button" data-cat="all" aria-pressed="true">Featured</button><button type="button" data-cat="commercial" aria-pressed="false">Commercial</button><button type="button" data-cat="corporate" aria-pressed="false">Corporate</button><button type="button" data-cat="nonprofit" aria-pressed="false">Nonprofit</button><button type="button" data-cat="film" aria-pressed="false">Film &amp; music videos</button></div><p class="vh filter-status" role="status"></p><ul class="grid" id="home-grid">
         <li class="tile" data-cats="commercial" data-all>
           <button class="tile-frame" type="button" data-vimeo="1021087594?h=2c0add4aa6" data-title="Because Quality Matters" aria-label="Play Because Quality Matters"><img src="../assets/img/checklist.webp" width="2500" height="1406" alt="Preschoolers laugh and shape clay at a classroom table." loading="lazy" decoding="async" style="object-position:50% 38%"><span class="cue" aria-hidden="true"><svg class="tri" viewBox="0 0 10 12" aria-hidden="true"><path d="M0 0v12l10-6z"/></svg> Play</span></button>
           <div class="tile-cap">
@@ -391,17 +407,17 @@
       <ul class="svcs">
         <li class="svc">
           <a class="svc-img" href="commercial-video-production.html" tabindex="-1" aria-hidden="true"><img src="../assets/img/Screen-Shot-2022-06-24-at-6.14.31-PM-2.webp" width="2500" height="1406" alt="" loading="lazy" decoding="async"></a>
-          <h3><a href="commercial-video-production.html">Commercial</a></h3>
+          <h3><a href="commercial-video-production.html">Commercial Video Production</a></h3>
           <p>TV spots and social cuts. Our Maryland Excels PSAs aired statewide, and we made a WellPoint spot for InterPublic.</p>
         </li>
         <li class="svc">
           <a class="svc-img" href="corporate-video-production.html" tabindex="-1" aria-hidden="true"><img src="../assets/img/chelsea-ilf.webp" width="1920" height="1080" alt="" loading="lazy" decoding="async"></a>
-          <h3><a href="corporate-video-production.html">Corporate</a></h3>
+          <h3><a href="corporate-video-production.html">Corporate Video Production</a></h3>
           <p>Videos that recruit, train a team or show donors where their money goes, for universities, hospitals and nonprofits.</p>
         </li>
         <li class="svc">
           <a class="svc-img" href="film-production.html" tabindex="-1" aria-hidden="true"><img src="../assets/img/bad-witch.webp" width="1920" height="1081" alt="" loading="lazy" decoding="async"></a>
-          <h3><a href="film-production.html">Film</a></h3>
+          <h3><a href="film-production.html">Film Production</a></h3>
           <p>Features, shorts, documentaries and music videos. We can produce the whole film or join your crew. Tell us your budget and we'll talk through what's possible.</p>
         </li>
         <li class="svc">
@@ -419,7 +435,7 @@
     </div>
     <div class="show" data-interval="5000" role="region" aria-roledescription="carousel" aria-label="Behind the scenes photos">
       <div class="show-stage">
-        <figure class="on"><img src="../assets/img/bts/film/06-tunnel-scene.webp" width="2000" height="1672" alt="Crew filming a scene in a graffiti-covered tunnel" decoding="async"></figure><figure><img src="../assets/img/bts/commercial/01-dolly-track.webp" width="2000" height="1500" alt="Camera operator on dolly track filming alongside lighting setup outdoors" decoding="async" loading="lazy"></figure><figure><img data-src="../assets/img/bts/film/12-lakeside-camera.webp" width="2000" height="1325" alt="Two filmmakers checking a shot beside a lake" decoding="async"></figure><figure><img data-src="../assets/img/bts/corporate/01-studio-teleprompter.webp" width="2000" height="1500" alt="Woman filmed in studio with lighting rig, teleprompter and monitors" decoding="async"></figure><figure><img data-src="../assets/img/bts/commercial/10-bedroom-monitor.webp" width="2000" height="1334" alt="Two crew members smiling behind a camera monitor in a child&#x27;s bedroom" decoding="async"></figure><figure><img data-src="../assets/img/bts/film/02-forest-scene.webp" width="2000" height="1500" alt="Camera operator filming two actors sitting in a palmetto forest" decoding="async"></figure><figure><img data-src="../assets/img/bts/commercial/13-studio-officers.webp" width="2000" height="1334" alt="Crew filming a uniformed officer on a dark studio set" decoding="async"></figure><figure><img data-src="../assets/img/bts/film/11-hillside-camera.webp" width="2000" height="1334" alt="Camera operator filming from a foggy hillside" decoding="async"></figure><figure><img data-src="../assets/img/bts/corporate/06-ballroom-interview.webp" width="2000" height="1500" alt="Multi-camera interview setup with a woman seated in a hotel ballroom" decoding="async"></figure><figure><img data-src="../assets/img/bts/commercial/05-park-boom.webp" width="2000" height="1334" alt="Boom operator and camera operator filming an actor in a park" decoding="async"></figure><figure><img data-src="../assets/img/bts/film/17-night-shoot.webp" width="1152" height="1536" alt="Two camera operators on a night shoot under a large light" decoding="async"></figure><figure><img data-src="../assets/img/bts/film/07-guitar-field.webp" width="900" height="1600" alt="Crew filming a woman playing guitar in a grassy field" decoding="async"></figure>
+        <figure class="on"><img src="../assets/img/bts/film/06-tunnel-scene.webp" width="2000" height="1672" alt="Crew filming a scene in a graffiti-covered tunnel" decoding="async"></figure><figure><img src="../assets/img/bts/commercial/01-dolly-track.webp" width="2000" height="1500" alt="Camera operator on dolly track filming alongside lighting setup outdoors" decoding="async" loading="lazy"></figure><figure><img data-src="../assets/img/bts/film/12-lakeside-camera.webp" width="2000" height="1325" alt="Two filmmakers checking a shot beside a lake" decoding="async"></figure><figure><img data-src="../assets/img/bts/corporate/01-studio-teleprompter.webp" width="2000" height="1500" alt="Woman filmed in studio with lighting rig, teleprompter and monitors" decoding="async"></figure><figure><img data-src="../assets/img/bts/commercial/10-bedroom-monitor.webp" width="2000" height="1334" alt="Two crew members smiling behind a camera monitor in a child&#x27;s bedroom" decoding="async"></figure><figure><img data-src="../assets/img/bts/film/02-forest-scene.webp" width="2000" height="1500" alt="Camera operator filming two actors sitting in a palmetto forest" decoding="async"></figure><figure><img data-src="../assets/img/bts/commercial/13-studio-officers.webp" width="2000" height="1334" alt="Crew filming a uniformed officer on a dark studio set" decoding="async"></figure><figure><img data-src="../assets/img/bts/film/11-hillside-camera.webp" width="2000" height="1334" alt="Camera operator filming from a foggy hillside" decoding="async"></figure><figure><img data-src="../assets/img/bts/corporate/06-ballroom-interview.webp" width="2000" height="1500" alt="Multi-camera interview setup with a woman seated in a hotel ballroom" decoding="async"></figure><figure><img data-src="../assets/img/bts/commercial/05-park-boom.webp" width="2000" height="1334" alt="Boom operator and camera operator filming an actor in a park" decoding="async"></figure><figure class="tall"><img data-src="../assets/img/bts/film/17-night-shoot.webp" width="1152" height="1536" alt="Two camera operators on a night shoot under a large light" decoding="async"></figure><figure class="tall"><img data-src="../assets/img/bts/film/07-guitar-field.webp" width="900" height="1600" alt="Crew filming a woman playing guitar in a grassy field" decoding="async"></figure>
       </div>
       <div class="show-bar">
         <div class="show-ctl">

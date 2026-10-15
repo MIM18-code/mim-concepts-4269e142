@@ -282,16 +282,21 @@ BUSINESS = {
     'telephone': '+1-443-527-5181',
     'email': 'mindinmotionpro@gmail.com',
     'foundingDate': '2012',
-    'founder': [{'@type': 'Person', 'name': 'Joshua Land'}, {'@type': 'Person', 'name': 'Victor Fink'}],
+    'founder': [{'@type': 'Person', 'name': 'Joshua Land', 'sameAs': 'https://www.imdb.com/name/nm4644677/'},
+                {'@type': 'Person', 'name': 'Victor Fink', 'sameAs': 'https://www.imdb.com/name/nm5227903/'}],
     'address': {'@type': 'PostalAddress', 'streetAddress': '3617 Chestnut Ave', 'addressLocality': 'Baltimore',
                 'addressRegion': 'MD', 'postalCode': '21211', 'addressCountry': 'US'},
     'geo': {'@type': 'GeoCoordinates', 'latitude': 39.3317084, 'longitude': -76.6293025},
     'areaServed': ['Baltimore', 'Maryland', 'Washington, DC', 'Mid-Atlantic'],
+    'hasMap': 'https://g.page/r/Cebm122V_KOAEAE',
+    'priceRange': '$$',
+    'knowsAbout': ['Video Production', 'Commercial Production', 'Corporate Video', 'Film Production', 'Post-Production'],
     'sameAs': ['https://www.instagram.com/mindinmotionpro', 'https://vimeo.com/mindinmotionpro',
                'https://www.youtube.com/@mindinmotionpro', 'https://www.facebook.com/mindinmotionpro',
-               'https://www.linkedin.com/company/mindinmotion', 'https://www.imdb.com/name/nm4644677/',
-               'https://www.imdb.com/name/nm5227903/'],
+               'https://www.linkedin.com/company/mindinmotion'],
 }
+# The live Portfolio's video list for search (VideoObject), carried over as it is on mindinmotion.tv.
+PORTFOLIO_VIDEOS = json.loads((HERE / 'portfolio-videos.json').read_text())
 
 
 def ld(page):
@@ -308,6 +313,8 @@ def ld(page):
     if page.get('service'):
         graph.append({'@type': 'Service', 'serviceType': page['service'], 'provider': {'@id': LIVE + '/#business'},
                       'areaServed': BUSINESS['areaServed'], 'url': url})
+    if page.get('videos'):
+        graph.append(page['videos'])
     if page.get('faq'):
         graph.append({'@type': 'FAQPage', 'mainEntity': [
             {'@type': 'Question', 'name': q, 'acceptedAnswer': {'@type': 'Answer', 'text': re.sub('<[^>]+>', '', a)}}
@@ -412,7 +419,8 @@ def page_html(page, body):
     canon = LIVE + ('/' if slug == 'index' else '/' + slug)
     preload = ''
     if page.get('preload'):
-        preload = '<link rel="preload" as="image" href="%s" fetchpriority="high">' % page['preload']
+        preload = '<link rel="preload" as="image" href="%s"%s fetchpriority="high">' % (
+            page['preload'], ' imagesrcset="%s" imagesizes="100vw"' % page['preload_srcset'] if page.get('preload_srcset') else '')
     return f'''<!doctype html>
 <html lang="en">
 <head>
@@ -429,7 +437,13 @@ def page_html(page, body):
 <meta property="og:description" content="{e(page['desc'])}">
 <meta property="og:url" content="{canon}">
 <meta property="og:image" content="{LIVE}/images/og-share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/jpeg">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{e(page['title'])}">
+<meta name="twitter:description" content="{e(page['desc'])}">
+<meta name="twitter:image" content="{LIVE}/images/og-share.jpg">
 <meta name="theme-color" content="#000000">
 <link rel="icon" type="image/png" href="{A}mindinmotion-logo.png">
 {FONTS}
@@ -577,7 +591,8 @@ def slideshow(hid, title, folder_or_list, intro=None, interval=5000):
             im = '<img src="%s" width="%d" height="%d" alt="%s" decoding="async"%s>' % (src, w, h, e(alt), '' if k == 0 else ' loading="lazy"')
         else:
             im = '<img data-src="%s" width="%d" height="%d" alt="%s" decoding="async">' % (src, w, h, e(alt))
-        figs.append('<figure%s>%s</figure>' % (' class="on"' if k == 0 else '', im))
+        cls = ' '.join(c for c in ('on' if k == 0 else '', 'tall' if h > w else '') if c)
+        figs.append('<figure%s>%s</figure>' % (' class="%s"' % cls if cls else '', im))
     head = ''
     if title:
         it = '<p class="lede">%s</p>' % intro if intro else ''
@@ -654,9 +669,9 @@ BTS_HOME = [BTS_FILM[5], BTS_COMMERCIAL[0], BTS_FILM[11], BTS_CORPORATE[0], BTS_
             BTS_COMMERCIAL[12], BTS_FILM[10], BTS_CORPORATE[5], BTS_COMMERCIAL[4], BTS_FILM[16], BTS_FILM[6]]
 
 SVC_COPY = {
-    'commercial-video-production': ('Commercial', 'TV spots and social cuts. Our Maryland Excels PSAs aired statewide, and we made a WellPoint spot for InterPublic.', A + 'Screen-Shot-2022-06-24-at-6.14.31-PM-2.webp', 'A woman in a dark bathroom at night, from the Maryland Excels "Good Mom" spot.'),
-    'corporate-video-production': ('Corporate', 'Videos that recruit, train a team or show donors where their money goes, for universities, hospitals and nonprofits.', A + 'chelsea-ilf.webp', 'A mother holds her baby close, from an Infinite Legacy testimonial.'),
-    'film-production': ('Film', "Features, shorts, documentaries and music videos. We can produce the whole film or join your crew. Tell us your budget and we'll talk through what's possible.", A + 'bad-witch.webp', 'A young man at dusk in hard orange light, from Bad Witch.'),
+    'commercial-video-production': ('Commercial Video Production', 'TV spots and social cuts. Our Maryland Excels PSAs aired statewide, and we made a WellPoint spot for InterPublic.', A + 'Screen-Shot-2022-06-24-at-6.14.31-PM-2.webp', 'A woman in a dark bathroom at night, from the Maryland Excels "Good Mom" spot.'),
+    'corporate-video-production': ('Corporate Video Production', 'Videos that recruit, train a team or show donors where their money goes, for universities, hospitals and nonprofits.', A + 'chelsea-ilf.webp', 'A mother holds her baby close, from an Infinite Legacy testimonial.'),
+    'film-production': ('Film Production', "Features, shorts, documentaries and music videos. We can produce the whole film or join your crew. Tell us your budget and we'll talk through what's possible.", A + 'bad-witch.webp', 'A young man at dusk in hard orange light, from Bad Witch.'),
     'post-production': ('Post-Production', 'Editing, color grading, VFX and motion graphics. We can handle the full post workflow or pick up a project already in progress.', A + '011A1257-2.webp', 'A color grading panel and keyboard on a wooden desk, seen from above.'),
 }
 
@@ -736,6 +751,7 @@ HOME_ALL = ['quality', 'joe', 'cuba', 'ashley', 'aacpd', 'wellpoint', 'eng', 'pa
 # ---------------------------------------------------------------- home
 HOME_BODY = f'''
   <section class="hero" aria-labelledby="h-hero">
+    <button class="hero-pp" type="button" aria-label="Pause background video" hidden></button>
     <div class="hero-media" data-bg="848454220">
       <img src="{L}hero-poster-1920.webp" srcset="{L}hero-poster-960.webp 960w, {L}hero-poster-1920.webp 1920w" sizes="100vw" width="1920" height="1080" alt="" fetchpriority="high">
     </div>
@@ -747,7 +763,7 @@ HOME_BODY = f'''
   </section>
 {logo_row()}
 {grid_sec('Selected work', 'h-work', 'Donor stories, patient interviews, recruitment films and a statewide childcare campaign.',
-          work_grid(ALL_WORK, 'home-grid', all_keys=HOME_ALL, filters=FILTERS, meta=False,
+          work_grid(ALL_WORK, 'home-grid', all_keys=HOME_ALL, filters=[('all', 'Featured')] + FILTERS[1:], meta=False,
                     foot='<a class="text-link" href="portfolio.html">See all projects</a>'))}
 {services_sec()}
 {slideshow('h-bts', 'Behind the scenes', BTS_HOME)}
@@ -776,6 +792,7 @@ PAGES.append(dict(
     title='Baltimore video production for nonprofits | MindInMotion',
     desc='Baltimore film and video production since 2012. Donor films, patient stories, PSAs and recruitment videos for nonprofits, universities and public agencies.',
     preload=L + 'hero-poster-1920.webp',
+    preload_srcset=L + 'hero-poster-960.webp 960w, ' + L + 'hero-poster-1920.webp 1920w',
     body=HOME_BODY))
 
 # ---------------------------------------------------------------- commercial
@@ -1063,6 +1080,7 @@ PAGES.append(dict(
     title='Our Work | MindInMotion Video Production',
     desc='Watch our commercials, corporate videos & films. Work for Johns Hopkins, MSDE & more.',
     crumbs=[('Home', ''), ('Portfolio', 'portfolio')],
+    videos=PORTFOLIO_VIDEOS,
     body=''.join([
         phero(None, None,
               'Our Work', 'Our video production work: commercials, corporate videos and documentaries for clients in Baltimore, Maryland and elsewhere, plus our own feature films. Tap any frame to watch.',

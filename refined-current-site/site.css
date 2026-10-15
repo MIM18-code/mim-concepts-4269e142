@@ -13,6 +13,7 @@
   --bone-3: #9a9285;
   --line: rgba(236, 230, 218, .14);
   --line-2: rgba(236, 230, 218, .32);
+  --field: rgba(236, 230, 218, .45);   /* form field borders: 3:1 or better against black */
 
   --sans: 'Libre Franklin', 'Franklin Gothic Medium', 'Helvetica Neue', Arial, sans-serif;
 
@@ -33,7 +34,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { background: var(--ink); -webkit-text-size-adjust: 100%; scroll-padding-top: calc(var(--hdr) + 16px); font-synthesis: none; }
+html { background: var(--ink); -webkit-text-size-adjust: 100%; -webkit-tap-highlight-color: transparent; scroll-padding-top: calc(var(--hdr) + 16px); font-synthesis: none; }
 body {
   margin: 0; background: var(--ink); color: var(--bone);
   font-family: var(--sans); font-size: var(--t-body); font-weight: 400; line-height: 1.5; letter-spacing: -.01em;
@@ -96,7 +97,7 @@ main > :last-child { padding-bottom: var(--sec); }
 .hdr.over:not(.scrolled) .nav a, .hdr.over:not(.scrolled) .nav .dd-btn, .hdr.over:not(.scrolled) .hdr-tel { color: var(--bone); text-shadow: 0 1px 12px rgba(0, 0, 0, .5); }
 .hdr .wrap { height: 100%; display: flex; align-items: center; gap: 32px; }
 .hdr nav { margin-left: auto; }
-.brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; font-size: var(--t-s); font-weight: 700; letter-spacing: -.015em; white-space: nowrap; }
+.brand { display: inline-flex; align-items: center; gap: 12px; min-height: 44px; text-decoration: none; font-size: var(--t-s); font-weight: 700; letter-spacing: -.015em; white-space: nowrap; }
 .brand img { width: 30px; height: 30px; }
 .nav { display: flex; align-items: center; gap: 28px; font-size: var(--t-s); }
 .nav > li { position: relative; }
@@ -118,7 +119,7 @@ main > :last-child { padding-bottom: var(--sec); }
 .mnav { position: fixed; inset: 0; z-index: 60; background: var(--ink); display: none; flex-direction: column; overflow-y: auto; }
 .mnav.open { display: flex; }
 .mnav-top { height: var(--hdr); display: flex; align-items: center; justify-content: space-between; padding-inline: var(--gut); border-bottom: 1px solid var(--line); }
-.mnav-top button { font-size: var(--t-s); font-weight: 700; min-height: 44px; }
+.mnav-top button { font-size: var(--t-s); font-weight: 700; min-height: 44px; min-width: 44px; padding: 0 8px; margin-right: -8px; }
 .mnav ul { padding: 16px var(--gut) 0; }
 .mnav li a { display: block; padding: 12px 0; font-size: var(--t-l); font-weight: 700; line-height: 1.15; letter-spacing: -.03em; text-decoration: none; border-bottom: 1px solid var(--line); }
 .mnav-label { padding: 20px 0 4px; font-size: var(--t-s); color: var(--bone-3); }
@@ -126,7 +127,7 @@ main > :last-child { padding-bottom: var(--sec); }
 .mnav a[aria-current="page"] { text-decoration: underline; text-decoration-color: var(--line-2); text-underline-offset: .2em; }
 .mnav-foot { margin-top: auto; padding: 28px var(--gut) 36px; display: grid; gap: 14px; }
 .mnav-foot .btn { width: 100%; }
-.mnav-foot a.tel { font-size: var(--t-s); }
+.mnav-foot a.tel { font-size: var(--t-s); display: flex; align-items: center; min-height: 44px; }
 
 @media (max-width: 1080px) {
   .hdr nav, .hdr-tel, .hdr .btn { display: none; }
@@ -147,6 +148,9 @@ main > :last-child { padding-bottom: var(--sec); }
 .hero h1 { font-size: var(--t-hero); line-height: 1; letter-spacing: -.045em; max-width: 11em; }
 .hero .lede { margin-top: 24px; color: var(--bone); }
 .hero .btns { margin-top: 32px; }
+.hero-pp { position: absolute; top: calc(var(--hdr) + 8px); right: var(--gut); z-index: 3; width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; color: var(--bone-2); background: rgba(0, 0, 0, .5); }
+.hero-pp:hover { color: var(--bone); }
+.hero-pp svg { width: 14px; height: 14px; fill: currentColor; }
 .hero h1, .hero .lede, .phero h1, .phero .lede { text-shadow: 0 1px 2px rgba(0, 0, 0, .35); }
 
 /* ---------- inner page hero ---------- */
@@ -178,8 +182,8 @@ main > :last-child { padding-bottom: var(--sec); }
 }
 
 /* ---------- work grid: two big stills a row, plain titles ---------- */
-.filters { display: flex; flex-wrap: wrap; gap: 4px 26px; margin-bottom: 36px; font-size: var(--t-s); }
-.filters button { min-height: 44px; color: var(--bone-3); border-bottom: 1px solid transparent; }
+.filters { display: flex; flex-wrap: wrap; gap: 4px 14px; margin-left: -6px; margin-bottom: 36px; font-size: var(--t-s); }
+.filters button { min-height: 44px; padding: 0 6px; color: var(--bone-3); border-bottom: 1px solid transparent; }
 .filters button:hover { color: var(--bone); }
 .filters button[aria-pressed="true"] { color: var(--bone); border-bottom-color: var(--bone); }
 .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(40px, 4.5vw, 64px) var(--cgap); }
@@ -218,6 +222,7 @@ main > :last-child { padding-bottom: var(--sec); }
 .show-stage figure { position: absolute; inset: 0; opacity: 0; transition: opacity 1.1s ease; }
 .show-stage figure.on { opacity: 1; }
 .show-stage img { width: 100%; height: 100%; object-fit: cover; }
+.show-stage figure.tall img { object-fit: contain; }   /* portrait photos: whole, on black */
 .show-bar { position: absolute; right: var(--gut); bottom: 12px; z-index: 2; background: rgba(0, 0, 0, .5); }
 .show-ctl { display: flex; align-items: center; }
 .show-ctl button { min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; color: var(--bone-2); }
@@ -304,7 +309,7 @@ main > :last-child { padding-bottom: var(--sec); }
 .field label { display: block; font-weight: 700; margin-bottom: 8px; }
 .field input, .field select, .field textarea {
   width: 100%; min-height: 50px; padding: 12px 14px; font: inherit;
-  color: var(--bone); background: transparent; border: 1px solid var(--line-2); border-radius: 0; appearance: none;
+  color: var(--bone); background: transparent; border: 1px solid var(--field); border-radius: 0; appearance: none;
 }
 .field select option { background: var(--ink-2); }
 .field select { background-image: linear-gradient(45deg, transparent 50%, var(--bone-2) 50%), linear-gradient(135deg, var(--bone-2) 50%, transparent 50%); background-position: calc(100% - 20px) 50%, calc(100% - 15px) 50%; background-size: 5px 5px; background-repeat: no-repeat; padding-right: 40px; }
