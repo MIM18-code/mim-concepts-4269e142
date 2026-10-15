@@ -42,16 +42,15 @@ Only Orlando, the film and client counts, and a few slogan endings come out. Eve
 
 ## Headings
 
-**H1s.** Four change. Joshua renamed these on 2026-10-14 because they were slogans. If any of them were the SEO consultant's call, tell Joshua and they go back.
+**H1s.** Three change. Joshua renamed these on 2026-10-14 because they were slogans. If any of them were the SEO consultant's call, tell Joshua and they go back.
 
 | Page | Live H1 | New H1 |
 |---|---|---|
-| Home | We are MindInMotion | Film and video production in Baltimore |
 | About | Film School Friends. Business Partners. | About MindInMotion |
 | Post-Production | Where the Magic Actually Happens | Post-Production |
 | Contact | Let's Create Something Amazing | Contact Us |
 
-The H1s on Commercial, Corporate, Film and Portfolio don't change.
+The H1s on Home ("We are MindInMotion"), Commercial, Corporate, Film and Portfolio don't change.
 
 **H2s and H3s.**
 
