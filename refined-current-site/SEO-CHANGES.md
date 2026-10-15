@@ -9,7 +9,8 @@ The wording on the pages is the live site's, with a short list of exceptions. Th
 - **Page addresses.** All eight stay: `/`, `/commercial-video-production`, `/corporate-video-production`, `/film-production`, `/post-production`, `/about`, `/portfolio`, `/contact`. The canonical tags are unchanged. So are `/thank-you`, `/privacy-policy` and the 404 page.
 - **Redirects.** The `.html` to clean-address 301s in `netlify.toml` and the old Squarespace 301s in `_redirects` stay. The Orlando ones change (see below).
 - **Tracking.** GA4 (`G-QKX4700C3T`), Google Ads (`AW-11297450275`) and the CallRail number swap go back on every page, unchanged. The demo leaves them out on purpose so test visits stay out of the real data.
-- **Contact form and conversion.** Same Netlify form name (`contact`), the same fields and the same option values. It still posts to `/thank-you`, which fires the Ads conversion.
+- **Contact form and conversion.** Same Netlify form name (`contact`), the same fields and the same option values. It still posts to `/thank-you`, which fires the Ads conversion. The Contact page now has the form beside the heading, as Squarespace did, so it's in the first screen.
+- **New: a second form on the homepage.** The homepage now ends with a short quote form (name, email, phone, project), as Squarespace's did. It is a separate Netlify form named `contact-home` and posts to the same `/thank-you` page, so the Ads conversion fires for it too. At launch, check that Netlify's form notifications cover it (a notification set to one form by name won't), and add it anywhere form submissions are tracked by form name.
 - **Page titles.** Six of the eight are word for word the same. The other two only lose "& Orlando" (see below).
 
 ## The one address change: the Orlando page
@@ -64,6 +65,8 @@ The H1s on Home ("We are MindInMotion"), Commercial, Corporate, Film and Portfol
 - Video titles in each work grid are H3s. On the homepage, every project is in the page and the "Featured" filter shows the same eight as live.
 - The homepage and About gain a client logo wall. Its heading, "Clients include", is visually hidden and is read out to screen readers only. Each logo's alt text is the client's name.
 - Footer labels ("Services", "Baltimore", "Follow") are plain text, not headings, as on the live site.
+- Post-Production: the services list gains an H3, "Sound Mixing", with one line saying MindInMotion works with sound-mixing partners.
+- Home: the closing "Tell us about your project" section gains the short form above. Its field labels are not headings.
 
 ## Body text
 
@@ -90,5 +93,5 @@ On the new homepage, "award-winning video production company" appears in the des
 
 - The demo tells search engines not to index it (`noindex, nofollow, noarchive`). That comes off at launch.
 - Links on the demo point to `.html` files because it is hosted on GitHub Pages. At launch they use the clean addresses, so internal links don't go through a 301.
-- The form posts to `thank-you` on the demo. At launch that is `/thank-you`, as now.
+- Both forms post to `thank-you` on the demo. At launch that is `/thank-you`, as now.
 - Tracking tags go back on as above.

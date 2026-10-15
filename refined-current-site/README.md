@@ -1,6 +1,6 @@
 # Refined current site (review copy)
 
-The current mindinmotion.tv layout, rebuilt without Tailwind or React, with Concept D's monochrome look and the best parts of the old Squarespace site. It's a design review copy: every page has `noindex`, the canonical links point at mindinmotion.tv, and the contact form doesn't send.
+The current mindinmotion.tv layout, rebuilt without Tailwind or React, with Concept D's monochrome look and the best parts of the old Squarespace site. It's a design review copy: every page has `noindex`, the canonical links point at mindinmotion.tv, and the forms don't send.
 
 - `ASSESSMENT.md`: the side-by-side of the live site, Squarespace and Concept D, and what the demo keeps, cuts and brings back.
 - `COPY-REVIEW.md`: every copy change from the approved Concept D copy, with the old line, the new line and why.

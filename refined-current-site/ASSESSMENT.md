@@ -14,7 +14,7 @@ Written 2026-10-15 for the refined demo in this folder, and checked against the 
 1. The live site has the right content in the right order for clients. What lets it down is the dressing: pill buttons, rounded cards with badges, the stats row, icon cards, uppercase eyebrow labels and a carousel with dots. Those are the tells of a Tailwind template.
 2. Joshua's Squarespace site looked better because it showed the work bigger and did less around it. It had two large stills a row, a play mark on the video stills, heavy headings on black, bold testimonials, slideshows that ran by themselves and a contact form right on the page. Its weak spots were the slogans, stock rounded buttons and grey form boxes, untitled stills that sent people off to Vimeo, and stale facts.
 3. Concept D has the right look: monochrome, square corners, real stills and a Play mark you can always see. Its scroll-cinema structure (slates, timecode, scene numbers) asks more of a client than a plain page does, so that part stays out.
-4. The demo keeps the live site's layout and wording, takes its look from Concept D, and has removed everything that read as template. It brings back what Squarespace did better, apart from the six bigger changes listed at the end for Joshua's call.
+4. The demo keeps the live site's layout and wording, takes its look from Concept D, and has removed everything that read as template. It brings back what Squarespace did better, including the bigger changes Joshua approved on 2026-10-15.
 
 ## What the live site does well (kept)
 
@@ -47,7 +47,7 @@ Written 2026-10-15 for the refined demo in this folder, and checked against the 
 ### Brought back
 
 - **Big stills, two a row.** Squarespace showed the work two to a row, each still about 645px wide at 1440, on Home, Portfolio, Film, Commercial and Corporate (sq home-1440-p2, portfolio-1440-p0, commercial-video-production-1440-p0). That is the main reason it felt like a film company's site. The demo shows every work grid two a row, about 600px per still at 1440, and one a row on phones. Every still has a title under it, and Portfolio also shows the credit line.
-- **Heavy headings and few sizes.** What made Squarespace look confident was large, heavy, tightly spaced headings against lighter body text, with only a few sizes on a page (sq home-1440-p1, portfolio-1440-p0). The live site sets its type light (live index-1440-p1). The demo uses Libre Franklin 400 and 700, which Joshua picked, in Squarespace's proportions: six sizes in all, bold tight headings, and nothing under 16px. Its section headings stop at 56px, where Squarespace's are about 64px; see the changes below.
+- **Heavy headings and few sizes.** What made Squarespace look confident was large, heavy, tightly spaced headings against lighter body text, with only a few sizes on a page (sq home-1440-p1, portfolio-1440-p0). The live site sets its type light (live index-1440-p1). The demo uses Libre Franklin 400 and 700, which Joshua picked, in Squarespace's proportions: six sizes in all, bold tight headings, and nothing under 16px. Section headings and page H1s are 64px at 1440, as on Squarespace.
 - **Bold testimonials.** Squarespace set its four quotes in large bold type with the name underneath and no cards (sq home-1440-p2, p3). The demo does the same with the same four quotes, two a row.
 - **Slideshows that run by themselves, with nothing but the pictures.** Commercial, Corporate and Film each ended with a full-width behind-the-scenes slideshow with thin arrows and no captions (sq commercial-video-production-1440-p1). The demo uses the same photo sets: 14 on Commercial, 6 on Corporate and 17 on Film. They advance every 5 seconds and pause on hover or keyboard focus, when off screen, and when the tab is hidden. Nothing makes the visitor click.
 - **Service pages that get to the work.** Squarespace opened with a header and the H1, then the intro, one "Tell Us About Your Project" button, the grid and the slideshow (sq commercial-video-production-1440-p0, p1). The demo follows that order. It adds one client testimonial before the slideshow and the live homepage's closing section after it.
@@ -64,12 +64,13 @@ Written 2026-10-15 for the refined demo in this folder, and checked against the 
 - **The Film page.** Titles only, as on Squarespace and the live Film page, and two a row on phones (sq film-production-390-p0). Ape Canyon's mark reads "Prime Video" so it fits a half-width still.
 - **Smaller fixes.** The client logos load straight away, since they sit right under the hero. The footer stays two columns on phones, with the address and Follow links running full width and the Follow links in one row, which takes it from about 900px to about 660px tall at 390. The Contact page's "Baltimore HQ" now reads "Baltimore".
 
-### Not brought back yet
+### Brought back on 2026-10-15 (the bigger changes Joshua approved)
 
-- **A contact form on the page.** Squarespace's Contact page had the heading and a short paragraph on the left and the form on the right, all in the first screen (sq contact-1440-p0). Its homepage ended with the same short form (sq home-1440-p3, home-390-p2). The demo's form sits below a full-width heading, and the homepage only links to Contact.
-- **Heading size.** Squarespace's section headings were about 64px at 1440. The demo's are 56px.
-- **Header pictures.** Squarespace's Commercial, Corporate and Film headers showed different footage from the grid. They were muted background videos (export: YouTube byswLHwqo2M, ybBa38EiM2Q and M0txpVj2JoA). Each demo header repeats a still from its own grid: Good Mom, Mike Odom and Lotus Eyes.
-- **Sound mixing.** Squarespace's post page said MindInMotion works with sound-mixing partners (sq post-production-1440-p0). Neither the demo nor the live site mentions sound.
+- **The Contact form in the first screen.** Squarespace's Contact page had the heading and a short paragraph on the left and the form on the right (sq contact-1440-p0). The demo now does the same: "Contact Us", the line under it and the contact details on the left, the form on the right. At 1440x900 the whole form, Submit included, is in the first screen. It used to start below a full-width heading, with the message box and Submit below the fold. The fields, form name and thank-you page are unchanged.
+- **A short form at the end of the homepage.** Squarespace's homepage ended with a short form (sq home-1440-p3, home-390-p2). The demo's homepage now ends with "Tell us about your project" and the phone number on the left, and a form on the right asking for name, email, phone and project, with the live Contact form's labels. It is a second Netlify form (`contact-home`) posting to the same thank-you page; SEO-CHANGES.md lists it.
+- **Heading size.** Section headings and page H1s are now 64px at 1440, as on Squarespace, up from 56px. Phones stay at 34px. The page still uses six sizes.
+- **Header pictures.** Squarespace's Commercial, Corporate and Film headers showed footage that wasn't in the grid below (muted YouTube videos byswLHwqo2M, ybBa38EiM2Q and M0txpVj2JoA). The demo's headers used to repeat a grid still. They are now stills that aren't in the page's grid or slideshow: two girls in a toy car from Squarespace's Commercial page, the Cuba hikers from Squarespace's Corporate page, and a drummer in blue haze from FIVES' Heart & Thunder (Squarespace's Portfolio). They are stills, not video, to keep the pages light.
+- **Sound mixing.** Squarespace's post page said MindInMotion works with sound-mixing partners (sq post-production-1440-p0), and Joshua confirmed it on 2026-10-15. The post page's services list now has a "Sound Mixing" row: "We work with sound-mixing partners for the final mix."
 
 ## What was worse on Squarespace (not brought back)
 
@@ -111,14 +112,11 @@ These follow the "Fix live site errors" thread and Joshua's answers on 2026-10-1
 
 ## Changes still worth making (Joshua's call)
 
-Ten of the 11 small fixes are done (see "Brought back on 2026-10-15" above). Joshua chose to keep the Play mark on hover, unlike Squarespace's always-visible triangle (sq portfolio-1440-p0). These six need Joshua's say:
+Ten of the 11 small fixes are done (see "Brought back on 2026-10-15" above). Joshua chose to keep the Play mark on hover, unlike Squarespace's always-visible triangle (sq portfolio-1440-p0).
 
-1. Lay the Contact page out like Squarespace's, with the heading and details on the left and the form on the right, so the form is in the first screen. The fields, form name and thank-you page stay the same.
-2. End the homepage with a short form (name, email, phone, project) beside "Tell us about your project", as Squarespace did. It would be a second Netlify form posting to /thank-you, so the SEO consultant would need to know.
-3. Raise section headings from 56px to Squarespace's 64px. I'd show them side by side first.
-4. Take the single testimonial off Commercial, Corporate and Film. Squarespace's service pages had none, and the four quotes stay on Home and About.
-5. Pick header stills for Commercial, Corporate and Film that aren't in the grid below. If you want moving headers like Squarespace's, each page needs a short clip on Vimeo.
-6. Add a sound-mixing line to the post page, using the substance of the old Squarespace copy.
+Of the six bigger changes, Joshua approved five on 2026-10-15 and they are done (see above): the Contact layout, the homepage form, 64px headings, new header stills and the sound-mixing line. One was not made:
+
+- Taking the single testimonial off Commercial, Corporate and Film. Squarespace's service pages had none, but each quote is real, word for word, and matched to its page (the Johns Hopkins marketing director on Corporate), so the recommendation is to keep them. They come off if Joshua wants only what live or Squarespace had.
 
 ## Questions for Joshua
 
