@@ -226,7 +226,6 @@ main > :last-child { padding-bottom: var(--sec); }
 .show-ctl button { min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; color: var(--bone-2); }
 .show-ctl button:hover { color: var(--bone); }
 .show-ctl svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 1.6; }
-.show-ctl .pp svg { fill: currentColor; stroke: none; }
 .show-head { padding-top: var(--sec); margin-bottom: clamp(28px, 3vw, 40px); }
 
 /* ---------- two columns: every right column starts on the same edge ---------- */
