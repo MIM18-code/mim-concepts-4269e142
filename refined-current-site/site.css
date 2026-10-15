@@ -165,13 +165,14 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 /* ---------- client logos ---------- */
 .clients { padding-block: clamp(40px, 5vw, 64px); border-bottom: 1px solid var(--line); }
 .clients .label { margin-bottom: 26px; }
-.logo-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 32px 36px; }
-.logo-row li { display: flex; align-items: center; }
-.logo-row img { height: auto; width: auto; max-height: var(--lh, 40px); max-width: 158px; opacity: .82; }
+.logo-row { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); align-items: center; gap: 40px 48px; }
+.logo-row li { display: flex; align-items: center; min-height: 64px; }
+.logo-row img { height: auto; width: auto; max-height: var(--lh, 40px); max-width: 100%; opacity: .82; }
 .logo-row .word { font-family: var(--sans); font-size: 16px; font-weight: 600; line-height: 1.15; color: var(--bone-2); max-width: 9.5em; }
-@media (max-width: 720px) {
-  .logo-row { justify-content: flex-start; gap: 28px 36px; }
-  .logo-row img { max-height: calc(var(--lh, 40px) * .82); max-width: 150px; }
+@media (max-width: 900px) { .logo-row { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px 36px; } }
+@media (max-width: 560px) {
+  .logo-row { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 32px; }
+  .logo-row img { max-height: calc(var(--lh, 40px) * .85); }
 }
 
 /* ---------- work grid ---------- */

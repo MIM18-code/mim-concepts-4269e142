@@ -83,15 +83,18 @@ def yt_thumb(vid):
 # fetched from the organizations' own sites go in img/logos-src/ and are picked up when present.
 BONE = (236, 230, 218)
 CLIENTS = [
-    # (key, name, source file, mode, display height)
-    ('johns-hopkins', 'Johns Hopkins University', A + 'logo-johns-hopkins.png', 'sil', 34),
-    ('usm', 'University System of Maryland', L + 'logos-src/usm.png', 'sil', 40),
-    ('msde', 'Maryland State Department of Education', A + 'logo-msde.png', 'lum', 38),
+    # (key, name, source file, mode, display height). Sources: ../assets/img/ for the logos the live site
+    # already had; img/logos-src/ for ones fetched from each organization's own site (see SOURCES.md there).
+    ('johns-hopkins', 'Johns Hopkins University', A + 'logo-johns-hopkins.png', 'sil', 32),
+    ('usm', 'University System of Maryland', L + 'logos-src/usm.png', 'sil', 36),
+    ('msde', 'Maryland State Department of Education', L + 'logos-src/msde.png', 'lum', 36),
     ('american-lung', 'American Lung Association', A + 'logo-american-lung.png', 'sil', 40),
-    ('interpublic', 'Interpublic Group', A + 'logo-interpublic.png', 'sil', 36),
-    ('aacpd', 'Anne Arundel County Police Department', A + 'logo-aacpd.png', 'badge', 64),
-    ('infinite-legacy', 'Infinite Legacy', A + 'logo-infinite-legacy.png', 'sil', 46),
+    ('interpublic', 'Interpublic Group', A + 'logo-interpublic.png', 'sil', 30),
+    ('aacpd', 'Anne Arundel County Police Department', A + 'logo-aacpd.png', 'badge', 60),
+    ('infinite-legacy', 'Infinite Legacy', A + 'logo-infinite-legacy.png', 'sil', 44),
     ('packard', 'The Packard Center for ALS Research', A + 'logo-packard-center.png', 'sil', 44),
+    ('pearlstone', 'Pearlstone', L + 'logos-src/pearlstone.png', 'sil', 40),
+    ('rising-tide', 'Rising Tide Innovation Center', L + 'logos-src/rising-tide.png', 'sil', 36),
 ]
 
 
@@ -181,9 +184,9 @@ W = {
     'residency': dict(cats='corporate', label='Corporate', title='Johns Hopkins AAP Teaching Writing - 2018 Residency', cr=JHAAP, img=A + 'residency.webp', play='youtube:gSCIClcxpMw', alt='A woman looks up in a wood-paneled library.'),
     'layne': dict(cats='corporate', label='Corporate', title='Johns Hopkins AAP Teaching Writing - Precious Layne', cr=JHAAP, img=A + 'precious-layne.webp', play='youtube:juCJhFbIsXs', alt='A young woman with braids smiles during an interview in a classroom.'),
     'packard': dict(cats='nonprofit corporate', label='Nonprofit', title='The Packard Center for ALS Research', cr='Client: The Packard Center', img=A + 'Screen-Shot-2019-12-09-at-2.15.52-PM-2-1.webp', play='vimeo:378347545?h=65f9bfe1c5', alt='Researchers at laptops in a meeting room, shot with shallow focus.'),
-    'sydney': dict(cats='nonprofit', label='Nonprofit', title='Sydney B. - Biomarker Testing Story', cr=ALA, yt='MkNrUkNgVfA', play='youtube:MkNrUkNgVfA', alt='A frame from the Sydney B. biomarker testing story for the American Lung Association.'),
+    'sydney': dict(cats='nonprofit', label='Nonprofit', title='Sydney B. - Biomarker Testing Story', cr=ALA, yt='MkNrUkNgVfA', play='youtube:MkNrUkNgVfA', alt='A smiling couple lying on a beach towel, looking up at the camera.'),
     'ashley': dict(cats='nonprofit', label='Nonprofit', title='Ashley & Dr. Reed - Patient-Provider Story', cr=ALA, img=A + 'ala-ashley-dr-reed.webp', pos='50% 22%', play='youtube:dxUx8L3rQos', alt='Dr. Reed and Ashley talk across a small round table in his office.'),
-    'lungforce': dict(cats='nonprofit', label='Nonprofit', title='LUNG FORCE Advocacy Day 2025', cr=ALA, yt='kaDZAOgjiR8', play='youtube:kaDZAOgjiR8', alt='A frame from the LUNG FORCE Advocacy Day 2025 video for the American Lung Association.'),
+    'lungforce': dict(cats='nonprofit', label='Nonprofit', title='LUNG FORCE Advocacy Day 2025', cr=ALA, yt='kaDZAOgjiR8', play='youtube:kaDZAOgjiR8', alt='The video\'s title card: the American Lung Association line "When you can\'t breathe, nothing else matters" over a hazy view of Washington, DC.'),
     'ape': dict(cats='film', label='Feature film', title='Ape Canyon (feature film, 2019)', cr='Directors: Joshua Land & Victor Fink', img=A + 'ape-canyon.webp', link='https://www.amazon.com/gp/video/detail/B091SXZYT8', alt='Two young people lie in tall grass, alarmed.'),
     'quality': dict(cats='commercial', label='Commercial', title='Because Quality Matters', cr=MSDE, img=A + 'checklist.webp', pos='50% 38%', play='vimeo:1021087594?h=2c0add4aa6', alt='Preschoolers laugh and shape clay at a classroom table.'),
     'aacpd': dict(cats='commercial', label='Commercial', title='AACPD Recruitment', cr=DIR + ', DP: Alex Guckert', img=A + 'Screen-Shot-2022-06-24-at-5.40.56-PM.webp', play='vimeo:723880294', alt='A young woman at night, rim-lit, with red and blue police lights blurred behind her.'),
