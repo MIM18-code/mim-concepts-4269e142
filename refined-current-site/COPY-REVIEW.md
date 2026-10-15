@@ -71,7 +71,7 @@ The list of changes that search engines see, written for the SEO consultant, is 
 | Live | Demo | Why |
 |---|---|---|
 | The three intro paragraphs ("extensive experience", "six feature films", "you're not alone. We've been there.", "one of the best film production companies... in locations like Orlando") | The Oct 14 versions: "full-service film production company in Baltimore, Maryland", produce a whole film or join your crew, upfront about budget. "Most are on major VOD platforms" (Joshua, 2026-10-15). | Slogan (Oct 14), brag, Orlando |
-| One mixed grid of nine films, no heading | Grouped under "Feature films, shorts and music videos" (Feature films / Short films / Music videos), same titles, plus the Incubation teaser and FIVES "Heart & Thunder" from Portfolio, with their credit lines | Joshua asked on Oct 14 why a "feature films" heading sat over shorts and music videos |
+| One mixed grid of nine films, no heading | Grouped under "Feature films, shorts and music videos" (Feature films / Short films / Music videos), same titles, plus the Incubation teaser and FIVES "Heart & Thunder" from Portfolio. Titles only, as on the live Film page and Squarespace. | Joshua asked on Oct 14 why a "feature films" heading sat over shorts and music videos |
 
 ## Post-Production
 
@@ -120,6 +120,7 @@ The list of changes that search engines see, written for the SEO consultant, is 
 | H1: Let's Create Something Amazing | Contact Us | Slogan |
 | ...with a custom quote. No obligation, no pressure—just a conversation about how we can help. | ...with a custom quote. | Slogan |
 | Orlando Office block; FAQ "based in Baltimore and Orlando" | Removed | Orlando |
+| Baltimore HQ | Baltimore | Orlando: with the other office gone, "HQ" implies offices that don't exist |
 | (no label) | "Phone" label on the phone number, to match "Email" | Layout |
 | We'll review your project details and schedule a quick discovery call | ...and set up a call | Agency jargon (Oct 14) |
 | Absolutely! / Yes! (FAQ) | Yes. | Slogan tone (Oct 14) |

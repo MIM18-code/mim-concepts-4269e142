@@ -1,6 +1,6 @@
 # Live site vs. Squarespace vs. Concept D: an honest side-by-side
 
-Written 2026-10-15 for the refined demo in this folder, and checked against the demo as it stands after the evening's changes (review site PR #14).
+Written 2026-10-15 for the refined demo in this folder, and checked against the demo's code after the evening's changes. Ten of the 11 small fixes Joshua approved that night are in, and are marked below. He chose to keep the Play mark on hover.
 
 ## Sources
 
@@ -14,7 +14,7 @@ Written 2026-10-15 for the refined demo in this folder, and checked against the 
 1. The live site has the right content in the right order for clients. What lets it down is the dressing: pill buttons, rounded cards with badges, the stats row, icon cards, uppercase eyebrow labels and a carousel with dots. Those are the tells of a Tailwind template.
 2. Joshua's Squarespace site looked better because it showed the work bigger and did less around it. It had two large stills a row, a play mark on the video stills, heavy headings on black, bold testimonials, slideshows that ran by themselves and a contact form right on the page. Its weak spots were the slogans, stock rounded buttons and grey form boxes, untitled stills that sent people off to Vimeo, and stale facts.
 3. Concept D has the right look: monochrome, square corners, real stills and a Play mark you can always see. Its scroll-cinema structure (slates, timecode, scene numbers) asks more of a client than a plain page does, so that part stays out.
-4. The demo keeps the live site's layout and wording, takes its look from Concept D, and has removed everything that read as template. It brings back most of what Squarespace did better. The rest is listed under "Changes still worth making" at the end.
+4. The demo keeps the live site's layout and wording, takes its look from Concept D, and has removed everything that read as template. It brings back what Squarespace did better, apart from the six bigger changes listed at the end for Joshua's call.
 
 ## What the live site does well (kept)
 
@@ -32,7 +32,7 @@ Written 2026-10-15 for the refined demo in this folder, and checked against the 
 | A "Baltimore · Orlando" chip with a pin icon, a scroll-down chevron, and uppercase tracked labels over sections ("TRUSTED BY INDUSTRY LEADERS", "OUR WORK", "SERVICES", "TESTIMONIALS") (live index-1440-p0 to p3) | Stock landing-page furniture | Gone. Headings stand on their own. |
 | A stats row with icons: 100+ Clients Served, 2012 Founded, 1.8M+ Video Views and a feature-film count (live index-1440-p0) | The stock SaaS landing-page block, and Joshua named it a brag | Cut. The logos and the work make the case. |
 | Pill buttons with icons ("Watch Our Reel" with a play circle, "Get a Quote in 24 Hours" with an arrow) and pill filter tabs (live index-1440-p0, portfolio-1440-p1) | The default Tailwind look | The same labels on square buttons with a thin border, one of them filled, and no icons. Filters are plain words with a line under the active one. |
-| Rounded cards with "Case Study", "Featured" and "Demo Reel" badges, client chips, and a round play button on every still (live index-1440-p0, commercial-video-production-1440-p0) | The card-and-badge grid every template ships with | Plain stills with the title underneath and a small square "Play" mark. The mark shows on hover on a computer and all the time on phones; see the first change below. |
+| Rounded cards with "Case Study", "Featured" and "Demo Reel" badges, client chips, and a round play button on every still (live index-1440-p0, commercial-video-production-1440-p0) | The card-and-badge grid every template ships with | Plain stills with the title underneath and a small square "Play" mark that appears on hover on a computer and stays visible on phones. |
 | Four rounded icon cards under "Full-Service Production", each with "Learn More" (live index-1440-p1) | Icon cards are the clearest tell of all | Four services, each a real still with its name and the live description. |
 | A slideshow with round arrow buttons and a row of 17 dots (live index-1440-p2) | Carousel kit | Two small arrows in the corner. No dots, counter or pause button. |
 | Testimonials in rounded cards with quote marks (live index-1440-p3) | The template testimonial block | Bold type, two a row, words unchanged. |
@@ -54,19 +54,20 @@ Written 2026-10-15 for the refined demo in this folder, and checked against the 
 - **All the films on the Film page.** Squarespace showed nine films as large stills with plain titles (sq film-production-1440-p0, p1). The demo has the same nine plus the Incubation teaser and Heart & Thunder, grouped as feature films, short films and music videos.
 - **Square, quiet controls.** The demo has square buttons and dark form fields with a thin border, without Squarespace's white rounded buttons and grey boxes.
 
+### Brought back on 2026-10-15 (the small fixes)
+
+- **The homepage slideshow.** Squarespace and the live site use the same 17 behind-the-scenes photos (content/home.md). The demo's homepage now uses those 17 in the live order instead of a 12-photo mix from the service pages.
+- **Slideshows on phones.** Squarespace's slideshow filled most of a phone screen (sq commercial-video-production-390-p0). The demo's is now 4:5 on phones, about 490px tall at 390, where it used to be a 16:9 strip about 220px tall.
+- **Nonprofit work.** Squarespace had a "Nonprofit / Instructional Work" page with 12 videos, seven of them from the Maryland State Department of Education or Maryland Excels (sq nonprofit-1440-p0). Those seven are now tagged Nonprofit as well as Commercial, so Portfolio's Nonprofit filter shows 15 films.
+- **The stills.** Call Your Wife now uses the masked-singer frame, as Squarespace and the live Film page do (sq film-production-1440-p0). Johns Hopkins Engineering Management now uses Squarespace's lab frame (sq portfolio-1440-p1) instead of an interview frame with a name card burned into it.
+- **Portfolio's opening.** All Work now opens as Squarespace's did: the reel, Good Mom, Moms at the Playground, AACPD, Ghost Light and The Farmhouse (sq portfolio-1440-p0). The four Featured Projects come after the rest of the client work, so they don't repeat right under the write-ups.
+- **The Film page.** Titles only, as on Squarespace and the live Film page, and two a row on phones (sq film-production-390-p0). Ape Canyon's mark reads "Prime Video" so it fits a half-width still.
+- **Smaller fixes.** The client logos load straight away, since they sit right under the hero. The footer stays two columns on phones, with the address and Follow links running full width and the Follow links in one row, which takes it from about 900px to about 660px tall at 390. The Contact page's "Baltimore HQ" now reads "Baltimore".
+
 ### Not brought back yet
 
-These are the Squarespace strengths the demo still lacks. Each one is a change in the list at the end.
-
-- **The play mark at rest.** Squarespace's Portfolio and Nonprofit pages put a white triangle on every video still, so a client could see at a glance what plays (sq portfolio-1440-p0, nonprofit-1440-p0). The demo's mark only appears on hover on a computer.
 - **A contact form on the page.** Squarespace's Contact page had the heading and a short paragraph on the left and the form on the right, all in the first screen (sq contact-1440-p0). Its homepage ended with the same short form (sq home-1440-p3, home-390-p2). The demo's form sits below a full-width heading, and the homepage only links to Contact.
 - **Heading size.** Squarespace's section headings were about 64px at 1440. The demo's are 56px.
-- **The homepage slideshow.** Squarespace and the live site use the same 17 behind-the-scenes photos (content/home.md). The demo's homepage uses a 12-photo mix taken from the service pages.
-- **Slideshows on phones.** Squarespace's slideshow filled most of a phone screen (sq commercial-video-production-390-p0). The demo's is a 16:9 strip about 220px tall at 390.
-- **Nonprofit work.** Squarespace had a "Nonprofit / Instructional Work" page with 12 videos, seven of them from the Maryland State Department of Education or Maryland Excels (sq nonprofit-1440-p0). The demo's Portfolio has a Nonprofit filter, but those seven are tagged Commercial only, so the filter misses them.
-- **The stills.** Squarespace and the live Film page use the masked-singer frame for Call Your Wife (sq film-production-1440-p0). The demo uses a small default Vimeo thumbnail. For Johns Hopkins Engineering Management, Squarespace used the lab frame (sq portfolio-1440-p1). The demo uses an interview frame with a name card burned into it.
-- **Portfolio's opening.** Squarespace's grid opened on the reel, Good Mom, Moms at the Playground, AACPD, Ghost Light and The Farmhouse (sq portfolio-1440-p0). The demo's All Work grid opens with stills the Featured Projects just showed above it.
-- **The Film page on phones.** Squarespace showed titles only and stayed two a row on a phone (sq film-production-390-p0). The demo adds credit lines and drops to one a row.
 - **Header pictures.** Squarespace's Commercial, Corporate and Film headers showed different footage from the grid. They were muted background videos (export: YouTube byswLHwqo2M, ybBa38EiM2Q and M0txpVj2JoA). Each demo header repeats a still from its own grid: Good Mom, Mike Odom and Lotus Eyes.
 - **Sound mixing.** Squarespace's post page said MindInMotion works with sound-mixing partners (sq post-production-1440-p0). Neither the demo nor the live site mentions sound.
 
@@ -108,30 +109,16 @@ These follow the "Fix live site errors" thread and Joshua's answers on 2026-10-1
 - The **USM** logo is the official one, and every logo is plain white.
 - The M logo stays cyan, which was Joshua's choice.
 
-## Changes still worth making
+## Changes still worth making (Joshua's call)
 
-**Small fixes.** Each follows a decision Joshua has already made or something Squarespace did better.
+Ten of the 11 small fixes are done (see "Brought back on 2026-10-15" above). Joshua chose to keep the Play mark on hover, unlike Squarespace's always-visible triangle (sq portfolio-1440-p0). These six need Joshua's say:
 
-1. Show the Play mark on every video still all the time, not only on hover.
-2. Use the masked-singer frame for Call Your Wife, which carries through to Home, Portfolio and Film.
-3. Use the lab frame for Johns Hopkins Engineering Management, without the burned-in name card.
-4. Tag the seven MSDE and Maryland Excels pieces as Nonprofit as well as Commercial.
-5. Use the 17 homepage behind-the-scenes photos that Squarespace and the live site use, in the live order.
-6. Make the slideshows taller on phones so they fill most of the screen.
-7. Film page: titles only, no credit lines, and two a row on phones.
-8. Open Portfolio's All Work grid the way Squarespace did, without repeating the four Featured Projects at the top.
-9. Load the client logos straight away instead of when scrolled to, since they sit right under the hero.
-10. Keep the footer two columns wide on phones, with the Follow links in one row.
-11. On the Contact page, change the label "Baltimore HQ" to "Baltimore". With Orlando gone, "HQ" implies other offices.
-
-**Joshua's call.**
-
-12. Lay the Contact page out like Squarespace's, with the heading and details on the left and the form on the right, so the form is in the first screen. The fields, form name and thank-you page stay the same.
-13. End the homepage with a short form (name, email, phone, project) beside "Tell us about your project", as Squarespace did. It would be a second Netlify form posting to /thank-you, so the SEO consultant would need to know.
-14. Raise section headings from 56px to Squarespace's 64px. I'd show them side by side first.
-15. Take the single testimonial off Commercial, Corporate and Film. Squarespace's service pages had none, and the four quotes stay on Home and About.
-16. Pick header stills for Commercial, Corporate and Film that aren't in the grid below. If you want moving headers like Squarespace's, each page needs a short clip on Vimeo.
-17. Add a sound-mixing line to the post page, using the substance of the old Squarespace copy.
+1. Lay the Contact page out like Squarespace's, with the heading and details on the left and the form on the right, so the form is in the first screen. The fields, form name and thank-you page stay the same.
+2. End the homepage with a short form (name, email, phone, project) beside "Tell us about your project", as Squarespace did. It would be a second Netlify form posting to /thank-you, so the SEO consultant would need to know.
+3. Raise section headings from 56px to Squarespace's 64px. I'd show them side by side first.
+4. Take the single testimonial off Commercial, Corporate and Film. Squarespace's service pages had none, and the four quotes stay on Home and About.
+5. Pick header stills for Commercial, Corporate and Film that aren't in the grid below. If you want moving headers like Squarespace's, each page needs a short clip on Vimeo.
+6. Add a sound-mixing line to the post page, using the substance of the old Squarespace copy.
 
 ## Questions for Joshua
 
