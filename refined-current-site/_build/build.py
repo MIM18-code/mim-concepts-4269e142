@@ -154,7 +154,7 @@ def logo_row():
     return '''
   <section class="clients" aria-labelledby="h-clients">
     <div class="wrap">
-      <h2 id="h-clients" class="vh">Clients include</h2>
+      <h2 id="h-clients" class="clients-h">Trusted by industry leaders</h2>
       <ul class="logo-row">
         %s
       </ul>
@@ -230,9 +230,9 @@ def frame(w, cls='tile-frame', eager=False):
     """The clickable picture: opens the player, or the film's page on Prime Video."""
     pic = img(still(w), w['alt'], lazy=not eager, pos=w.get('pos'))
     if w.get('link'):
-        return '<a class="%s" href="%s" target="_blank" rel="noopener">%s<span class="cue">Prime Video</span><span class="vh"> (opens in a new tab)</span></a>' % (
+        return '<a class="%s" href="%s" target="_blank" rel="noopener">%s<span class="cue cue-txt">Prime Video</span><span class="vh"> (opens in a new tab)</span></a>' % (
             cls, e(w['link']), pic)
-    return '<button class="%s" type="button" %s aria-label="Play %s">%s<span class="cue" aria-hidden="true">%s Play</span></button>' % (
+    return '<button class="%s" type="button" %s aria-label="Play %s">%s<span class="cue" aria-hidden="true">%s</span></button>' % (
         cls, play_attrs(w), e(w['title']), pic, TRI)
 
 
@@ -482,6 +482,17 @@ def page_html(page, body):
 
 
 # ---------------------------------------------------------------- building blocks
+# Banner reels for the service pages (Victor, 2026-10-15: every service but Post). Put a Vimeo ID here and
+# the banner plays it muted and looped behind the heading, as the homepage hero does; until then the still shows.
+SVC_REELS = {
+    'commercial-video-production': None,
+    'corporate-video-production': None,
+    'film-production': None,
+}
+# The running timecode, the one idea kept from concept D: the viewer's time of day at 24 frames a second, in grey.
+TC = '<p class="tc" aria-hidden="true"><span class="tc-lbl">TC</span> <span class="tc-val">00:00:00:00</span></p>'
+
+
 def phero(img_src, alt, h1, sub, ctas, crumbs=None, short=False, pos=None, bare=False):
     """Inner-page hero. Breadcrumbs are not drawn; the page's crumbs still go out as BreadcrumbList JSON-LD.
     bare=True opens straight on the heading with no picture or buttons, as Squarespace's Portfolio and Contact did."""
@@ -495,14 +506,18 @@ def phero(img_src, alt, h1, sub, ctas, crumbs=None, short=False, pos=None, bare=
   </section>'''
     b = ''.join('<a class="btn%s" href="%s"%s>%s</a>' % (' btn-solid' if solid else '', href, extra, t) for href, t, solid, extra in [
         (c[0], c[1], c[2], c[3] if len(c) > 3 else '') for c in ctas])
+    svc = bool(crumbs) and len(crumbs) > 2 and crumbs[1][0] == 'Services'
+    pic = img(img_src, alt, lazy=False, pos=pos, extra='fetchpriority="high"')
+    reel = SVC_REELS.get(crumbs[-1][1]) if svc else None
+    media = '<div class="hero-media" data-bg="%s">%s</div>' % (reel, pic) if reel else pic
     return f'''
   <section class="phero{' short' if short else ''}">
-    {img(img_src, alt, lazy=False, pos=pos, extra='fetchpriority="high"')}
+    {media}
     <div class="wrap">
       <h1>{h1}</h1>
       <p class="lede">{sub}</p>
       <div class="btns">{b}</div>
-    </div>
+    </div>{TC if svc else ''}
   </section>'''
 
 
@@ -616,7 +631,7 @@ def slideshow(hid, title, folder_or_list, intro=None, interval=5000):
     </div>'''
     return f'''
   <section aria-labelledby="{hid}" class="show-sec">{head}
-    <div class="show" data-interval="{interval}" role="region" aria-roledescription="carousel" aria-label="{e(title or 'Behind the scenes')} photos">
+    <div class="wrap"><div class="show" data-interval="{interval}" role="region" aria-roledescription="carousel" aria-label="{e(title or 'Behind the scenes')} photos">
       <div class="show-stage">
         {''.join(figs)}
       </div>
@@ -626,7 +641,7 @@ def slideshow(hid, title, folder_or_list, intro=None, interval=5000):
           <button class="next" type="button" aria-label="Next photo"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M5 2l5 5-5 5"/></svg></button>
         </div>
       </div>
-    </div>
+    </div></div>
   </section>'''
 
 
@@ -706,7 +721,7 @@ SVC_COPY = {
 }
 
 
-def services_sec(alt=False, exclude=None, h2='Full-Service Production', lede='From initial concept to final delivery, we handle every aspect of your video production with expertise built since 2012.', hid='h-svc'):
+def services_sec(alt=False, exclude=None, h2='Full-Service Production', lede=None, hid='h-svc'):
     cards = []
     for s, _ in SERVICES:
         if s == exclude:
@@ -831,9 +846,10 @@ HOME_BODY = f'''
 {services_sec()}
 {slideshow('h-bts', 'Behind the Scenes', BTS_HOME)}
   <section class="sec" aria-labelledby="h-about">
-    <div class="wrap split">
+    <div class="wrap">
+      <div class="sec-head solo"><h2 id="h-about" class="h2">About MindInMotion</h2></div>
+      <div class="split pair">
       <div>
-        <h2 id="h-about" class="h2">About MindInMotion</h2>
         <div class="prose">
           <p>MindInMotion was founded by Baltimore native Joshua Land and Boston transplant Victor Fink in 2012. We met in a 16mm filmmaking class in college.</p>
           <p>Since then we've made our own feature films together and grown a company that makes film and video for clients. We've shot documentary and fiction in Baltimore, Washington DC, the mountains of Washington state and the rainforests of Cuba.</p>
@@ -845,6 +861,7 @@ HOME_BODY = f'''
         {img(A + 'DSCF2928.webp', 'Josh, left, and Victor on a wooded set. Victor holds a cinema camera with a monitor on top.')}
         <figcaption class="meta cap">Josh (left) and Victor on set</figcaption>
       </figure>
+      </div>
     </div>
   </section>
 {quotes_sec()}
@@ -1035,6 +1052,9 @@ PAGES.append(dict(
     ])))
 
 # ---------------------------------------------------------------- about
+# Five features in release order. The Summer Before counts but isn't shown (Joshua, 2026-10-15).
+ABOUT_FILMS = [('lotus', 'Lotus Eyes', '2016'), ('ilikeme', 'I Like Me', '2018'), ('badwitch', 'Bad Witch', '2021'),
+               ('ape', 'Ape Canyon', '2021'), ('incubation', 'Incubation', 'Now screening at festivals')]
 POSTERS = [('still-lotus-eyes.webp', 'Lotus Eyes feature film — two leads against an industrial skyline', 'Lotus Eyes', 'Feature'),
            ('poster-i-like-me.webp', 'I Like Me feature film poster', 'I Like Me', 'Feature'),
            ('poster-ape-canyon.webp', 'Ape Canyon feature film poster', 'Ape Canyon', 'Feature'),
@@ -1048,9 +1068,10 @@ ABOUT_BODY = ''.join([
           crumbs=[('Home', ''), ('About', 'about')], pos='50% 18%'),
     f'''
   <section class="sec" aria-labelledby="h-story">
-    <div class="wrap split">
+    <div class="wrap">
+      <div class="sec-head solo"><h2 id="h-story" class="h2">Our Story</h2></div>
+      <div class="split pair">
       <div>
-        <h2 id="h-story" class="h2">Our Story</h2>
         <div class="prose">
           <p>Joshua Land and Victor Fink met in a 16mm filmmaking class at Johns Hopkins University and have been collaborating ever since. Josh grew up in Baltimore; Victor in Boston. Together they co-founded MindInMotion, a video production company based in Baltimore.</p>
           <p>Over the past decade-plus, they’ve produced features, shorts, music videos, and commercials together. Their features include "Lotus Eyes," "I Like Me," "Bad Witch," "Ape Canyon" and their latest, "Incubation."</p>
@@ -1062,19 +1083,22 @@ ABOUT_BODY = ''.join([
         {img(A + 'Joshua-and-Victor-on-stage-1.webp', 'Josh, holding a microphone, and Victor on stage at a screening Q&A, both wearing festival lanyards.')}
         <figcaption class="meta cap">Josh (with the microphone) and Victor at a screening Q&amp;A</figcaption>
       </figure>
+      </div>
     </div>
   </section>
   <section class="sec" aria-labelledby="h-how">
-    <div class="wrap split">
+    <div class="wrap">
+      <div class="sec-head solo"><h2 id="h-how" class="h2">How We Work</h2></div>
+      <div class="split pair">
       <div>
-        <h2 id="h-how" class="h2">How We Work</h2>
-        <ul class="rows" style="margin-top:8px">
+        <ul class="rows">
           <li style="grid-template-columns:minmax(0,1fr)"><h3>Documentary Interviews</h3><p>Much of our client work is documentary. We interview the people involved and build the edit around what they say.</p></li>
           <li style="grid-template-columns:minmax(0,1fr)"><h3>Working With Josh and Victor</h3><p>You talk to us directly. We ask questions, offer ideas, and say so when we think something could be better.</p></li>
-          <li style="grid-template-columns:minmax(0,1fr)"><h3>In-House Post-Production</h3><p>We edit and color grade everything we shoot ourselves.</p></li>
+          <li style="grid-template-columns:minmax(0,1fr)"><h3>Post-Production</h3><p>We edit and color grade what we shoot, and work with sound-mixing partners for the final mix.</p></li>
         </ul>
       </div>
       <figure>{img(A + 'crew-hike-bw.webp', 'Black-and-white photo of a small crew hiking up a foggy hillside with a camera and a boom pole.')}</figure>
+      </div>
     </div>
   </section>
   <section class="sec" aria-labelledby="h-team">
@@ -1102,7 +1126,7 @@ ABOUT_BODY = ''.join([
   <section class="sec" aria-labelledby="h-features">
     <div class="wrap">
       <div class="sec-head"><h2 id="h-features" class="h2">Our Feature Films</h2><p class="lede">Most are available on all major VOD platforms.</p></div>
-      <ul class="posters">{''.join('<li><div class="poster">%s</div><h3>%s</h3><p class="meta">%s</p></li>' % (img(A + 'films/' + f, alt), t, k) for f, alt, t, k in POSTERS)}
+      <ul class="grid g3">{''.join('<li class="tile">%s<div class="tile-cap"><h3 class="tile-t">%s</h3><p class="meta">%s</p></div></li>' % (frame(W[k]), t, y) for k, t, y in ABOUT_FILMS)}
       </ul>
       <p style="margin-top:32px"><a class="text-link" href="film-production.html#films">Plus shorts, music videos, and commercials</a></p>
     </div>
