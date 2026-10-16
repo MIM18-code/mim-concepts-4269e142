@@ -57,7 +57,7 @@ The H1s on Home ("We are MindInMotion"), Commercial, Corporate, Film and Portfol
 
 - Home: "Film School Friends. Production Partners." becomes "About MindInMotion". The closing "Ready to Bring Your Vision to Life?" becomes "Tell us about your project".
 - About: "How We Think About Work" becomes "How We Work", and its three H3s ("Story First", "Collaboration", "Craft Matters") become "Documentary Interviews", "Working With Josh and Victor" and "Post-Production" (it was "In-House Post-Production" until 2026-10-15; they also use sound-mixing partners). New H2s are "Our Story" and "What Our Clients Say" (the homepage testimonials, shown here too). The closing "Let's Make Something Together" becomes "Tell us about your project".
-- Post-Production: "Collaboration Is the Point" becomes "Working With Your Editor". The "Tools We Work With" label stays, with the same tool names, but is no longer a heading.
+- Post-Production: the H2 over the four example videos is "Edited and Colored In-House" (the live wording was "Finished In-House"; changed 2026-10-16 because the sound mix is done with partners). "Collaboration Is the Point" becomes "Working With Your Editor". The "Tools We Work With" label stays, with the same tool names, but is no longer a heading.
 - Portfolio: the closing "Ready to Create Something Amazing?" becomes "Tell us about your project", and "All Work" is added over the full grid.
 - Film: the films are grouped under the new H2 "Feature films, shorts and music videos", with H3s "Feature films", "Short films" and "Music videos". The film titles become H4s.
 - Commercial, Corporate and Film gain a closing section with the H2 "Tell us about your project", the quote button and the phone number. Live, these pages end after Behind the Scenes.

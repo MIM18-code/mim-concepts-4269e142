@@ -277,6 +277,8 @@ html:not(.js) .tc { display: none; }
 .quote figcaption b { display: block; }
 .quote figcaption span { color: var(--bone-3); }
 .quote.solo { max-width: 40em; }
+.quote.long { grid-column: 1 / -1; max-width: 52em; }
+.quote.long blockquote p { font-size: var(--t-m); line-height: 1.35; }
 
 /* ---------- lists of services (post page, about) ---------- */
 .rows > li { display: grid; grid-template-columns: minmax(0, 15em) minmax(0, var(--measure)); gap: 8px var(--cgap); padding-block: 24px; border-top: 1px solid var(--line); }

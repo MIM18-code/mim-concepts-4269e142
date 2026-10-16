@@ -144,6 +144,6 @@ Earlier versions of this demo had reworded these. They now read as on the live s
 | Logo wall heading (screen readers only): "Clients include" | Visible: "Trusted by industry leaders" | Victor: the logos need a title. The words are the live homepage's own label over its logo row. |
 | About, Our Feature Films labels: Feature, Feature, Feature, Feature, At Festivals | 2016, 2018, 2021, 2021, Now screening at festivals | Victor: the section read oddly. Years say more than "Feature" five times. |
 
-Flagged, not changed (same "post is all in-house" issue, your call):
-- Commercial intro: "We handle concept, production and post-production in-house, so one team takes your spot from script to delivery."
-- Post-Production: "Finished In-House" and "We edited, colored and finished every project on this site."
+| Commercial intro: "We handle concept, production and post-production in-house, so one team takes your spot from script to delivery." | "The same team plans, shoots, edits and colors your spot, from script to delivery." | Fact: the final sound mix is done with partners, so not all post is in-house (Joshua OK'd rewording, 2026-10-16) |
+| Post-Production H2 and line: "Finished In-House" / "We edited, colored and finished every project on this site. Here are four." | "Edited and Colored In-House" / "We edited and colored every project on this site. Here are four." | Same reason |
+| Homepage and About testimonials: the four from the live site | The newest Infinite Legacy Google review added first, word for word, captioned "Infinite Legacy / Google review". The other four stay. | Joshua sent the new reviews, 2026-10-16 |

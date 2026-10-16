@@ -594,8 +594,19 @@ TESTIMONIALS = [
 ]
 
 
+# Newest Google reviews, word for word (Joshua sent them 2026-10-16). Long ones run across both columns.
+NEW_REVIEWS = [
+    ("We've had the pleasure of working with Victor and Josh at MindInMotion for the past several years on multiple projects requiring different needs. They make thoughtful recommendations and we can always count on them to provide the highest quality service. Outside of their technical expertise, they are professional, punctual and responsive. We highly recommend them for any video production needs and look forward to collaborating with them for years to come.", 'Infinite Legacy', 'Google review'),
+]
+
+
 def quotes_sec(alt=False, hid='h-words'):
     qs = ''.join('''
+        <figure class="quote long">
+          <blockquote><p>%s</p></blockquote>
+          <figcaption><b>%s</b><span>%s</span></figcaption>
+        </figure>''' % (e(q), w, r) for q, w, r in NEW_REVIEWS)
+    qs += ''.join('''
         <figure class="quote">
           <blockquote><p>%s</p></blockquote>
           <figcaption><b>%s</b><span>%s</span></figcaption>
@@ -895,7 +906,7 @@ PAGES.append(dict(
         copy_split(None,
                    "MindInMotion handles commercial video production in Baltimore for broadcast TV, streaming platforms, YouTube pre-roll and social feeds. Some spots come through ad agencies, like our WellPoint spot for InterPublic. Others we make directly for the client, like the Maryland Excels PSAs for the Maryland State Department of Education.",
                    ["Josh and Victor also direct feature films. They plan the lighting, camera moves and performances in a 15-second social cut or a 60-second broadcast spot the same way they do on their features.",
-                    "We handle concept, production and post-production in-house, so one team takes your spot from script to delivery. If you have a campaign coming up, <a href=\"contact.html\">tell us about it</a>."],
+                    "The same team plans, shoots, edits and colors your spot, from script to delivery. If you have a campaign coming up, <a href=\"contact.html\">tell us about it</a>."],
                    '<div class="btns">%s</div>' % reel_btn(), 'h-intro'),
         grid_sec('Selected Work', 'h-work', 'A few of the commercials we’ve produced.',
                  work_grid(['goodmom', 'aacpd', 'wouldnt', 'checklist', 'wellpoint', 'playground', 'illegal', 'bennetts'], 'work-grid', meta=False,
@@ -1029,7 +1040,7 @@ PAGES.append(dict(
       <ul class="rows">{''.join('<li><h3>%s</h3><p>%s</p></li>' % r for r in POST_ROWS)}</ul>
     </div>
   </section>''',
-        grid_sec('Finished In-House', 'h-work', 'We edited, colored and finished every project on this site. Here are four.',
+        grid_sec('Edited and Colored In-House', 'h-work', 'We edited and colored every project on this site. Here are four.',
                  '<ul class="grid" id="post-grid">%s</ul>' % ''.join([
                      tile('goodmom', title='Maryland Excels "Good Mom"', cr='Commercial spot'),
                      tile('ghost', title='Ghost Light', cr='Music video'),
