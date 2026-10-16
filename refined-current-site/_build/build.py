@@ -526,6 +526,17 @@ def reel_btn(text='Watch Our Reel', solid=False):
 
 
 def copy_split(h2, lede, paras, side, hid, alt=False, rev=False):
+    if not h2:
+        # Service-page intros: plain paragraphs in one column, read as running text (Victor, 2026-10-16:
+        # the big first line beside smaller text "seems weird").
+        ps = ''.join('<p>%s</p>' % p for p in ([lede] if lede else []) + paras)
+        return f'''
+  <section class="sec">
+    <div class="wrap intro-text">
+      <div class="prose">{ps}</div>
+      <div class="intro-side">{side}</div>
+    </div>
+  </section>'''
     h = '<h2 id="%s" class="h2">%s</h2>' % (hid, h2) if h2 else ''
     ps = ''.join('<p>%s</p>' % p for p in paras)
     ld_ = '<p class="lede intro-lede">%s</p>' % lede if lede else ''
@@ -621,7 +632,7 @@ def quotes_sec(alt=False, hid='h-words'):
   </section>'''
 
 
-def slideshow(hid, title, folder_or_list, intro=None, interval=5000):
+def slideshow(hid, title, folder_or_list, intro=None, interval=3500):
     """Behind-the-scenes photos that advance on their own. Pauses on hover, keyboard focus, when off screen,
     and for visitors who ask for reduced motion. The first two load straight away, the rest one step ahead."""
     figs = []
@@ -836,6 +847,7 @@ _rest = [k for k in ALL_WORK if k not in PORTFOLIO_OPEN + PORTFOLIO_FEATURED]
 PORTFOLIO_ORDER = PORTFOLIO_OPEN + _rest[:_rest.index('lotus')] + PORTFOLIO_FEATURED + _rest[_rest.index('lotus'):]
 # The live homepage's featured eight, in its order (its ninth tile, the reel, is the hero button here).
 HOME_ALL = ['eng', 'cuba', 'checklist', 'aacpd', 'ashley', 'joe', 'chelsea', 'packard']
+HOME_SKIP = ['bennetts']   # Victor, 2026-10-16: not homepage material (still on Commercial and Portfolio)
 HOME_TITLES = {'eng': 'Johns Hopkins Engineering Management', 'cuba': 'Cuba Field Course Experience'}
 
 # ---------------------------------------------------------------- home
@@ -852,7 +864,7 @@ HOME_BODY = f'''
   </section>
 {logo_row()}
 {grid_sec('Featured Projects', 'h-work', None,
-          work_grid(HOME_ALL + [k for k in ALL_WORK if k not in HOME_ALL], 'home-grid', all_keys=HOME_ALL, filters=[('all', 'Featured')] + FILTERS[1:4], meta=False, titles=HOME_TITLES,
+          work_grid(HOME_ALL + [k for k in ALL_WORK if k not in HOME_ALL + HOME_SKIP], 'home-grid', all_keys=HOME_ALL, filters=[('all', 'Featured')] + FILTERS[1:4], meta=False, titles=HOME_TITLES,
                     foot='<a class="text-link" href="portfolio.html">View All Projects</a>'))}
 {services_sec()}
 {slideshow('h-bts', 'Behind the Scenes', BTS_HOME)}
