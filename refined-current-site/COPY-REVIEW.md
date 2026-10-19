@@ -147,6 +147,7 @@ Earlier versions of this demo had reworded these. They now read as on the live s
 | Commercial intro: "We handle concept, production and post-production in-house, so one team takes your spot from script to delivery." | "The same team plans, shoots, edits and colors your spot, from script to delivery." | Fact: the final sound mix is done with partners, so not all post is in-house (Joshua OK'd rewording, 2026-10-16) |
 | Post-Production H2 and line: "Finished In-House" / "We edited, colored and finished every project on this site. Here are four." | "Edited and Colored In-House" / "We edited and colored every project on this site. Here are four." | Same reason |
 | Homepage and About testimonials: the four from the live site | The newest Infinite Legacy Google review added first, word for word, captioned "Infinite Legacy / Google review". The other four stay. | Joshua sent the new reviews, 2026-10-16 |
+| Homepage and About testimonials | Two more Google reviews added word for word after Infinite Legacy: Cara McCandless ("Google review") and Gabe Medina ("Schmidt Sciences, Google review"). | Joshua picked them 2026-10-16; full text copied from Google Maps 2026-10-19; Joshua confirmed Gabe is Schmidt Sciences |
 
 ## Victor's notes, 2026-10-16 (layout only, no wording changes)
 
