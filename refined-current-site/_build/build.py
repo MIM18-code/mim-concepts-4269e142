@@ -605,9 +605,11 @@ TESTIMONIALS = [
 ]
 
 
-# Newest Google reviews, word for word (Joshua sent them 2026-10-16). Long ones run across both columns.
+# Newest Google reviews, word for word (Joshua picked them 2026-10-16; full text from Google Maps 2026-10-19). Long ones run across both columns.
 NEW_REVIEWS = [
     ("We've had the pleasure of working with Victor and Josh at MindInMotion for the past several years on multiple projects requiring different needs. They make thoughtful recommendations and we can always count on them to provide the highest quality service. Outside of their technical expertise, they are professional, punctual and responsive. We highly recommend them for any video production needs and look forward to collaborating with them for years to come.", 'Infinite Legacy', 'Google review'),
+    ("It's always a pleasure to work with Josh, Victor, and the Mind in Motion team. Our organization has partnered with them on roughly 10 video projects over the past five to six years, and they have delivered exceptional work on every one. I'm continually impressed by their ability to transform our initial ideas into compelling, engaging stories. Their professionalism is evident at every stage of the process, from listening carefully to our goals and putting video subjects at ease to coordinating every detail of production and thoughtfully refining the final product until it's exactly what we envisioned - and often even better.", 'Cara McCandless', 'Google review'),
+    ("Victor and the MindInMotion team are top notch. Not only are they technically gifted videographers, but they're also great communicators and project managers. We have hired them for several projects now to tell the stories of our science grantees, and we're always very satisfied with their work.", 'Gabe Medina', 'Schmidt Sciences, Google review'),
 ]
 
 
