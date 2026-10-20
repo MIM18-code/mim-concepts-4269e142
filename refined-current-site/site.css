@@ -172,8 +172,10 @@ main > :last-child { padding-bottom: var(--sec); }
 .tc-val i { display: inline-block; width: .64em; text-align: center; font-style: normal; }   /* fixed boxes: no side-to-side jitter */
 .tc-val b { display: inline-block; width: .3em; text-align: center; font-weight: 400; }
 .hero .tc { bottom: max(88px, 24vh); }   /* level with the home hero's buttons */
+.contact-top { position: relative; }
+.phero.bare .tc, .contact-top .tc { top: 12px; bottom: auto; color: var(--bone-3); text-shadow: none; }   /* pages that open on their heading */
 html:not(.js) .tc { display: none; }
-@media (max-width: 620px) { .tc { top: 16px; bottom: auto; } .hero .tc { top: calc(var(--hdr) + 16px); } }
+@media (max-width: 620px) { .tc { top: 16px; bottom: auto; } .hero .tc { top: calc(var(--hdr) + 16px); } .phero.bare .tc, .contact-top .tc { top: 10px; } }
 /* Portfolio and Contact open straight on the heading, as on Squarespace */
 .phero.bare { min-height: 0; background: none; }
 .phero.bare::after { display: none; }

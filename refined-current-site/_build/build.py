@@ -21,6 +21,9 @@ from PIL import Image
 
 HERE = Path(__file__).resolve().parent
 OUT = HERE.parent
+# Cache-busting: GitHub Pages lets browsers keep site.css and site.js for ten minutes, so a fresh page could run
+# with the old stylesheet or script. The version is a hash of the file, so it only changes when the file does.
+ASSET_V = {f: __import__('hashlib').md5((OUT / f).read_bytes()).hexdigest()[:8] for f in ('site.css', 'site.js')}
 REPO = OUT.parent
 ASSETS = REPO / 'assets' / 'img'
 A = '../assets/img/'          # shared images, relative to the built pages
@@ -462,7 +465,7 @@ def page_html(page, body):
 <link rel="icon" type="image/png" href="{A}mindinmotion-logo.png">
 {FONTS}
 {preload}
-<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="site.css?v={ASSET_V['site.css']}">
 <script type="application/ld+json">
 {ld(page)}
 </script>
@@ -475,7 +478,7 @@ def page_html(page, body):
 </main>
 {FOOTER}
 {PLAYER}
-<script src="site.js"></script>
+<script src="site.js?v={ASSET_V['site.js']}"></script>
 </body>
 </html>
 '''
@@ -490,7 +493,8 @@ SVC_REELS = {
     'film-production': 'youtube:M0txpVj2JoA',
 }
 # The running timecode, the one idea kept from concept D: the viewer's time of day at 24 frames a second, in grey.
-# On every page banner (Joshua, 2026-10-20: services-only "seems very weird"). Each character sits in its own
+# On every page (Joshua, 2026-10-20: "It should all be on every page if we're going to do it"): bottom right of a
+# banner, top right where a page opens on its heading. Each character sits in its own
 # fixed-width box so the readout doesn't shift as the digits change.
 TC = '<p class="tc" aria-hidden="true"><span class="tc-lbl">TC</span> <span class="tc-val">%s</span></p>' % ''.join(
     '<b>:</b>' if c == ':' else '<i>0</i>' for c in '00:00:00:00')
@@ -505,7 +509,7 @@ def phero(img_src, alt, h1, sub, ctas, crumbs=None, short=False, pos=None, bare=
     <div class="wrap">
       <h1>{h1}</h1>
       <p class="lede">{sub}</p>
-    </div>
+    </div>{TC}
   </section>'''
     b = ''.join('<a class="btn%s" href="%s"%s>%s</a>' % (' btn-solid' if solid else '', href, extra, t) for href, t, solid, extra in [
         (c[0], c[1], c[2], c[3] if len(c) > 3 else '') for c in ctas])
@@ -1281,6 +1285,7 @@ CONTACT_BODY = ''.join([
         </ol>
       </aside>
     </div>
+    {TC}
   </section>
   <section class="sec" aria-labelledby="h-faq">
     <div class="wrap">
