@@ -171,3 +171,5 @@ Layout only, 2026-10-20 (Joshua: gaps under the service banners, testimonial spa
 Layout only, 2026-10-20 (Joshua): the timecode is now on every page: bottom right of the banner on Home, About and the four services, top right on Portfolio and Contact, which open on their heading, each digit in a fixed-width box so it no longer shifts side to side. Banner videos now fill the banner exactly and crop from the bottom, and the Commercial and Film stills sit higher, so heads aren't cut off. No wording changes.
 
 The page now asks for site.css and site.js by a version tied to their contents, so a browser can't run a fresh page with a stale stylesheet or script (that mix is what kept the timecode jittering after the fix).
+
+Layout only, 2026-10-20 (Joshua): video thumbnails fade in as they scroll into view, as on the Squarespace site. Ones already on screen when a page opens show straight away; visitors who ask for reduced motion see no fade.

@@ -107,6 +107,28 @@
     tickTc();
   }
 
+  /* ----- thumbnails fade in as they scroll into view, as on the Squarespace site (Joshua, 2026-10-20).
+     Ones already on screen when the page loads show straight away, and reduced motion skips it. Nothing is
+     hidden from search: the tiles are in the page either way, only their opacity changes. ----- */
+  if (!reduce.matches && 'IntersectionObserver' in window) {
+    var fadeIo = new IntersectionObserver(function (en) {
+      en.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        var t = e.target, grid = t.parentNode;
+        var cols = getComputedStyle(grid).gridTemplateColumns.split(' ').length || 1;
+        var i = [].filter.call(grid.children, function (c) { return !c.hidden; }).indexOf(t);
+        t.style.transitionDelay = (i < 0 ? 0 : i % cols) * 90 + 'ms';
+        t.classList.add('in');
+        fadeIo.unobserve(t);
+      });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    d.querySelectorAll('.grid > .tile').forEach(function (t) {
+      if (t.getBoundingClientRect().top < window.innerHeight) return;
+      t.classList.add('fade');
+      fadeIo.observe(t);
+    });
+  }
+
   /* ----- video player ----- */
   var player = d.getElementById('player');
   var frame = player && player.querySelector('.player-frame');
