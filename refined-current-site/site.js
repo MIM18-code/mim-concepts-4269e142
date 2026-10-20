@@ -51,17 +51,27 @@
       var bg = heroMedia.getAttribute('data-bg');
       var yt = bg.indexOf('youtube:') === 0;
       if (yt) {
-        /* YouTube has no background mode: no controls, muted, looped through a one-video playlist. The still
-           stays up until the player reports it is playing (so an error screen never shows), plus a few seconds
-           while YouTube's title overlay is up. */
+        /* YouTube has no background mode: no controls, muted, looped through a one-video playlist, and the player
+           oversized so its title bar and logo sit outside the banner (site.css). The reel shows only while it is
+           playing: when it buffers, pauses or restarts the loop, YouTube puts a spinner or play button over a frozen
+           frame, so the still comes back until it plays again. That also keeps an error screen from ever showing. */
         var id = bg.slice(8);
         f.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&mute=1&loop=1&playlist=' + id +
           '&controls=0&disablekb=1&fs=0&iv_load_policy=3&modestbranding=1&playsinline=1&rel=0&enablejsapi=1' +
           '&origin=' + encodeURIComponent(location.origin);
+        f.className = 'yt';
+        var showing = null;
         window.addEventListener('message', function (e) {
-          if (e.source !== f.contentWindow || f.classList.contains('ready')) return;
+          if (e.source !== f.contentWindow) return;
           var m; try { m = typeof e.data === 'string' ? JSON.parse(e.data) : e.data; } catch (err) { return; }
-          if (m && ((m.event === 'onStateChange' && m.info === 1) || (m.info && m.info.playerState === 1))) setTimeout(function () { f.classList.add('ready'); }, 3000);
+          var state = m && (m.event === 'onStateChange' ? m.info : m.info && m.info.playerState);
+          if (typeof state !== 'number') return;
+          if (state === 1) {
+            if (!showing && !f.classList.contains('ready')) showing = setTimeout(function () { showing = null; f.classList.add('ready'); }, 1500);
+          } else {
+            clearTimeout(showing); showing = null;
+            f.classList.remove('ready');
+          }
         });
       } else {
         f.src = 'https://player.vimeo.com/video/' + bg + '?background=1&autoplay=1&loop=1&muted=1&dnt=1';
