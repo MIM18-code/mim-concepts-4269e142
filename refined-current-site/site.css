@@ -25,10 +25,10 @@
   --t-body: clamp(1.125rem, 1.055rem + .286vw, 1.3125rem);  /* 18 -> 21  running text                  */
   --t-s:    1rem;                                            /* 16        nav, buttons, credits, footer, forms */
 
-  --measure: 70ch;
+  --measure: 62ch;
   --gut: clamp(20px, 4vw, 56px);
   --cgap: clamp(24px, 4vw, 56px);
-  --max: 1600px;   /* was 1360 (Victor, 2026-10-15: the column read a little narrow) */
+  --max: 1440px;   /* 1360 originally; Victor asked for a little wider (2026-10-15), 1600 read too wide (Joshua, 2026-10-20) */
   --hdr: 72px;
   --sec: clamp(64px, 7.5vw, 112px);
 }
@@ -63,14 +63,14 @@ main > :last-child { padding-bottom: var(--sec); }
 
 /* ---------- type ---------- */
 .h2, .close-sec h2 { font-size: var(--t-xl); line-height: 1.02; letter-spacing: -.045em; }
-.lede { font-size: var(--t-m); line-height: 1.4; letter-spacing: -.015em; color: var(--bone-2); max-width: 42em; }
+.lede { font-size: var(--t-m); line-height: 1.4; letter-spacing: -.015em; color: var(--bone-2); max-width: 36em; }
 .meta, .label { font-size: var(--t-s); line-height: 1.4; letter-spacing: 0; color: var(--bone-3); }
 .prose { max-width: var(--measure); }
 .prose p + p { margin-top: .9em; }
 .prose a { color: var(--bone); }
 
 .sec-head { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px var(--cgap); align-items: end; margin-bottom: clamp(32px, 4vw, 56px); }
-.sec-head .lede { max-width: 36em; }
+.sec-head .lede { max-width: 30em; }
 .sec-head.solo { grid-template-columns: minmax(0, 1fr); }
 @media (max-width: 760px) { .sec-head { grid-template-columns: minmax(0, 1fr); align-items: start; } }
 
@@ -222,7 +222,7 @@ html:not(.js) .tc { display: none; }
 .svc h3 { margin-top: 18px; }
 .svc h3 a { text-decoration: none; }
 .svc h3 a:hover { text-decoration: underline; }
-.svc p { margin-top: 8px; color: var(--bone-2); max-width: 40em; }
+.svc p { margin-top: 8px; color: var(--bone-2); max-width: 30em; }
 
 /* ---------- slideshow: just the pictures, controls over the corner ---------- */
 .show { position: relative; background: #000; width: min(100%, 60vh * 16 / 9); }   /* in the column, about 60% of the screen tall (Victor, 2026-10-15: it dominated) */
@@ -279,7 +279,7 @@ html:not(.js) .tc { display: none; }
 .quote figcaption b { display: block; }
 .quote figcaption span { color: var(--bone-3); }
 .quote.solo { max-width: 40em; }
-.quote.long { grid-column: 1 / -1; max-width: 52em; }
+.quote.long { grid-column: 1 / -1; max-width: 40em; }
 .quote.long blockquote p { font-size: var(--t-m); line-height: 1.35; }
 
 /* ---------- lists of services (post page, about) ---------- */

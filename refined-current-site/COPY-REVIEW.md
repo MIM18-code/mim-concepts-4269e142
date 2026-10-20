@@ -153,3 +153,7 @@ Earlier versions of this demo had reworded these. They now read as on the live s
 
 - Homepage Featured Projects: Bennett's Curse St. Patrick's Day no longer appears in the homepage grid (under any filter). It stays on Commercial and Portfolio.
 - Service-page intros: same words, now set as plain paragraphs in one column instead of a large first line beside smaller text.
+
+## Joshua's note, 2026-10-20 (layout only, no wording changes)
+
+- Content column: 1600px read too wide, so it is now 1440px (1360px before Victor's "a little wider" note). Text line lengths are back to their earlier widths, and the long reviews are capped narrower.
