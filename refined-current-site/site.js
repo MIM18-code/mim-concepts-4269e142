@@ -48,12 +48,32 @@
   if (!reduce.matches && !(navigator.connection && navigator.connection.saveData)) {
     var startBg = function () {
       var f = d.createElement('iframe');
-      f.src = 'https://player.vimeo.com/video/' + heroMedia.getAttribute('data-bg') + '?background=1&autoplay=1&loop=1&muted=1&dnt=1';
+      var bg = heroMedia.getAttribute('data-bg');
+      var yt = bg.indexOf('youtube:') === 0;
+      if (yt) {
+        /* YouTube has no background mode: no controls, muted, looped through a one-video playlist. The still
+           stays up until the player reports it is playing (so an error screen never shows), plus a few seconds
+           while YouTube's title overlay is up. */
+        var id = bg.slice(8);
+        f.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&mute=1&loop=1&playlist=' + id +
+          '&controls=0&disablekb=1&fs=0&iv_load_policy=3&modestbranding=1&playsinline=1&rel=0&enablejsapi=1' +
+          '&origin=' + encodeURIComponent(location.origin);
+        window.addEventListener('message', function (e) {
+          if (e.source !== f.contentWindow || f.classList.contains('ready')) return;
+          var m; try { m = typeof e.data === 'string' ? JSON.parse(e.data) : e.data; } catch (err) { return; }
+          if (m && ((m.event === 'onStateChange' && m.info === 1) || (m.info && m.info.playerState === 1))) setTimeout(function () { f.classList.add('ready'); }, 3000);
+        });
+      } else {
+        f.src = 'https://player.vimeo.com/video/' + bg + '?background=1&autoplay=1&loop=1&muted=1&dnt=1';
+      }
       f.title = 'Background reel (muted)';
       f.setAttribute('aria-hidden', 'true');
       f.setAttribute('tabindex', '-1');
       f.allow = 'autoplay; fullscreen';
-      f.addEventListener('load', function () { setTimeout(function () { f.classList.add('ready'); }, 900); });
+      f.addEventListener('load', function () {
+        if (yt) f.contentWindow.postMessage(JSON.stringify({ event: 'listening', id: 1, channel: 'widget' }), '*');
+        else setTimeout(function () { f.classList.add('ready'); }, 900);
+      });
       heroMedia.appendChild(f);
     };
     if (d.readyState === 'complete') setTimeout(startBg, 600); else window.addEventListener('load', function () { setTimeout(startBg, 600); });

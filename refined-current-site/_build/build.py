@@ -482,12 +482,12 @@ def page_html(page, body):
 
 
 # ---------------------------------------------------------------- building blocks
-# Banner reels for the service pages (Victor, 2026-10-15: every service but Post). Put a Vimeo ID here and
-# the banner plays it muted and looped behind the heading, as the homepage hero does; until then the still shows.
+# Banner reels for the service pages (Victor, 2026-10-15: every service but Post; Joshua sent them 2026-10-20).
+# A Vimeo ID or 'youtube:ID'; the banner plays it muted and looped behind the heading, as the homepage hero does.
 SVC_REELS = {
-    'commercial-video-production': None,
-    'corporate-video-production': None,
-    'film-production': None,
+    'commercial-video-production': 'youtube:byswLHwqo2M',
+    'corporate-video-production': 'youtube:ybBa38EiM2Q',
+    'film-production': 'youtube:M0txpVj2JoA',
 }
 # The running timecode, the one idea kept from concept D: the viewer's time of day at 24 frames a second, in grey.
 TC = '<p class="tc" aria-hidden="true"><span class="tc-lbl">TC</span> <span class="tc-val">00:00:00:00</span></p>'
@@ -848,9 +848,10 @@ PORTFOLIO_FEATURED = ['quality', 'chelsea', 'cuba', 'ashley']
 _rest = [k for k in ALL_WORK if k not in PORTFOLIO_OPEN + PORTFOLIO_FEATURED]
 PORTFOLIO_ORDER = PORTFOLIO_OPEN + _rest[:_rest.index('lotus')] + PORTFOLIO_FEATURED + _rest[_rest.index('lotus'):]
 # The live homepage's featured eight, in its order (its ninth tile, the reel, is the hero button here).
-HOME_ALL = ['eng', 'cuba', 'checklist', 'aacpd', 'ashley', 'joe', 'chelsea', 'packard']
-HOME_SKIP = ['bennetts']   # Victor, 2026-10-16: not homepage material (still on Commercial and Portfolio)
-HOME_TITLES = {'eng': 'Johns Hopkins Engineering Management', 'cuba': 'Cuba Field Course Experience'}
+# Squarespace's six, in its order (Joshua, 2026-10-20: "go back to old set. 6 only"). No filter tabs, so
+# Maryland Excels - Finding Childcare and Bennett's Curse (Victor's notes) no longer show on the homepage.
+HOME_ALL = ['playground', 'aacpd', 'chelsea', 'ilikeme', 'cuba', 'packard']
+HOME_TITLES = {'cuba': 'Cuba Field Course Experience'}
 
 # ---------------------------------------------------------------- home
 HOME_BODY = f'''
@@ -866,7 +867,7 @@ HOME_BODY = f'''
   </section>
 {logo_row()}
 {grid_sec('Featured Projects', 'h-work', None,
-          work_grid(HOME_ALL + [k for k in ALL_WORK if k not in HOME_ALL + HOME_SKIP], 'home-grid', all_keys=HOME_ALL, filters=[('all', 'Featured')] + FILTERS[1:4], meta=False, titles=HOME_TITLES,
+          work_grid(HOME_ALL, 'home-grid', meta=False, titles=HOME_TITLES,
                     foot='<a class="text-link" href="portfolio.html">View All Projects</a>'))}
 {services_sec()}
 {slideshow('h-bts', 'Behind the Scenes', BTS_HOME)}
@@ -918,9 +919,11 @@ PAGES.append(dict(
               [('contact.html', 'Tell Us About Your Project', True)],
               crumbs=[('Home', ''), ('Services', None), ('Commercial', 'commercial-video-production')], pos='50% 40%'),
         copy_split(None,
-                   "MindInMotion handles commercial video production in Baltimore for broadcast TV, streaming platforms, YouTube pre-roll and social feeds. Some spots come through ad agencies, like our WellPoint spot for InterPublic. Others we make directly for the client, like the Maryland Excels PSAs for the Maryland State Department of Education.",
-                   ["Josh and Victor also direct feature films. They plan the lighting, camera moves and performances in a 15-second social cut or a 60-second broadcast spot the same way they do on their features.",
-                    "The same team plans, shoots, edits and colors your spot, from script to delivery. If you have a campaign coming up, <a href=\"contact.html\">tell us about it</a>."],
+                   # The live intro, word for word (Joshua, 2026-10-20: "Longer wording please"), except the opening
+                   # slogan and "production and post under one roof" (the final mix is done with partners).
+                   "Our team has spent years crafting spots that grab attention and hold it—for broadcast TV, streaming platforms, YouTube pre-roll, and social feeds. We've partnered with ad agencies and brands directly to produce campaigns that actually perform, not just look good in a conference room.",
+                   ["What sets us apart is our background in narrative filmmaking. Every commercial we produce has intention behind every frame: motivated lighting, purposeful camera movement, performances that feel real. Whether it's a 15-second social cut or a 60-second broadcast spot, we approach it with the same discipline we bring to feature films. That's how you make something memorable when you're competing with a skip button.",
+                    "We work fast when you need it and thorough when you don't. From concept through final delivery, we handle production, editing and color under one roof—which means fewer handoffs, tighter timelines, and creative that stays consistent from first frame to last. If you've got a campaign coming up, <a href=\"contact.html\">let's talk</a>."],
                    '<div class="btns">%s</div>' % reel_btn(), 'h-intro'),
         grid_sec('Selected Work', 'h-work', 'A few of the commercials we’ve produced.',
                  work_grid(['goodmom', 'aacpd', 'wouldnt', 'checklist', 'wellpoint', 'playground', 'illegal', 'bennetts'], 'work-grid', meta=False,
@@ -945,9 +948,10 @@ PAGES.append(dict(
               [('contact.html', 'Tell Us About Your Project', True)],
               crumbs=[('Home', ''), ('Services', None), ('Corporate', 'corporate-video-production')], pos='62% 30%'),
         copy_split(None,
-                   "Our corporate video production work includes training modules for hospital systems, testimonial campaigns for nonprofits, recruitment videos for universities, and internal communications for organizations that want their employees to watch.",
-                   ["Our approach comes from documentary filmmaking. We interview the people involved with a small crew, and film b-roll at your own locations.",
-                    "We've worked with Johns Hopkins, the Maryland State Department of Education, healthcare systems, and dozens of nonprofits and foundations across the Mid-Atlantic. <a href=\"contact.html\">Tell us what you're working on</a>."],
+                   # The live intro, word for word (Joshua, 2026-10-20: "Longer wording please").
+                   "Not every video needs to sell something. Sometimes you need to train a team, share a patient's story, or help donors understand where their money goes. That's corporate video—and it's work we take seriously. We've produced training modules for hospital systems, testimonial campaigns for nonprofits, recruitment videos for universities, and internal communications for organizations that actually want their employees to watch.",
+                   ["Our approach comes from documentary filmmaking. We let real people tell real stories. We set up interviews that feel like conversations, not depositions. We capture b-roll that shows your organization as it actually is, not a stock-photo version of it. The result is content people connect with because it feels honest.",
+                    "We've worked with Johns Hopkins, the Maryland State Department of Education, healthcare systems, and dozens of nonprofits and foundations across the Mid-Atlantic and Florida. If you need video that informs, inspires, or moves people to action without feeling like a commercial, <a href=\"contact.html\">we should talk</a>."],
                    '<div class="btns">%s</div>' % reel_btn(), 'h-intro'),
         grid_sec('Selected Work', 'h-work', 'Recruitment, training, and brand films for organizations across the Mid-Atlantic.',
                  work_grid(['eng', 'chelsea', 'quality', 'finding', 'tidewater', 'cuba', 'joe', 'pearlstone', 'risingtide', 'packard', 'cdspg', 'residency', 'odom', 'ashley', 'sydney'], 'work-grid', meta=False,
@@ -1009,9 +1013,11 @@ PAGES.append(dict(
               [('contact.html', 'Tell Us About Your Project', True)],
               crumbs=[('Home', ''), ('Services', None), ('Film', 'film-production')], pos='50% 40%'),
         copy_split(None,
-                   'MindInMotion is a full-service film production company in Baltimore, Maryland. We produce and finish shorts and feature films, and our own features have screened at festivals across the globe; most are on major VOD platforms.',
-                   ["We can produce a whole film or join your crew for part of it, on productions in Baltimore and up and down the east coast.",
-                    "We'll walk you through each step and tell you what your budget can cover. If you need help getting a film off the ground, or need to fill specific production roles, fill out the <a href=\"contact.html\">contact form</a>."],
+                   # The live intro, word for word (Joshua, 2026-10-20: "Longer wording please"), except the
+                   # feature-film count and Orlando, both cut by Joshua on 2026-10-15.
+                   'MindInMotion is a full service film production company in Maryland based in Baltimore. We have extensive experience with the entire process of producing and finishing shorts and feature films, and our own features have screened at festivals across the globe; most are on major VOD platforms.',
+                   ["If you're looking to get your next film project started and you don't know where to begin, you're not alone. We've been there. Making a film is rarely a simple, easy, or straightforward process, and although every project is different, our years of experience working on a multitude of film projects in various capacities has helped us learn how to make the process simpler and more manageable.",
+                    "To say we love making films is an understatement. It's a difficult process, but it's always rewarding. We continuously strive to be one of the best film production companies in Baltimore, as well as up and down the east coast, and actively try to improve with each project. We promise to always be upfront and honest about every step of the process of completing the film, and help you determine what is possible and how the most can be achieved for any budget. If you're looking for help getting your next film off the ground, or you're looking to fill specific production roles, fill out the <a href=\"contact.html\">contact form</a> and we'll let you know how we can help."],
                    '<div class="btns">%s</div>' % reel_btn(), 'h-intro'),
         films_sec(),
         quote_block('Not only are Josh and Victor an amazing creative team with a TON of knowledge on every facet of filmmaking, they&#39;re just great people.', 'Chris Perillo', 'Director'),
@@ -1046,7 +1052,7 @@ PAGES.append(dict(
     <div class="wrap split">
       <div>
         <h2 id="h-post" class="h2">Our Services</h2>
-        <p class="lede" style="margin-bottom:32px">We're based in Baltimore and have edited and colored feature films and commercials for more than a decade. We can run the full post workflow or take on one piece of it, like color or VFX.</p>
+        <p class="lede" style="margin-bottom:32px">Post-production is where everything comes together. Based in Baltimore, we've built our editing and color capabilities over a decade of feature films and commercial work. Whether you need a full post workflow or help with a specific piece—color, VFX—we can take your project across the finish line.</p>
       </div>
       <figure>{img(A + '011A1266.webp', 'A color grading panel and monitors in a dark edit suite.')}</figure>
     </div>
