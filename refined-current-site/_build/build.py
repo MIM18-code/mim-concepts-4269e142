@@ -351,6 +351,7 @@ def header(slug, over=False):
     return f'''<header class="hdr{' over' if over else ''}">
   <div class="wrap">
     <a class="brand" href="index.html"{cur('index')}><img src="{A}mindinmotion-logo.png" width="30" height="30" alt="">MindInMotion</a>
+    {TC}
     <nav aria-label="Main">
       <ul class="nav">
         <li><a href="portfolio.html"{cur('portfolio')}>Portfolio</a></li>
@@ -492,11 +493,11 @@ SVC_REELS = {
     'corporate-video-production': 'youtube:ybBa38EiM2Q',
     'film-production': 'youtube:M0txpVj2JoA',
 }
-# The running timecode, the one idea kept from concept D: the viewer's time of day at 24 frames a second, in grey.
-# On every page (Joshua, 2026-10-20: "It should all be on every page if we're going to do it"): bottom right of a
-# banner, top right where a page opens on its heading. Each character sits in its own
-# fixed-width box so the readout doesn't shift as the digits change.
-TC = '<p class="tc" aria-hidden="true"><span class="tc-lbl">TC</span> <span class="tc-val">%s</span></p>' % ''.join(
+# The running timecode, the one idea kept from concept D: the viewer's time of day at 24 frames a second, read out
+# in the navigation bar beside the logo with a record light, like a camera's viewfinder (Joshua, 2026-10-20: in the
+# banners it "looks like it's just a mistake left in videos"). Each character sits in its own fixed-width box so the
+# readout doesn't shift as the digits change.
+TC = '<span class="rec" aria-hidden="true"><span class="rec-dot"></span><span class="rec-lbl">REC</span><span class="tc-val">%s</span></span>' % ''.join(
     '<b>:</b>' if c == ':' else '<i>0</i>' for c in '00:00:00:00')
 
 
@@ -509,7 +510,7 @@ def phero(img_src, alt, h1, sub, ctas, crumbs=None, short=False, pos=None, bare=
     <div class="wrap">
       <h1>{h1}</h1>
       <p class="lede">{sub}</p>
-    </div>{TC}
+    </div>
   </section>'''
     b = ''.join('<a class="btn%s" href="%s"%s>%s</a>' % (' btn-solid' if solid else '', href, extra, t) for href, t, solid, extra in [
         (c[0], c[1], c[2], c[3] if len(c) > 3 else '') for c in ctas])
@@ -524,7 +525,7 @@ def phero(img_src, alt, h1, sub, ctas, crumbs=None, short=False, pos=None, bare=
       <h1>{h1}</h1>
       <p class="lede">{sub}</p>
       <div class="btns">{b}</div>
-    </div>{TC}
+    </div>
   </section>'''
 
 
@@ -870,7 +871,7 @@ HOME_BODY = f'''
       <h1 id="h-hero">We are MindInMotion</h1>
       <p class="lede">We Create, Produce, Direct, Film, and Edit. Let&#39;s Create Something Amazing Together.</p>
       <div class="btns">{reel_btn(solid=True)}<a class="btn" href="contact.html">Get a Quote in 24 Hours</a></div>
-    </div>{TC}
+    </div>
   </section>
 {logo_row()}
 {grid_sec('Featured Projects', 'h-work', None,
@@ -1285,7 +1286,6 @@ CONTACT_BODY = ''.join([
         </ol>
       </aside>
     </div>
-    {TC}
   </section>
   <section class="sec" aria-labelledby="h-faq">
     <div class="wrap">

@@ -98,6 +98,22 @@ main > :last-child { padding-bottom: var(--sec); }
 .hdr.over:not(.scrolled) .nav a, .hdr.over:not(.scrolled) .nav .dd-btn, .hdr.over:not(.scrolled) .hdr-tel { color: var(--bone); text-shadow: 0 1px 12px rgba(0, 0, 0, .5); }
 .hdr .wrap { height: 100%; display: flex; align-items: center; gap: 32px; }
 .hdr nav { margin-left: auto; }
+/* record light and running timecode beside the logo, like a viewfinder; the red dot is the one colour on the page
+   besides the logo and the footage (Joshua, 2026-10-20: "with a record button ... on the navigation bar") */
+.rec { display: inline-flex; align-items: center; gap: 8px; font-size: var(--t-s); color: var(--bone-3); white-space: nowrap; letter-spacing: 0; }
+.rec-dot { width: 9px; height: 9px; border-radius: 50%; background: #e0282e; }
+.rec-lbl { font-weight: 700; color: var(--bone-2); letter-spacing: .04em; }
+.tc-val i { display: inline-block; width: .64em; text-align: center; font-style: normal; }   /* fixed boxes: no side-to-side jitter */
+.tc-val b { display: inline-block; width: .3em; text-align: center; font-weight: 400; }
+.hdr.over:not(.scrolled) .rec { color: var(--bone-2); text-shadow: 0 1px 12px rgba(0, 0, 0, .5); }
+.hdr.over:not(.scrolled) .rec-lbl { color: var(--bone); }
+html:not(.js) .rec { display: none; }
+.brand, .rec { flex-shrink: 0; }
+/* phones keep the light and the running time; the narrowest drop the frames, then the readout */
+@media (max-width: 480px) { .hdr .wrap { gap: 12px; } .rec { gap: 6px; } .tc-val i { width: .58em; } }
+@media (max-width: 413px) { .rec-lbl { display: none; } }
+@media (max-width: 366px) { .tc-val > :nth-last-child(-n+3) { display: none; } }
+@media (max-width: 339px) { .rec { display: none; } }
 .brand { display: inline-flex; align-items: center; gap: 12px; min-height: 44px; text-decoration: none; font-size: var(--t-s); font-weight: 700; letter-spacing: -.015em; white-space: nowrap; }
 .brand img { width: 30px; height: 30px; }
 .nav { display: flex; align-items: center; gap: 28px; font-size: var(--t-s); }
@@ -174,16 +190,6 @@ main > :last-child { padding-bottom: var(--sec); }
 .phero h1 { font-size: var(--t-xl); line-height: 1; letter-spacing: -.045em; }
 .phero .lede { margin-top: 20px; color: var(--bone); }
 .phero .btns { margin-top: 28px; }
-/* running timecode in the banner corner, grey, the one thing kept from concept D */
-.tc { position: absolute; right: max(var(--gut), (100% - var(--max)) / 2 + var(--gut)); bottom: clamp(40px, 6vh, 72px); z-index: 2; margin: 0; font-size: var(--t-s); color: var(--bone-2); letter-spacing: 0; white-space: nowrap; text-shadow: 0 1px 8px rgba(0, 0, 0, .6); }
-.tc-lbl { color: var(--bone-3); margin-right: .3em; }
-.tc-val i { display: inline-block; width: .64em; text-align: center; font-style: normal; }   /* fixed boxes: no side-to-side jitter */
-.tc-val b { display: inline-block; width: .3em; text-align: center; font-weight: 400; }
-.hero .tc { bottom: max(88px, 24vh); }   /* level with the home hero's buttons */
-.contact-top { position: relative; }
-.phero.bare .tc, .contact-top .tc { top: 12px; bottom: auto; color: var(--bone-3); text-shadow: none; }   /* pages that open on their heading */
-html:not(.js) .tc { display: none; }
-@media (max-width: 620px) { .tc { top: 16px; bottom: auto; } .hero .tc { top: calc(var(--hdr) + 16px); } .phero.bare .tc, .contact-top .tc { top: 10px; } }
 /* Portfolio and Contact open straight on the heading, as on Squarespace */
 .phero.bare { min-height: 0; background: none; }
 .phero.bare::after { display: none; }
