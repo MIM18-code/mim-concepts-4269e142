@@ -179,3 +179,5 @@ Layout only, 2026-10-20 (Joshua: "make it a bit taller", no YouTube controls on 
 Layout only, 2026-10-20 (Joshua: the banner timecode "looks like it's just a mistake left in videos"; put it with a record button on the navigation bar): the timecode is off every banner and page top. It now runs in the navigation bar beside the logo as a red record light, "REC" and the time, on every page. Phones show the light and the time; the narrowest drop the frames, then the readout. No wording changes.
 
 Layout only, 2026-10-20 (Joshua: "for now, that's just killing the timecode. Everywhere we put it looks stupid."): the running timecode is gone from the whole site, header included. No wording changes.
+
+Layout only, 2026-10-20 (Joshua: "full-width banners for the still galleries, like we're doing with the video"): the Behind the Scenes slideshows on Home, Commercial, Corporate and Film now run edge to edge at the service banners' height (up to one screen below the header), with the crop leaning toward the top so heads stay in. Phones keep a 4:3 frame. The four portrait photos still show whole on black. No wording changes.
