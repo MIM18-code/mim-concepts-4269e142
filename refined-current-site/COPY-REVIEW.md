@@ -157,3 +157,11 @@ Earlier versions of this demo had reworded these. They now read as on the live s
 ## Joshua's note, 2026-10-20 (layout only, no wording changes)
 
 - Content column: 1600px read too wide, so it is now 1440px (1360px before Victor's "a little wider" note). Text line lengths are back to their earlier widths, and the long reviews are capped narrower.
+
+## Joshua's answers, 2026-10-20
+
+| Live | Demo | Why |
+|---|---|---|
+| Commercial, Corporate, Film and Post-Production intros (the long live paragraphs) | Back to the live paragraphs word for word, replacing the shorter Oct 14 versions. Exceptions: Commercial drops "Commercials live or die in the first three seconds. We get that." (slogan) and reads "we handle production, editing and color under one roof" for "production and post under one roof"; Film reads "and our own features have screened at festivals across the globe; most are on major VOD platforms" for "to date our company has produced six feature films that have screened at festivals across the globe, most with worldwide distribution", and drops "in locations like Orlando". "Let's talk", "we should talk" and "contact form" link to Contact. | Joshua: "Longer wording please". The exceptions are earlier rulings: no slogans, sound mixing done with partners, no feature-film count, Orlando dropped. |
+| Homepage Featured Projects (filters: Featured, Commercial, Corporate, Film) | Squarespace's six, no filters: Maryland Excels - Moms at the Playground, AACPD Recruitment, Infinite Legacy - Chelsea, I Like Me, Cuba Field Course Experience, The Packard Center for ALS Research | Joshua: "go back to old set. 6 only". Maryland Excels - Finding Childcare (the one Victor called "White Psych") and Bennett's Curse are off the homepage. |
+| Service page banners: still photos | Commercial, Corporate and Film play the reels Joshua sent, muted and looped (YouTube byswLHwqo2M, ybBa38EiM2Q, M0txpVj2JoA). Post keeps its still. | Victor's note, Joshua sent the reels 2026-10-20 |
