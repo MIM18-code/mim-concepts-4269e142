@@ -59,6 +59,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .wrap { width: 100%; max-width: var(--max); margin: 0 auto; padding-inline: var(--gut); }
 /* one gap between sections, the same everywhere */
 .sec { padding-top: var(--sec); }
+.phero + .sec { padding-top: clamp(40px, 4.5vw, 64px); }   /* the banner fades to black, so a full gap under it read as empty space (Joshua, 2026-10-20) */
 main > :last-child { padding-bottom: var(--sec); }
 
 /* ---------- type ---------- */
@@ -272,15 +273,18 @@ html:not(.js) .tc { display: none; }
 @media (max-width: 900px) { .feat { grid-template-columns: minmax(0, 1fr); } }
 
 /* ---------- testimonials: bold, like the Squarespace site ---------- */
-.quotes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(40px, 5vw, 72px) var(--cgap); }
-@media (max-width: 800px) { .quotes { grid-template-columns: minmax(0, 1fr); } }
-.quote blockquote p { font-size: var(--t-l); font-weight: 700; line-height: 1.25; letter-spacing: -.025em; }
+/* Testimonials: one treatment everywhere, centred under the heading as Squarespace set them (Joshua, 2026-10-20:
+   the mixed sizes and widths looked "super weird"). Two a row; an odd last one sits centred. */
+.quotes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(48px, 5vw, 72px) var(--cgap); align-items: start; }
+.quotes > .quote:last-child:nth-child(odd) { grid-column: 1 / -1; justify-self: center; width: calc((100% - var(--cgap)) / 2); }
+@media (max-width: 800px) { .quotes { grid-template-columns: minmax(0, 1fr); } .quotes > .quote:last-child:nth-child(odd) { width: auto; } }
+.quote { text-align: center; }
+.quote blockquote p { font-size: var(--t-m); font-weight: 700; line-height: 1.35; letter-spacing: -.015em; }
 .quote figcaption { margin-top: 16px; font-size: var(--t-s); line-height: 1.4; letter-spacing: 0; }
 .quote figcaption b { display: block; }
 .quote figcaption span { color: var(--bone-3); }
-.quote.solo { max-width: 40em; }
-.quote.long { grid-column: 1 / -1; max-width: 40em; }
-.quote.long blockquote p { font-size: var(--t-m); line-height: 1.35; }
+.quote.solo { max-width: 34em; margin-inline: auto; }
+.quote.solo blockquote p { font-size: var(--t-l); line-height: 1.25; letter-spacing: -.025em; }
 
 /* ---------- lists of services (post page, about) ---------- */
 .rows > li { display: grid; grid-template-columns: minmax(0, 15em) minmax(0, var(--measure)); gap: 8px var(--cgap); padding-block: 24px; border-top: 1px solid var(--line); }

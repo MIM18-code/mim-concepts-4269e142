@@ -605,7 +605,7 @@ TESTIMONIALS = [
 ]
 
 
-# Newest Google reviews, word for word (Joshua picked them 2026-10-16; full text from Google Maps 2026-10-19). Long ones run across both columns.
+# Newest Google reviews, word for word (Joshua picked them 2026-10-16; full text from Google Maps 2026-10-19).
 NEW_REVIEWS = [
     ("We've had the pleasure of working with Victor and Josh at MindInMotion for the past several years on multiple projects requiring different needs. They make thoughtful recommendations and we can always count on them to provide the highest quality service. Outside of their technical expertise, they are professional, punctual and responsive. We highly recommend them for any video production needs and look forward to collaborating with them for years to come.", 'Infinite Legacy', 'Google review'),
     ("It's always a pleasure to work with Josh, Victor, and the Mind in Motion team. Our organization has partnered with them on roughly 10 video projects over the past five to six years, and they have delivered exceptional work on every one. I'm continually impressed by their ability to transform our initial ideas into compelling, engaging stories. Their professionalism is evident at every stage of the process, from listening carefully to our goals and putting video subjects at ease to coordinating every detail of production and thoughtfully refining the final product until it's exactly what we envisioned - and often even better.", 'Cara McCandless', 'Google review'),
@@ -615,7 +615,7 @@ NEW_REVIEWS = [
 
 def quotes_sec(alt=False, hid='h-words'):
     qs = ''.join('''
-        <figure class="quote long">
+        <figure class="quote">
           <blockquote><p>%s</p></blockquote>
           <figcaption><b>%s</b><span>%s</span></figcaption>
         </figure>''' % (e(q), w, r) for q, w, r in NEW_REVIEWS)
