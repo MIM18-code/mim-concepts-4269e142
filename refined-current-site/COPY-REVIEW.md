@@ -173,3 +173,5 @@ Layout only, 2026-10-20 (Joshua): the timecode is now on every page: bottom righ
 The page now asks for site.css and site.js by a version tied to their contents, so a browser can't run a fresh page with a stale stylesheet or script (that mix is what kept the timecode jittering after the fix).
 
 Layout only, 2026-10-20 (Joshua): video thumbnails fade in as they scroll into view, as on the Squarespace site. Ones already on screen when a page opens show straight away; visitors who ask for reduced motion see no fade.
+
+Layout only, 2026-10-20 (Joshua: "make it a bit taller", no YouTube controls on mouseover): the four service banners are as tall as a 16:9 frame at the window's width, up to the screen below the header (on a 1440-wide laptop window, about 720px instead of 540px), so the reels show nearly the whole picture. YouTube's title bar and logo now sit outside the banner, nothing in the player can be hovered, and the still comes back whenever the reel buffers, pauses or restarts its loop. Phones keep their banner height. No wording changes.

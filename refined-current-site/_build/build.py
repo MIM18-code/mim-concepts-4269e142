@@ -518,7 +518,7 @@ def phero(img_src, alt, h1, sub, ctas, crumbs=None, short=False, pos=None, bare=
     reel = SVC_REELS.get(crumbs[-1][1]) if svc else None
     media = '<div class="hero-media" data-bg="%s">%s</div>' % (reel, pic) if reel else pic
     return f'''
-  <section class="phero{' short' if short else ''}">
+  <section class="phero{' short' if short else ''}{' svc' if svc else ''}">
     {media}
     <div class="wrap">
       <h1>{h1}</h1>
