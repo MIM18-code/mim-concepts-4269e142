@@ -144,6 +144,12 @@ main > :last-child { padding-bottom: var(--sec); }
   transform: translate(-50%, -50%); border: 0; pointer-events: none; opacity: 0; transition: opacity 1.2s ease;
 }
 .hero-media iframe.ready { opacity: 1; }
+/* Cover the banner exactly, whatever its shape, and crop from the bottom rather than the middle so heads at the top
+   of the frame stay in (Joshua, 2026-10-20: the banners cut off heads). The bottom sits under the dark fade anyway. */
+@supports (width: 1cqw) {
+  .hero-media { container-type: size; }
+  .hero-media iframe { top: 0; width: max(100cqw, 177.78cqh); height: max(100cqh, 56.25cqw); min-width: 0; min-height: 0; transform: translateX(-50%); }
+}
 .hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0, 0, 0, .9) 0%, rgba(0, 0, 0, .5) 34%, rgba(0, 0, 0, .08) 62%, rgba(0, 0, 0, .25) 82%, rgba(0, 0, 0, .65) 100%); }
 .hero-body { position: relative; z-index: 2; padding-block: 120px max(88px, 24vh); }   /* lower third, not on the floor (Victor, 2026-10-16) */
 .hero h1 { font-size: var(--t-hero); line-height: 1; letter-spacing: -.045em; max-width: 11em; }
@@ -161,10 +167,13 @@ main > :last-child { padding-bottom: var(--sec); }
 .phero .lede { margin-top: 20px; color: var(--bone); }
 .phero .btns { margin-top: 28px; }
 /* running timecode in the banner corner, grey, the one thing kept from concept D */
-.tc { position: absolute; right: var(--gut); bottom: clamp(40px, 6vh, 72px); z-index: 2; margin: 0; font-size: var(--t-s); color: var(--bone-2); font-variant-numeric: tabular-nums; letter-spacing: .02em; text-shadow: 0 1px 8px rgba(0, 0, 0, .6); }
-.tc-lbl { color: var(--bone-3); }
+.tc { position: absolute; right: max(var(--gut), (100% - var(--max)) / 2 + var(--gut)); bottom: clamp(40px, 6vh, 72px); z-index: 2; margin: 0; font-size: var(--t-s); color: var(--bone-2); letter-spacing: 0; white-space: nowrap; text-shadow: 0 1px 8px rgba(0, 0, 0, .6); }
+.tc-lbl { color: var(--bone-3); margin-right: .3em; }
+.tc-val i { display: inline-block; width: .64em; text-align: center; font-style: normal; }   /* fixed boxes: no side-to-side jitter */
+.tc-val b { display: inline-block; width: .3em; text-align: center; font-weight: 400; }
+.hero .tc { bottom: max(88px, 24vh); }   /* level with the home hero's buttons */
 html:not(.js) .tc { display: none; }
-@media (max-width: 620px) { .tc { top: 16px; bottom: auto; } }
+@media (max-width: 620px) { .tc { top: 16px; bottom: auto; } .hero .tc { top: calc(var(--hdr) + 16px); } }
 /* Portfolio and Contact open straight on the heading, as on Squarespace */
 .phero.bare { min-height: 0; background: none; }
 .phero.bare::after { display: none; }

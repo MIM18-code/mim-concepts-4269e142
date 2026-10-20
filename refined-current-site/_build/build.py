@@ -490,7 +490,10 @@ SVC_REELS = {
     'film-production': 'youtube:M0txpVj2JoA',
 }
 # The running timecode, the one idea kept from concept D: the viewer's time of day at 24 frames a second, in grey.
-TC = '<p class="tc" aria-hidden="true"><span class="tc-lbl">TC</span> <span class="tc-val">00:00:00:00</span></p>'
+# On every page banner (Joshua, 2026-10-20: services-only "seems very weird"). Each character sits in its own
+# fixed-width box so the readout doesn't shift as the digits change.
+TC = '<p class="tc" aria-hidden="true"><span class="tc-lbl">TC</span> <span class="tc-val">%s</span></p>' % ''.join(
+    '<b>:</b>' if c == ':' else '<i>0</i>' for c in '00:00:00:00')
 
 
 def phero(img_src, alt, h1, sub, ctas, crumbs=None, short=False, pos=None, bare=False):
@@ -517,7 +520,7 @@ def phero(img_src, alt, h1, sub, ctas, crumbs=None, short=False, pos=None, bare=
       <h1>{h1}</h1>
       <p class="lede">{sub}</p>
       <div class="btns">{b}</div>
-    </div>{TC if svc else ''}
+    </div>{TC}
   </section>'''
 
 
@@ -863,7 +866,7 @@ HOME_BODY = f'''
       <h1 id="h-hero">We are MindInMotion</h1>
       <p class="lede">We Create, Produce, Direct, Film, and Edit. Let&#39;s Create Something Amazing Together.</p>
       <div class="btns">{reel_btn(solid=True)}<a class="btn" href="contact.html">Get a Quote in 24 Hours</a></div>
-    </div>
+    </div>{TC}
   </section>
 {logo_row()}
 {grid_sec('Featured Projects', 'h-work', None,
@@ -917,7 +920,7 @@ PAGES.append(dict(
         phero(A + 'Screenshot-2024-01-18-at-2.56.49-PM.webp', 'Two young girls play in a purple and yellow toy car outdoors.',
               'Commercial Video Production', 'TV spots, PSAs, recruitment ads and social cuts.',
               [('contact.html', 'Tell Us About Your Project', True)],
-              crumbs=[('Home', ''), ('Services', None), ('Commercial', 'commercial-video-production')], pos='50% 40%'),
+              crumbs=[('Home', ''), ('Services', None), ('Commercial', 'commercial-video-production')], pos='50% 18%'),
         copy_split(None,
                    # The live intro, word for word (Joshua, 2026-10-20: "Longer wording please"), except the opening
                    # slogan and "production and post under one roof" (the final mix is done with partners).
@@ -1011,7 +1014,7 @@ PAGES.append(dict(
         phero(A + 'heart-thunder-fog.webp', 'From the FIVES video Heart & Thunder: a drummer mid-hit, backlit in blue haze.',
               'Film Production', 'Production and post-production support for features, shorts, documentaries, and music videos.',
               [('contact.html', 'Tell Us About Your Project', True)],
-              crumbs=[('Home', ''), ('Services', None), ('Film', 'film-production')], pos='50% 40%'),
+              crumbs=[('Home', ''), ('Services', None), ('Film', 'film-production')], pos='50% 8%'),
         copy_split(None,
                    # The live intro, word for word (Joshua, 2026-10-20: "Longer wording please"), except the
                    # feature-film count and Orlando, both cut by Joshua on 2026-10-15.
