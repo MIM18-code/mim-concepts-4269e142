@@ -80,17 +80,19 @@
   }
   });
 
-  /* ----- timecode on the service banners: the viewer's time of day, HH:MM:SS:FF at 24 fps.
+  /* ----- timecode on the page banners: the viewer's time of day, HH:MM:SS:FF at 24 fps.
      Decoration only, no control. With reduced motion it shows the time once and stays still. ----- */
-  var tcs = [].slice.call(d.querySelectorAll('.tc-val'));
+  var tcs = [].slice.call(d.querySelectorAll('.tc-val')).map(function (c) { return c.querySelectorAll('i'); });
   if (tcs.length) {
     var pad = function (n) { return (n < 10 ? '0' : '') + n; };
     var tcOn = true, tcTimer = 0;
     var paintTc = function () {
       var now = new Date();
       var f = Math.floor(now.getMilliseconds() * 24 / 1000);
-      var t = pad(now.getHours()) + ':' + pad(now.getMinutes()) + ':' + pad(now.getSeconds()) + ':' + pad(f);
-      tcs.forEach(function (c) { c.textContent = t; });
+      var t = pad(now.getHours()) + pad(now.getMinutes()) + pad(now.getSeconds()) + pad(f);
+      tcs.forEach(function (digits) {
+        for (var i = 0; i < digits.length; i++) if (digits[i].textContent !== t[i]) digits[i].textContent = t[i];
+      });
       return now.getMilliseconds();
     };
     var tickTc = function () {
@@ -99,7 +101,7 @@
       if (tcOn && !d.hidden && !reduce.matches) tcTimer = setTimeout(tickTc, 1000 / 24 - ms % (1000 / 24) + 2);
     };
     if ('IntersectionObserver' in window) {
-      new IntersectionObserver(function (en) { tcOn = en[0].isIntersecting; if (tcOn && !tcTimer) tickTc(); }).observe(tcs[0].parentNode);
+      new IntersectionObserver(function (en) { tcOn = en[0].isIntersecting; if (tcOn && !tcTimer) tickTc(); }).observe(d.querySelector('.tc'));
     }
     d.addEventListener('visibilitychange', function () { if (!d.hidden && !tcTimer) tickTc(); });
     tickTc();

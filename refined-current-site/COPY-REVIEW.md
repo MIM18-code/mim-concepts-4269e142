@@ -167,3 +167,5 @@ Earlier versions of this demo had reworded these. They now read as on the live s
 | Service page banners: still photos | Commercial, Corporate and Film play the reels Joshua sent, muted and looped (YouTube byswLHwqo2M, ybBa38EiM2Q, M0txpVj2JoA). Post keeps its still. | Victor's note, Joshua sent the reels 2026-10-20 |
 
 Layout only, 2026-10-20 (Joshua: gaps under the service banners, testimonial spacing "super weird"): the space between a service banner and its intro is smaller, and every testimonial now has the same centred treatment, two a row on Home and About and one centred on service pages. No wording changes.
+
+Layout only, 2026-10-20 (Joshua): the timecode is now on every page banner (Home, About and all four services; Portfolio and Contact have no banner), each digit in a fixed-width box so it no longer shifts side to side. Banner videos now fill the banner exactly and crop from the bottom, and the Commercial and Film stills sit higher, so heads aren't cut off. No wording changes.
