@@ -351,7 +351,6 @@ def header(slug, over=False):
     return f'''<header class="hdr{' over' if over else ''}">
   <div class="wrap">
     <a class="brand" href="index.html"{cur('index')}><img src="{A}mindinmotion-logo.png" width="30" height="30" alt="">MindInMotion</a>
-    {TC}
     <nav aria-label="Main">
       <ul class="nav">
         <li><a href="portfolio.html"{cur('portfolio')}>Portfolio</a></li>
@@ -493,12 +492,8 @@ SVC_REELS = {
     'corporate-video-production': 'youtube:ybBa38EiM2Q',
     'film-production': 'youtube:M0txpVj2JoA',
 }
-# The running timecode, the one idea kept from concept D: the viewer's time of day at 24 frames a second, read out
-# in the navigation bar beside the logo with a record light, like a camera's viewfinder (Joshua, 2026-10-20: in the
-# banners it "looks like it's just a mistake left in videos"). Each character sits in its own fixed-width box so the
-# readout doesn't shift as the digits change.
-TC = '<span class="rec" aria-hidden="true"><span class="rec-dot"></span><span class="rec-lbl">REC</span><span class="tc-val">%s</span></span>' % ''.join(
-    '<b>:</b>' if c == ':' else '<i>0</i>' for c in '00:00:00:00')
+# No running timecode anywhere: on the banners and then in the navigation bar it looked like a mistake (Joshua,
+# 2026-10-20: "for now, that's just killing the timecode. Everywhere we put it looks stupid.")
 
 
 def phero(img_src, alt, h1, sub, ctas, crumbs=None, short=False, pos=None, bare=False):
