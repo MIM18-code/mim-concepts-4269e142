@@ -90,12 +90,12 @@
   }
   });
 
-  /* ----- timecode on the page banners: the viewer's time of day, HH:MM:SS:FF at 24 fps.
+  /* ----- timecode in the navigation bar: the viewer's time of day, HH:MM:SS:FF at 24 fps.
      Decoration only, no control. With reduced motion it shows the time once and stays still. ----- */
   var tcs = [].slice.call(d.querySelectorAll('.tc-val')).map(function (c) { return c.querySelectorAll('i'); });
   if (tcs.length) {
     var pad = function (n) { return (n < 10 ? '0' : '') + n; };
-    var tcOn = true, tcTimer = 0;
+    var tcTimer = 0;
     var paintTc = function () {
       var now = new Date();
       var f = Math.floor(now.getMilliseconds() * 24 / 1000);
@@ -108,11 +108,8 @@
     var tickTc = function () {
       tcTimer = 0;
       var ms = paintTc();
-      if (tcOn && !d.hidden && !reduce.matches) tcTimer = setTimeout(tickTc, 1000 / 24 - ms % (1000 / 24) + 2);
+      if (!d.hidden && !reduce.matches) tcTimer = setTimeout(tickTc, 1000 / 24 - ms % (1000 / 24) + 2);
     };
-    if ('IntersectionObserver' in window) {
-      new IntersectionObserver(function (en) { tcOn = en[0].isIntersecting; if (tcOn && !tcTimer) tickTc(); }).observe(d.querySelector('.tc'));
-    }
     d.addEventListener('visibilitychange', function () { if (!d.hidden && !tcTimer) tickTc(); });
     tickTc();
   }
