@@ -638,7 +638,7 @@ def quotes_sec(alt=False, hid='h-words'):
 
 
 def slideshow(hid, title, folder_or_list, intro=None, interval=3500):
-    """Behind-the-scenes photos that advance on their own. Pauses on hover, keyboard focus, when off screen,
+    """Behind-the-scenes photos that advance on their own, edge to edge like the banners (Joshua, 2026-10-20). Pauses on hover, keyboard focus, when off screen,
     and for visitors who ask for reduced motion. The first two load straight away, the rest one step ahead."""
     figs = []
     for k, (src, alt) in enumerate(folder_or_list):
@@ -658,7 +658,7 @@ def slideshow(hid, title, folder_or_list, intro=None, interval=3500):
     </div>'''
     return f'''
   <section aria-labelledby="{hid}" class="show-sec">{head}
-    <div class="wrap"><div class="show" data-interval="{interval}" role="region" aria-roledescription="carousel" aria-label="{e(title or 'Behind the scenes')} photos">
+    <div class="show" data-interval="{interval}" role="region" aria-roledescription="carousel" aria-label="{e(title or 'Behind the scenes')} photos">
       <div class="show-stage">
         {''.join(figs)}
       </div>
@@ -668,7 +668,7 @@ def slideshow(hid, title, folder_or_list, intro=None, interval=3500):
           <button class="next" type="button" aria-label="Next photo"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M5 2l5 5-5 5"/></svg></button>
         </div>
       </div>
-    </div></div>
+    </div>
   </section>'''
 
 
