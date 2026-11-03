@@ -610,9 +610,11 @@ TESTIMONIALS = [
 
 # Newest Google reviews, word for word (Joshua picked them 2026-10-16; full text from Google Maps 2026-10-19).
 NEW_REVIEWS = [
-    ("We've had the pleasure of working with Victor and Josh at MindInMotion for the past several years on multiple projects requiring different needs. They make thoughtful recommendations and we can always count on them to provide the highest quality service. Outside of their technical expertise, they are professional, punctual and responsive. We highly recommend them for any video production needs and look forward to collaborating with them for years to come.", 'Infinite Legacy', 'Google review'),
-    ("It's always a pleasure to work with Josh, Victor, and the Mind in Motion team. Our organization has partnered with them on roughly 10 video projects over the past five to six years, and they have delivered exceptional work on every one. I'm continually impressed by their ability to transform our initial ideas into compelling, engaging stories. Their professionalism is evident at every stage of the process, from listening carefully to our goals and putting video subjects at ease to coordinating every detail of production and thoughtfully refining the final product until it's exactly what we envisioned - and often even better.", 'Cara McCandless', 'Google review'),
-    ("Victor and the MindInMotion team are top notch. Not only are they technically gifted videographers, but they're also great communicators and project managers. We have hired them for several projects now to tell the stories of our science grantees, and we're always very satisfied with their work.", 'Gabe Medina', 'Schmidt Sciences, Google review'),
+    # Victor, 2026-11-02: no "Google review" labels, Cara's title and organization, and every review about the same
+    # length as the older quotes. Each is one or two whole sentences from the Google review, word for word.
+    ("They make thoughtful recommendations and we can always count on them to provide the highest quality service.", 'Infinite Legacy', ''),
+    ("Our organization has partnered with them on roughly 10 video projects over the past five to six years, and they have delivered exceptional work on every one.", 'Cara McCandless', 'Senior Marketing and Brand Manager, University System of Maryland'),
+    ("Victor and the MindInMotion team are top notch. Not only are they technically gifted videographers, but they're also great communicators and project managers.", 'Gabe Medina', 'Schmidt Sciences'),
 ]
 
 
@@ -620,8 +622,8 @@ def quotes_sec(alt=False, hid='h-words'):
     qs = ''.join('''
         <figure class="quote">
           <blockquote><p>%s</p></blockquote>
-          <figcaption><b>%s</b><span>%s</span></figcaption>
-        </figure>''' % (e(q), w, r) for q, w, r in NEW_REVIEWS)
+          <figcaption><b>%s</b>%s</figcaption>
+        </figure>''' % (e(q), w, '<span>%s</span>' % r if r else '') for q, w, r in NEW_REVIEWS)
     qs += ''.join('''
         <figure class="quote">
           <blockquote><p>%s</p></blockquote>
@@ -742,7 +744,7 @@ BTS_HOME = bts('home', [
 
 SVC_COPY = {
     'commercial-video-production': ('Commercial', 'TV spots, social media ads, and branded content. We&#39;ve created campaigns for clients like Maryland State Department of Education that reach millions of viewers across broadcast and digital.', A + 'Screen-Shot-2022-06-24-at-6.14.31-PM-2.webp', 'A woman in a dark bathroom at night, from the Maryland Excels "Good Mom" spot.'),
-    'corporate-video-production': ('Corporate', 'Recruitment videos, training content, testimonials, and internal communications. Trusted by Johns Hopkins, Anne Arundel County Police, and InterPublic.', A + 'residency.webp', 'A woman looks up in a wood-paneled library, from a Johns Hopkins AAP film.'),
+    'corporate-video-production': ('Corporate', 'Recruitment videos, training content, testimonials, and internal communications. Trusted by Johns Hopkins, Anne Arundel County Police, and InterPublic.', A + 'eng-lab.webp', 'A man in blue gloves shows a 3D-printed part to a student beside an orange 3D-printer cover.'),
     'film-production': ('Film', 'Feature films, documentaries, music videos, and narrative projects. Our films "I Like Me" and "Bad Witch" have screened at festivals worldwide and stream on major VOD platforms.', A + 'bad-witch.webp', 'A young man at dusk in hard orange light, from Bad Witch.'),
     'post-production': ('Post-Production', 'Expert editing, color grading, and VFX using Final Cut Pro, Premiere, Avid, and DaVinci Resolve.', A + '011A1257-2.webp', 'A color grading panel and keyboard on a wooden desk, seen from above.'),
 }
@@ -841,10 +843,10 @@ def grid_sec(h2, hid, lede, grid_html, alt=False):
 PAGES = []
 ALL_WORK = ['quality', 'joe', 'cuba', 'ashley', 'aacpd', 'wellpoint', 'eng', 'packard', 'chelsea',
             'goodmom', 'wouldnt', 'checklist', 'playground', 'illegal', 'bennetts',
-            'residency', 'layne', 'odom', 'tidewater', 'risingtide',
-            'sydney', 'lungforce', 'pearlstone', 'cdspg', 'finding',
+            'tidewater', 'risingtide',
+            'sydney', 'lungforce', 'pearlstone', 'finding',
             'lotus', 'ilikeme', 'badwitch', 'ape', 'incubation', 'farmhouse', 'hiking',
-            'ghost', 'cyw', 'lovers', 'thunder']
+            'ghost', 'cyw', 'lovers']
 # Portfolio's All Work opens as Squarespace's did; the four Featured Projects come after the client work.
 PORTFOLIO_OPEN = ['reel', 'goodmom', 'playground', 'aacpd', 'ghost', 'farmhouse']
 PORTFOLIO_FEATURED = ['quality', 'chelsea', 'cuba', 'ashley']
@@ -880,7 +882,7 @@ HOME_BODY = f'''
       <div class="split pair">
       <div>
         <div class="prose">
-          <p>MindInMotion was founded by Baltimore native Joshua Land and Boston transplant Victor Fink in 2012. We met in a 16mm filmmaking class in college.</p>
+          <p>We're Joshua Land, a Baltimore native, and Victor Fink, a Boston transplant. We met in a 16mm filmmaking class in college and founded MindInMotion in 2012.</p>
           <p>Since then we've made our own feature films together and grown a company that makes film and video for clients. We've shot documentary and fiction in Baltimore, Washington DC, the mountains of Washington state and the rainforests of Cuba.</p>
           <p>Our feature films "I Like Me" and "Bad Witch" have screened at festivals across the world and are available to view on all major VOD platforms. Our new feature film, "Incubation", is now screening at festivals.</p>
         </div>
@@ -957,7 +959,7 @@ PAGES.append(dict(
                     "We've worked with Johns Hopkins, the Maryland State Department of Education, healthcare systems, and dozens of nonprofits and foundations across the Mid-Atlantic and Florida. If you need video that informs, inspires, or moves people to action without feeling like a commercial, <a href=\"contact.html\">we should talk</a>."],
                    '<div class="btns">%s</div>' % reel_btn(), 'h-intro'),
         grid_sec('Selected Work', 'h-work', 'Recruitment, training, and brand films for organizations across the Mid-Atlantic.',
-                 work_grid(['eng', 'chelsea', 'quality', 'finding', 'tidewater', 'cuba', 'joe', 'pearlstone', 'risingtide', 'packard', 'cdspg', 'residency', 'odom', 'ashley', 'sydney'], 'work-grid', meta=False,
+                 work_grid(['eng', 'chelsea', 'quality', 'finding', 'tidewater', 'cuba', 'joe', 'pearlstone', 'risingtide', 'packard', 'ashley', 'sydney'], 'work-grid', meta=False,
                            titles=SVC_TITLES, foot=GRIDFOOT % 'Have a project in mind?')),
         quote_block('They go the extra mile to create the best content and offer helpful input on ways to create the most appealing video for our audience.', 'Patrick Moody', 'Director of Marketing, Johns Hopkins AAP'),
         slideshow('h-bts', 'Behind the Scenes', BTS_CORPORATE),
@@ -970,7 +972,7 @@ FILM_GROUPS = [
                        ('ape', 'Ape Canyon'), ('incubation', 'Incubation (teaser)')]),
     ('Short films', [('farmhouse', 'The Farmhouse'), ('hiking', "Don't Go Hiking")]),
     ('Music videos', [('ghost', 'Juliet Lloyd - Ghost Light'), ('cyw', 'Juliet Lloyd - Call Your Wife'),
-                      ('lovers', 'Fives - Lovers in Lullaby'), ('thunder', 'FIVES - Heart &amp; Thunder')]),
+                      ('lovers', 'Fives - Lovers in Lullaby')]),
 ]
 
 
@@ -1009,9 +1011,9 @@ PAGES.append(dict(
     og_desc='Full service film production. Feature films, shorts, and documentaries screened at festivals worldwide.',
     crumbs=[('Home', ''), ('Services', None), ('Film', 'film-production')],
     service='Film production',
-    preload=A + 'heart-thunder-fog.webp',
+    preload=A + 'hero-film.webp',
     body=''.join([
-        phero(A + 'heart-thunder-fog.webp', 'From the FIVES video Heart & Thunder: a drummer mid-hit, backlit in blue haze.',
+        phero(A + 'hero-film.webp', 'A woman plays a grand piano on a dark stage, lit by beams of light.',
               'Film Production', 'Production and post-production support for features, shorts, documentaries, and music videos.',
               [('contact.html', 'Tell Us About Your Project', True)],
               crumbs=[('Home', ''), ('Services', None), ('Film', 'film-production')], pos='50% 8%'),
@@ -1213,9 +1215,9 @@ PAGES.append(dict(
         phero(None, None,
               'Our Work', 'Our video production work: commercials, corporate videos and documentaries for clients in Baltimore, Maryland and elsewhere, plus our own feature films. Tap any frame to watch.',
               [], bare=True),
-        feature_sec('Featured Projects', 'h-cases', [
-            feature(c['key'], c['client'], c['title'], alt_override=c['alt'], body=c['text'], deliv=c['deliv'], eager=(i == 0))
-            for i, c in enumerate(CASES)]),
+        # Same six as the homepage (Victor, 2026-11-02: different featured projects on the two pages was a problem).
+        grid_sec('Featured Projects', 'h-cases', None,
+                 work_grid(HOME_ALL, 'feat-grid', meta=False, titles=HOME_TITLES)),
         grid_sec('All Work', 'h-all', None,
                  work_grid(PORTFOLIO_ORDER, 'all-grid', all_keys=PORTFOLIO_ORDER, filters=FILTERS)),
         closing(btn='Start Your Project'),

@@ -238,13 +238,13 @@ main > :last-child { padding-bottom: var(--sec); }
 
 /* ---------- slideshow: just the pictures, controls over the corner ---------- */
 .show { position: relative; background: #000; }
-/* edge to edge and as tall as the service banners (Joshua, 2026-10-20: "full-width banners for the still galleries,
-   like we're doing with the video"); most of these photos are 4:3 or 3:2, so the crop leans to the top to keep heads */
-.show-stage { position: relative; width: 100%; height: max(360px, min(56.25vw, calc(100svh - var(--hdr)))); overflow: hidden; }
+/* edge to edge (Joshua, 2026-10-20) in a 2.35:1 frame (Victor, 2026-11-02); most of these photos are 4:3 or 3:2,
+   so the crop leans to the top to keep heads */
+.show-stage { position: relative; width: 100%; aspect-ratio: 2.35 / 1; overflow: hidden; }   /* scope, edge to edge (Victor, 2026-11-02) */
 .show-stage figure { position: absolute; inset: 0; opacity: 0; transition: opacity 1.1s ease; }
 .show-stage figure.on { opacity: 1; }
 .show-stage img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
-@media (max-width: 620px) { .show-stage { height: auto; aspect-ratio: 4 / 3; } }
+@media (max-width: 620px) { .show-stage { aspect-ratio: 16 / 9; } }   /* scope would be a sliver on a phone */
 .show-stage figure.tall img { object-fit: contain; }   /* portrait photos: whole, on black */
 .show-bar { position: absolute; right: max(var(--gut), (100% - var(--max)) / 2 + var(--gut)); bottom: 16px; z-index: 2; background: rgba(0, 0, 0, .5); }   /* lined up with the column */
 @media (max-width: 620px) { .show-bar { right: 8px; bottom: 8px; } }

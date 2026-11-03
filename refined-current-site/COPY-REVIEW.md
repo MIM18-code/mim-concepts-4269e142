@@ -181,3 +181,14 @@ Layout only, 2026-10-20 (Joshua: the banner timecode "looks like it's just a mis
 Layout only, 2026-10-20 (Joshua: "for now, that's just killing the timecode. Everywhere we put it looks stupid."): the running timecode is gone from the whole site, header included. No wording changes.
 
 Layout only, 2026-10-20 (Joshua: "full-width banners for the still galleries, like we're doing with the video"): the Behind the Scenes slideshows on Home, Commercial, Corporate and Film now run edge to edge at the service banners' height (up to one screen below the header), with the crop leaning toward the top so heads stay in. Phones keep a 4:3 frame. The four portrait photos still show whole on black. No wording changes.
+
+## Victor's notes, 2026-11-02 (Joshua: "do everything he wants")
+
+| Where | Before | After | Why |
+|---|---|---|---|
+| Testimonials (every page that has them) | Infinite Legacy, Cara McCandless and Gabe Medina as full Google reviews, captioned "Google review" | One or two whole sentences from each review, word for word, at the length of the older quotes. Captions: Infinite Legacy; Cara McCandless, Senior Marketing and Brand Manager, University System of Maryland (from her email signature); Gabe Medina, Schmidt Sciences | Victor: no "Google review" labels, add Cara's title and organization, all reviews a similar length |
+| Homepage, About MindInMotion | "MindInMotion was founded by Baltimore native Joshua Land and Boston transplant Victor Fink in 2012. We met in a 16mm filmmaking class in college." | "We're Joshua Land, a Baltimore native, and Victor Fink, a Boston transplant. We met in a 16mm filmmaking class in college and founded MindInMotion in 2012." | Victor: third and first person mixed in one paragraph |
+| Portfolio, Featured Projects | Four write-ups (Maryland Excels, Infinite Legacy, Cuba, ALA Ashley & Dr. Reed) | The homepage's six, as tiles | Victor: the two pages featured different projects |
+| Portfolio, Corporate and Film grids | Included 2018 Residency, Precious Layne, Mike Odom, CDSPG Building Friendships, FIVES Heart & Thunder | Those five removed | Victor's list, confirmed by Joshua |
+
+Layout only: the Behind the Scenes slideshows are 2.35:1 (16:9 on phones). The Film banner's still is now the piano shot instead of a Heart & Thunder frame, and the homepage's Corporate service card uses the Johns Hopkins engineering still instead of the Residency one.
